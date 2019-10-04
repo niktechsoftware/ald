@@ -19,5 +19,25 @@
   <!-- Custom JS File -->
   <script src="<?php echo base_url();?>assets/js/custom.js"></script>
 </body>
-
+<script>
+  $(document).ready(function(){
+    
+   $('#regForm').hide();
+    $('#parent_id').change(function(){
+      var parent_id= $('#parent_id').val();
+      $.post("<?php echo site_url("clogin/checkID") ?>",{parent_id : parent_id}, function(data){
+	//	$("#regForm").html(data);
+  alert(data);
+    if(data){
+      $('#regForm').show();
+    }
+    else{
+      alert('Please Check your Parent Id');
+    }
+  
+		
+	});
+    });
+  });
+</script>
 </html>
