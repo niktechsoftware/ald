@@ -49,7 +49,7 @@ class Clogin extends CI_Controller{
 		if($c_ID){
 			echo "found parent id";
 		}else{
-		
+				//echo "parent id is wroung";
 		}
 	}
 	function insertCustmer(){
@@ -57,9 +57,9 @@ class Clogin extends CI_Controller{
 		$maxid=$maxid+1;
 		$username="ADL".$maxid;
 		$rjoinerID= $this->input->post('JoinerID');
-		//$ljoinerID= $this->input->post('lJoinerID');
 		$name= $this->input->post('name');
 		$fname= $this->input->post('fname');
+		$joinername= $this->input->post('joinername');
 		$address= $this->input->post('address');
 		$pinno= $this->input->post('pinno');
 		$mobile= $this->input->post('mobile');
@@ -67,6 +67,8 @@ class Clogin extends CI_Controller{
 		$dob= $this->input->post('dob');
 		$password= $this->input->post('password');
 		$parent_id= $this->input->post('parent_id');
+		print_r($parent_id);
+		print_r($joinername);exit();
 		$city= $this->input->post('city');
 		$state= $this->input->post('state');
 		$panno= $this->input->post('panno');
@@ -87,7 +89,16 @@ class Clogin extends CI_Controller{
 			'dob'=>$dob
 		);
 		$query=$this->customermodel->insertCustomer($data);
-		$this->load->view( base_url()'clogin/customerConformPage');
+		if($query){
+			$this->db->where('username',$username);
+			$id= $this->get('customer_info')->row();
+			$data1=array(
+				'c_id'=>$id,
+				''
+			);
+			$this->customermodel->insertCustomer($data);
+		}
+		$this->load->view('index.php/clogin/customerConformPage');
 	}
 
 }

@@ -21,18 +21,20 @@
 </body>
 <script>
   $(document).ready(function(){
-    
+    $('#parent_nm').hide();
    $('#regForm').hide();
-    $('#parent_id').change(function(){
+    $('#parent_id').keyup(function(){
       var parent_id= $('#parent_id').val();
       $.post("<?php echo site_url("clogin/checkID") ?>",{parent_id : parent_id}, function(data){
 	//	$("#regForm").html(data);
-  alert(data);
+  //alert(data);
     if(data){
       $('#regForm').show();
     }
     else{
-      alert('Please Check your Parent Id');
+      $('#regForm').hide();
+
+      document.getElementById('#parent_idd').innerHTML = "Parent ID is Wroung";
     }
   
 		
