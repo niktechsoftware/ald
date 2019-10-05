@@ -15,6 +15,7 @@
                   <div class="row">
                   
                   <div class=" col-col-md-6 col-xs-6 col-lg-6 ">
+
                   	
                   	<div class="form-group row">
                         <label class="col-sm-3 col-form-label required">Sponsor Userid<span title="Required" style="color:red;">*</span></label>
@@ -37,6 +38,7 @@
                       </div>
                     </div>
                   </div>
+
                    <div class="row" id="regForm">
                    <div class="col-md-12 col-lg-12 col-xs-12">
                         <div class="row">
@@ -60,6 +62,7 @@
                                 
                             </div>
                             <div class="col-xs-6 col-md-6 col-lg-6" >
+
                             <div class="form-group row">
                                 <div class="col-md-3">
                                     <label>Name<span title="Required" style="color:red;">*</span></label>
@@ -68,15 +71,33 @@
                                      <div class="form-group">
                                     <input type="text" class="form-control" name="name" id="name" required="required">
                                 	</div>
+
                                 </div>
                           </div>
+
+                            
                         </div>
                         </div>
                         </div>
                         
                        <div class="col-md-12 col-lg-12 col-xs-12">
                         <div class="row">
+                        <div class="col-xs-6 col-md-6 col-lg-6" >
+                            <div class="form-group">
+                               <div class="row">
+                                <div class="col-md-6">
+                                <label>Name</label>
+                                </div>
+                                <div class="col-md-6">
+                                <div class="input-group" >
+                                    <input type="text" class="form-control" name="name" id="name" required="requried">
+                                </div>
+                                </div>
+                               </div>
+                                </div>
+                          </div>
                             <div class="col-xs-6 col-md-6 col-lg-6" >
+
                                 <div class="form-group row">
                                     <div class="col-md-3">
                                     	<label>Father Name<span title="Required" style="color:red;">*</span></label>
@@ -101,8 +122,10 @@
                                     <textarea type="text" class="form-control" name="address" id="address" required="required"></textarea>
                                 </div>
                                 <?php echo form_error('selectTree');?> 
+
                                 </div>
                           </div>
+
                         </div>
                         </div>
                         </div>
@@ -131,8 +154,10 @@
                                      <div class="form-group">
                                      <input type="text" class="form-control" name="state" id="state" required="required">
                             	</div>
+
                                 </div>
                           </div>
+
                         </div>
                         </div>
                         </div>
@@ -243,17 +268,20 @@
                        
                         <div class="col-md-12 col-lg-12 col-xs-12">
                         <div class="row">
+
                             <div class="col-xs-6 col-md-6 col-lg-6" >
                                 <div class="form-group row">
                                     <div class="col-md-3">
                                     	<label>Password<span title="Required" style="color:red;">*</span></label>
                                     </div>
+
                                      <div class="col-md-9">
                                      	<div class="form-group">
 					                        <input type="password" required="required" class="form-control pwstrength" data-indicator="pwindicator" name="confirm_pwd" id="confirm_pwd">
                               		 </div> 
 					               </div>
                                   
+
                                 </div>
                             </div>
                             <div class="col-xs-6 col-md-6 col-lg-6" >

@@ -44,6 +44,7 @@ class Clogin extends CI_Controller{
 	function checkID(){
 		$parentID= $this->input->post('parent_id');
 		//print_r($parentID);
+
 		$getvalue = $this->cmodel->checkStatus("customer_info",$parentID);
 		echo (json_encode($getvalue));
 	}
@@ -102,5 +103,6 @@ class Clogin extends CI_Controller{
 			}	
 		}
 		
+
 
 }
