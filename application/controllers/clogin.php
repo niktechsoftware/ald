@@ -5,7 +5,7 @@ class Clogin extends CI_Controller{
 	{
 		parent::__construct();
 		$this->is_login();
-		$this->load->model('customermodel');
+		$this->load->model('cmodel');
 	}
 	function is_login(){
 		$is_login = $this->session->userdata('is_login');
@@ -37,57 +37,70 @@ class Clogin extends CI_Controller{
 		$data['subPage'] = 'Customer Registration';
 		$data['title'] = 'Customer Registration Form';
 		$data['headerCss'] = 'headerCss/dashboardCss';
-		$data['footerJs'] = 'footerJs/dashboardJs';
+		$data['footerJs'] = 'footerJs/customerJs';
 		$data['mainContent'] = 'customer/registration';
 		$this->load->view("includes/mainContent", $data);
 	}
 	function checkID(){
 		$parentID= $this->input->post('parent_id');
 		//print_r($parentID);
-		$this->db->where('username',$parentID);
-		$c_ID=$this->db->get('customer_info')->row();
-		if($c_ID){
-			echo "found parent id";
-		}else{
-		
-		}
+		$getvalue = $this->cmodel->checkStatus("customer_info",$parentID);
+		echo (json_encode($getvalue));
 	}
 	function insertCustmer(){
-		$maxid=$this->customermodel->cust_max();
-		$maxid=$maxid+1;
-		$username="ADL".$maxid;
-		$rjoinerID= $this->input->post('JoinerID');
-		//$ljoinerID= $this->input->post('lJoinerID');
-		$name= $this->input->post('name');
-		$fname= $this->input->post('fname');
-		$address= $this->input->post('address');
-		$pinno= $this->input->post('pinno');
-		$mobile= $this->input->post('mobile');
-		$aadhar= $this->input->post('aadhar');
-		$dob= $this->input->post('dob');
-		$password= $this->input->post('password');
-		$parent_id= $this->input->post('parent_id');
-		$city= $this->input->post('city');
-		$state= $this->input->post('state');
-		$panno= $this->input->post('panno');
-		$data= array(
-			'parent_id'=>$parent_id,
-			'customer_name'=>$name,
-			'username'=>$username,
-			'password'=>$password,
-			'mobilenumber'=>$mobile,
-			'current_address'=>$address,
-			'city'=>$city,
-			'state'=>$state,
-			'pin'=>$pinno,
-			'pannumber'=>$panno,
-			'adhaarnumber'=>$aadhar,
-			'status'=>0,
-			'joining_date'=>date('Y-m-d'),
-			'dob'=>$dob
-		);
-		$query=$this->customermodel->insertCustomer($data);
-		$this->load->view( base_url()'clogin/customerConformPage');
-	}
+		$this->load->library("form_validation");
+		$this->form_validation->set_rules('JoinerID','Joinner ID','required|is_unique[customer_info.username]');
+		$this->form_validation->set_rules('name','Customer Name','required');
+		$this->form_validation->set_rules('fname','Father Name','required');
+		$this->form_validation->set_rules('address','Address','required');
+		$this->form_validation->set_rules('pinno','PIN No.','required |exact_length[6]');
+		$this->form_validation->set_rules('mobile','Mobile Number','required | numeric |exact_length[10]');
+		$this->form_validation->set_rules('aadhar','Aadhaar Number','required | is_unique[customer_info.adhaarnumber]');
+		$this->form_validation->set_rules('password','Password','required');
+		$this->form_validation->set_rules('name','Customer Name','required');
+		$this->form_validation->set_rules('name','Customer Name','required');
+		if($this->form_validation->run()){
+			$maxid	=	$this->customermodel->cust_max();
+			$maxid	=	$maxid+1;
+			
+			$username="ADL".$maxid;
+			$rjoinerID= $this->input->post('JoinerID');
+			//$ljoinerID= $this->input->post('lJoinerID');
+			$name= $this->input->post('name');
+			$fname= $this->input->post('fname');
+			$address= $this->input->post('address');
+			$pinno= $this->input->post('pinno');
+			$mobile= $this->input->post('mobile');
+			$aadhar= $this->input->post('aadhar');
+			$dob= $this->input->post('dob');
+			$password= $this->input->post('password');
+			$parent_id= $this->input->post('parent_id');
+			$city= $this->input->post('city');
+			$state= $this->input->post('state');
+			$panno= $this->input->post('panno');
+			$data= array(
+					'parent_id'=>$parent_id,
+					'customer_name'=>$name,
+					'username'=>$username,
+					'password'=>$password,
+					'mobilenumber'=>$mobile,
+					'current_address'=>$address,
+					'city'=>$city,
+					'state'=>$state,
+					'pin'=>$pinno,
+					'pannumber'=>$panno,
+					'adhaarnumber'=>$aadhar,
+					'status'=>0,
+					'joining_date'=>date('Y-m-d'),
+					'dob'=>$dob
+			);
+			$query=$this->customermodel->insertCustomer($data);
+			redirect('clogin/customerConformPage');
+			}
+			else{
+				$this->load->view("registration");
+			}	
+		}
+		
 
 }

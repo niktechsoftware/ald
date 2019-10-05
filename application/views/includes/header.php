@@ -18,5 +18,7 @@
   <!-- Custom style CSS -->
   <link rel="stylesheet" href="<?php echo base_url();?>assets/css/custom.css">
   <link rel='shortcut icon' type='image/x-icon' href='<?php echo base_url();?>assets/img/favicon.ico' />
-</head>
+ <?php echo $this->load->view($headerCss); ?>
+  </head>
+
 
