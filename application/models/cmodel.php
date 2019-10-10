@@ -31,5 +31,17 @@
         			}
         			return $data;	
         }
+        
+        function getrowid($username){
+        	$this->db->where("username",$username);
+        	$getrow = $this->db->get("customer_info")->row()->id;
+        	return $getrow;
+        }
+        
+        function getCrecord($id){
+        	$this->db->where('id',$id);
+        	$record = $this->db->get("customer_info");
+        	return $record;
+        }
     }
 ?>

@@ -8,8 +8,20 @@
              <li class="dropdown">
               <a href="#" class="nav-link has-dropdown"><i data-feather="user-check"></i><span>Personal</span></a>
               <ul class="dropdown-menu">
-                <li><a href="auth-login.html">View/Edit Profile</a></li>
-                <li><a href="auth-register.html">Account Info</a></li>
+                <?php if($this->session->userdata("login_type")==2){
+                    $rc =   $this->cmodel->getCrecord($this->session->userdata("customer_id"))->row();
+                    if(!$rc->status){
+                    	?> 
+                    	
+                    	<li><a href="<?php echo base_url()?>index.php/clogin/changeStatus">Activate Account</a></li>
+                    	
+                  <?php   }else{
+                  	?>
+                   <li><a href="#">View/Edit Profile</a></li>
+                    <li><a href="#">Account Info</a></li>
+                  	<?php 
+                      }}?>
+               
                
               </ul>
             </li>

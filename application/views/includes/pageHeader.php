@@ -18,6 +18,27 @@
             </li>
           </ul>
          <strong><?php echo $this->session->userdata("business_name");?></strong>
+          <div>
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    </div>
+        </div>
+         
+                      <?php if($this->session->userdata("login_type")==2){
+                    $rc =   $this->cmodel->getCrecord($this->session->userdata("customer_id"))->row();
+                    if(!$rc->status){
+                    	?><div class="alert alert-dark">
+                    	 <a href="#" class="btn btn-danger">Inactive Account</a>
+                    	
+                    	    </div>
+                  <?php   }else{
+                  	?>
+                  	<div class="alert alert-info">
+                    	 <a href="#" class="btn btn-success">Active Account</a>
+                    	
+                    	    </div>
+                  	<?php 
+                      }}?>
+                
         </div>
         
         <ul class="navbar-nav navbar-right">
