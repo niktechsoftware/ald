@@ -23,7 +23,7 @@
 							$c_ro=$crecord->row();
 							?>
 								<div class="row" id="regForm">
-				<form method="post" action="<?php echo base_url()?>index.php/clogin/RequestUpdate" enctype="multipart/form-data>
+				<form method="post" action="<?php echo base_url()?>index.php/clogin/requestUpdate" enctype="multipart/form-data" >
 									
 									<div class="col-md-12 col-lg-12 col-xs-12">
 										<div class="row">
@@ -34,7 +34,7 @@
 													</div>
 													<div class="col-md-9">
 														<div class="form-group">
-															<?php echo $c_ro->customer_name;?>
+															<input type="text" name="name" value ="<?php echo $c_ro->customer_name;?>" readonly/>
 														</div>
 					                   			</div>
 												</div>
@@ -47,7 +47,8 @@
 													</div>
 													<div class="col-md-9">
 														<div class="form-group">
-															<?php echo $c_ro->fname;?>
+															
+															<input type="text" name="fname" value ="<?php echo $c_ro->fname;?>" readonly/>
 														</div>
 									
                                 					</div>
@@ -68,7 +69,8 @@
 													</div>
 													<div class="col-md-9">
 														<div class="form-group">
-															<?php echo $c_ro->username;?>
+															<?php //echo $c_ro->username;?>
+															<input type="text" name="uname" value ="<?php echo $c_ro->username;?>" readonly/>
 														</div>
 					                   
 					                   					</div>
@@ -103,7 +105,7 @@
 													</div>
 													<div class="col-md-9">
 														<div class="form-group">
-															<input type="text" class="form-control" name="tno" id="tno" >
+															<input type="text" class="form-control" name="tno" id="tno" />
 														</div>
 														</div>
                            			
@@ -119,7 +121,7 @@
 													</div>
 													<div class="col-md-9">
 														<div class="form-group">
-															<input type="text" class="form-control" name="reffno" id="reffno" >
+															<input type="text" class="form-control" name="reffno" id="reffno"/>
 														</div>
                               
                                 </div>
@@ -137,7 +139,8 @@
 													</div>
 													<div class="col-md-9">
 														<div class="form-group">
-															<input type="file" name = "paymentSlip" id ="paymentSlip" class="form-control">
+															<input type="file" name = "photo" id ="paymentSlip" class="form-control">
+															<!-- <input type="file" name="photo"/> -->
 														</div> 
                               			
 					               					</div>

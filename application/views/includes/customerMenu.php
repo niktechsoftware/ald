@@ -32,8 +32,8 @@
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="widget-chart.html">Wallet Balance</a></li>
                 <li><a class="nav-link" href="widget-data.html">My MPin Details</a></li>
-                <li><a class="nav-link" href="widget-data.html">My Team</a></li>
-                <li><a class="nav-link" href="widget-data.html">My Tree</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline">My Downline</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/tree">My Tree</a></li>
               </ul>
             </li>
             <li class="dropdown">

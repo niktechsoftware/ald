@@ -42,6 +42,19 @@
         	$this->db->where('id',$id);
         	$record = $this->db->get("customer_info");
         	return $record;
-        }
+		}
+		function pay_detail_insert($cust_id,$txn,$reffno,$file_name)
+		{
+			$val = array(
+						'c_id' => $cust_id,
+						// 'c_id' => '2',
+						'reffno' => $reffno,
+						'transaction' => $txn,
+						'uploadfile' => $file_name
+			);
+        	// $this->db->where('id',$id);
+        	$insrt = $this->db->insert("pay_details",$val);
+        	return $insrt;
+		}
     }
 ?>

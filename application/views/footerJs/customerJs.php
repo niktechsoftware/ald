@@ -1,5 +1,4 @@
 <script>
-
   //alert("rahul");
  //$('#regForm').hide();
   $('#parent_id').keyup(function(){

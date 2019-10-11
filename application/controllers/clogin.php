@@ -173,6 +173,72 @@ class Clogin extends CI_Controller{
 			$data['mainContent'] = 'customer/changeStatus';
 			$this->load->view("includes/mainContent", $data);
 		}
+		
+		function requestUpdate(){
 
-
+			$cust_id = $this->session->userdata("customer_id");
+			$txn =  $this->input->post("tno");
+			$reffno =  $this->input->post("reffno");			
+			$file_name   = $_FILES['photo']['name']; 
+			// $val = array('cust_id' => );
+			$this->load->model('cmodel');
+			$chk = $this->cmodel->pay_detail_insert($cust_id,$txn,$reffno,$file_name);
+			if($chk)
+			{				
+				$this->load->library('upload');
+				$image_path = realpath(APPPATH . '../assets/img/pay/');		  
+				  $config['upload_path'] = $image_path;
+				  $config['allowed_types'] = 'jpg|jpeg|png';
+				  $config['max_size'] = '100';
+   
+				  if (!empty($_FILES['photo']['name']))
+				   {
+					  $config['file_name'] = $file_name;
+					  print_r($config['file_name']);
+					 $this->upload->initialize($config);
+					 $a = $this->upload->do_upload('photo');
+					  $value['photo']=$file_name;
+						if($a)
+						{
+							echo "yes";
+						}
+						else
+						{
+							echo "no";
+						}
+					}
+					else 
+					{
+						echo "file not found";
+					}
+			}
+			else
+			{
+				echo "data not insert";
+			}
+		}
+		function downline(){
+			$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
+			$data['pageTitle'] = 'My Downline';
+			$data['smallTitle'] = 'Downline';
+			$data['mainPage'] = 'Downline';
+			$data['subPage'] = 'Downline';
+			$data['title'] = 'Customer Downline';
+			$data['headerCss'] = 'headerCss/dashboardCss';
+			$data['footerJs'] = 'footerJs/customerJs';
+			$data['mainContent'] = 'customer/downline';
+			$this->load->view("includes/mainContent", $data);
+		}
+		function tree(){
+			$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
+			$data['pageTitle'] = 'My Tree';
+			$data['smallTitle'] = 'My Tree';
+			$data['mainPage'] = 'My Tree';
+			$data['subPage'] = 'My Tree';
+			$data['title'] = 'Customer Tree';
+			$data['headerCss'] = 'headerCss/dashboardCss';
+			$data['footerJs'] = 'footerJs/customerJs';
+			$data['mainContent'] = 'customer/tree';
+			$this->load->view("includes/mainContent", $data);
+		}
 }
