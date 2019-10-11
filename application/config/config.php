@@ -22,8 +22,13 @@
 | a PHP script and you can easily do that on your own.
 |
 */
+<<<<<<< HEAD
 // $config['base_url'] = 'http://localhost:8080/ald/';
 $config['base_url'] = 'http://localhost/ald/';
+=======
+$config['base_url'] = 'http://localhost/ald/';
+//$config['base_url'] = 'http://localhost/ald/';
+>>>>>>> a17c33cc863064f7ef63bd293d6a80f334d5bc1f
 /*
 |--------------------------------------------------------------------------
 | Index File
