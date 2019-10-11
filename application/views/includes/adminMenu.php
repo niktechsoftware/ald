@@ -15,10 +15,10 @@
              <li class="dropdown">
               <a href="#" class="nav-link has-dropdown"><i data-feather="user-check"></i><span>Customer</span></a>
               <ul class="dropdown-menu">
-                <li><a href="auth-login.html">Active List</a></li>
-                <li><a href="auth-register.html">Inactive List</a></li>
-                <li><a href="auth-forgot-password.html">Paid Inactive</a></li>
-                <li><a href="auth-reset-password.html">Customer Report</a></li>
+                <li><a href="<?php echo base_url();?>index.php/adminController/active_list">Active List</a></li>
+                <li><a href="<?php echo base_url();?>index.php/adminController/Inactive_List">Inactive List</a></li>
+                <li><a href="<?php echo base_url();?>index.php/adminController/Paid_InaciveList">Paid Inactive</a></li>
+                <li><a href="<?php echo base_url();?>index.php/adminController">Customer Report</a></li>
                 
               </ul>
             </li>
