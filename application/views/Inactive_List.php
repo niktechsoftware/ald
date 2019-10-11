@@ -13,9 +13,7 @@
                      
                         <thead>
                           <tr>
-                            <th class="text-center">
-                              #
-                            </th>
+                            <th class="text-center"> #</th>
                             <th>Customer Name</th>
                             <th>Father Name</th>
                             <th>Mobile Number</th>
@@ -23,6 +21,7 @@
                             <th>Current Address</th>
                             <th>City</th>
                             <th>Status</th>
+                          
                           </tr>
                         </thead>
                         <tbody>
@@ -43,6 +42,8 @@
                             <td><?php echo $data->current_address;?></td>
                             <td><?php echo $data->city;?></td>
                             <td> <div class="badge badge-danger badge-shadow"><?php if($data->status==0){?><a href="#" style="color:white;"> <?php echo "Inactive"; ?></a> <?php }else{ "Active";}?></div></td>
+                            
+                           
                           </tr>
                           <?php  //} 
                           $i++; endforeach; }else{
