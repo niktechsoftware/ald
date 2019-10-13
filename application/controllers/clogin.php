@@ -161,8 +161,15 @@ class Clogin extends CI_Controller{
 		}
 		
 		function changeStatus(){
-			$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
-			
+			if($this->uri->segment(4)){
+				$cid = $this->uri->segment(4);
+			}else{
+				$cid=$this->session->userdata("customer_id");
+			}
+			$data['crecord'] = $this->cmodel->getCrecord($cid);
+			$this->load->model("pay_details");
+			$pd  = $this->pay_details->checkStatus($cid);
+			$data['pd']=$pd;
 			$data['pageTitle'] = 'Customer Registration';
 			$data['smallTitle'] = 'Activation Panel';
 			$data['mainPage'] = 'Customer Registration';
@@ -173,6 +180,84 @@ class Clogin extends CI_Controller{
 			$data['mainContent'] = 'customer/changeStatus';
 			$this->load->view("includes/mainContent", $data);
 		}
+		
+		function requestUpdate(){
 
-
+			$cust_id = $this->session->userdata("customer_id");
+			$txn =  $this->input->post("tno");
+			$reffno =  $this->input->post("reffno");			
+			$file_name   = time().trim($_FILES['photo']['name']); 
+			$photo_name = str_replace(' ', '_', $file_name);
+			// $val = array('cust_id' => );
+			$this->load->model('cmodel');
+			$chk = $this->cmodel->pay_detail_insert($cust_id,$txn,$reffno,$photo_name);
+			if($chk)
+			{				
+				$this->load->library('upload');
+				$image_path = realpath(APPPATH . '../assets/img/pay/');		  
+				  $config['upload_path'] = $image_path;
+				  $config['allowed_types'] = 'jpg|jpeg|png|bmp';
+				  $config['max_size'] = '500';
+				  $config['file_name'] = $photo_name;
+				  if (!empty($_FILES['photo']['name']))
+				   {
+					  
+					  print_r($config['file_name']);
+					 $this->upload->initialize($config);
+					 $a = $this->upload->do_upload('photo');
+					 
+					 redirect("clogin/changeStatus/success/$cust_id");
+					 
+					}
+					else 
+					{
+						redirect("clogin/changeStatus/success/$cust_id");
+					}
+			}
+			else
+			{
+				echo "data not insert";
+			}
+		}
+		function downline(){
+			$tabv = $this->uri->segment("3");
+			if($tabv==1){
+				$table="silver_tree";
+			}
+			if($tabv==2){
+				$table="gold_tree";
+			}
+			if($tabv==3){
+				$table="diamond_tree";
+			}
+			if($tabv==4){
+				$table="crown_tree";
+			}
+			$lposition="leftjoiner";
+			$rposition="rightjoiner";
+			$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
+			$data['left']=$this->tree->mydownline($this->session->userdata("customer_id"),$lposition,$table);
+			$data['right']=$this->tree->mydownline($this->session->userdata("customer_id"),$rposition,$table);
+			$data['pageTitle'] = 'My Downline';
+			$data['smallTitle'] = $table.' Downline';
+			$data['mainPage'] = 'Downline';
+			$data['subPage'] = 'Downline';
+			$data['title'] = 'Customer Downline';
+			$data['headerCss'] = 'headerCss/dashboardCss';
+			$data['footerJs'] = 'footerJs/customerJs';
+			$data['mainContent'] = 'customer/downline';
+			$this->load->view("includes/mainContent", $data);
+		}
+		function tree(){
+			$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
+			$data['pageTitle'] = 'My Tree';
+			$data['smallTitle'] = 'My Tree';
+			$data['mainPage'] = 'My Tree';
+			$data['subPage'] = 'My Tree';
+			$data['title'] = 'Customer Tree';
+			$data['headerCss'] = 'headerCss/dashboardCss';
+			$data['footerJs'] = 'footerJs/customerJs';
+			$data['mainContent'] = 'customer/tree';
+			$this->load->view("includes/mainContent", $data);
+		}
 }

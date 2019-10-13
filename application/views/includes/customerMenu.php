@@ -31,9 +31,18 @@
               <a href="#" class="nav-link has-dropdown"><i data-feather="briefcase"></i><span>My Business</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="widget-chart.html">Wallet Balance</a></li>
-                <li><a class="nav-link" href="widget-data.html">My MPin Details</a></li>
-                <li><a class="nav-link" href="widget-data.html">My Team</a></li>
-                <li><a class="nav-link" href="widget-data.html">My Tree</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/pin/generatePin/<?php echo $this->session->userdata("customer_id");?>">My MPin Details</a></li>
+                <li><a class="nav-link" href=""></a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/tree">My Tree</a></li>
+              </ul>
+            </li>
+             <li class="dropdown">
+              <a href="#" class="nav-link has-dropdown"><i data-feather="anchor"></i><span>My Downline</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/1">Silver</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/2">Gold</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/3">Diamond</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/4">Crown</a></li>
               </ul>
             </li>
             <li class="dropdown">

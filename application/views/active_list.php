@@ -5,7 +5,7 @@
               <div class="col-12">
                 <div class="card">
                   <div class="card-header">
-                    <h4>Active Customer List</h4>
+                    <h4><?php echo $smallTitle;?></h4>
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
@@ -23,6 +23,10 @@
                             <th>Current Address</th>
                             <th>City</th>
                             <th>Status</th>
+                            <?php if($uriv==3){?>  <th>Transacton / Reffrence Id</th>
+                            
+                           <th>Generate Pin</th>
+                           <?php } ?>
                           </tr>
                         </thead>
                         <tbody>
@@ -43,7 +47,47 @@
                             <td><?php echo $data->current_address;?></td>
                             <td><?php echo $data->city;?></td>
                             <td> <div class="badge badge-success badge-shadow"><?php if($data->status==1){ echo "Active";}else{ "Inactive";}?></div></td>
+                          <?php if($uriv==3){?>
+                           <td><?php if($data->reffno){ echo $data->reffno;} else { if($data->transaction){ echo $data->transaction; }} ?> 
+                             <a href="<?php echo base_url();?>assets/img/pay/<?php echo $data->uploadfile;?>"> 
+                             <img alt="image" src="<?php echo base_url();?>assets/img/pay/<?php echo $data->uploadfile;?>" width="35"></a>
+                            <?php  ?>
+                            
+                            <input type="hidden" id="<?php echo $i;?>id" value="<?php echo $data->id; ?>" ></td>
+                           
+                            <td><a href="<?php echo base_url();?>index.php/pin/generatePin/<?php echo $data->id; ?>" class="btn btn-primary"> Generate Pin</a></td>
+                         
+                         <?php } ?>
                           </tr>
+                           <script>
+                           $('#<?php echo $i;?>approve').hide();
+                            $('#<?php echo $i;?>status').keyup(function(){
+                             var st= $('#<?php echo $i;?>status').val();
+                            // 
+                             if((st.length)>0){
+                              $('#<?php echo $i;?>approve').show(); 
+                             }
+                             else{
+                              $('#<?php echo $i;?>approve').hide(); 
+                             }
+
+                             $('#<?php echo $i;?>approve').click(function(){
+                               var stats =$('#<?php echo $i;?>status').val();
+                               var id =$('#<?php echo $i;?>id').val();
+                              $.post("<?php echo base_url()?>index.php/adminController/approve_paystatus" ,
+                               { stats : stats , id : id } ,
+                                function(data){
+                                  // alert(data);
+                                  $('#<?php echo $i;?>approve').html(data); 
+
+
+                              });
+                            });
+
+
+                            });
+                           
+                         </script>
                           <?php //} 
                           $i++; endforeach; }else{
                           echo "data not found";

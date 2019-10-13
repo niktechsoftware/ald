@@ -10,6 +10,36 @@
 				return 1; 
 			}
         }
+        
+        function activestatus($custid,$mpin,$tblnm){
+        	$this->db->where("status",0);
+        	$this->db->where("username",$custid);
+        	$checksv = $this->db->get($tblnm);
+        	$this->db->where("status",0);
+        	$this->db->where("mpin",$mpin);
+        	$checkpinv =  $this->db->get("mpin");
+        	if(($checksv->num_rows()>0)&& ($checkpinv->num_rows()>0)){
+        		
+        	$arr =array(
+        			"status" =>1
+        	);
+        
+        	$this->db->where("username",$custid);
+        	  $this->db->update($tblnm,$arr);
+        	  $data = array(
+        	  		"status" =>1,
+        	  		"active_mpin_date"=>date('Y-m-d H:i:s'),
+        	  		"id_active" =>$custid
+        	  );
+        	 
+        	  $this->db->where("mpin",$mpin);
+        	  $this->db->update("mpin",$data);
+        	  return true;
+        	}else{
+        		echo " Customer ID Error";
+        	}
+        }
+        
         function insertCustomer($data){
             $query =$this->db->insert('customer_info',$data);
             return $query; 
@@ -42,6 +72,50 @@
         	$this->db->where('id',$id);
         	$record = $this->db->get("customer_info");
         	return $record;
-        }
+		}
+		function pay_detail_insert($cust_id,$txn,$reffno,$file_name)
+		{
+			$this->db->where("c_id",$cust_id);
+			$pyd = $this->db->get("pay_details");
+			if($pyd->num_rows()>0){
+				$val = array(
+						'reffno' => $reffno,
+						'transaction' => $txn,
+						'uploadfile' => $file_name
+				);
+				 			$this->db->where("c_id",$cust_id);
+				$insrt = $this->db->update("pay_details",$val);
+				return $insrt;
+			}else{
+			$val = array(
+						'c_id' => $cust_id,
+						
+						'reffno' => $reffno,
+						'transaction' => $txn,
+						'uploadfile' => $file_name
+			);
+        	// $this->db->where('id',$id);
+        	$insrt = $this->db->insert("pay_details",$val);
+        	return $insrt;
+			}
+		}
+		
+		//aarju mathods
+		function getcustomerdata($matchcon,$status,$tblname){
+			if($status==2){
+				$req = $this->db->query("select customer_info.id,customer_info.customer_name,customer_info.fname,customer_info.status,customer_info.mobilenumber,customer_info.email,customer_info.current_address,customer_info.city,pay_details.reffno,pay_details.transaction,pay_details.uploadfile from customer_info,pay_details where customer_info.id = pay_details.c_id and customer_info.status=0");
+				return $req;
+			}else{
+				$this->db->where($matchcon,$status);
+				return  $this->db->get($tblname);
+			}
+		
+		}
+		function getpaydetails(){
+			return  $this->db->get("pay_details");
+		}
+		 
+				
+		//aarju mathods
     }
 ?>
