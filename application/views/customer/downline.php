@@ -5,7 +5,7 @@
                 <div class="col-xs-12 col-md-12 col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Customer DownLine</h4>
+                            <h4><?php echo $smallTitle;?></h4>
                         </div>
 
                         <div class="card-body">
@@ -27,13 +27,8 @@
                                     <tbody>
                                     <?php
                                         
-                                        $id = $this->session->userdata("customer_id");   
-                                        // echo $id;                                    
-                                        $this->db->where('leftjoiner', $id);
-                                        $dt= $this->db->get('silver_tree');
-                                        // print_r($dt);
-                                        $i=1;
-                                        foreach ($dt->result() as $dtt) 
+                                       $i=1;
+                                        foreach ($left->result() as $dtt) 
                                         {
                                             $this->db->where('id',$dtt->c_id);
                                            $dat= $this->db->get('customer_info')->row();
@@ -75,13 +70,9 @@
                                     <tbody>
                                     <?php
                                         
-                                        $id = $this->session->userdata("customer_id");   
-                                        // echo $id;                                    
-                                        $this->db->where('rightjoiner', $id);
-                                        $dt= $this->db->get('silver_tree');
-                                        // print_r($dt);
+                                     
                                         $i=1;
-                                        foreach ($dt->result() as $dtt) 
+                                        foreach ($right->result() as $dtt) 
                                         {
                                             $this->db->where('id',$dtt->c_id);
                                            $dat= $this->db->get('customer_info')->row();

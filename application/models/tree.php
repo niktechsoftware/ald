@@ -53,5 +53,11 @@
     			return true;
     	}
     	
+    	
+    function mydownline($id,$pos,$table){
+    $this->db->where($pos, $id);
+    $dt= $this->db->get($table);
+    return $dt;
+    }
     }
 ?>

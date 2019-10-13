@@ -23,3 +23,12 @@ $output=curl_exec($ch);
 curl_close($ch);
 return $output;
 }
+
+function getAlert($val){
+	if($val=="success"){
+		echo '<div class="alert alert-success">Success Fully Save Your Record !!!!</div>';
+	}else{
+		echo '<div class="alert alert-danger">Retry Afer Sone Times</div>';
+		
+	}
+}

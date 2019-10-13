@@ -22,11 +22,17 @@
 							<?php if($crecord->num_rows()>0){
 							$c_ro=$crecord->row();
 							?>
-								<div class="row" id="regForm">
+							
+							<?php if($this->uri->segment(3)){
+											getAlert($this->uri->segment(3));
+							}?>
+								
 				<form method="post" action="<?php echo base_url()?>index.php/clogin/requestUpdate" enctype="multipart/form-data" >
-									
+								<div class="row" id="regForm">	
 									<div class="col-md-12 col-lg-12 col-xs-12">
+									
 										<div class="row">
+										
 											<div class="col-xs-6 col-md-6 col-lg-6">
 												<div class="form-group row">
 													<div class="col-md-3">
@@ -34,7 +40,7 @@
 													</div>
 													<div class="col-md-9">
 														<div class="form-group">
-															<input type="text" name="name" value ="<?php echo $c_ro->customer_name;?>" readonly/>
+															<input type="text" name="name" class="form-control" value ="<?php echo $c_ro->customer_name;?>" readonly/>
 														</div>
 					                   			</div>
 												</div>
@@ -48,7 +54,7 @@
 													<div class="col-md-9">
 														<div class="form-group">
 															
-															<input type="text" name="fname" value ="<?php echo $c_ro->fname;?>" readonly/>
+															<input type="text" name="fname" class="form-control" value ="<?php echo $c_ro->fname;?>" readonly/>
 														</div>
 									
                                 					</div>
@@ -57,9 +63,9 @@
 
 											</div>
 										</div>
-									</div>
+									
 
-									<div class="col-md-12 col-lg-12 col-xs-12">
+									
 										<div class="row">
 											<div class="col-xs-6 col-md-6 col-lg-6">
 
@@ -70,7 +76,7 @@
 													<div class="col-md-9">
 														<div class="form-group">
 															<?php //echo $c_ro->username;?>
-															<input type="text" name="uname" value ="<?php echo $c_ro->username;?>" readonly/>
+															<input type="text" name="uname" class="form-control" value ="<?php echo $c_ro->username;?>" readonly/>
 														</div>
 					                   
 					                   					</div>
@@ -92,10 +98,7 @@
 					               					</div>			
 					               				</div>
 										</div>
-									</div>
-
 									
-									<div class="col-md-12 col-lg-12 col-xs-12">
 										<div class="row">
 											<div class="col-xs-6 col-md-6 col-lg-6">
 												<div class="form-group row">
@@ -105,7 +108,15 @@
 													</div>
 													<div class="col-md-9">
 														<div class="form-group">
+														<?php if($pd){
+															$pd1=$pd->row();?>
+															<input type="text" class="form-control" value ="<?php echo $pd1->transaction;?>" name="tno" id="tno" />
+															
+														<?php }else{
+															?>	
 															<input type="text" class="form-control" name="tno" id="tno" />
+													<?php 	}?>
+															
 														</div>
 														</div>
                            			
@@ -121,7 +132,7 @@
 													</div>
 													<div class="col-md-9">
 														<div class="form-group">
-															<input type="text" class="form-control" name="reffno" id="reffno"/>
+															<input type="text" class="form-control" name="reffno" <?php if($pd1->reffno){ echo 'value='.$pd1->reffno;}else{ }?>  id="reffno"/>
 														</div>
                               
                                 </div>
@@ -129,8 +140,7 @@
 											</div>
 
 										</div>
-									</div>
-									<div class="col-md-12 col-lg-12 col-xs-12">
+								
 										<div class="row">
 											<div class="col-xs-6 col-md-6 col-lg-6">
 												<div class="form-group row">
@@ -139,8 +149,13 @@
 													</div>
 													<div class="col-md-9">
 														<div class="form-group">
+														<?php if($pd1->uploadfile){?>
+														<img src="<?php echo base_url();?>assets/img/pay/<?php echo $pd1->uploadfile;?>" alt="Smiley face" height="250" width="230">
+															
+															<?php }?>
 															<input type="file" name = "photo" id ="paymentSlip" class="form-control">
 															<!-- <input type="file" name="photo"/> -->
+															
 														</div> 
                               			
 					               					</div>
