@@ -1,14 +1,15 @@
 <?php 
     class Cmodel extends CI_Model{
-        function cust_max(){
+			
+        function cust_max($tblnm){
             $this->db->select_max('id');
-			$this->db->from('customer_info');
-			$maxid=$this->db->get();
-			if($maxid->num_rows()>0){
-				return $maxid->row()->id;
-			}else{
-				return 1; 
-			}
+						$this->db->from($tblnm);
+						$maxid=$this->db->get();
+						if($maxid->num_rows()>0){
+			      	return $maxid->row()->id;
+						}else{
+							return 1; 
+						}
         }
         
         function activestatus($custid,$mpin,$tblnm){
@@ -67,12 +68,15 @@
         	$getrow = $this->db->get("customer_info")->row()->id;
         	return $getrow;
         }
-        
+			function abc($id)
+			{
+				return $id;
+			}
         function getCrecord($id){
         	$this->db->where('id',$id);
         	$record = $this->db->get("customer_info");
         	return $record;
-		}
+	     	}
 		function pay_detail_insert($cust_id,$txn,$reffno,$file_name)
 		{
 			$this->db->where("c_id",$cust_id);

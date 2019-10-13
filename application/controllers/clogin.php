@@ -82,7 +82,8 @@ class Clogin extends CI_Controller{
 		$this->form_validation->set_rules('dob','Date Of Birth','required');
 		$this->form_validation->set_rules('customRadioInline1','Gender','required');
 		if($this->form_validation->run()){
-			$maxid	=	$this->cmodel->cust_max();
+			$tblnm ="customer_info";
+			$maxid	=	$this->cmodel->cust_max($tblnm);
 			$maxid	=	$maxid+1;
 			
 			$username="ADL".$maxid;

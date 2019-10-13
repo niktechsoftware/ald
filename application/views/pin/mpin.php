@@ -34,7 +34,7 @@
                      		</div>
                      		</div>
                      			
-                     		<?php }?></div>
+                     		<?php } ?></div>
                      		<div class=" col-col-md-3 col-xs-3 col-lg-3 ">
                      		<div class="form-group row">
 													<div class="col-md-5">	PIN: 

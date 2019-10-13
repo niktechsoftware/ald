@@ -35,7 +35,8 @@
             <li class="dropdown">
               <a href="#" class="nav-link has-dropdown"><i data-feather="copy"></i><span>Accounting</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="email-inbox.html">Daybook</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/daybookController/daybook/1">Outer Daybook</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/daybookController/daybook/2">Inner Daybook</a></li>
                 <li><a class="nav-link" href="email-compose.html">Cash Transaction</a></li>
               </ul>
             </li>
