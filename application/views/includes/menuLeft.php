@@ -7,7 +7,12 @@
           </div>
           <div class="sidebar-user">
             <div class="sidebar-user-picture">
-              <img alt="image" src="<?php echo base_url();?>assets/img/userbig.png">
+              <?php if(strlen($this->session->userdata('image'))>0){?>
+              <img alt="image" src="<?php echo base_url();?>assets/img/users/<?php echo $this->session->userdata('image');?>"
+              <?php }else {?>
+              <img alt="image" src="<?php echo base_url();?>assets/img/default.jpg"
+              
+              <?php }?>
             </div>
             <div class="sidebar-user-details">
               <div class="user-name"><?php echo $this->session->userdata("name");?></div>

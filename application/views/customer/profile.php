@@ -7,10 +7,10 @@
                 <div class="card author-box">
                   <div class="card-body">
                     <div class="author-box-center">
-					<?php if(strlen($crecord->row()->photo > 0)):?>
-													<img alt="" height="128" width="138" src="/images/customerImage/<?php echo $crecord->row()->photo;?>" />
+					<?php if(strlen($crecord->row()->image > 0)):?>
+													<img alt="" height="128" width="138" src="<?php echo base_url();?>assets/img/user/<?php echo $crecord->row()->image;?>" />
 												<?php else:?>
-													<img alt="" width="128" src="assets/img/users/user-1.png" />	
+													<img alt="" width="128" src="<?php echo base_url();?>assets/img/default.jpg" />	
 												<?php endif;?>
                       <div class="clearfix"></div>
                       <div class="author-box-name">
