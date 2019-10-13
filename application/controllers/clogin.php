@@ -331,6 +331,7 @@ class Clogin extends CI_Controller{
 			$this->load->view("includes/mainContent", $data);
 		}
 		function tree(){
+
 			$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
 			$data['pageTitle'] = 'My Tree';
 			$data['smallTitle'] = 'My Tree';

@@ -1,115 +1,16 @@
-<?php
-	function getDetail($id) {
-		$valueArray = ['DayBook','Daily Base Income','Pair Matching Income','Pool Income','Royality Income','Time to Time Reward','No Time Reward','Buy MPIN'];
-		$CI =& get_instance();
-		$CI->load->model("dashboard_model");
-		$personalData = $CI->dashboard_model->getDashboardCounts1($id);
-		$dataString = '';
-		foreach($personalData as $arr):
-			if(!in_array($arr["title"], $valueArray)):
-				$dataString .= '<strong>'.$arr["title"].'</strong>: ';
-				$dataString .= $arr["prefix"].$arr["count"].'<br/>';
-				//$dataString .= $arr["joindate"].$arr["activate"].'<br/>';
-			endif;
-		endforeach;
-		return $dataString;
-	}
-	
-	function getDetail2($id) {
-		$valueArray = ['DayBook','Daily Base Income','Pair Matching Income','Pool Income','Royality Income','Time to Time Reward','No Time Reward','Buy MPIN'];
-		$CI =& get_instance();
-		$CI->load->model("dashboard_model");
-		$personalData = $CI->dashboard_model->getDashboardCounts2($id);
-		$dataString = '';
-		foreach($personalData as $arr):
-			if(!in_array($arr["title"], $valueArray)):
-				$dataString .= '<strong>'.$arr["title"].'</strong>: ';
-				$dataString .= $arr["prefix"].$arr["count"].'<br/>';
-			
-			endif;
-		endforeach;
-		return $dataString;
-	}
-
-	/**
-	 * to generate customer information onmouseover on every tree node
-	 * @param  [int] 			$customerID 	[customer_id to get all wallet infromation and tree information etc.]
-	 * @param  [array Object] 	$data   		[customer persional information (name & username)]
-	 * @return [String]             			[string of generate html block of information.]
-	 */
-	function generateCustomerInfo($customerID, $data) {
-		$CI =& get_instance();
-		$CI->load->model('dashboard_model');
-	    $allCounts 			= $CI->dashboard_model->getDashboardCounts($customerID);
-	    $activeDate 		= $data->active_date ? date('d-m-Y',strtotime($data->active_date )) : 'N/A';
-	    $joinerName 		= $data->joiner_name ? $data->joiner_name : 'N/A';
-	    $TotalLeft 			= isset($allCounts[10]) ? $allCounts[10]['count'] : 'N/A';
-	    $TotalLeftActive 	= isset($allCounts[11]) ? $allCounts[11]['count'] : 'N/A';
-	    $TotalRight 		= isset($allCounts[12]) ? $allCounts[12]['count'] : 'N/A';
-	    $TotalRightActive 	= isset($allCounts[13]) ? $allCounts[13]['count'] : 'N/A';
-	    $TotalLeftBusiness 	= isset($allCounts[14]) ? $allCounts[14]['count'] : 'N/A';
-	    $TotalRightBusiness = isset($allCounts[15]) ? $allCounts[15]['count'] : 'N/A';
-	    return '<div class="container" style="font-size: 11px; border: 1px solid #fff;">
-	    	<div class="row">
-	    		<div class="col-6" style="border-right: 1px solid #fff;"><strong>Name : </strong>'.$data->customer_name . '</div>
-	    		<div class="col-6"><strong>User Name : </strong>'.$data->username . '</div>
-	    	</div>
-
-	    	<div class="row">
-	    		<div class="col-6" style="border-right: 1px solid #fff;"><strong>Joining Date : </strong>' . date('d-m-Y',strtotime($data->joining_date)).'</div>
-	    		<div class="col-6"><strong>Active Date : </strong>'. $activeDate. '</div>
-	    	</div>
-
-	    	<div class="row">
-	    		<div class="col-6" style="border-right: 1px solid #fff;">
-	    			<strong>Sponser Id : </strong>'.$data->joiner_id . '
-	    		</div>
-	    		<div class="col-6">
-	    			<strong>Sponser Name : </strong>'. $joinerName . '
-	    		</div>
-	    	</div>
-
-	    	<div class="row">
-	    		<div class="col-6" style="border-right: 1px solid #fff;">
-	    			<strong>Total Left : </strong>'. $TotalLeft . '
-	    		</div>
-	    		<div class="col-6">
-	    			<strong>Total Right : </strong>'. $TotalRight . '
-	    		</div>
-	    	</div>
-
-	    	<div class="row">
-	    		<div class="col-6" style="border-right: 1px solid #fff;">
-	    			<strong>Total Left Active : </strong>'. $TotalLeftActive . '
-	    		</div>
-	    		<div class="col-6">
-	    			<strong>Total Right Active : </strong>'. $TotalRightActive . '
-	    		</div>
-	    	</div>
-
-	    	<div class="row">
-	    		<div class="col-6" style="border-right: 1px solid #fff;">
-	    			<strong>Total Left Business : </strong>'. $TotalLeftBusiness . '
-	    		</div>
-	    		<div class="col-6">
-	    			<strong>Total Right Business : </strong>'. $TotalRightBusiness . '
-	    		</div>
-	    	</div>
-	    </div>';
-	}
-?>
-
-							
-							
-<section class="section-b-space">
-
-    <div class="container">
-        <div class="row">
-            <?php //$this->load->view("dashboardmenu");?>
-            <div class="col-lg-9">
-                <div class="dashboard-right">
-                    <div class="dashboard">
-                        <form action="<?php echo base_url(); ?>index.php/dashboard/binarySubGroup" method="post">
+<!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+          <div class="section-body">
+            <div class="row mt-sm-12">
+              <div class="col-12 col-md-12 col-lg-12">
+                <div class="card author-box">
+                  <div class="card-body">
+                    <!-- tree Content -->
+					
+					
+					
+					 <form action="<?php echo base_url(); ?>index.php/dashboard/binarySubGroup" method="post">
 	                        <div class="row">
 		                            <div class="col-4 page-title">
 		                                <!--<div style="font-size:35px;"><?php echo $this->session->userdata("name"); ?>'s <h2 class="btn bg-danger text-white">Binary Group</h2> </div>-->
@@ -124,25 +25,17 @@
 	                        		echo '<div class="row"><div class="col-12 text-center"><h5 class="text-danger">' . $this->session->flashdata('error') . '</h5></div></div>';
 	                        ?>
 						</form>
-	                            <?php //$this->load->view("mpindrop");?>
-
-
-						<div class="welcome-msg">
-							<div class="table-responsive">
-								<table class="table table-bordered">
-									<tr>
-										<td colspan="2">
-											<table>
-												<table width="100%">
+						<div class="table-responsive">
+								<table width="100%">
 													<tr>
 														<td style="border: none;" align="center" colspan="8">
-															<div class="customerHead">
-																<?= $data->customer_name; ?> <br/>
+															<div class="customerHead"><?php $data=$crecord->row();?>
+																<?=  $this->session->userdata("name"); ?> <br/>
 																<?php
 																	/**
 																	 * Getting the tree data of root node.
 																	 */
-																	$root = $this->db->query("SELECT * FROM tree WHERE root=".$data->id." LIMIT 1;")->row();
+																	$root = $this->db->query("SELECT * FROM silver_tree WHERE c_id=".$data->id." LIMIT 1;")->row();
 																	$rootData = $this->db->query("SELECT * FROM customer_info WHERE id=".$data->id." LIMIT 1;")->row();
 																	$rootImg = $data ? 'activated.png' : 'disabled.png';
 																	$rootImg = $rootData->status == 1 ? $rootImg : 'deactivated.png';
@@ -151,7 +44,7 @@
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $rootImg;?>" width="60"  />
 
 																<span class="customerLeft">
-																	<?= generateCustomerInfo($data->id, $data) ?>
+																	<?php //echo generateCustomerInfo($data->id, $data) ?>
 																</span>
 															</div>
 
@@ -166,14 +59,14 @@
 														<td style="border: none;" align="center" colspan="4">
 															<div style="margin-top: -20px;">
 																<?php
-																	$leftRootImg = $root->root_left ? 'activated.png' : 'disabled.png';
-																	$customerID = $root->root_left ? $root->root_left : '';
+																	$leftRootImg = $root->left ? 'activated.png' : 'disabled.png';
+																	$customerID = $root->left ? $root->left : '';
 																	$leftRootData = null;
 																	$leftRootTree = null;
 																	
-																	if($root->root_left):
-																		$leftRootData = $this->db->query("SELECT * FROM customer_info WHERE id=".$root->root_left." LIMIT 1;")->row();
-																		$leftRootTree = $this->db->query("SELECT * FROM tree WHERE root=".$root->root_left." LIMIT 1;")->row();
+																	if($root->left):
+																		$leftRootData = $this->db->query("SELECT * FROM customer_info WHERE id=".$root->left." LIMIT 1;")->row();
+																		//$leftRootTree = $this->db->query("SELECT * FROM silver_tree WHERE root=".$root->left." LIMIT 1;")->row();
 																		$leftRootImg = $leftRootData && $leftRootData->status == 1 ? $leftRootImg : 'deactivated.png';
 																		if($leftRootData)
 																			echo '<span>' . $leftRootData->customer_name . '('.$leftRootData->username.')</span>';
@@ -183,9 +76,9 @@
 															<div class="customerHead">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $leftRootImg; ?>" data-id="<?= $customerID ?>" class="profileImg" width="60" >
 
-																<?php if($root->root_left && $leftRootData): ?>
+																<?php if($root->left && $leftRootData): ?>
 																	<span class="customerLeft">
-																		<?= generateCustomerInfo($root->root_left, $leftRootData) ?>
+																		<?php //echo generateCustomerInfo($root->left, $leftRootData) ?>
 																	</span>
 																<?php endif; ?>
 															</div>
@@ -193,12 +86,12 @@
 														<td style="border: none;" align="center" colspan="4">
 															<div style="margin-top: -20px;">
 																<?php
-																	$rightRootImg = $root->root_right ? 'activated.png' : 'disabled.png';
-																	$customerID = $root->root_right ? $root->root_right : '';
+																	$rightRootImg = $root->right ? 'activated.png' : 'disabled.png';
+																	$customerID = $root->right ? $root->right : '';
 																	$rightRootData = null;
-																	if($root->root_right):
-																		$rightRootData = $this->db->query("SELECT * FROM customer_info WHERE id=".$root->root_right." LIMIT 1;")->row();
-																		$rightRootTree = $this->db->query("SELECT * FROM tree WHERE root=".$root->root_right." LIMIT 1;")->row();
+																	if($root->right):
+																		$rightRootData = $this->db->query("SELECT * FROM customer_info WHERE id=".$root->right." LIMIT 1;")->row();
+																		//$rightRootTree = $this->db->query("SELECT * FROM silver_tree WHERE root=".$root->right." LIMIT 1;")->row();
 																		$rightRootImg = $rightRootData && $rightRootData->status == 1 ? $rightRootImg : 'deactivated.png';
 																		if($rightRootData)
 																			echo '<span>' . $rightRootData->customer_name . '('.$rightRootData->username.')</span>';
@@ -209,9 +102,9 @@
 															<div class="customerHead">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $rightRootImg; ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">																		
 
-																<?php if($root->root_right && $rightRootData): ?>
+																<?php if($root->right && $rightRootData): ?>
 																	<span class="customerRight">
-																		<?= generateCustomerInfo($root->root_right, $rightRootData) ?>
+																		<?php //echo generateCustomerInfo($root->right, $rightRootData) ?>
 																	</span>
 																<?php endif; ?>
 															</div>
@@ -234,25 +127,24 @@
 																	$leftRootData1 = null;
 																	$leftRootTree1 = null;
 																	$customerID = '';
-																	if($root->root_left && $leftRootTree && $leftRootTree->root_left):
-																		$leftRootImg = $leftRootTree->root_left ? 'activated.png' : 'disabled.png';
-																		$customerID = $leftRootTree->root_left ? $leftRootTree->root_left : '';
-																		if($leftRootTree->root_left):
-																			$leftRootData1 = $this->db->query("SELECT * FROM customer_info WHERE id=".$leftRootTree->root_left." LIMIT 1;")->row();
-																			$leftRootTree1 = $this->db->query("SELECT * FROM tree WHERE root=".$leftRootTree->root_left." LIMIT 1;")->row();
+																	if($root->left && $leftRootTree && $leftRootTree->left):
+																		$leftRootImg = $leftRootTree->left ? 'activated.png' : 'disabled.png';
+																		$customerID = $leftRootTree->left ? $leftRootTree->left : '';
+																		if($leftRootTree->left):
+																			$leftRootData1 = $this->db->query("SELECT * FROM customer_info WHERE id=".$leftRootTree->left." LIMIT 1;")->row();
+																			//$leftRootTree1 = $this->db->query("SELECT * FROM silver_tree WHERE root=".$leftRootTree->left." LIMIT 1;")->row();
 																			$leftRootImg = $leftRootData1 && $leftRootData1->status == 1 ? $leftRootImg : 'deactivated.png';
 																			if($leftRootData1)
 																				echo '<span>' . $leftRootData1->customer_name . '('.$leftRootData1->username.')</span>';
-																		//print_r($leftRootTree->root_left);
 																		endif;
 																	endif;
 																?>
 															</div>
 															<div class="customerHead">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $leftRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
-																<?php if($root->root_left && $leftRootTree && $leftRootTree->root_left && $leftRootData1): ?>
+																<?php if($root->left && $leftRootTree && $leftRootTree->left && $leftRootData1): ?>
 																	<span class="customerLeft">
-																		<?= generateCustomerInfo($root->root_right, $rightRootData) ?>
+																		<?php //echo generateCustomerInfo($root->right, $rightRootData) ?>
 																	</span>
 																<?php endif; ?>
 															</div>
@@ -264,12 +156,12 @@
 																	$rightRootData1 = null;
 																	$rightRootTree1 = null;
 																	$customerID = '';
-																	if($root->root_left && $leftRootTree && $leftRootTree->root_right):
-																		$rightRootImg = $leftRootTree->root_right ? 'activated.png' : 'disabled.png';
-																		$customerID = $leftRootTree->root_right ? $leftRootTree->root_right : '';
-																		if($leftRootTree->root_right):
-																			$rightRootData1 = $this->db->query("SELECT * FROM customer_info WHERE id=".$leftRootTree->root_right." LIMIT 1;")->row();
-																			$rightRootTree1 = $this->db->query("SELECT * FROM tree WHERE root=".$leftRootTree->root_right." LIMIT 1;")->row();
+																	if($root->left && $leftRootTree && $leftRootTree->right):
+																		$rightRootImg = $leftRootTree->right ? 'activated.png' : 'disabled.png';
+																		$customerID = $leftRootTree->right ? $leftRootTree->right : '';
+																		if($leftRootTree->right):
+																			$rightRootData1 = $this->db->query("SELECT * FROM customer_info WHERE id=".$leftRootTree->right." LIMIT 1;")->row();
+																			//$rightRootTree1 = $this->db->query("SELECT * FROM silver_tree WHERE root=".$leftRootTree->right." LIMIT 1;")->row();
 																			$rightRootImg = $rightRootData1 && $rightRootData1->status == 1 ? $rightRootImg : 'deactivated.png';
 																			if($rightRootData1)
 																				echo '<span>' . $rightRootData1->customer_name . '('.$rightRootData1->username.')</span>';
@@ -279,9 +171,9 @@
 															</div>
 															<div class="customerHead">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $rightRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
-																<?php if($root->root_left && $leftRootTree && $leftRootTree->root_right && $rightRootData1): ?>
+																<?php if($root->left && $leftRootTree && $leftRootTree->right && $rightRootData1): ?>
 																	<span class="customerLeft">
-																		<?= generateCustomerInfo($leftRootTree->root_right, $rightRootData1) ?>
+																		<?php //echo generateCustomerInfo($leftRootTree->right, $rightRootData1) ?>
 																	</span>
 																<?php endif; ?>
 															</div>
@@ -294,12 +186,12 @@
 																	$leftRootData2 = null;
 																	$leftRootTree2 = null;
 																	$customerID = '';
-																	if($root->root_right && $rightRootTree && $rightRootTree->root_left):
-																		$leftRootImg = $rightRootTree->root_left ? 'activated.png' : 'disabled.png';
-																		$customerID = $rightRootTree->root_left ? $rightRootTree->root_left : '';
-																		if($rightRootTree->root_left):
-																			$leftRootData2 = $this->db->query("SELECT * FROM customer_info WHERE id=".$rightRootTree->root_left." LIMIT 1;")->row();
-																			$leftRootTree2 = $this->db->query("SELECT * FROM tree WHERE root=".$rightRootTree->root_left." LIMIT 1;")->row();
+																	if($root->right && $rightRootTree && $rightRootTree->left):
+																		$leftRootImg = $rightRootTree->left ? 'activated.png' : 'disabled.png';
+																		$customerID = $rightRootTree->left ? $rightRootTree->left : '';
+																		if($rightRootTree->left):
+																			$leftRootData2 = $this->db->query("SELECT * FROM customer_info WHERE id=".$rightRootTree->left." LIMIT 1;")->row();
+																			//$leftRootTree2 = $this->db->query("SELECT * FROM silver_tree WHERE root=".$rightRootTree->left." LIMIT 1;")->row();
 																			$leftRootImg = $leftRootData2 && $leftRootData2->status == 1 ? $leftRootImg : 'deactivated.png';
 																			if($leftRootData2)
 																				echo '<span>' . $leftRootData2->customer_name . '('.$leftRootData2->username.')</span>';
@@ -309,9 +201,9 @@
 															</div>
 															<div class="customerHead">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $leftRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
-																<?php if($root->root_right && $leftRootTree && $leftRootTree->root_left && $leftRootData2): ?>
+																<?php if($root->right && $leftRootTree && $leftRootTree->left && $leftRootData2): ?>
 																	<span class="customerRight">
-																		<?= generateCustomerInfo($rightRootTree->root_left, $leftRootData2) ?>
+																		<?php echo generateCustomerInfo($rightRootTree->left, $leftRootData2) ?>
 																	</span>
 																<?php endif; ?>
 															</div>
@@ -323,12 +215,12 @@
 																	$rightRootData2 = null;
 																	$rightRootTree2 = null;
 																	$customerID = '';
-																	if($root->root_right && $rightRootTree && $rightRootTree->root_right):
-																		$rightRootImg = $rightRootTree->root_right ? 'activated.png' : 'disabled.png';
-																		$customerID = $rightRootTree->root_right ? $rightRootTree->root_right : '';
-																		if($rightRootTree->root_right):
-																			$rightRootData2 = $this->db->query("SELECT * FROM customer_info WHERE id=".$rightRootTree->root_right." LIMIT 1;")->row();
-																			$rightRootTree2 = $this->db->query("SELECT * FROM tree WHERE root=".$rightRootTree->root_right." LIMIT 1;")->row();
+																	if($root->right && $rightRootTree && $rightRootTree->right):
+																		$rightRootImg = $rightRootTree->right ? 'activated.png' : 'disabled.png';
+																		$customerID = $rightRootTree->right ? $rightRootTree->right : '';
+																		if($rightRootTree->right):
+																			$rightRootData2 = $this->db->query("SELECT * FROM customer_info WHERE id=".$rightRootTree->right." LIMIT 1;")->row();
+																			//$rightRootTree2 = $this->db->query("SELECT * FROM silver_tree WHERE root=".$rightRootTree->right." LIMIT 1;")->row();
 																			$rightRootImg = $rightRootData2 && $rightRootData2->status == 1 ? $rightRootImg : 'deactivated.png';
 																			if($rightRootData2)
 																				echo '<span>' . $rightRootData2->customer_name . '('.$rightRootData2->username.')</span>';
@@ -338,9 +230,9 @@
 															</div>
 															<div class="customerHead">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $rightRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
-																<?php if($root->root_right && $rightRootTree && $rightRootTree->root_left && $rightRootData2): ?>
+																<?php if($root->right && $rightRootTree && $rightRootTree->left && $rightRootData2): ?>
 																	<span class="customerRight">
-																		<?= generateCustomerInfo($rightRootTree->root_right, $rightRootData2) ?>
+																		<?php //echo generateCustomerInfo($rightRootTree->right, $rightRootData2) ?>
 																	</span>
 																<?php endif; ?>
 															</div>
@@ -369,12 +261,12 @@
 																	$leftRootData3 = null;
 																	$leftRootTree3 = null;
 																	$customerID = '';
-																	if($root->root_left && $leftRootTree1 && $leftRootTree1->root_left):
-																		$leftRootImg = $leftRootTree1->root_left ? 'activated.png' : 'disabled.png';
-																		$customerID = $leftRootTree1->root_left ? $leftRootTree1->root_left : '';
-																		if($leftRootTree1->root_left):
-																			$leftRootData3 = $this->db->query("SELECT * FROM customer_info WHERE id=".$leftRootTree1->root_left." LIMIT 1;")->row();
-																			$leftRootTree3 = $this->db->query("SELECT * FROM tree WHERE root=".$leftRootTree1->root_left." LIMIT 1;")->row();
+																	if($root->left && $leftRootTree1 && $leftRootTree1->left):
+																		$leftRootImg = $leftRootTree1->left ? 'activated.png' : 'disabled.png';
+																		$customerID = $leftRootTree1->left ? $leftRootTree1->left : '';
+																		if($leftRootTree1->left):
+																			$leftRootData3 = $this->db->query("SELECT * FROM customer_info WHERE id=".$leftRootTree1->left." LIMIT 1;")->row();
+																			//$leftRootTree3 = $this->db->query("SELECT * FROM silver_tree WHERE root=".$leftRootTree1->left." LIMIT 1;")->row();
 																			$leftRootImg = $leftRootData3 && $leftRootData3->status == 1 ? $leftRootImg : 'deactivated.png';
 																			if($leftRootData3)
 																				echo '<span>' . $leftRootData3->customer_name . '('.$leftRootData3->username.')</span>';
@@ -385,9 +277,9 @@
 														
 															<div class="customerHead">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $leftRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
-																<?php if($root->root_left && $leftRootTree1 && $leftRootTree1->root_left && $leftRootData3): ?>
+																<?php if($root->left && $leftRootTree1 && $leftRootTree1->left && $leftRootData3): ?>
 																	<span class="customerLeft">
-																		<?= generateCustomerInfo($leftRootTree1->root_left, $leftRootData3) ?>
+																		<?php //echo generateCustomerInfo($leftRootTree1->left, $leftRootData3) ?>
 																	</span>
 																<?php endif; ?>
 															</div>
@@ -400,11 +292,11 @@
 																	$rightRootImg = 'disabled.png';
 																	$rightRootData3 = null;
 																	$customerID = '';
-																	if($root->root_left && $leftRootTree1 && $leftRootTree1->root_left):
-																		$rightRootImg = $leftRootTree1->root_right ? 'activated.png' : 'disabled.png';
-																		$customerID = $leftRootTree1->root_right ? $leftRootTree1->root_right : '';
-																		if($leftRootTree1->root_right):
-																			$rightRootData3 = $this->db->query("SELECT * FROM customer_info WHERE id=".$leftRootTree1->root_right." LIMIT 1;")->row();
+																	if($root->left && $leftRootTree1 && $leftRootTree1->left):
+																		$rightRootImg = $leftRootTree1->right ? 'activated.png' : 'disabled.png';
+																		$customerID = $leftRootTree1->right ? $leftRootTree1->right : '';
+																		if($leftRootTree1->right):
+																			$rightRootData3 = $this->db->query("SELECT * FROM customer_info WHERE id=".$leftRootTree1->right." LIMIT 1;")->row();
 																			$rightRootImg = $rightRootData3 && $rightRootData3->status == 1 ? $rightRootImg : 'deactivated.png';
 																			if($rightRootData3)
 																				echo '<span>' . $rightRootData3->customer_name . '('.$rightRootData3->username.')</span>';
@@ -415,9 +307,9 @@
 															
 															<div class="customerHead">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $rightRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
-																<?php if($root->root_left && $leftRootTree1 && $leftRootTree1->root_right && $rightRootData3): ?>
+																<?php if($root->left && $leftRootTree1 && $leftRootTree1->right && $rightRootData3): ?>
 																	<span class="customerLeft">
-																		<?= generateCustomerInfo($leftRootTree1->root_right, $rightRootData3) ?>
+																		<?php //echo generateCustomerInfo($leftRootTree1->right, $rightRootData3) ?>
 																	</span>
 																<?php endif; ?>
 															</div>
@@ -430,25 +322,24 @@
 																	$leftRootData4 = null;
 																	$leftRootTree4 = null;
 																	$customerID = '';
-																	if($root->root_left && $rightRootTree1 && $rightRootTree1->root_left):
-																		$leftRootImg = $rightRootTree1->root_left ? 'activated.png' : 'disabled.png';
-																		$customerID = $rightRootTree1->root_left ? $rightRootTree1->root_left : '';
-																		if($rightRootTree1->root_left):
-																			$leftRootData4 = $this->db->query("SELECT * FROM customer_info WHERE id=".$rightRootTree1->root_left." LIMIT 1;")->row();
-																			$leftRootTree4 = $this->db->query("SELECT * FROM tree WHERE root=".$rightRootTree1->root_left." LIMIT 1;")->row();
+																	if($root->left && $rightRootTree1 && $rightRootTree1->left):
+																		$leftRootImg = $rightRootTree1->left ? 'activated.png' : 'disabled.png';
+																		$customerID = $rightRootTree1->left ? $rightRootTree1->left : '';
+																		if($rightRootTree1->left):
+																			$leftRootData4 = $this->db->query("SELECT * FROM customer_info WHERE id=".$rightRootTree1->left." LIMIT 1;")->row();
+																			//$leftRootTree4 = $this->db->query("SELECT * FROM silver_tree WHERE root=".$rightRootTree1->left." LIMIT 1;")->row();
 																			$leftRootImg = $leftRootData4 && $leftRootData4->status == 1 ? $leftRootImg : 'deactivated.png';
 																			if($leftRootData4)
 																				echo '<span>' . $leftRootData4->customer_name . '('.$leftRootData4->username.')</span>';
-																		//print_r($rightRootTree1->root_left);
 																		endif;
 																	endif;
 																?>
 															</div>
 															<div class="customerHead">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $leftRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
-																<?php if($root->root_left && $rightRootTree1 && $rightRootTree1->root_left && $leftRootData4): ?>
+																<?php if($root->left && $rightRootTree1 && $rightRootTree1->left && $leftRootData4): ?>
 																	<span class="customerLeft">
-																		<?= generateCustomerInfo($rightRootTree1->root_left, $leftRootData4) ?>
+																		<?php //echo generateCustomerInfo($rightRootTree1->left, $leftRootData4) ?>
 																	</span>
 																<?php endif; ?>
 															</div>
@@ -461,25 +352,24 @@
 																	$rightRootData4 = null;
 																	$leftRootTree3 = null;
 																	$customerID = '';
-																	if($root->root_right && $rightRootTree1 && $rightRootTree1->root_right):
-																		$rightRootImg = $rightRootTree1->root_right ? 'activated.png' : 'disabled.png';
-																		$customerID = $rightRootTree1->root_right ? $rightRootTree1->root_right : '';
-																		if($rightRootTree1->root_right):
-																			$rightRootData4 = $this->db->query("SELECT * FROM customer_info WHERE id=".$rightRootTree1->root_right." LIMIT 1;")->row();
-																			$leftRootTree3 = $this->db->query("SELECT * FROM tree WHERE root=".$rightRootTree1->root_right." LIMIT 1;")->row();
+																	if($root->right && $rightRootTree1 && $rightRootTree1->right):
+																		$rightRootImg = $rightRootTree1->right ? 'activated.png' : 'disabled.png';
+																		$customerID = $rightRootTree1->right ? $rightRootTree1->right : '';
+																		if($rightRootTree1->right):
+																			$rightRootData4 = $this->db->query("SELECT * FROM customer_info WHERE id=".$rightRootTree1->right." LIMIT 1;")->row();
+																			//$leftRootTree3 = $this->db->query("SELECT * FROM silver_tree WHERE root=".$rightRootTree1->right." LIMIT 1;")->row();
 																			$rightRootImg = $rightRootData4 && $rightRootData4->status == 1 ? $rightRootImg : 'deactivated.png';
 																			if($rightRootData4)
 																				echo '<span>' . $rightRootData4->customer_name . '('.$rightRootData4->username.')</span>';
-																		//print_r($leftRootTree1->root_left);
 																		endif;
 																	endif;
 																?>
 															</div>
 															<div class="customerHead">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $rightRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
-																<?php if($root->root_right && $rightRootTree1 && $rightRootTree1->root_left && $rightRootData4): ?>
+																<?php if($root->right && $rightRootTree1 && $rightRootTree1->left && $rightRootData4): ?>
 																	<span class="customerLeft">
-																		<?= generateCustomerInfo($rightRootTree1->root_right, $rightRootData4) ?>
+																		<?php //echo generateCustomerInfo($rightRootTree1->right, $rightRootData4) ?>
 																	</span>
 																<?php endif; ?>
 															</div>
@@ -491,11 +381,11 @@
 																	$leftRootImg = 'disabled.png';
 																	$leftRootData5 = null;
 																	$customerID = '';
-																	if($root->root_right && $leftRootTree2 && $leftRootTree2->root_left):
-																		$leftRootImg = $leftRootTree2->root_left ? 'activated.png' : 'disabled.png';
-																		$customerID = $leftRootTree2->root_left ? $leftRootTree2->root_left : '';
-																		if($leftRootTree2->root_left):
-																			$leftRootData5 = $this->db->query("SELECT * FROM customer_info WHERE id=".$leftRootTree2->root_left." LIMIT 1;")->row();
+																	if($root->right && $leftRootTree2 && $leftRootTree2->left):
+																		$leftRootImg = $leftRootTree2->left ? 'activated.png' : 'disabled.png';
+																		$customerID = $leftRootTree2->left ? $leftRootTree2->left : '';
+																		if($leftRootTree2->left):
+																			$leftRootData5 = $this->db->query("SELECT * FROM customer_info WHERE id=".$leftRootTree2->left." LIMIT 1;")->row();
 																			$leftRootImg = $leftRootData5 && $leftRootData5->status == 1 ? $leftRootImg : 'deactivated.png';
 																			if($leftRootData5)
 																				echo '<span>' . $leftRootData5->customer_name . '('.$leftRootData5->username.')</span>';
@@ -505,9 +395,9 @@
 															</div>
 															<div class="customerHead">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $leftRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
-																<?php if($root->root_right && $leftRootTree2 && $leftRootTree2->root_left && $leftRootData5): ?>
+																<?php if($root->right && $leftRootTree2 && $leftRootTree2->left && $leftRootData5): ?>
 																	<span class="customerRight">
-																		<?= generateCustomerInfo($leftRootTree2->root_left, $leftRootData5) ?>
+																		<?php // echo generateCustomerInfo($leftRootTree2->left, $leftRootData5) ?>
 																	</span>
 																<?php endif; ?>
 															</div>
@@ -519,11 +409,11 @@
 																	$rightRootImg = 'disabled.png';
 																	$rightRootData5 = null;
 																	$customerID = '';
-																	if($root->root_right && $leftRootTree2 && $leftRootTree2->root_left):
-																		$rightRootImg = $leftRootTree2->root_right ? 'activated.png' : 'disabled.png';
-																		$customerID = $leftRootTree2->root_right ? $leftRootTree2->root_right : '';
-																		if($leftRootTree2->root_right):
-																			$rightRootData5 = $this->db->query("SELECT * FROM customer_info WHERE id=".$leftRootTree2->root_right." LIMIT 1;")->row();
+																	if($root->right && $leftRootTree2 && $leftRootTree2->left):
+																		$rightRootImg = $leftRootTree2->right ? 'activated.png' : 'disabled.png';
+																		$customerID = $leftRootTree2->right ? $leftRootTree2->right : '';
+																		if($leftRootTree2->right):
+																			$rightRootData5 = $this->db->query("SELECT * FROM customer_info WHERE id=".$leftRootTree2->right." LIMIT 1;")->row();
 																			$rightRootImg = $rightRootData5 && $rightRootData5->status == 1 ? $rightRootImg : 'deactivated.png';
 																			if($rightRootData5)
 																				echo '<span>' . $rightRootData5->customer_name . '('.$rightRootData5->username.')</span>';
@@ -533,9 +423,9 @@
 															</div>
 															<div class="customerHead">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $rightRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
-																<?php if($root->root_right && $leftRootTree2 && $leftRootTree2->root_right && $rightRootData5): ?>
+																<?php if($root->right && $leftRootTree2 && $leftRootTree2->right && $rightRootData5): ?>
 																	<span class="customerRight">
-																		<?= generateCustomerInfo($leftRootTree2->root_right, $rightRootData5) ?>
+																		<?php //echo generateCustomerInfo($leftRootTree2->right, $rightRootData5) ?>
 																	</span>
 																<?php endif; ?>
 															</div>
@@ -547,11 +437,11 @@
 																	$leftRootImg = 'disabled.png';
 																	$leftRootData6 = null;
 																	$customerID = '';
-																	if($root->root_right && $rightRootTree2 && $rightRootTree2->root_right):
-																		$leftRootImg = $rightRootTree2->root_left ? 'activated.png' : 'disabled.png';
-																		$customerID = $rightRootTree2->root_left ? $rightRootTree2->root_left : '';
-																		if($rightRootTree2->root_left):
-																			$leftRootData6 = $this->db->query("SELECT * FROM customer_info WHERE id=".$rightRootTree2->root_left." LIMIT 1;")->row();
+																	if($root->right && $rightRootTree2 && $rightRootTree2->right):
+																		$leftRootImg = $rightRootTree2->left ? 'activated.png' : 'disabled.png';
+																		$customerID = $rightRootTree2->left ? $rightRootTree2->left : '';
+																		if($rightRootTree2->left):
+																			$leftRootData6 = $this->db->query("SELECT * FROM customer_info WHERE id=".$rightRootTree2->left." LIMIT 1;")->row();
 																			$leftRootImg = $leftRootData6 && $leftRootData6->status == 1 ? $leftRootImg : 'deactivated.png';
 																			if($leftRootData6)
 																				echo '<span>' . $leftRootData6->customer_name . '('.$leftRootData6->username.')</span>';
@@ -561,9 +451,9 @@
 															</div>
 															<div class="customerHead">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $leftRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
-																<?php if($root->root_right && $rightRootTree2 && $rightRootTree2->root_right && $leftRootData6): ?>
+																<?php if($root->right && $rightRootTree2 && $rightRootTree2->right && $leftRootData6): ?>
 																	<span class="customerRight">
-																		<?= generateCustomerInfo($rightRootTree2->root_left, $leftRootData6) ?>
+																		<?php //echo generateCustomerInfo($rightRootTree2->left, $leftRootData6) ?>
 																	</span>
 																<?php endif; ?>
 															</div>
@@ -575,11 +465,11 @@
 																	$rightRootImg = 'disabled.png';
 																	$rightRootData6 = null;
 																	$customerID = '';
-																	if($root->root_right && $rightRootTree2 && gettype($rightRootTree2->root_right) != null):
-																		$rightRootImg = $rightRootTree2->root_right ? 'activated.png' : 'disabled.png';
-																		$customerID =  $rightRootTree2->root_right ?  $rightRootTree2->root_right : '';
-																		if($rightRootTree2->root_right):
-																			$rightRootData6 = $this->db->query("SELECT * FROM customer_info WHERE id=".$rightRootTree2->root_right." LIMIT 1;")->row();
+																	if($root->right && $rightRootTree2 && gettype($rightRootTree2->right) != null):
+																		$rightRootImg = $rightRootTree2->right ? 'activated.png' : 'disabled.png';
+																		$customerID =  $rightRootTree2->right ?  $rightRootTree2->right : '';
+																		if($rightRootTree2->right):
+																			$rightRootData6 = $this->db->query("SELECT * FROM customer_info WHERE id=".$rightRootTree2->right." LIMIT 1;")->row();
 																			$rightRootImg = $rightRootData6 && $rightRootData6->status == 1 ? $rightRootImg : 'deactivated.png';
 																			if($rightRootData6)
 																				echo '<span>' . $rightRootData6->customer_name . '('.$rightRootData6->username.')</span>';
@@ -589,20 +479,15 @@
 															</div>
 															<div class="customerHead">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $rightRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
-																<?php if($root->root_right && $rightRootTree2 && $rightRootTree2->root_right && $rightRootData6): ?>
+																<?php if($root->right && $rightRootTree2 && $rightRootTree2->right && $rightRootData6): ?>
 																	<span class="customerRight">
-																		<?= generateCustomerInfo($rightRootTree2->root_right, $rightRootData6) ?>
+																		<?php //echo generateCustomerInfo($rightRootTree2->right, $rightRootData6) ?>
 																	</span>
 																<?php endif; ?>
 															</div>
 														</td>
 													</tr>
 												</table>
-											</table>
-										</td>
-									</tr>
-										
-								</table>
 								<?php  
 								
 									if ($this->uri->segment(3)) :
@@ -610,11 +495,129 @@
 									endif;
 								?>
 							</div>
-							
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+					
+					
+					
+					
+					<!-- tree Content end-->
+                    
+                  </div>
+                </div>
+                
+                
+              </div>
+              
+            </div>
+          </div>
+        </section>
+        <div class="settingSidebar">
+          <a href="javascript:void(0)" class="settingPanelToggle"> <i class="fa fa-spin fa-cog"></i>
+          </a>
+          <div class="settingSidebar-body ps-container ps-theme-default">
+            <div class=" fade show active">
+              <div class="setting-panel-header">Setting Panel
+              </div>
+              <div class="p-15 border-bottom">
+                <h6 class="font-medium m-b-10">Select Layout</h6>
+                <div class="selectgroup layout-color w-50">
+                  <label class="selectgroup-item">
+                    <input type="radio" name="value" value="1" class="selectgroup-input select-layout" checked>
+                    <span class="selectgroup-button">Light</span>
+                  </label>
+                  <label class="selectgroup-item">
+                    <input type="radio" name="value" value="2" class="selectgroup-input select-layout">
+                    <span class="selectgroup-button">Dark</span>
+                  </label>
+                </div>
+              </div>
+              <div class="p-15 border-bottom">
+                <h6 class="font-medium m-b-10">Sidebar Color</h6>
+                <div class="selectgroup selectgroup-pills sidebar-color">
+                  <label class="selectgroup-item">
+                    <input type="radio" name="icon-input" value="1" class="selectgroup-input select-sidebar">
+                    <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip"
+                      data-original-title="Light Sidebar"><i class="fas fa-sun"></i></span>
+                  </label>
+                  <label class="selectgroup-item">
+                    <input type="radio" name="icon-input" value="2" class="selectgroup-input select-sidebar" checked>
+                    <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip"
+                      data-original-title="Dark Sidebar"><i class="fas fa-moon"></i></span>
+                  </label>
+                </div>
+              </div>
+              <div class="p-15 border-bottom">
+                <h6 class="font-medium m-b-10">Color Theme</h6>
+                <div class="theme-setting-options">
+                  <ul class="choose-theme list-unstyled mb-0">
+                    <li title="white" class="active">
+                      <div class="white"></div>
+                    </li>
+                    <li title="cyan">
+                      <div class="cyan"></div>
+                    </li>
+                    <li title="black">
+                      <div class="black"></div>
+                    </li>
+                    <li title="purple">
+                      <div class="purple"></div>
+                    </li>
+                    <li title="orange">
+                      <div class="orange"></div>
+                    </li>
+                    <li title="green">
+                      <div class="green"></div>
+                    </li>
+                    <li title="red">
+                      <div class="red"></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="p-15 border-bottom">
+                <div class="theme-setting-options">
+                  <label>
+                    <span class="control-label p-r-20">Mini Sidebar</span>
+                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
+                      id="mini_sidebar_setting">
+                    <span class="custom-switch-indicator"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="p-15 border-bottom">
+                <div class="theme-setting-options">
+                  <div class="disk-server-setting m-b-20">
+                    <p>Disk Space</p>
+                    <div class="sidebar-progress">
+                      <div class="progress" data-height="5">
+                        <div class="progress-bar l-bg-green" role="progressbar" data-width="80%" aria-valuenow="80"
+                          aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <span class="progress-description">
+                        <small>26% remaining</small>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="disk-server-setting">
+                    <p>Server Load</p>
+                    <div class="sidebar-progress">
+                      <div class="progress" data-height="5">
+                        <div class="progress-bar l-bg-orange" role="progressbar" data-width="58%" aria-valuenow="25"
+                          aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <span class="progress-description">
+                        <small>Highly Loaded</small>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4 mb-4 p-3 align-center rt-sidebar-last-ele">
+                <a href="#" class="btn btn-icon icon-left btn-primary btn-restore-theme">
+                  <i class="fas fa-undo"></i> Restore Default
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     
