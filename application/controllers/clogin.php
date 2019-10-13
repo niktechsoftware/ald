@@ -45,6 +45,7 @@ class Clogin extends CI_Controller{
 	}
 	public function customer_profile(){
 		$this->load->library("form_validation");
+		$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
 		$data['pageTitle'] = 'Customer Profile';
 		$data['smallTitle'] = 'Profile form';
 		$data['mainPage'] = 'Customer Profile';
