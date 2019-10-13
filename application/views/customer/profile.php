@@ -7,85 +7,41 @@
                 <div class="card author-box">
                   <div class="card-body">
                     <div class="author-box-center">
-                      <img alt="image" src="assets/img/users/user-1.png" class="rounded-circle author-box-picture">
+					<?php if(strlen($crecord->row()->photo > 0)):?>
+													<img alt="" height="128" width="138" src="/images/customerImage/<?php echo $crecord->row()->photo;?>" />
+												<?php else:?>
+													<img alt="" width="128" src="assets/img/users/user-1.png" />	
+												<?php endif;?>
                       <div class="clearfix"></div>
                       <div class="author-box-name">
-                        <a href="#">Sarah Smith</a>
+                        <a href="#"><?php echo $this->session->userdata("name");?></a>
                       </div>
-                      <div class="author-box-job">Web Developer</div>
+					  <div class="author-box-job">User Id:<?php echo $this->session->userdata("customer_username");?></div>
                     </div>
-                    <div class="text-center">
-                      <div class="author-box-description">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur voluptatum alias molestias
-                          minus quod dignissimos.
-                        </p>
-                      </div>
-                      <div class="mb-2 mt-3">
-                        <div class="text-small font-weight-bold">Follow Hasan On</div>
-                      </div>
-                      <a href="#" class="btn btn-social-icon mr-1 btn-facebook">
-                        <i class="fab fa-facebook-f"></i>
-                      </a>
-                      <a href="#" class="btn btn-social-icon mr-1 btn-twitter">
-                        <i class="fab fa-twitter"></i>
-                      </a>
-                      <a href="#" class="btn btn-social-icon mr-1 btn-github">
-                        <i class="fab fa-github"></i>
-                      </a>
-                      <a href="#" class="btn btn-social-icon mr-1 btn-instagram">
-                        <i class="fab fa-instagram"></i>
-                      </a>
-                      <div class="w-100 d-sm-none"></div>
-                    </div>
+                    
                   </div>
                 </div>
                 <div class="card">
                   <div class="card-header">
-                    <h4>Personal Details</h4>
+                    <h4>Bank Details</h4>
                   </div>
                   <div class="card-body">
                     <div class="py-4">
-                      <p class="clearfix">
-                        <span class="float-left">
-                          Birthday
-                        </span>
-                        <span class="float-right text-muted">
-                          30-05-1998
-                        </span>
+                      <p class="clearfix"><span class="float-left">Bank Name</span>
+                        <span class="float-right text-muted"><?php  echo $crecord->row()->bankname;?></span>
                       </p>
                       <p class="clearfix">
-                        <span class="float-left">
-                          Phone
-                        </span>
-                        <span class="float-right text-muted">
-                          (0123)123456789
-                        </span>
+                        <span class="float-left"> IFSCode</span>
+                        <span class="float-right text-muted"><?php  echo $crecord->row()->ifsccode;?> </span>
+                      </p>
+					  <p class="clearfix"><span class="float-left">Branch Name</span>
+                        <span class="float-right text-muted"><?php  echo $crecord->row()->branchname;?></span>
                       </p>
                       <p class="clearfix">
-                        <span class="float-left">
-                          Mail
-                        </span>
-                        <span class="float-right text-muted">
-                          test@example.com
-                        </span>
+                        <span class="float-left">Account No.</span>
+                        <span class="float-right text-muted"><?php  echo $crecord->row()->account_no;?> </span>
                       </p>
-                      <p class="clearfix">
-                        <span class="float-left">
-                          Facebook
-                        </span>
-                        <span class="float-right text-muted">
-                          <a href="#">John Deo</a>
-                        </span>
-                      </p>
-                      <p class="clearfix">
-                        <span class="float-left">
-                          Twitter
-                        </span>
-                        <span class="float-right text-muted">
-                          <a href="#">@johndeo</a>
-                        </span>
-                      </p>
+                      
                     </div>
                   </div>
                 </div>
@@ -106,7 +62,74 @@
                     </ul>
                     <div class="tab-content tab-bordered" id="myTab3Content">
                       <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="home-tab2">
-                       yuuyi
+                       
+                          <div class="card-header">
+                            <h4>Full Profile</h4>
+                          </div>
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="form-group col-md-3 col-12"><label>Name :</label></div>
+							  <div class="form-group col-md-3 col-12"><label><?php echo $this->session->userdata("name");?></label></div>
+                              <div class="form-group col-md-3 col-12"><label>Father Name :</label></div>
+							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->fname; ?></label> </div>
+                            </div>
+							<div class="row">
+                              <div class="form-group col-md-3 col-12"><label>Gender:</label></div>
+							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->gender;  ?></label></div>
+                              <div class="form-group col-md-3 col-12"><label>Status :</label></div>
+							  <div class="form-group col-md-3 col-12"> <label><?php if($this->session->userdata("status") == 1){ echo "<label style='color:green;'>Active</label>";}else{echo "<label style='color:red;'>InActive</label>";}?></label> </div>
+                            </div>
+							<div class="row">
+                              <div class="form-group col-md-3 col-12"><label>City :</label></div>
+							  <div class="form-group col-md-3 col-12"><label><?php echo $this->session->userdata("city");?></label></div>
+                              <div class="form-group col-md-3 col-12"><label>State :</label></div>
+							  <div class="form-group col-md-3 col-12"> <label><?php  echo $this->session->userdata("state"); ?></label> </div>
+                            </div>
+							<div class="row">
+                              <div class="form-group col-md-3 col-12"><label>Current Address :</label></div>
+							  <div class="form-group col-md-3 col-12"><label><?php echo $this->session->userdata("currentaddress");?></label></div>
+                              <div class="form-group col-md-3 col-12"><label>Permanent Address :</label></div>
+							  <div class="form-group col-md-3 col-12"> <label><?php echo $this->session->userdata("permanentaddress");?></label> </div>
+                            </div>
+							<div class="row">
+                              <div class="form-group col-md-3 col-12"><label>Pincode :</label></div>
+							  <div class="form-group col-md-3 col-12"><label><?php echo $this->session->userdata("pin");?></label></div>
+                              <div class="form-group col-md-3 col-12"><label>Email Id  :</label></div>
+							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->email; ?></label> </div>
+                            </div>
+							<div class="row">
+                              <div class="form-group col-md-3 col-12"><label>Mobile No :</label></div>
+							  <div class="form-group col-md-3 col-12"><label><?php echo $this->session->userdata("mobile_number");?></label></div>
+                              <div class="form-group col-md-3 col-12"><label>Other Mobile No :</label></div>
+							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->altnumber; ?></label> </div>
+                            </div>
+							<div class="row">
+                              <div class="form-group col-md-3 col-12"><label>Aadhar No :</label></div>
+							  <div class="form-group col-md-3 col-12"><label><?php echo $this->session->userdata("adhaar_number");?></label></div>
+                              <div class="form-group col-md-3 col-12"><label>Pan No :</label></div>
+							  <div class="form-group col-md-3 col-12"> <label><?php echo $this->session->userdata("pan_number");?></label> </div>
+                            </div>
+							<div class="row">
+                              <div class="form-group col-md-3 col-12"><label>User Id:</label></div>
+							  <div class="form-group col-md-3 col-12"><label><?php echo $this->session->userdata("customer_username");?></label></div>
+                              <div class="form-group col-md-3 col-12"><label>Date Of Birth :</label></div>
+							  <div class="form-group col-md-3 col-12"> <label><?php echo $this->session->userdata("dob");?></label> </div>
+                            </div>
+							<div class="row">
+                              <div class="form-group col-md-3 col-12"><label>Joiner Name:</label></div>
+							  <div class="form-group col-md-3 col-12"><label><?php echo $this->session->userdata("joiner_name");?></label></div>
+                              <div class="form-group col-md-3 col-12"><label>Position :</label></div>
+							  <div class="form-group col-md-3 col-12"> <label><?php echo $this->session->userdata("joiner_position");?></label> </div>
+                            </div>
+							<div class="row">
+                              <div class="form-group col-md-3 col-12"><label>Join Date:</label></div>
+							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->joining_date;?></label></div>
+                              <div class="form-group col-md-3 col-12"><label>Active Date :</label></div>
+							  <div class="form-group col-md-3 col-12"> <label><?php  echo $crecord->row()->active_date;?></label> </div>
+                            </div>
+							
+							
+                          </div>
                       </div>
                       <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="profile-tab2">
                         <form method="post" class="needs-validation">
@@ -115,101 +138,86 @@
                           </div>
                           <div class="card-body">
                             <div class="row">
-                              <div class="form-group col-md-6 col-12">
-                                <label>Name</label>
-                                <input type="text" class="form-control" value="John">
-                                <div class="invalid-feedback">
-                                  Please fill in the first name
-                                </div>
+							<div class="form-group col-md-2 col-12"><label>Name</label></div>
+							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" value="John">
+                                <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
-                              <div class="form-group col-md-6 col-12">
-                                <label>Father Name</label>
-                                <input type="text" class="form-control" value="Deo">
-                                <div class="invalid-feedback">
-                                  Please fill in the last name
-                                </div>
+                              <div class="form-group col-md-2 col-12"><label>Father Name</label></div>
+                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" value="Deo">
+                                <div class="invalid-feedback">Please fill in the last name </div>
+                              </div>
+                            </div>
+							 <div class="row">
+							<div class="form-group col-md-2 col-12"><label>City</label></div>
+							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" value="John">
+                                <div class="invalid-feedback">Please fill in the first name</div>
+                              </div>
+                              <div class="form-group col-md-2 col-12"><label>State</label></div>
+                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" value="Deo">
+                                <div class="invalid-feedback">Please fill in the last name </div>
+                              </div>
+                            </div>
+							 <div class="row">
+							<div class="form-group col-md-2 col-12"><label>Current Address</label></div>
+							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" value="John">
+                                <div class="invalid-feedback">Please fill in the first name</div>
+                              </div>
+                              <div class="form-group col-md-2 col-12"><label>Permanent  Address</label></div>
+                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" value="Deo">
+                                <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>
 							<div class="row">
-                              <div class="form-group col-md-6 col-12">
-                                <label>City</label>
-                                <input type="text" class="form-control" value="John">
-                                <div class="invalid-feedback">
-                                  Please fill in the first name
-                                </div>
+							<div class="form-group col-md-2 col-12"><label>Pincode</label></div>
+							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" value="John">
+                                <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
-                              <div class="form-group col-md-6 col-12">
-                                <label>State</label>
-                                <input type="text" class="form-control" value="Deo">
-                                <div class="invalid-feedback">
-                                  Please fill in the last name
-                                </div>
+                              <div class="form-group col-md-2 col-12"><label>Email</label></div>
+                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" value="Deo">
+                                <div class="invalid-feedback">Please fill in the last name </div>
+                              </div>
+                            </div>
+							 <div class="row">
+							<div class="form-group col-md-2 col-12"><label>Mobile No</label></div>
+							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" value="John">
+                                <div class="invalid-feedback">Please fill in the first name</div>
+                              </div>
+                              <div class="form-group col-md-2 col-12"><label>Other Mobile No</label></div>
+                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" value="Deo">
+                                <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>
 							<div class="row">
-                              <div class="form-group col-md-6 col-12">
-                                <label>Address</label>
-                                <input type="text" class="form-control" value="John">
-                                <div class="invalid-feedback">
-                                  Please fill in the first name
-                                </div>
+							<div class="form-group col-md-2 col-12"><label>Aadhar No</label></div>
+							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" value="John">
+                                <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
-                              <div class="form-group col-md-6 col-12">
-                                <label>Pincode</label>
-                                <input type="text" class="form-control" value="Deo">
-                                <div class="invalid-feedback">
-                                  Please fill in the last name
-                                </div>
+                              <div class="form-group col-md-2 col-12"><label>Pan No</label></div>
+                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" value="Deo">
+                                <div class="invalid-feedback">Please fill in the last name </div>
+                              </div>
+                            </div>
+							 <div class="row">
+							<div class="form-group col-md-2 col-12"><label>Gender</label></div>
+							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" value="John">
+                                <div class="invalid-feedback">Please fill in the first name</div>
+                              </div>
+                              <div class="form-group col-md-2 col-12"><label>Date Of Birth</label></div>
+                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" value="Deo">
+                                <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>
 							<div class="row">
-                              <div class="form-group col-md-6 col-12">
-                                <label>Aadhar No</label>
-                                <input type="text" class="form-control" value="John">
-                                <div class="invalid-feedback">
-                                  Please fill in the first name
-                                </div>
+							<div class="form-group col-md-2 col-12"><label>Password</label></div>
+							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" value="John">
+                                <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
-                              <div class="form-group col-md-6 col-12">
-                                <label>Pan No</label>
-                                <input type="text" class="form-control" value="Deo">
-                                <div class="invalid-feedback">
-                                  Please fill in the last name
-                                </div>
+                              <div class="form-group col-md-2 col-12"><label>Upload Photo</label></div>
+                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" value="Deo">
+                                <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>
-							<div class="row">
-                              <div class="form-group col-md-6 col-12">
-                                <label>Mobile No</label>
-                                <input type="text" class="form-control" value="John">
-                                <div class="invalid-feedback">
-                                  Please fill in the first name
-                                </div>
-                              </div>
-                              <div class="form-group col-md-6 col-12">
-                                <label>Date Of Birth</label>
-                                <input type="text" class="form-control" value="Deo">
-                                <div class="invalid-feedback">
-                                  Please fill in the last name
-                                </div>
-                              </div>
-                            </div>
-							<div class="row">
-                              <div class="form-group col-md-6 col-12">
-                                <label>Gender</label>
-                                <input type="text" class="form-control" value="John">
-                                <div class="invalid-feedback">
-                                  Please fill in the first name
-                                </div>
-                              </div>
-                              <div class="form-group col-md-6 col-12">
-                                <label>Upload Photo</label>
-                                <input type="text" class="form-control" value="Deo">
-                                <div class="invalid-feedback">
-                                  Please fill in the last name
-                                </div>
-                              </div>
-                            </div>
+							
                           </div>
                           <div class="card-footer text-right">
                             <button class="btn btn-primary">Save Changes</button>
