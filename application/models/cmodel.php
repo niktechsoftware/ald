@@ -118,8 +118,31 @@
 		function getpaydetails(){
 			return  $this->db->get("pay_details");
 		}
+		 function getTransaction($cid,$incometype){
+		 	$this->db->where("transaction_type",$incometype);
+		 	$this->db->where("paid_to",$cid);
+		 	$getrecord = $this->db->get("inner_daybook");
+		 	return $getrecord;
+		 }
+
+		 function getSilver($cid){
+		 	$this->db->where("c_id",$cid);
+		 	return $this->db->get("silver_mbalance");
+		 }
 		 
-				
+		 function getGold($cid){
+		 	$this->db->where("c_id",$cid);
+		 	return $this->db->get("gold_mbalance");
+		 }
+		 function getDiamond($cid){
+		 	$this->db->where("c_id",$cid);
+		 	return $this->db->get("diamond_mbalance");
+		 }
+		 
+		 function getCrown($cid){
+		 	$this->db->where("c_id",$cid);
+		 	return $this->db->get("crown_balance");
+		 }
 		//aarju mathods
     }
 ?>

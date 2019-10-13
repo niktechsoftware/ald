@@ -54,10 +54,55 @@
     	}
     	
     	
-    function mydownline($id,$pos,$table){
+    function mydownline($id,$pos,$table,$tabv){
+    	if($tabv==1){
     $this->db->where($pos, $id);
     $dt= $this->db->get($table);
     return $dt;
+    	}else{
+    	$posl ="left";
+    	$posr = "right";
+    	$i=0;	
+    	$getv = array();
+    $dataleft=	$this->getRightData($id,$table,$i,$getv);
+    return $dataleft;
     }
+    }
+    public function getRightData($cid,$table,$i,$getv){
+    	 
+    	$this->db->where('c_id', $cid);
+    	$leftjoiner = $this->db->get($table);
+    
+    	if($leftjoiner->num_rows()>0){
+    		foreach ($leftjoiner->result() as $query2)
+    		{
+    			 
+    			if($query2->left){
+    				//echo $query2->left.'left';
+    				$getv[$i]=$query2->left;
+    				$leftv=$query2->left;
+    				$this->getRightData($leftv,$table,$i++,$getv);
+    				
+    			}
+    			if($query2->right){
+    				$getv[$i] = $query2->right;
+    				//echo $query2->right.'right';
+    				$rightv=$query2->right;
+    				$this->getRightData($rightv,$table,$i++,$getv);
+    				 
+    			}
+    			 
+    		}
+    	}
+    	
+    return $getv;
+    
+    
+    }
+    
+    
+    
+    
+    
     }
 ?>

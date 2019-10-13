@@ -237,21 +237,88 @@ class Clogin extends CI_Controller{
 			$tabv = $this->uri->segment("3");
 			if($tabv==1){
 				$table="silver_tree";
+				$lposition="leftjoiner";
+				$rposition="rightjoiner";
+				$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
+				$data['left']=$this->tree->mydownline($this->session->userdata("customer_id"),$lposition,$table,$tabv);
+				$data['right']=$this->tree->mydownline($this->session->userdata("customer_id"),$rposition,$table,$tabv);
+					
 			}
 			if($tabv==2){
 				$table="gold_tree";
+				$lposition="left";
+				$rposition="right";
+				$data['leftrootid']=0;
+				$data['rightrootid']=0;
+				$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
+				$this->db->where('c_id', $this->session->userdata("customer_id"));
+    			$leftjoiner = $this->db->get($table);
+    			if($leftjoiner->num_rows()>0){
+    				if($leftjoiner->row()->left){
+    					$leftid =$leftjoiner->row()->left;
+    			$data['leftrootid']		=$leftid ;
+				$data['left']=$this->tree->mydownline($leftid,$lposition,$table,$tabv);
+    				}
+    				if($leftjoiner->row()->right){
+    					$rightid =$leftjoiner->row()->right;
+    					$data['rightrootid']		=$rightid;
+    					$data['right']=$this->tree->mydownline($rightid,$rposition,$table,$tabv);
+    					
+    				}
+				
+    			}
 			}
 			if($tabv==3){
 				$table="diamond_tree";
+			//$table="silver_tree";
+				$lposition="left";
+				$rposition="right";
+				$data['leftrootid']=0;
+				$data['rightrootid']=0;
+				$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
+				$this->db->where('c_id', $this->session->userdata("customer_id"));
+    			$leftjoiner = $this->db->get($table);
+    			if($leftjoiner->num_rows()>0){
+    				if($leftjoiner->row()->left){
+    					$leftid =$leftjoiner->row()->left;
+    			$data['leftrootid']		=$leftid ;
+				$data['left']=$this->tree->mydownline($leftid,$lposition,$table,$tabv);
+    				}
+    				if($leftjoiner->row()->right){
+    					$rightid =$leftjoiner->row()->right;
+    					$data['rightrootid']		=$rightid;
+    					$data['right']=$this->tree->mydownline($rightid,$rposition,$table,$tabv);
+    					
+    				}
+				
+    			}
 			}
 			if($tabv==4){
 				$table="crown_tree";
+			//$table="silver_tree";
+				$lposition="left";
+				$rposition="right";
+				$data['leftrootid']=0;
+				$data['rightrootid']=0;
+				$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
+				$this->db->where('c_id', $this->session->userdata("customer_id"));
+    			$leftjoiner = $this->db->get($table);
+    			if($leftjoiner->num_rows()>0){
+    				if($leftjoiner->row()->left){
+    					$leftid =$leftjoiner->row()->left;
+    			$data['leftrootid']		=$leftid ;
+				$data['left']=$this->tree->mydownline($leftid,$lposition,$table,$tabv);
+    				}
+    				if($leftjoiner->row()->right){
+    					$rightid =$leftjoiner->row()->right;
+    					$data['rightrootid']		=$rightid;
+    					$data['right']=$this->tree->mydownline($rightid,$rposition,$table,$tabv);
+    					
+    				}
+				
+    			}
 			}
-			$lposition="leftjoiner";
-			$rposition="rightjoiner";
-			$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
-			$data['left']=$this->tree->mydownline($this->session->userdata("customer_id"),$lposition,$table);
-			$data['right']=$this->tree->mydownline($this->session->userdata("customer_id"),$rposition,$table);
+			$data['tabv']=$tabv;
 			$data['pageTitle'] = 'My Downline';
 			$data['smallTitle'] = $table.' Downline';
 			$data['mainPage'] = 'Downline';
@@ -272,6 +339,59 @@ class Clogin extends CI_Controller{
 			$data['headerCss'] = 'headerCss/dashboardCss';
 			$data['footerJs'] = 'footerJs/customerJs';
 			$data['mainContent'] = 'customer/tree';
+			$this->load->view("includes/mainContent", $data);
+		}
+		
+		function income(){
+			$incometype = $this->uri->segment("3");
+			$cid = $this->session->userdata("customer_id");
+			if($incometype==1){
+				$tranname = "Binary Income";
+				$gdetails = $this->cmodel->getTransaction($cid,$incometype);
+			}
+			if($incometype==2){
+				$tranname = "Auto Pool Income";
+				$gdetails = $this->cmodel->getTransaction($cid,$incometype);
+			}
+			if($incometype==3){
+				$tranname = "ROI Income";
+				$gdetails = $this->cmodel->getTransaction($cid,$incometype);
+			}
+			if($incometype==4){
+				$tranname = "Pair Capping";
+				$gdetails = $this->cmodel->getTransaction($cid,$incometype);
+			}
+			if($incometype==5){
+				$tranname = "UPGrade";
+				$gdetails = $this->cmodel->getTransaction($cid,$incometype);
+			}
+			$data['gdetails']=$gdetails;
+			$data['pageTitle'] = $tranname.' Income panel';
+			$data['smallTitle'] = $tranname.' Income panel';
+			$data['mainPage'] = $tranname.' Income panel';
+			$data['subPage'] = $tranname.' Income panel';
+			$data['title'] = $tranname.' Income panel';
+			$data['headerCss'] = 'headerCss/dashboardCss';
+			$data['footerJs'] = 'footerJs/customerJs';
+			$data['mainContent'] = 'customer/transaction';
+			$this->load->view("includes/mainContent", $data);
+		}
+		
+		function walletIncome(){
+			$cid = $this->session->userdata("customer_id");
+			$data['sw'] = $this->cmodel->getSilver($cid);
+			$data['gw'] = $this->cmodel->getGold($cid);
+			$data['dw'] = $this->cmodel->getDiamond($cid);
+			$data['cw'] = $this->cmodel->getCrown($cid);
+			
+			$data['pageTitle'] = 'Wallet Income panel';
+			$data['smallTitle'] = 'Wallet Income panel';
+			$data['mainPage'] = 'Wallet Income panel';
+			$data['subPage'] = 'Wallet Income panel';
+			$data['title'] = 'Wallet Income panel';
+			$data['headerCss'] = 'headerCss/dashboardCss';
+			$data['footerJs'] = 'footerJs/customerJs';
+			$data['mainContent'] = 'customer/wallet';
 			$this->load->view("includes/mainContent", $data);
 		}
 }

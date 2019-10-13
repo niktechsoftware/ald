@@ -55,10 +55,8 @@ class loginmodel extends CI_Model{
 					"parent_id" => $res->parent_id,
 					"name" => $res->customer_name,
 					"dob" => $res->dob,
-		   
 					"customer_username" => $res->username,
 					"customer_password" => $res->password,
-	      
 					"mobile_number" => $res->mobilenumber,
 					"currentaddress" => $res->current_address,
 					"permanentaddress" => $res->permanent_address,
