@@ -173,6 +173,8 @@ class Clogin extends CI_Controller{
 			$data['mainContent'] = 'customer/changeStatus';
 			$this->load->view("includes/mainContent", $data);
 		}
-
+		function RequestUpdate(){
+			
+		}
 
 }
