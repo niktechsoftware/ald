@@ -17,7 +17,7 @@
                     	
                   <?php   }else{
                   	?>
-                   <li><a href="#">View/Edit Profile</a></li>
+                   <li><a href="<?php echo base_url();?>index.php/clogin/customer_profile">View/Edit Profile</a></li>
                     <li><a href="#">Account Info</a></li>
                   	<?php 
                       }}?>
