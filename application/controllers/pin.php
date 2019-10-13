@@ -66,9 +66,11 @@ class pin extends CI_Controller{
 		$cid = $this->input->post("cid");
 		}
 		$nopin = $this->input->post("nopin");
-		$pingenVale = $this->input->post("pingenVale");
-		$id = $this->mpinmodel->pin_max()+1;
-		$val = $this->mpinmodel->genSavePin($cid,$nopin,$id);
+		
+		$pinamount = $this->input->post("pingenVale");
+		$tblnm="mpin_master";
+		$id = $this->mpinmodel->pin_max($tblnm)+1;
+		$val = $this->mpinmodel->genSavePin($cid,$nopin,$id,$pinamount);
 		if($val){
 			redirect("pin/generatePin/$cid");
 		}
@@ -76,10 +78,10 @@ class pin extends CI_Controller{
 	
 	function pinDetails(){
 		
-			$pinid = $this->uri->segment("3");
-			$pin = $this->mpinmodel->gettotalPin($pinid);
-			$data['pind']=$pin;
-			$data['cid']=$this->uri->segment("4");
+		$pinid = $this->uri->segment("3");
+		$pin = $this->mpinmodel->gettotalPin($pinid);
+		$data['pind']=$pin;
+		$data['cid']=$this->uri->segment("4");
 		$data['pageTitle'] = 'PIN Panel';
 		$data['smallTitle'] = 'PIN Management ';
 		$data['mainPage'] = 'PIN Panel';

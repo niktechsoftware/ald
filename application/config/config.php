@@ -23,7 +23,7 @@
 |
 */
 
-$config['base_url'] = 'http://localhost:8080/ald/';
+$config['base_url'] = 'http://localhost/ald/';
 
 /*
 |--------------------------------------------------------------------------
