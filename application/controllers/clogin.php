@@ -43,6 +43,18 @@ class Clogin extends CI_Controller{
 		$data['mainContent'] = 'customer/registration';
 		$this->load->view("includes/mainContent", $data);
 	}
+	public function customer_profile(){
+		$this->load->library("form_validation");
+		$data['pageTitle'] = 'Customer Profile';
+		$data['smallTitle'] = 'Profile form';
+		$data['mainPage'] = 'Customer Profile';
+		$data['subPage'] = 'Customer Profile';
+		$data['title'] = 'Customer Profile Form';
+		$data['headerCss'] = 'headerCss/dashboardCss';
+		$data['footerJs'] = 'footerJs/customerJs';
+		$data['mainContent'] = 'customer/profile';
+		$this->load->view("includes/mainContent", $data);
+	}
 	function checkID(){
 		$parentID= $this->input->post('parent_id');
 		//print_r($parentID);
