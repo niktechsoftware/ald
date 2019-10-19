@@ -19,55 +19,37 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('loginPage');
+		$this->load->view('welcome_message');
 	}
-	
-	function login_check(){
-		$query = $this->loginmodel->validate();
-		if($query['is_login']){  
-			
-			if($query['login_type'] == 1):
-			$this->session->set_userdata($query);
-			redirect("login/index");
-			elseif($query['login_type'] == 2):
-			$this->session->set_userdata($query);
-			redirect("clogin/index");
-			else:
-			redirect("welcome/index/authFalse");
-			endif;
-		}
-		else{ // if user not validate the credential ....
-			redirect("welcome/index/authFalse");
-		}
-	}
-	
-	function unlock(){
-		$query = $this->loginModel->validateLock();
-	
-		if($query){  //if user Lock validation return true after validation
-			$this->session->set_userdata('is_lock',true);
-			redirect("index.php/login/index");
-		}
-		else{ // if user not validate the credential ....
-			redirect("index.php/homeController/lockPage/false");
-		}
-	}
-	
-	function logout()
+
+
+	public function aboutus()
 	{
-		$this->session->unset_userdata();
-		$this->session->sess_destroy();
-		redirect('index.php/welcome/index');
+		$this->load->view('about_us');
+	}
+
+	public function legal()
+	{
+		$this->load->view('legal');
+	}
+	public function bankdetails()
+	{
+		$this->load->view('bank_details');
+	}
+	public function bookproduct()
+	{
+		$this->load->view('booking_products');
 	}
 	
-	function lockPage(){
-		if($this->session->userdata("is_login") == false){
-			redirect('index.php/homeController');
-		}
-		$data['title'] = $this->session->userdata("name");
-		$this->session->set_userdata('is_lock', false);
-		$this->load->view("lockPage", $data);
+	public function registration()
+	{
+		$this->load->view('registration');
 	}
+public function contact()
+	{
+		$this->load->view('contact_us');
+	}
+	
 	
 }
 
