@@ -14,8 +14,7 @@
 					<li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
 					<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
 					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-					<li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-					<li><a href="#"><i class="fab fa-skype"></i></a></li>
+				
 				</ul>
 			</div>
 			<!-- Column 1 End -->
@@ -24,9 +23,9 @@
 			<div class="col-md-3 col-sm-6 col-12">
 				<h3>Latest News</h3>
 				<ul class="footer-style-1-latest-news">
-					<li><span>30.03.2018</span><a href="#">Save Time & Money In Your Business</a></li>
-					<li><span>29.03.2018</span><a href="#">Excellent Business ...</a></li>
-					<li><span>28.03.2018</span><a href="#">Multiple Incomes</a></li>
+					<li><span>01.01.2020</span><a href="#">Save Time & Money In Your Business</a></li>
+					<li><span>01.01.2020</span><a href="#">Excellent Business ...</a></li>
+					<li><span>01.01.2020</span><a href="#">Multiple Incomes</a></li>
 				</ul>
 			</div>
 			<!-- Column 2 End -->
@@ -49,11 +48,11 @@
 			<div class="col-md-2 col-sm-6 col-12">
 				<h3>Quick Links</h3>
 				<ul class="footer-style-1-links">
-					<li><a href="AboutUs.html">About Us</a></li>
-					<li><a href="Registration.html">Registration</a></li>
+					<li><a href="<?php echo base_url();?>index.php/welcome/aboutus">About Us</a></li>
+					<li><a href="<?php echo base_url();?>index.php/welcome/registration">Registration</a></li>
 					<li><a href="http://office.dyd.in.net/" target="_blank">Login</a></li>
-					<li><a href="Gallery.html">Gallery</a></li>		
-					<li><a href="ContactUs.html">Contact Us</a></li>
+					<li><a href="<?php echo base_url();?>index.php/welcome">Gallery</a></li>		
+					<li><a href="<?php echo base_url();?>index.php/welcome/contact">Contact Us</a></li>
 				</ul>
 			</div>		
 			<!-- Column 4 End -->										
@@ -64,12 +63,12 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-sm-6 col-12">
-					<h5>ADLGM Group © 2018. All Rights Reserved.</h5>
+					<h5>ADLGM Group © 2019. All Rights Reserved.</h5>
 				</div>
 
 				<div class="col-md-6 col-sm-6 col-12">
 					<ul class="footer-style-1-bar-links">
-						<li><a href="http://pansoftech.com/" target="_blank">Developed By : niktechsoftwaresoluions</a></li>
+						<li><a href="http://schoolerp-niktech.in/" target="_blank">Developed By : niktechsoftwaresoluions</a></li>
 						
 					</ul>
 				</div>

@@ -22,7 +22,7 @@
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/priyanshu1/';
+$config['base_url'] = 'http://schoolerp-niktech.in/ald';
 
 /*
 |--------------------------------------------------------------------------
