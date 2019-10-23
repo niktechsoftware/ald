@@ -57,7 +57,7 @@ class Welcome extends CI_Controller {
 	{
 		$this->session->unset_userdata();
 		$this->session->sess_destroy();
-		redirect('index.php/welcome/index');
+		redirect('welcome/index');
 	}
 	
 	function lockPage(){

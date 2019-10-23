@@ -15,10 +15,10 @@
              <li class="dropdown">
               <a href="#" class="nav-link has-dropdown"><i data-feather="user-check"></i><span>Customer</span></a>
               <ul class="dropdown-menu">
-                <li><a href="auth-login.html">Active List</a></li>
-                <li><a href="auth-register.html">Inactive List</a></li>
-                <li><a href="auth-forgot-password.html">Paid Inactive</a></li>
-                <li><a href="auth-reset-password.html">Customer Report</a></li>
+                <li><a href="<?php echo base_url();?>index.php/customer/customer_list/1">Active List</a></li>
+                <li><a href="<?php echo base_url();?>index.php/customer/customer_list/2">Inactive List</a></li>
+                <li><a href="<?php echo base_url();?>index.php/customer/customer_list/3">Paid Inactive</a></li>
+                <li><a href="<?php echo base_url();?>index.php/customer">Customer Report</a></li>
                 
               </ul>
             </li>
@@ -35,7 +35,8 @@
             <li class="dropdown">
               <a href="#" class="nav-link has-dropdown"><i data-feather="copy"></i><span>Accounting</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="email-inbox.html">Daybook</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/daybookController/daybook/1">Outer Daybook</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/daybookController/daybook/2">Inner Daybook</a></li>
                 <li><a class="nav-link" href="email-compose.html">Cash Transaction</a></li>
               </ul>
             </li>

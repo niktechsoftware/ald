@@ -1,6 +1,4 @@
-
-     
-      <!-- Main Content -->
+<!-- Main Content -->
       <div class="main-content">
         <section class="section">
           <div class="row ">
@@ -9,7 +7,7 @@
                 <div class="card-statistic-3">
                   <div class="card-icon card-icon-large"><i class="fa fa-award"></i></div>
                   <div class="card-content">
-                    <h4 class="card-title">New Orders</h4>
+                    <h4 class="card-title">Silver Balance</h4>
                     <span>524</span>
                     <div class="progress mt-1 mb-1" data-height="8">
                       <div class="progress-bar l-bg-purple" role="progressbar" data-width="25%" aria-valuenow="25"

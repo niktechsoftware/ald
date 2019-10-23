@@ -30,6 +30,7 @@ class loginmodel extends CI_Model{
 				"customer_password" => $res->password,
 				"photo" => $res->ico_logo,
 				"logo" => $res->logo,
+					"image" =>$res->logo,
 				"is_login" => true,
 				"is_lock" => true,
 				"login_date" => date("d-M-Y"),
@@ -41,8 +42,11 @@ class loginmodel extends CI_Model{
 			$this->db->where("username", $this->input->post("username"));
 			$this->db->where("password", $this->input->post("password"));
 			$query = $this->db->get("customer_info");
+			
 			if ($query->num_rows() > 0) {
+
 				$res = $query->row();
+			
 				$general = $this->db->get("general_settings");
 				$school = $general->row();
 				$loginData = array(
@@ -52,10 +56,9 @@ class loginmodel extends CI_Model{
 					"parent_id" => $res->parent_id,
 					"name" => $res->customer_name,
 					"dob" => $res->dob,
-		   
+						"image"=>$res->image,
 					"customer_username" => $res->username,
 					"customer_password" => $res->password,
-	      
 					"mobile_number" => $res->mobilenumber,
 					"currentaddress" => $res->current_address,
 					"permanentaddress" => $res->permanent_address,
@@ -87,7 +90,7 @@ class loginmodel extends CI_Model{
     	//die();
     	if($login_type == 'admin'){
 
-    		$this->db->where("school_code",$this->session->userdata("school_code"));
+    	//	$this->db->where("school_code",$this->session->userdata("school_code"));
     		$this->db->where("admin_username", $this->input->post("username"));
     		$this->db->where("admin_password", md5($this->input->post("password")));
     		$result = $this->db->get('general_settings');
@@ -100,7 +103,7 @@ class loginmodel extends CI_Model{
     	}
     	elseif($login_type == "student"){
 
-    		$this->db->where("school_code",$this->session->userdata("school_code"));
+    	//	$this->db->where("school_code",$this->session->userdata("school_code"));
     		$this->db->where("status",1);
     		$this->db->where("username", $this->input->post("username"));
     		$this->db->where("password", $this->input->post("password"));
@@ -114,7 +117,7 @@ class loginmodel extends CI_Model{
     	}
     	else{
 
-    		$this->db->where("school_code",$this->session->userdata("school_code"));
+    	//	$this->db->where("school_code",$this->session->userdata("school_code"));
     		$this->db->where("status",1);
     		$this->db->where("username", $this->input->post("username"));
     		$this->db->where("password", $this->input->post("password"));
