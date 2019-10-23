@@ -15,23 +15,23 @@
 						</div>
 						<div class="contact-box-text">
 							<h5>Office</h5>
-							<p>AC 2, GF flr NH2, Chowk krishna Vihar, IOCL TWP, Mathura - 281001, (U.P.)<br />
-							Contact No. : 6395059988, 6397087738
+							<p>Word No.4 Ambedkar Nagar Kasia Kushinagar - 281001, (U.P.)<br />
+							Contact No. : +91 7860288090, +91 9506804800
 							</p>
 						</div>
 					</div>
-					<div class="contact-box-place clearfix">
+				<!--	<div class="contact-box-place clearfix">
 						<div class="contact-box-icon">
 							<i class="ti-map-alt"></i>
 						</div>
-						<div class="contact-box-text">
+					<div class="contact-box-text">
 							<h5>Franchisee Office</h5>
 							<p>Shop No. 51, Thakur Market Kajrauty Sadabad, Hathras - 281306, (U.P.)<br />
                                 Contact No. : 9759330822<br />
                                 Code No. DYD00007 </p>
 						</div>
 					</div>
-					
+					-->
 					<div class="contact-box-place clearfix">
 						<div class="contact-box-icon">
 							<i class="ti-mobile"></i>
@@ -48,7 +48,7 @@
 						</div>
 						<div class="contact-box-text">
 							<h5>Email</h5>
-							<p>info@dyd.in.net</p>
+							<p>info@adl.in.net</p>
 						</div>
 					</div>
 
@@ -108,7 +108,7 @@
 				<p>A great business opportunity to fulfil your dreams.</p>	
 			</div>
 			<div class="col-md-2 col-sm-2 col-12 right-holder center-holder-xs">
-				<a href="#" class="button-md primary-button">Download</a>
+				<a href="<?php echo base_url();?>assets/img/adlplan.pdf"  target="_blank" class="button-md primary-button">Read More</a>
 			</div>
 		</div>
 	</div>

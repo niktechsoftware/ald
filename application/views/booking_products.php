@@ -16,7 +16,7 @@
 								
 					</div>
 					<div class="team-member-name">
-						<h4><a href="#">Hair Oil</a></h4>	
+						<h4><a href="#">Power UP</a></h4>	
 						
 					</div>						
 				</div>				
@@ -25,11 +25,11 @@
 			<div class="col-md-3 col-sm-6 col-12 wow fadeIn animated" data-wow-delay=".2s" data-wow-duration="1.5s">
 				<div class="team-member">
 					<div class="team-member-image">
-						<img src="<?php echo base_url();?>assets/img/pack2.jpg" alt="img">
+						<img src="<?php echo base_url();?>assets/img/pack2.png" alt="img">
 									
 					</div>
 					<div class="team-member-name">
-						<h4><a href="#">Hand Wash</a></h4>	
+						<h4><a href="#">OrthoZac</a></h4>	
 						
 					</div>						
 				</div>				
@@ -42,7 +42,7 @@
 								
 					</div>
 					<div class="team-member-name">
-						<h4><a href="#">Aloevera Gel</a></h4>	
+						<h4><a href="#">Health Tonic</a></h4>	
 					
 					</div>						
 				</div>				
@@ -55,7 +55,7 @@
 									
 					</div>
 					<div class="team-member-name">
-						<h4><a href="#">Shampoo</a></h4>	
+						<h4><a href="#">LivCare</a></h4>	
 						
 					</div>						
 				</div>				
@@ -68,7 +68,7 @@
 									
 					</div>
 					<div class="team-member-name">
-						<h4><a href="#">Tulsi Ark</a></h4>	
+						<h4><a href="#">Noni Gold</a></h4>	
 						
 					</div>						
 				</div>				
@@ -81,7 +81,7 @@
 									
 					</div>
 					<div class="team-member-name">
-						<h4><a href="#">Neem Tulsi Soap</a></h4>	
+						<h4><a href="#">CITAL</a></h4>	
 						
 					</div>						
 				</div>				
@@ -94,7 +94,7 @@
 									
 					</div>
 					<div class="team-member-name">
-						<h4><a href="#">Herbal ToothPaste</a></h4>	
+						<h4><a href="#">Phyto ProFlex</a></h4>	
 						
 					</div>						
 				</div>				

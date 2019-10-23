@@ -8,23 +8,23 @@
 			<tr>
 			<td>Account Name</td>
 			<td>:</td>
-			<td>DIGIYES DIGITAL MARKETING PVT.LTD.</td>
+			<td>ADL GLOBAL MARKETING PVT.LTD.</td>
 			<td rowspan="4"><img / src="<?php echo base_url();?>assets/img/canara.png"></td>
 			</tr>
 			<tr>
 			<td>Bank Name</td>
 			<td>:</td>
-			<td>Canara Bank</td>
+			<td>xxxxx.</td>
 			</tr>
 			<tr>
 			<td>A/c No.</td>
 			<td>:</td>
-			<td>6053201000207</td>
+			<td>xxxxx.</td>
 			</tr>
 			<tr>
 			<td>IFSC Code</td>
 			<td>:</td>
-			<td>CNRB0006053</td>
+			<td>xxxxx.</td>
 			</tr>
 			<tr>
 			<td>&nbsp;</td>
@@ -41,28 +41,28 @@
 			<tr>
 			<td>Account Name</td>
 			<td>:</td>
-			<td>DIGIYES DIGITAL MARKETING PVT.LTD.</td>
+			<td>ADL GLOBAL MARKETING PVT.LTD.</td>
 			<td rowspan="5"><img / src="<?php echo base_url();?>assets/img/induslnd.jpg"> </td>
 			</tr>
 			<tr>
 			<td>Bank Name</td>
 			<td>:</td>
-			<td>Induslnd Bank</td>
+			<td>xxxxx</td>
 			</tr>
 			<tr>
 			<td>A/c No.</td>
 			<td>:</td>
-			<td>258477019019</td>
+			<td>xxxxx</td>
 			</tr>
 			<tr>
 			<td>IFSC Code</td>
 			<td>:</td>
-			<td>INDB0001455</td>
+			<td>xxxxxx</td>
 			</tr>
 			<tr>
 			<td>Branch</td>
 			<td>:</td>
-			<td>Bhuteshwar Road, Mathura</td>
+			<td>xxxxxxx</td>
 			</tr>
 			</table>												 	      
 		</div>	

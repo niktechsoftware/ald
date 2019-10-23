@@ -10,7 +10,7 @@
 			<div class="col-md-6 col-sm-12 col-12">
 				<div class="pl-45-md">
 					<div class="section-heading left-holder">
-						<h3 class="bold ls-minus">About <span class="italic libre-baskerville primary-color">ADLGM</span></h3>
+						<h3 class="bold ls-minus">Read More <span class="italic libre-baskerville primary-color">ADLGM</span></h3>
 						<div class="section-heading-line"></div>
 					</div>
 					<div class="text-content-big mt-10">
@@ -18,7 +18,7 @@
 					</div>
 
 					<!-- List Start -->
-					<div class="mt-25">
+				<!--	<div class="mt-25">
 						<ul class="primary-list">
 							<li><i class="fa fa-check-square"></i>Health Care Products</li>
 							<li><i class="fa fa-check-square"></i>Personal Care Products</li>
@@ -27,7 +27,7 @@
 							<li><i class="fa fa-check-square"></i>Electronic Items</li>
 							<li><i class="fa fa-check-square"></i>Recharge</li>
 						</ul>
-					</div>
+					</div>-->
 					<!-- List End -->		
 				</div>
 			</div>		

@@ -79,18 +79,18 @@
 		<div class="row">
 			<div class="col-md-9 col-12">
 				<ul class="top-bar-info">				 
-					<li><i class="fas fa-map-marker-alt"></i>Address:Word No.4 Ambedkar Nagar Kasia Kushinagar 274402
-</li>
-					<li><i class="fas fa-phone-square"></i></li>
-					<li><i class="fa fa-envelope"></i></li>
+					<!--<li><i class="fas fa-map-marker-alt"></i>Address:Word No.4 Ambedkar Nagar Kasia Kushinagar 274402
+</li>-->
+					<li><i class="fas fa-phone-square"></i>+91 7860288090</li>
+					<li><i class="fa fa-envelope"></i>info@gmail.com</li>
 				</ul>					
 			</div>
 			<div class="col-md-3 col-12">
 				<ul class="social-icons hidden-sm">				 
 					<li><a href="#"><i class="fab fa-facebook"></i></a></li>
 					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-					<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-					<li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+					<!--<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+					<li><a href="#"><i class="fab fa-pinterest"></i></a></li>-->
 				</ul>							
 			</div>		
 		</div>
@@ -136,12 +136,12 @@
 						
 					</ul>
 				</li>				
-				<li><a href="#">Products</a>
-					<ul class="nav-dropdown">
+				<li><a href="<?php echo base_url();?>index.php/welcome/bookproduct">Products</a>
+					<!--<ul class="nav-dropdown">
 						<li><a href="<?php echo base_url();?>index.php/welcome/bookproduct">Booking Products</a></li>
 						<li><a href="<?php echo base_url();?>index.php/welcome/">Welcome Products</a></li>
 						<li><a href="<?php echo base_url();?>index.php/welcome/">Re-Purchase Products</a></li>
-					</ul>
+					</ul>-->
 				</li>
 				<li><a href="<?php echo base_url();?>assets/img/adlplan.pdf">Business Plan</a></li>
 				<li><a href="<?php echo base_url();?>index.php/welcome/registration">Registration</a></li>

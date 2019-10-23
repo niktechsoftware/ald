@@ -20,14 +20,14 @@
 			<!-- Column 1 End -->
 
 			<!-- Column 2 Start -->
-			<div class="col-md-3 col-sm-6 col-12">
+			<!--<div class="col-md-3 col-sm-6 col-12">
 				<h3>Latest News</h3>
 				<ul class="footer-style-1-latest-news">
 					<li><span>01.01.2020</span><a href="#">Save Time & Money In Your Business</a></li>
 					<li><span>01.01.2020</span><a href="#">Excellent Business ...</a></li>
 					<li><span>01.01.2020</span><a href="#">Multiple Incomes</a></li>
 				</ul>
-			</div>
+			</div>-->
 			<!-- Column 2 End -->
 
 			<!-- Column 3 Start -->

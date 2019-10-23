@@ -49,7 +49,10 @@ public function contact()
 	{
 		$this->load->view('contact_us');
 	}
-	
+	public function read()
+	{
+		$this->load->view('read');
+	}
 	
 }
 
