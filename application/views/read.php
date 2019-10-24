@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-sm-12 col-12">
-				<img src="<?php echo base_url();?>assets/img/logos/logo.jpg" class="rounded-border shadow-primary full-width" alt="img">
+				<img src="<?php echo base_url();?>assets/img/logos/logo.jpg" class="rounded-border shadow-primary " height="200px" width="300px" alt="img">
 			</div>				
 			<div class="col-md-6 col-sm-12 col-12">
 				<div class="pl-45-md">
@@ -14,64 +14,188 @@
 						<div class="section-heading-line"></div>
 					</div>
 					<div class="text-content-big mt-10">
-						<p>ADL Global  MARKETING PVT. LTD., which started its operations in the year 2019, is a leading direct selling company dealing in Health Care, Personal Care, FMCG Products, Furniture Items, Electronic Items & Recharge. ADL GLOBAL MARKETING is constantly growing at a phenomenal rate every year. The growth rate in itself speaks volumes about the quality of the products, the marketing plan and the management that has been able to deliver such a rewarding and sustainable system.</p>
+						<p>ADL Global  MARKETING PVT. LTD., which started its operations in the year 2019, is a leading direct selling company dealing in Health Care, Personal Care. ADL GLOBAL MARKETING is constantly growing at a phenomenal rate every year. The growth rate in itself speaks volumes about the quality of the products, the marketing plan and the management that has been able to deliver such a rewarding and sustainable system.</p>
 					</div>
 
-					<!-- List Start -->
-				<!--	<div class="mt-25">
+					<!--List Start -->
+					<div class="mt-25">
 						<ul class="primary-list">
-							<li><i class="fa fa-check-square"></i>Health Care Products</li>
-							<li><i class="fa fa-check-square"></i>Personal Care Products</li>
-							<li><i class="fa fa-check-square"></i>FMCG Products</li>
-							<li><i class="fa fa-check-square"></i>Furniture Items</li>
-							<li><i class="fa fa-check-square"></i>Electronic Items</li>
-							<li><i class="fa fa-check-square"></i>Recharge</li>
+							<li><i class="fa fa-users" aria-hidden="true"></i>Direct Income</li>
+							<li><i class="fa fa-users" aria-hidden="true"></i>Binary Income</li>
+							<li><i class="fa fa-users" aria-hidden="true"></i>Auto Pool Income</li>
+							<li><i class="fa fa-users" aria-hidden="true"></i>ROI Income</li>
+							
 						</ul>
-					</div>-->
+					</div>
 					<!-- List End -->		
 				</div>
 			</div>		
 		</div>	
 
-		<!-- Feature Boxes Start -->
-		<!--<div class="row mt-35">
-			<div class="col-md-4 col-sm-4 col-xs-12">
-				<div class="feature-float">
-					<div class="feature-float-icon">
-						<i class="icon-shield-1"></i>
-					</div>
-					<div class="feature-float-content">
-						<h4>Vision</h4>
-						<p>To help people live a life of economic independence on their own terms.</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-4 col-sm-4 col-xs-12">
-				<div class="feature-float">
-					<div class="feature-float-icon">
-						<i class="icon-compass2"></i>
-					</div>
-					<div class="feature-float-content">
-						<h4>Mission</h4>
-						<p>To grow to a global scale and become the benchmark in direct selling.</p>
-					</div>
-				</div>				
-			</div>
-
+		
 			
-		</div>	-->
+		</div>	<br><br>
 		<!-- Feature Boxes End -->
-	</div>
+	
+
+
+
+<!---open1---->
+
+<!--<div class="section-block">-->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-sm-12 col-12">
+			
+			<div class="pl-45-md">
+					<div class="section-heading left-holder">
+						<h3 class="bold ls-minus">Direct <span class="italic libre-baskerville primary-color">Income</span></h3>
+						<div class="section-heading-line"></div>
+					</div>
+					
 </div>
-<!-- Info Section END -->
+			
+				<!--<img src="<?php echo base_url();?>assets/img/logos/logo.jpg" class="rounded-border shadow-primary " height="200px" width="300px" alt="img"> -->
+			</div>				
+			<div class="col-md-6 col-sm-12 col-12">
+				<div class="pl-45-md">
+					<div class="section-heading left-holder">
+						<h3 class="bold ls-minus">Description of <span class="italic libre-baskerville primary-color">Direct Income</span></h3>
+						<div class="section-heading-line"></div>
+					</div>
+					<div class="text-content-big mt-10">
+						<p>तुम कर सकते हो असीमित प्रत्यक्ष प्रायोजक आप कर सकते हैं करो और पाओ 1440 रु। हर प्रत्यक्ष से रायोजक। पूरा करने के बाद आपका वाम और अधिकार आपका आईडी ब्लू और आपकी आईडी है ऑटो के लिए योग्य पूल रॉयल्टी क्लब</div>
+</div>
 
-    
-        
 
 
+
+</div>
+</div>
+</div><br><br>
+<!--close>
+
+
+<!--open2-->
+
+<!--<div class="section-block">-->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-sm-12 col-12">
+			
+			<div class="pl-45-md">
+					<div class="section-heading left-holder">
+						<h3 class="bold ls-minus">Binary <span class="italic libre-baskerville primary-color">Income</span></h3>
+						<div class="section-heading-line"></div>
+					</div>
+					
+</div>
+			
+				<!--<img src="<?php echo base_url();?>assets/img/logos/logo.jpg" class="rounded-border shadow-primary " height="200px" width="300px" alt="img"> -->
+			</div>				
+			<div class="col-md-6 col-sm-12 col-12">
+				<div class="pl-45-md">
+					<div class="section-heading left-holder">
+						<h3 class="bold ls-minus">Description of <span class="italic libre-baskerville primary-color">Binary Income</span></h3>
+						<div class="section-heading-line"></div>
+					</div>
+					<div class="text-content-big mt-10">
+						<p>प्रत्येक सदस्य को 600 रुपये मिलेंगे जो बाएं पैर और दाहिने पैर या जोड़ी (10% कटौती) को पूरा करता है व्यवस्थापक शुल्क के रूप में। अपग्रेड राशि के रूप में 50% की कटौती होगी और शेष राशि के आपके बटुए में 50% जोड़ा जाएगा)।</div>
+</div>
+
+
+
+
+</div>
+</div>
+</div>
+<br><br>
+<!--close2-->
+
+<!---open3---->
+
+
+<!--<div class="section-block">-->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-sm-12 col-12">
+			
+			<div class="pl-45-md">
+					<div class="section-heading left-holder">
+						<h3 class="bold ls-minus">Auto Pull <span class="italic libre-baskerville primary-color">Income</span></h3>
+						<div class="section-heading-line"></div>
+					</div>
+					
+</div>
+			
+				<!--<img src="<?php echo base_url();?>assets/img/logos/logo.jpg" class="rounded-border shadow-primary " height="200px" width="300px" alt="img"> -->
+			</div>				
+			<div class="col-md-6 col-sm-12 col-12">
+				<div class="pl-45-md">
+					<div class="section-heading left-holder">
+						<h3 class="bold ls-minus">Description of <span class="italic libre-baskerville primary-color">Auto Pull Income</span></h3>
+						<div class="section-heading-line"></div>
+					</div>
+					<div class="text-content-big mt-10">
+						<p>एक पूल (1: 2 या 2: 1) पूरा करने के बाद, ग्राहक को 400 R pools पूल आय प्राप्त होगी।</div>
+</div>
+
+
+
+
+</div>
+</div>
+
+
+</div>
+
+<br><br>
+<!--close3-->
+
+<!--open4---->
+
+<!--<div class="section-block">-->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-sm-12 col-12">
+			
+			<div class="pl-45-md">
+					<div class="section-heading left-holder">
+						<h3 class="bold ls-minus">ROI <span class="italic libre-baskerville primary-color">Income</span></h3>
+						<div class="section-heading-line"></div>
+					</div>
+					
+</div>
+			
+				<!--<img src="<?php echo base_url();?>assets/img/logos/logo.jpg" class="rounded-border shadow-primary " height="200px" width="300px" alt="img"> -->
+			</div>				
+			<div class="col-md-6 col-sm-12 col-12">
+				<div class="pl-45-md">
+					<div class="section-heading left-holder">
+						<h3 class="bold ls-minus">Description of <span class="italic libre-baskerville primary-color">ROI Income</span></h3>
+						<div class="section-heading-line"></div>
+					</div>
+					<div class="text-content-big mt-10">
+						<p>तपूल निर्माता ग्राहक के वॉलेट में 180 रुपये की राशि जोड़ी जाएगी और यह वितरित करेगा यदि कोई हो तो हर जुड़े पूल निर्माता के बीच।</p></div>
+</div>
+
+
+
+
+</div>
+</div>
+
+				</div>
+				
+		<br><br>
+<!--close4-->
+
+
+</div>
+<!--section close-->
 <!-- Action Box START -->
-<div class="action-box action-box-md grey-bg center-holder-xs">
+
+<div class="action-box action-box-md grey-bg left-holder">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10 col-sm-10 col-12">
@@ -83,5 +207,6 @@
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 <?php echo $this->load->view("footer"); ?>

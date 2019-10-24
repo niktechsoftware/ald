@@ -8,7 +8,7 @@
 <head>
 	<title>
 	ADL GLOBAL MARKETING PVT. LTD.
-</title><meta charset="UTF-8" /><link rel="shortcut icon" href="<?php echo base_url();?>assets/img/logos/logo-shortcut.png" /><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</title><meta charset="UTF-8" /><link rel="shortcut icon" href="<?php echo base_url();?>assets/img/logos/logo.jpg" /><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 	<!-- Bootstrap CSS-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap.min.css" />
@@ -130,7 +130,7 @@
 				</li>										
 				<li><a href="#">About Us</a>
 					<ul class="nav-dropdown">
-						<li><a href="<?php echo base_url();?>index.php/welcome/aboutus">About Us</a></li>
+						<li><a href="<?php echo base_url();?>index.php/welcome/read">About Us</a></li>
 						<li><a href="<?php echo base_url();?>index.php/welcome/legal">Legal</a></li>
 						<li><a href="<?php echo base_url();?>index.php/welcome/bankdetails">Bank Details</a></li>
 						
@@ -145,7 +145,7 @@
 				</li>
 				<li><a href="<?php echo base_url();?>assets/img/adlplan.pdf">Business Plan</a></li>
 				<li><a href="<?php echo base_url();?>index.php/welcome/registration">Registration</a></li>
-				<li><a href="<?php echo base_url();?>index.php/welcome/" target="_blank">Login</a></li>
+				<li><a href="<?php echo base_url();?>aldsoft/" target="_blank">Login</a></li>
 				<li><a href="#">Gallery</a></li>												
 				<li><a href="<?php echo base_url();?>index.php/welcome/contact">Contact Us</a></li>												
 			</ul>
