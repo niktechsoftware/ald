@@ -9,7 +9,7 @@
 			<td>Account Name</td>
 			<td>:</td>
 			<td>ADL GLOBAL MARKETING PVT.LTD.</td>
-			<td rowspan="4"><img / src="<?php echo base_url();?>assets/img/canara.png"></td>
+			<!--<td rowspan="4"><img / src="<?php echo base_url();?>assets/img/canara.png"></td>-->
 			</tr>
 			<tr>
 			<td>Bank Name</td>
@@ -42,7 +42,7 @@
 			<td>Account Name</td>
 			<td>:</td>
 			<td>ADL GLOBAL MARKETING PVT.LTD.</td>
-			<td rowspan="5"><img / src="<?php echo base_url();?>assets/img/induslnd.jpg"> </td>
+			<!--<td rowspan="5"><img / src="<?php echo base_url();?>assets/img/induslnd.jpg"> </td>-->
 			</tr>
 			<tr>
 			<td>Bank Name</td>

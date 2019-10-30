@@ -2,13 +2,14 @@
     class Cmodel extends CI_Model{
 			public function selectlegleft($data1){
     		//  $returndata = array();
-    	
+    	//echo $data1."  dd";
     		$this->db->where("c_id", $data1);
     		$rowdata = $this->db->get("silver_tree")->row();
     		if ($rowdata) {
     	
     			if ($rowdata->left) {
     				$returndata= $this->selectlegleft($rowdata->left);
+			//print_r($returndata);exit();
     			} else {
     				$returndata= $rowdata->c_id;
     	
@@ -18,7 +19,22 @@
     		}
     	
     	}
-    	
+    	public function position($data, $id ,$po)
+    	{
+    			$this->db->where("c_id", $id);
+    			$fty =$this->db->get("silver_tree")->row();
+    			
+    			if(!$fty->$po){
+    				$this->db->where("c_id", $id);
+    				$this->db->update("silver_tree", $data);
+    			$datainsert = array(
+    					"c_id"=>$data[$po]
+    			);
+    			$this->db->insert("silver_tree",$datainsert);
+    			$this->db->insert("silver_mbalance",$datainsert);
+    			}
+    			return true;
+    	}
     	public function selectlegright($data1){
     		// $returndata = array();
     	

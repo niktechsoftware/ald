@@ -58,6 +58,7 @@ public function contact()
 	function insertCustmer(){
 		$this->load->library("form_validation");
 		$this->load->model("cmodel");
+		$this->load->helpers("sms_helper");
 		$this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
 		//$this->form_validation->set_rules('parent_id','Sponsor ID','required|is_unique[customer_info.username]');
 		$this->form_validation->set_rules('name','Customer Name','required');
@@ -77,14 +78,17 @@ public function contact()
 		if($this->form_validation->run()){
 			$tblnm ="customer_info";
 			$maxid	=	$this->cmodel->cust_max($tblnm);
+			
 			$maxid	=	$maxid+1;
 			
 			$username="ADL".$maxid;
+			
 			$rjoinerID= $this->input->post('parent_id');
 			$cid  = $this->cmodel->getrowid($rjoinerID);
 			
 			//$ljoinerID= $this->input->post('lJoinerID');
 			$name= $this->input->post('name');
+			
 			$fname= $this->input->post('fname');
 			$address= $this->input->post('address');
 			$pinno= $this->input->post('pinno');
@@ -93,12 +97,16 @@ public function contact()
 			$gender= $this->input->post('customRadioInline1');
 			$dob= $this->input->post('dob');
 			$password= $this->input->post('password');
+			
 			//$parent_id= $this->input->post('parent_id');
 			$city= $this->input->post('city');
 			$state= $this->input->post('state');
 			$panno= $this->input->post('panno');
+			//echo $cid; exit();
 			$left = $this->cmodel->selectlegleft($cid);
+		//echo $cid;exit();
 			$right = $this->cmodel->selectlegright($cid);
+			
 			if($this->input->post("selectTree")==1){
 			$postition = $left;
 			$po ="left";
@@ -135,11 +143,11 @@ public function contact()
 						$pojiner => $cid
 						 
 				);
-				if($this->tree->position($datatree,$postition,$po)){
+				if($this->cmodel->position($datatree,$postition,$po)){
 					 $msg = "Dear " . $name . " Your Registration is successfully Done,Your Username is ".$username." and password is ".$password.
 							"Please Login to update your details And Contact to Admin for Activate your account";
-                 		sms($mobile, $msg);
-					redirect('clogin/cconpage/'.$maxid);
+                 	sms($mobile, $msg);
+					redirect('welcome/cconpage/'.$maxid);
 				}
 			}else{
 				echo "error";
@@ -152,6 +160,18 @@ public function contact()
 				$this->registration();
 			}	
 		}
+		
+		
+		
+		
+		function checkID(){
+        $this->load->model("cmodel");
+        $parentID= $this->input->post('parent_id');
+        //print_r($parentID);
+
+        $getvalue = $this->cmodel->checkStatus("customer_info",$parentID);
+        echo (json_encode($getvalue));
+    }
 		
 	
 	

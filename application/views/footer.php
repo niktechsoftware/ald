@@ -48,9 +48,9 @@
 			<div class="col-md-2 col-sm-6 col-12">
 				<h3>Quick Links</h3>
 				<ul class="footer-style-1-links">
-					<li><a href="<?php echo base_url();?>index.php/welcome/aboutus">About Us</a></li>
+					<li><a href="<?php echo base_url();?>index.php/welcome/read">About Us</a></li>
 					<li><a href="<?php echo base_url();?>index.php/welcome/registration">Registration</a></li>
-					<li><a href="http://office.dyd.in.net/" target="_blank">Login</a></li>
+					<li><a href="<?php echo base_url();?>aldsoft/" target="_blank">Login</a></li>
 					<li><a href="<?php echo base_url();?>index.php/welcome">Gallery</a></li>		
 					<li><a href="<?php echo base_url();?>index.php/welcome/contact">Contact Us</a></li>
 				</ul>
@@ -119,8 +119,29 @@
 <!-- Main JS -->
 <script src="<?php echo base_url();?>assets/js/main.js"></script>
 
+<!--scriptin registration--->
+<script>
+
+ //alert("rahul");
+ //$('#regForm').hide();
+  $('#parent_id').keyup(function(){
+    var parent_id= $('#parent_id').val();
+    $.post("<?php echo site_url("welcome/checkID") ?>",{parent_id : parent_id}, function(data){
+    	var d = jQuery.parseJSON(data);
+		$("#custoStatus").html(d.msg);
+ if(d.checkv==true){
+	 $('#regForm').show();
+ }else{
+	 $('#regForm').show();
+ }
+   
+  
+  
+	});
+  });
 
 
+</script>
 
     </form>
 </body>

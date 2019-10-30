@@ -84,7 +84,7 @@
 				</div>
 				<div class="mt-15 wow fadeIn animated" data-wow-delay=".2s">
 				
-					<a href="<?php echo base_url();?>index.php/welcome/aboutus"  target="_blank" class="button-md primary-button">Read More</a>
+					<a href="<?php echo base_url();?>index.php/welcome/read"  target="_blank" class="button-md primary-button">Read More</a>
 				</div>
 			</div>
 			<div class="col-md-7 col-sm-12 col-12">

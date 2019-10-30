@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-sm-12 col-12">
-				<img src="<?php echo base_url();?>assets/img/logos/logo.jpg" class="rounded-border shadow-primary " height="200px" width="300px" alt="img">
+				<img src="<?php echo base_url();?>assets/img/logos/adl.png" class="rounded-border shadow-primary " height="200px" width="300px" alt="img">
 			</div>				
 			<div class="col-md-6 col-sm-12 col-12">
 				<div class="pl-45-md">
@@ -14,8 +14,8 @@
 						<div class="section-heading-line"></div>
 					</div>
 					<div class="text-content-big mt-10">
-						<p>ADL Global  MARKETING PVT. LTD., which started its operations in the year 2019, is a leading direct selling company dealing in Health Care, Personal Care. ADL GLOBAL MARKETING is constantly growing at a phenomenal rate every year. The growth rate in itself speaks volumes about the quality of the products, the marketing plan and the management that has been able to deliver such a rewarding and sustainable system.</p>
-					</div>
+						<p>ADL ग्लोबल मार्केटिंग प्रा। लि।, जिसने वर्ष 2019 में अपना परिचालन शुरू किया था, हेल्थ केयर, पर्सनल केयर में एक प्रमुख डायरेक्ट सेलिंग कंपनी है। एडीएल ग्लोबल मार्केटिंग लगातार हर साल एक अभूतपूर्व दर से बढ़ रहा है। अपने आप में वृद्धि दर उत्पादों की गुणवत्ता, विपणन योजना और प्रबंधन के बारे में बोलती है, जो इस तरह के एक पुरस्कृत और स्थायी प्रणाली देने में सक्षम है।
+</div>
 
 					<!--List Start -->
 					<div class="mt-25">
@@ -60,11 +60,11 @@
 			<div class="col-md-6 col-sm-12 col-12">
 				<div class="pl-45-md">
 					<div class="section-heading left-holder">
-						<h3 class="bold ls-minus">Description of <span class="italic libre-baskerville primary-color">Direct Income</span></h3>
+						<h3 class="bold ls-minus">Description</h3>  <!--<span class="italic libre-baskerville primary-color">Direct Income</span></h3>-->
 						<div class="section-heading-line"></div>
 					</div>
 					<div class="text-content-big mt-10">
-						<p>तुम कर सकते हो असीमित प्रत्यक्ष प्रायोजक आप कर सकते हैं करो और पाओ 1440 रु। हर प्रत्यक्ष से रायोजक। पूरा करने के बाद आपका वाम और अधिकार आपका आईडी ब्लू और आपकी आईडी है ऑटो के लिए योग्य पूल रॉयल्टी क्लब</div>
+						<p>तुम कर सकते हो असीमित प्रत्यक्ष प्रायोजक आप कर सकते हैं करो और पाओ 1440 रु। हर प्रत्यक्ष से रायोजक। पूरा करने के बाद आपका वाम और अधिकार आपका आईडी ब्लू और आपकी आईडी है ऑटो के लिए योग्य पूल रॉयल्टी क्लब</p></div>
 </div>
 
 
@@ -96,7 +96,7 @@
 			<div class="col-md-6 col-sm-12 col-12">
 				<div class="pl-45-md">
 					<div class="section-heading left-holder">
-						<h3 class="bold ls-minus">Description of <span class="italic libre-baskerville primary-color">Binary Income</span></h3>
+						<h3 class="bold ls-minus">Description <!--<span class="italic libre-baskerville primary-color">Binary Income</span>--></h3>
 						<div class="section-heading-line"></div>
 					</div>
 					<div class="text-content-big mt-10">
@@ -133,7 +133,7 @@
 			<div class="col-md-6 col-sm-12 col-12">
 				<div class="pl-45-md">
 					<div class="section-heading left-holder">
-						<h3 class="bold ls-minus">Description of <span class="italic libre-baskerville primary-color">Auto Pull Income</span></h3>
+						<h3 class="bold ls-minus">Description <!--of <span class="italic libre-baskerville primary-color">Auto Pull Income</span>--></h3>
 						<div class="section-heading-line"></div>
 					</div>
 					<div class="text-content-big mt-10">
@@ -172,7 +172,7 @@
 			<div class="col-md-6 col-sm-12 col-12">
 				<div class="pl-45-md">
 					<div class="section-heading left-holder">
-						<h3 class="bold ls-minus">Description of <span class="italic libre-baskerville primary-color">ROI Income</span></h3>
+						<h3 class="bold ls-minus">Description <!--of <span class="italic libre-baskerville primary-color">ROI Income</span>--></h3>
 						<div class="section-heading-line"></div>
 					</div>
 					<div class="text-content-big mt-10">
