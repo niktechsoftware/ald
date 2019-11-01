@@ -160,7 +160,10 @@ public function contact()
 				$this->registration();
 			}	
 		}
-		
+		function cconpage(){
+			$this->load->view('sub_invoice');
+			
+		}
 		
 		
 		
