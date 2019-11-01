@@ -1,355 +1,180 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Welcome extends CI_Controller {
+
+	/**
+	 * Index Page for this controller.
+	 *
+	 * Maps to the following URL
+	 * 		http://example.com/index.php/welcome
+	 *	- or -  
+	 * 		http://example.com/index.php/welcome/index
+	 *	- or -
+	 * Since this controller is set as the default controller in 
+	 * config/routes.php, it's displayed at http://example.com/
+	 *
+	 * So any other public methods not prefixed with an underscore will
+	 * map to /index.php/welcome/<method_name>
+	 * @see http://codeigniter.com/user_guide/general/urls.html
+	 */
+	public function index()
+	{
+		$this->load->view('welcome_message');
+	}
 
 
+	public function aboutus()
+	{
+		$this->load->view('about_us');
+	}
 
-<?php $this->load->view("header")?>
-<!-- Navbar END -->
-
-
-    </div>
-
-
-<!-- Slider START -->
-<div class="swiper-main-slider swiper-container">
-	<div class="swiper-wrapper">
-	    
-		<!-- Slide 1 Start -->
-		<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner1.jpg);">
-			<div class="container">
-                <div class="slider-content center-holder">
-                	<h3 class="extra-light animated fadeInDown"></h3>
-                    <h2 class="light animated fadeInDown"></h2>
-                    <h5 class="animated fadeInUp"></h5>	
-                    <div class="animated fadeInUp mt-30">
-                        
-                    </div>
-                </div>
-			</div>
-		</div>
-		<!-- Slide 1 End -->
+	public function legal()
+	{
+		$this->load->view('legal');
+	}
+	public function bankdetails()
+	{
+		$this->load->view('bank_details');
+	}
+	public function bookproduct()
+	{
+		$this->load->view('booking_products');
+	}
+	
+	public function registration()
+	{ $this->load->library("form_validation");
+		$this->load->view('registration');
+	}
+public function contact()
+	{
+		$this->load->view('contact_us');
+	}
+	public function read()
+	{
 		
-		<!-- Slide 2 Start -->	
-		<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner2.jpg);">
-			<div class="container">
-                <div class="slider-content center-holder">
-                	<h3 class="extra-light animated fadeInDown"></h3>
-                    <h2 class="light animated fadeInDown"></h2>
-                    <h5 class="animated fadeInUp"></h5>	
-                    <div class="animated fadeInUp mt-30">
-                        
-                    </div>
-                </div>
-			</div>
-		</div>	
+		$this->load->view('read');
+	}
+	
+	function insertCustmer(){
+		$this->load->library("form_validation");
+		$this->load->model("cmodel");
+		$this->load->helpers("sms_helper");
+		$this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
+		//$this->form_validation->set_rules('parent_id','Sponsor ID','required|is_unique[customer_info.username]');
+		$this->form_validation->set_rules('name','Customer Name','required');
+		$this->form_validation->set_rules('selectTree','Please Select Position','required');
+		$this->form_validation->set_rules('fname','Father Name','required');
+		$this->form_validation->set_rules('address','Address','required');
+		$this->form_validation->set_rules('city','City','required');
+		$this->form_validation->set_rules('state','State','required');
+		$this->form_validation->set_rules('pinno','PIN No.','required |exact_length[6]');
+		$this->form_validation->set_rules('mobile','Mobile Number','required | numeric |exact_length[10]');
+		$this->form_validation->set_rules('aadhar','Aadhaar Number','required | is_unique[customer_info.adhaarnumber]');
+		$this->form_validation->set_rules('password','Password','matches[confirm_pwd]');
+		$this->form_validation->set_rules('confirm_pwd','Password','matches[password]');
+		$this->form_validation->set_rules('panno','Pan Number','');
+		$this->form_validation->set_rules('dob','Date Of Birth','required');
+		$this->form_validation->set_rules('customRadioInline1','Gender','required');
+		if($this->form_validation->run()){
+			$tblnm ="customer_info";
+			$maxid	=	$this->cmodel->cust_max($tblnm);
+			
+			$maxid	=	$maxid+1;
+			
+			$username="ADL".$maxid;
+			
+			$rjoinerID= $this->input->post('parent_id');
+			
+			$cid  = $this->cmodel->getrowid($rjoinerID);
+			if($cid){
+			//$ljoinerID= $this->input->post('lJoinerID');
+			$name= $this->input->post('name');
+			
+			$fname= $this->input->post('fname');
+			$address= $this->input->post('address');
+			$pinno= $this->input->post('pinno');
+			$mobile= $this->input->post('mobile');
+			$aadhar= $this->input->post('aadhar');
+			$gender= $this->input->post('customRadioInline1');
+			$dob= $this->input->post('dob');
+			$password= $this->input->post('password');
+			
+			//$parent_id= $this->input->post('parent_id');
+			$city= $this->input->post('city');
+			$state= $this->input->post('state');
+			$panno= $this->input->post('panno');
+			//echo $cid; exit();
+			$left = $this->cmodel->selectlegleft($cid);
+		//echo $cid;exit();
+			$right = $this->cmodel->selectlegright($cid);
+			
+			if($this->input->post("selectTree")==1){
+			$postition = $left;
+			$po ="left";
+			$pojiner="leftjoiner";
+			}else{
+			$postition = $right;
+			$po ="right";
+			$pojiner="rightjoiner";
+			}
+			//echo $rjoinerID;
+			$data= array(
+					'parent_id'=>$postition,
+					'joiner_id'=>$cid,
+					'customer_name'=>$name,
+					'username'=>$username,
+					'password'=>$password,
+					'mobilenumber'=>$mobile,
+					'current_address'=>$address,
+					'city'=>$city,
+					'state'=>$state,
+					'gender'=>$gender,
+					'pin'=>$pinno,
+					'pannumber'=>$panno,
+					'adhaarnumber'=>$aadhar,
+					'status'=>0,
+					'joining_date'=>date('Y-m-d'),
+					'dob'=>$dob
+			);
+			if($this->cmodel->insertCustomer($data)){
+				$datatree = array(
+						$po => $maxid,
+						$pojiner => $cid
+				);
+				if($this->cmodel->position($datatree,$postition,$po)){
+					 $msg = "Dear " . $name . " Your Registration is successfully Done,Your Username is ".$username." and password is ".$password.
+							"Please Login to update your details And Contact to Admin for Activate your account";
+                 	sms($mobile, $msg);
+					redirect('welcome/cconpage/'.$maxid);
+				}
+			}else{
+				echo "error";
+			}
+		/////	
+			
+			}	else{
+		    echo "Invalid sponsor Name";
+		}
+			
+		}else{
+				$this->registration();
+			}
+	}
+		function cconpage(){
+			$this->load->view('sub_invoice');
+		}
+		function checkID(){
+        $this->load->model("cmodel");
+        $parentID= $this->input->post('parent_id');
+       
+
+        $getvalue = $this->cmodel->checkStatus("customer_info",$parentID);
+        echo (json_encode($getvalue));
+    }
 		
-		<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner3.jpg);">
-			<div class="container">
-                <div class="slider-content center-holder">
-                	<h3 class="extra-light animated fadeInDown"></h3>
-                    <h2 class="light animated fadeInDown"></h2>
-                    <h5 class="animated fadeInUp"></h5>	
-                    <div class="animated fadeInUp mt-30">
-                        
-                    </div>
-                </div>
-			</div>
-		</div>	
-		<!-- Slide 2 End -->
+	
+	
+}
 
-		<!-- Slide 3 Start -->
-		
-		<!-- Slide 3 End -->		
-	</div>
-	<!-- Add Arrows -->
-	<div class="swiper-button-next"></div>
-	<div class="swiper-button-prev"></div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>	
-</div>
-<!-- Slider END -->
-
-
-
-<!-- Services Section START -->
-<div class="section-block">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-5 col-sm-12 col-12">
-				<div class="section-heading left-holder wow fadeIn animated" data-wow-delay=".1s">
-					<h3 class="bold">Introduction <span class="italic libre-baskerville primary-color">ADL Group </span></h3>
-					<div class="section-heading-line"></div>
-				</div>
-				<div class="text-content wow fadeIn animated" data-wow-delay=".15s">
-					<p>ADL परिवार में आपका हार्दिक स्वागत है | अत्यंत प्रसन्ता का विषय है की आपके विश्वाश एवं परम सहयोग के होते हुए कंपनी विगत १ सालोँ से MLM के क्षेत्र में कार्य कर रही है | हाल ही में ADL ग्रुप ने अपने कार्य का विस्तार करते हुए रियल स्टेट, हेल्थ केयर, पर्सनल केयर, FMCG प्रोडक्ट्स एवं शिक्षा के क्षेत्र में कदम रखा है |</p> 
-					
-				</div>
-				<div class="mt-15 wow fadeIn animated" data-wow-delay=".2s">
-				
-					<a href="<?php echo base_url();?>index.php/welcome/read"  target="_blank" class="button-md primary-button">Read More</a>
-				</div>
-			</div>
-			<div class="col-md-7 col-sm-12 col-12">
-				<div class="row pl-30-md">
-					<div class="col-md-6 col-sm-6 col-12 wow fadeIn animated" data-wow-delay=".1s" data-wow-duration="1.5s">
-						<div class="service-overlay">
-							<img src="<?php echo base_url();?>assets/img/4.jpg" alt="img">
-							<div class="service-overlay-box center-holder">
-								<h4>Investment Advisor</h4>
-								<p> </p>
-								<a href="#">Learn More</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-6 col-sm-6 col-12 wow fadeIn animated" data-wow-delay=".15s" data-wow-duration="1.5s">
-						<div class="service-overlay">
-							<img src="<?php echo base_url();?>assets/img/1.jpg" alt="img">
-							<div class="service-overlay-box center-holder">
-								<h4>Staffing Consultant</h4>
-								<p> </p>
-								<a href="#">Learn More</a>
-							</div>
-						</div>
-					</div>					
-				</div>
-			</div>			
-		</div>
-		
-	</div>
-</div>
-<!-- Services Section END -->
-
-<!-- Services Block START -->
-
-<!-- Services Block END -->
-
-
-<!-- Info Section START -->
-<div class="section-block-grey">
-	<div class="container">
-		<div class="row">
-			<!--<div class="col-md-5 col-sm-12 col-12 wow fadeIn animated" data-wow-delay=".1s" data-wow-duration="1.5s">
-				<img src="<?php echo base_url();?>assets/img/handshake.jpg" class="rounded-border shadow-primary full-width" alt="img">
-			</div>		-->	
-			<div class="col-md-7 col-sm-12 col-12">
-				<div class="pl-45-md">
-					<div class="section-heading left-holder wow fadeIn animated" data-wow-delay=".1s">
-						<h3 class="bold">We provide a Business Opportunity to <span class="italic libre-baskerville primary-color">Fulfil Your Dreams.</span></h3>
-						<div class="section-heading-line"></div>
-					</div>
-					<div class="text-content-big mt-10 wow fadeIn animated" data-wow-delay=".15s">
-						<p>इस व्यवसाय से लाभ प्राप्त करने के लिए आप ADL ग्रुप द्वारा उपलब्ध पैकेजों में से किसी एक को अपनाते हुए ऑनलाइन पंजीकरण के द्वारा अपना एक ID Code प्राप्त कर अपने सपनों को साकार करने के लिए आप एक स्वतंत्र व्यवसाय के मालिक बन जातें हैं |</p>
-					</div>
-					<span class="italic libre-baskerville primary-color">Types of Income</span>
-					<!-- List Start -->
-					<div class="mt-25 wow fadeIn animated" data-wow-delay=".2s">
-						<ul class="primary-list">
-							<li><i class="fa fa-check-square"></i>Direct Income</li>
-							<li><i class="fa fa-check-square"></i>Binary Income</li>
-							<li><i class="fa fa-check-square"></i>Auto Pool Income</li>
-							<li><i class="fa fa-check-square"></i>Product 100% MRP</li>
-							<li><i class="fa fa-check-square"></i>Rewards(Upgrating Package)</li>
-							<li><i class="fa fa-check-square"></i>Royalty 2% After Crown</li>
-						</ul>
-					</div>
-					<!-- List End -->
-
-					<!-- Process Steps Start -->
-				<!--	<div class="mt-40 wow fadeIn animated" data-wow-delay=".25s">
-						<div class="process-steps-xs">
-							<ul class="left-holder row">
-								<li class="col-md-3 col-sm-6 col-6">
-									<div class="process-step-xs center-holder">
-										<div class="process-step-icon">
-											<i class="icon-settings2"></i>
-										</div>
-										<h3>Investment</h3>
-									</div>									
-								</li>
-								<li class="col-md-3 col-sm-6 col-6">
-									<div class="process-step-xs center-holder">
-										<div class="process-step-icon">
-											<i class="icon-wallet2"></i>
-										</div>
-										<h3>Strategist</h3>
-									</div>									
-								</li>
-								<li class="col-md-3 col-sm-6 col-6">
-									<div class="process-step-xs center-holder">
-										<div class="process-step-icon">
-											<i class="icon-idea3"></i>
-										</div>
-										<h3>Marketing</h3>
-									</div>									
-								</li>
-								<li class="col-md-3 col-sm-6 col-6">
-									<div class="process-step-xs center-holder">
-										<div class="process-step-icon">
-											<i class="icon-cloud-computing2"></i>
-										</div>
-										<h3>Insurance</h3>
-									</div>									
-								</li>			
-							</ul>
-						</div>
-					</div>-->
-					<!-- Process Steps End -->				
-				</div>
-			</div>	
-
-
-
-<div class="col-md-5 col-sm-12 col-12 wow fadeIn animated" data-wow-delay=".1s" data-wow-duration="1.5s">
-				<img src="<?php echo base_url();?>assets/img/111.jpg" class="rounded-border shadow-primary full-width" alt="img">
-			</div>
-
-
-
-
-			
-		</div>		
-	</div>
-</div>
-<!-- Info Section END -->
-
-<!-- Team Members START -->
-<div class="section-block">
-	<div class="container">
-		<div class="section-heading center-holder wow fadeIn animated" data-wow-delay=".1s">
-			<h3 class="bold">Our <span class="italic libre-baskerville primary-color">Products</span></h3>
-			<div class="section-heading-line"></div>
-			<p>You can choose any one product to start your Business. </p>
-		</div>
-		<div class="row mt-40">
-			<div class="col-md-3 col-sm-6 col-12 wow fadeIn animated" data-wow-delay=".1s" data-wow-duration="1.5s">
-				<div class="team-member">
-					<div class="team-member-image">
-						<img src="<?php echo base_url();?>assets/img/pack1.jpg" alt="img">
-								
-					</div>
-					<div class="team-member-name">
-						<h4><a href="#">Power UP</a></h4>	
-						
-					</div>						
-				</div>				
-			</div>
-
-			<div class="col-md-3 col-sm-6 col-12 wow fadeIn animated" data-wow-delay=".2s" data-wow-duration="1.5s">
-				<div class="team-member">
-					<div class="team-member-image">
-						<img src="<?php echo base_url();?>assets/img/pack2.png" alt="img">
-									
-					</div>
-					<div class="team-member-name">
-						<h4><a href="#">OrthoZac</a></h4>	
-						
-					</div>						
-				</div>				
-			</div>			
-
-			<div class="col-md-3 col-sm-6 col-12 wow fadeIn animated" data-wow-delay=".3s" data-wow-duration="1.5s">
-				<div class="team-member">
-					<div class="team-member-image">
-						<img src="<?php echo base_url();?>assets/img/pack3.jpg" alt="img">
-								
-					</div>
-					<div class="team-member-name">
-						<h4><a href="#">Health Tonic</a></h4>	
-					
-					</div>						
-				</div>				
-			</div>
-
-			<div class="col-md-3 col-sm-6 col-12 wow fadeIn animated" data-wow-delay=".4s" data-wow-duration="1.5s">
-				<div class="team-member">
-					<div class="team-member-image">
-						<img src="<?php echo base_url();?>assets/img/pack4.jpg" alt="img">
-									
-					</div>
-					<div class="team-member-name">
-						<h4><a href="#">LivCare</a></h4>	
-						
-					</div>						
-				</div>				
-			</div>
-			
-			<div class="col-md-3 col-sm-6 col-12 wow fadeIn animated" data-wow-delay=".4s" data-wow-duration="1.5s">
-				<div class="team-member">
-					<div class="team-member-image">
-						<img src="<?php echo base_url();?>assets/img/pack5.jpg" alt="img">
-									
-					</div>
-					<div class="team-member-name">
-						<h4><a href="#">Noni Gold</a></h4>	
-						
-					</div>						
-				</div>				
-			</div>
-			
-			<div class="col-md-3 col-sm-6 col-12 wow fadeIn animated" data-wow-delay=".4s" data-wow-duration="1.5s">
-				<div class="team-member">
-					<div class="team-member-image">
-						<img src="<?php echo base_url();?>assets/img/pack6.jpg" alt="img">
-									
-					</div>
-					<div class="team-member-name">
-						<h4><a href="#">CITAL</a></h4>	
-						
-					</div>						
-				</div>				
-			</div>
-			
-			<div class="col-md-3 col-sm-6 col-12 wow fadeIn animated" data-wow-delay=".4s" data-wow-duration="1.5s">
-				<div class="team-member">
-					<div class="team-member-image">
-						<img src="<?php echo base_url();?>assets/img/pack7.jpg" alt="img">
-									
-					</div>
-					<div class="team-member-name">
-						<h4><a href="#">Phyto ProFlex</a></h4>	
-						
-					</div>						
-				</div>				
-			</div>							
-		</div>	
-			
-	</div>		
-</div>
-<!-- Team Members END -->
-
-
-
-
-
-
-
-<!-- Contact Form Section START -->
-
-
-
-<!-- Contact Form Section END -->
-<div>
-    
-
-
-<!-- Action Box START -->
-<div class="action-box action-box-md grey-bg center-holder-xs">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-10 col-sm-10 col-12">
-				<h3 class="bold">Business Plan</h3>
-				<p>A great business opportunity to fulfil your dreams.</p>	
-			</div>
-			<div class="col-md-2 col-sm-2 col-12 right-holder center-holder-xs">
-				<a href="<?php echo base_url();?>assets/img/adlplan.pdf" class="button-md primary-button">Download</a>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- Action Box END -->
-
-
-
-
-<!-- Footer START -->
-<?php $this->load->view("footer")?>
-<!-- Footer END -->
+/* End of file welcome.php */
+/* Location: ./application/controllers/welcome.php */
