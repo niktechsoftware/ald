@@ -137,12 +137,9 @@ public function contact()
 					'dob'=>$dob
 			);
 			if($this->cmodel->insertCustomer($data)){
-			
-			
 				$datatree = array(
 						$po => $maxid,
 						$pojiner => $cid
-						 
 				);
 				if($this->cmodel->position($datatree,$postition,$po)){
 					 $msg = "Dear " . $name . " Your Registration is successfully Done,Your Username is ".$username." and password is ".$password.
@@ -153,24 +150,23 @@ public function contact()
 			}else{
 				echo "error";
 			}
-			
+		/////	
 			
 			}	else{
 		    echo "Invalid sponsor Name";
 		}
 			
-		} 
-			else{
-				
+		}else{
 				$this->registration();
 			}
+	}
 		function cconpage(){
 			$this->load->view('sub_invoice');
 		}
 	       
-		}
+		
 			
-		}
+		
 		
 		
 		
