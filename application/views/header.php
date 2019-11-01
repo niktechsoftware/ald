@@ -3,7 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-<!-- Mirrored from dyd.in.net/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Oct 2019 07:28:08 GMT -->
+
 
 <head>
 	<title>
