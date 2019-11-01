@@ -84,8 +84,9 @@ public function contact()
 			$username="ADL".$maxid;
 			
 			$rjoinerID= $this->input->post('parent_id');
-			$cid  = $this->cmodel->getrowid($rjoinerID);
 			
+			$cid  = $this->cmodel->getrowid($rjoinerID);
+			if($cid){
 			//$ljoinerID= $this->input->post('lJoinerID');
 			$name= $this->input->post('name');
 			
@@ -154,14 +155,20 @@ public function contact()
 			}
 			
 			
-			}
+			}	else{
+		    echo "Invalid sponsor Name";
+		}
+			
+		} 
 			else{
 				
 				$this->registration();
-			}	
-		}
+			}
 		function cconpage(){
 			$this->load->view('sub_invoice');
+		}
+	       
+		}
 			
 		}
 		

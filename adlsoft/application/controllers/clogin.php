@@ -89,7 +89,7 @@ class Clogin extends CI_Controller{
 			$username="ADL".$maxid;
 			$rjoinerID= $this->input->post('parent_id');
 			$cid  = $this->cmodel->getrowid($rjoinerID);
-			
+			if($cid){
 			//$ljoinerID= $this->input->post('lJoinerID');
 			$name= $this->input->post('name');
 			$fname= $this->input->post('fname');
@@ -153,7 +153,9 @@ class Clogin extends CI_Controller{
 			}
 			
 			
-			}
+			}	else{
+		    echo "Invalid sponsor Name";
+		}}
 			else{
 				
 				$this->customer_reg();
