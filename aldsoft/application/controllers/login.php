@@ -27,7 +27,7 @@ class Login extends CI_Controller{
 		$data['smallTitle'] = 'Overview of all Section';
 		$data['mainPage'] = 'Dashboard';
 		$data['subPage'] = 'dashboard';
-		$data['title'] = 'ALD Dashboard';
+		$data['title'] = 'ADL Dashboard';
 		$data['headerCss'] = 'headerCss/dashboardCss';
 		$data['footerJs'] = 'footerJs/dashboardJs';
 		$data['mainContent'] = 'dashboard';

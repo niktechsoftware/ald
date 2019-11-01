@@ -7,7 +7,7 @@
 
 <head>
 	<title>
-	ADL GLOBAL MARKETING PVT. LTD.
+	ADLGM Sales PVT. LTD.
 </title><meta charset="UTF-8" /><link rel="shortcut icon" href="<?php echo base_url();?>assets/img/logos/logo.jpg" /><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 	<!-- Bootstrap CSS-->

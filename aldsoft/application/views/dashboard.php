@@ -1,4 +1,4 @@
-<!-- Main Content -->
+  <!-- Main Content -->
       <div class="main-content">
         <section class="section">
           <div class="row ">
@@ -6,18 +6,27 @@
               <div class="card l-bg-green-dark">
                 <div class="card-statistic-3">
                   <div class="card-icon card-icon-large"><i class="fa fa-award"></i></div>
-                  <div class="card-content">
-                    <h4 class="card-title">Silver Balance</h4>
-                    <span>524</span>
+                  <a href="<?php echo base_url();?>index.php/customer/customer_list/1">
+                  <div class="card-content text-white">
+                    <h4 class="card-title">Customer Active List</h4>
+                    <span>
+                    <?php 
+                      $status=1;
+                      $matchcon="status";
+                      $tblname="customer_info";
+                    
+                      $dt = $this->cmodel->getcustomerdata($matchcon,$status,$tblname);
+                     print_r($dt->num_rows());
+                    
+                    ?>
+                    </span>
                     <div class="progress mt-1 mb-1" data-height="8">
                       <div class="progress-bar l-bg-purple" role="progressbar" data-width="25%" aria-valuenow="25"
                         aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <p class="mb-0 text-sm">
-                      <span class="mr-2"><i class="fa fa-arrow-up"></i> 10%</span>
-                      <span class="text-nowrap">Since last month</span>
-                    </p>
+                   
                   </div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -25,18 +34,25 @@
               <div class="card l-bg-cyan-dark">
                 <div class="card-statistic-3">
                   <div class="card-icon card-icon-large"><i class="fa fa-briefcase"></i></div>
-                  <div class="card-content">
-                    <h4 class="card-title">New Booking</h4>
-                    <span>1,258</span>
+                  <a href="<?php echo base_url();?>index.php/customer/customer_list/2">
+                  <div class="card-content text-white">
+                    <h4 class="card-title">Customer InActive List</h4>
+                    <span> <?php 
+                      $status=0;
+                      $matchcon="status";
+                      $tblname="customer_info";
+                    
+                      $dt = $this->cmodel->getcustomerdata($matchcon,$status,$tblname);
+                    print_r($dt->num_rows());
+                    
+                    ?></span>
                     <div class="progress mt-1 mb-1" data-height="8">
                       <div class="progress-bar l-bg-orange" role="progressbar" data-width="25%" aria-valuenow="25"
                         aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <p class="mb-0 text-sm">
-                      <span class="mr-2"><i class="fa fa-arrow-up"></i> 10%</span>
-                      <span class="text-nowrap">Since last month</span>
-                    </p>
+                  
                   </div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -44,18 +60,25 @@
               <div class="card l-bg-purple-dark">
                 <div class="card-statistic-3">
                   <div class="card-icon card-icon-large"><i class="fa fa-globe"></i></div>
-                  <div class="card-content">
-                    <h4 class="card-title">Inquiry</h4>
-                    <span>10,225</span>
+                  <a href="<?php echo base_url();?>index.php/customer/customer_list/3">
+                  <div class="card-content text-white">
+                    <h4 class="card-title">Customer Paid InActive List</h4>
+                    <span><?php 
+                      $status=2;
+                      $matchcon="status";
+                      $tblname="customer_info";
+                    
+                      $dt = $this->cmodel->getcustomerdata($matchcon,$status,$tblname);
+                    print_r($dt->num_rows());
+                    
+                    ?></span>
                     <div class="progress mt-1 mb-1" data-height="8">
                       <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25"
                         aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <p class="mb-0 text-sm">
-                      <span class="mr-2"><i class="fa fa-arrow-up"></i> 10%</span>
-                      <span class="text-nowrap">Since last month</span>
-                    </p>
+                   
                   </div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -63,18 +86,119 @@
               <div class="card l-bg-orange-dark">
                 <div class="card-statistic-3">
                   <div class="card-icon card-icon-large"><i class="fa fa-money-bill-alt"></i></div>
-                  <div class="card-content">
-                    <h4 class="card-title">Earning</h4>
-                    <span>$2,658</span>
+                  <a href="<?php echo base_url();?>index.php/daybookController/daybook/1">
+                  <div class="card-content text-white">
+                    <h4 class="card-title">Outer DayBook</h4>
+                    <div class="row">
+                    <div class="col-md-6">
+                    <span>Credit</span>
+                    </div>
+                    <div class="col-md-6">
+                    <span>Debit</span>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-6">
+                    <span>Rs.
+                    <?php 
+                   $this->db->select_sum("amount");
+                   $this->db->where("debit_credit",1);
+                   $daybook=$this->db->get("outer_daybook");
+                   if($daybook->num_rows()>0){
+                     $dt=$daybook->row();
+                    echo $dt->amount;
+                   }
+                   else{
+                    echo "0.00";
+                  }
+
+                    ?>
+                    </span>
+                    </div>
+                    <div class="col-md-6">
+                    <span>Rs.
+                    <?php 
+                   $this->db->select_sum("amount");
+                   $this->db->where("debit_credit",0);
+                   $daybook=$this->db->get("outer_daybook");
+                   if($daybook->num_rows()>0){
+                     $dt=$daybook->row();
+                   echo $dt->amount;
+                   }
+                   else{
+                    echo "0.00";
+                  }
+
+                    ?></span>
+                    </div>
+                    </div>
                     <div class="progress mt-1 mb-1" data-height="8">
                       <div class="progress-bar l-bg-green" role="progressbar" data-width="25%" aria-valuenow="25"
                         aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <p class="mb-0 text-sm">
-                      <span class="mr-2"><i class="fa fa-arrow-up"></i> 10%</span>
-                      <span class="text-nowrap">Since last month</span>
-                    </p>
+                    
                   </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+          <div class="col-xl-3 col-lg-6">
+              <div class="card l-bg-green-dark">
+                <div class="card-statistic-3">
+                  <div class="card-icon card-icon-large"><i class="fa fa-money-bill-alt"></i></div>
+                  <a href="<?php echo base_url();?>index.php/daybookController/daybook/2">
+                  <div class="card-content text-white">
+                    <h4 class="card-title">Inner DayBook</h4>
+                    <div class="row">
+                    <div class="col-md-6">
+                    <span>Credit</span>
+                    </div>
+                    <div class="col-md-6">
+                    <span>Debit</span>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-6">
+                    <span>Rs.
+                    <?php 
+                   $this->db->select_sum("amount");
+                   $this->db->where("debit_credit",1);
+                   $daybook=$this->db->get("inner_daybook");
+                   if($daybook->num_rows()>0){
+                     $dt=$daybook->row();
+                    echo $dt->amount;
+                   }
+                   else{
+                     echo "0.00";
+                   }
+
+                    ?>
+                    </span>
+                    </div>
+                    <div class="col-md-6">
+                    <span>Rs.
+                    <?php 
+                   $this->db->select_sum("amount");
+                   $this->db->where("debit_credit",0);
+                   $daybook=$this->db->get("inner_daybook");
+                   if($daybook->num_rows()>0){
+                     $dt=$daybook->row();
+                    echo $dt->amount;
+                   }
+                   else{
+                    echo "0.00";
+                   }?></span>
+                    </div>
+                    </div>
+                    <div class="progress mt-1 mb-1" data-height="8">
+                      <div class="progress-bar l-bg-green" role="progressbar" data-width="25%" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    
+                  </div>
+                  </a>
                 </div>
               </div>
             </div>

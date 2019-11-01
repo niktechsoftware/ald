@@ -23,7 +23,7 @@
 |
 */
 
-$config['base_url'] = 'http://localhost/ald/aldsoft';
+$config['base_url'] = 'http://adlgm.in/aldsoft';
 
 /*
 |--------------------------------------------------------------------------
