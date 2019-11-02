@@ -14,35 +14,11 @@
 												<?php endif;?>
                       <div class="clearfix"></div>
                       <div class="author-box-name">
-                        <a href="#"><?php echo $crecord->row()->customer_name; ?></a>
+                        <a href="#"><?php echo $this->session->userdata("name") ; ?></a>
                       </div>
-					  <div class="author-box-job">User Id:<?php  echo $crecord->row()->username; ?></div>
+					  <div class="author-box-job">User Id:<?php echo $this->session->userdata("name") ; ?><?php // echo $crecord->row()->username; ?></div>
                     </div>
                     
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="card-header">
-                    <h4>Bank Details</h4>
-                  </div>
-                  <div class="card-body">
-                    <div class="py-4">
-                      <p class="clearfix"><span class="float-left">Bank Name</span>
-                        <span class="float-right text-muted"><?php  echo $crecord->row()->bankname;?></span>
-                      </p>
-                      <p class="clearfix">
-                        <span class="float-left"> IFSCode</span>
-                        <span class="float-right text-muted"><?php  echo $crecord->row()->ifsccode;?> </span>
-                      </p>
-					  <p class="clearfix"><span class="float-left">Branch Name</span>
-                        <span class="float-right text-muted"><?php  echo $crecord->row()->branchname;?></span>
-                      </p>
-                      <p class="clearfix">
-                        <span class="float-left">Account No.</span>
-                        <span class="float-right text-muted"><?php  echo $crecord->row()->account_no;?> </span>
-                      </p>
-                      
-                    </div>
                   </div>
                 </div>
                 
@@ -73,12 +49,7 @@
                               <div class="form-group col-md-3 col-12"><label>Father Name :</label></div>
 							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->fname; ?></label> </div>
                             </div>
-							<div class="row">
-                              <div class="form-group col-md-3 col-12"><label>Gender:</label></div>
-							  <div class="form-group col-md-3 col-12"><label><?php  if($crecord->row()->gender == 1){ echo "Male";}else{echo "Female";}?></label></div>
-                              <div class="form-group col-md-3 col-12"><label>Status :</label></div>
-							  <div class="form-group col-md-3 col-12"> <label><?php  if($crecord->row()->status == 1){ echo "<label style='color:green;'>Active</label>";}else{echo "<label style='color:red;'>InActive</label>";}?></label> </div>
-                            </div>
+							
 							<div class="row">
                               <div class="form-group col-md-3 col-12"><label>City :</label></div>
 							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->city; ?></label></div>
@@ -100,7 +71,7 @@
 							<div class="row">
                               <div class="form-group col-md-3 col-12"><label>Mobile No :</label></div>
 							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->mobilenumber; ?></label></div>
-                              <div class="form-group col-md-3 col-12"><label>Other Mobile No :</label></div>
+                              <div class="form-group col-md-3 col-12"><label>Phone No :</label></div>
 							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->altnumber; ?></label> </div>
                             </div>
 							<div class="row">
@@ -214,7 +185,7 @@
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
                               <div class="form-group col-md-2 col-12"><label>Upload Photo</label></div>
-                              <div class="form-group col-md-4 col-12"><input type="file" class="form-control" name="photo" value="">
+                              <div class="form-group col-md-4 col-12"><input type="file" class="form-control" name="photo" value="<?php echo $crecord->row()->image; ?>">
                                 <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>

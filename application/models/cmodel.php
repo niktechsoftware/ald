@@ -23,7 +23,9 @@
     	{
     			$this->db->where("c_id", $id);
     			$fty =$this->db->get("silver_tree")->row();
-    			
+    // 		$dt2=	$data[$po];
+    // 			print_r($dt2);
+    // 			exit;
     			if(!$fty->$po){
     				$this->db->where("c_id", $id);
     				$this->db->update("silver_tree", $data);
@@ -35,6 +37,7 @@
     			}
     			return true;
     	}
+    	
     	public function selectlegright($data1){
     		// $returndata = array();
     	

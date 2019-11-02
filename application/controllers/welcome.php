@@ -62,9 +62,16 @@ public function contact()
 		$this->load->view('read');
 	}
 	
+	public function cmd_view()
+	{
+		
+		$this->load->view('cmd_view');
+	}
+	
 	function insertCustmer(){
 		$this->load->library("form_validation");
 		$this->load->model("cmodel");
+	
 		$this->load->helpers("sms_helper");
 		$this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
 		//$this->form_validation->set_rules('parent_id','Sponsor ID','required|is_unique[customer_info.username]');
@@ -106,7 +113,7 @@ public function contact()
 			$dob= $this->input->post('dob');
 			$password= $this->input->post('password');
 			
-			//$parent_id= $this->input->post('parent_id');
+			$parent_id= $this->input->post('parent_id');
 			$city= $this->input->post('city');
 			$state= $this->input->post('state');
 			$panno= $this->input->post('panno');

@@ -115,3 +115,4 @@
 [01-Nov-2019 05:30:57 Etc/GMT] PHP Fatal error:  Cannot redeclare class Welcome in /home/gfincpnt/public_html/adlgm.in/application/views/welcome_message.php on line 177
 [01-Nov-2019 05:31:54 Etc/GMT] PHP Fatal error:  Cannot redeclare class Welcome in /home/gfincpnt/public_html/adlgm.in/application/views/welcome_message.php on line 177
 [01-Nov-2019 05:32:08 Etc/GMT] PHP Fatal error:  Cannot redeclare class Welcome in /home/gfincpnt/public_html/adlgm.in/application/views/welcome_message.php on line 177
+[02-Nov-2019 11:19:59 Etc/GMT] PHP Fatal error:  Call to a member function position() on a non-object in /home/gfincpnt/public_html/adlgm.in/application/controllers/welcome.php on line 161

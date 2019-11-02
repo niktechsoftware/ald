@@ -42,3 +42,157 @@
 [01-Nov-2019 12:27:24 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 34
 [01-Nov-2019 12:27:38 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 34
 [01-Nov-2019 17:50:19 Etc/GMT] PHP Fatal error:  Call to undefined function generateCustomerInfo() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/tree.php on line 47
+[02-Nov-2019 04:11:26 Etc/GMT] PHP Fatal error:  Call to undefined method CI_DB_mysql_result::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:12:30 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:12:32 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:12:38 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:12:39 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:12:40 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:12:40 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:12:41 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:12:43 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:12:44 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:12:46 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:12:48 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:12:49 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:12:49 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:12:50 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:12:50 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:12:51 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:12:52 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:12:52 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:12:53 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:13:00 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:13:04 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:13:05 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:13:06 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:13:06 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:13:09 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:13:09 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:13:10 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:13:10 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:13:12 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:13:13 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:13:15 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:13:16 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:13:16 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 96
+[02-Nov-2019 04:14:23 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::amount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/cdashboard.php on line 206
+[02-Nov-2019 05:01:56 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 65
+[02-Nov-2019 05:02:20 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 65
+[02-Nov-2019 05:02:39 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 65
+[02-Nov-2019 05:03:21 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 40
+[02-Nov-2019 05:03:23 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 40
+[02-Nov-2019 05:03:23 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 40
+[02-Nov-2019 05:03:24 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 40
+[02-Nov-2019 05:03:24 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 40
+[02-Nov-2019 05:03:30 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 40
+[02-Nov-2019 05:10:52 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 67
+[02-Nov-2019 05:12:53 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 67
+[02-Nov-2019 05:12:54 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 67
+[02-Nov-2019 05:12:54 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 67
+[02-Nov-2019 05:12:55 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 67
+[02-Nov-2019 05:12:55 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 67
+[02-Nov-2019 05:12:55 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 67
+[02-Nov-2019 05:12:56 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 67
+[02-Nov-2019 05:12:56 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 67
+[02-Nov-2019 05:12:57 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 67
+[02-Nov-2019 05:12:57 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 67
+[02-Nov-2019 05:12:57 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 67
+[02-Nov-2019 05:12:58 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 67
+[02-Nov-2019 05:12:58 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 67
+[02-Nov-2019 06:20:59 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 34
+[02-Nov-2019 06:21:15 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 34
+[02-Nov-2019 06:32:56 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 66
+[02-Nov-2019 06:50:17 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 86
+[02-Nov-2019 07:25:40 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 133
+[02-Nov-2019 07:40:20 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/active_list.php on line 36
+[02-Nov-2019 07:40:57 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/active_list.php on line 36
+[02-Nov-2019 07:42:11 Etc/GMT] PHP Fatal error:  Call to undefined function set_value() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/pin/new_req_pin.php on line 28
+[02-Nov-2019 07:42:21 Etc/GMT] PHP Fatal error:  Call to undefined function set_value() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/pin/new_req_pin.php on line 28
+[02-Nov-2019 07:43:06 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 25
+[02-Nov-2019 07:43:09 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 25
+[02-Nov-2019 07:43:41 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/active_list.php on line 36
+[02-Nov-2019 07:45:04 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 25
+[02-Nov-2019 07:45:05 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 25
+[02-Nov-2019 07:45:05 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 25
+[02-Nov-2019 07:45:06 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 25
+[02-Nov-2019 07:46:55 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 25
+[02-Nov-2019 07:48:46 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/pin/final_mpin_detail.php on line 36
+[02-Nov-2019 07:51:01 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/pin/final_mpin_detail.php on line 36
+[02-Nov-2019 07:51:06 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/pin/final_mpin_detail.php on line 36
+[02-Nov-2019 07:51:35 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/pin/final_mpin_detail.php on line 36
+[02-Nov-2019 07:52:56 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/pin/final_mpin_detail.php on line 36
+[02-Nov-2019 07:53:50 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/pin/final_mpin_detail.php on line 36
+[02-Nov-2019 10:43:38 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/controllers/clogin.php on line 52
+[02-Nov-2019 10:45:15 Etc/GMT] PHP Fatal error:  Call to a member function row() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/controllers/clogin.php on line 52
+[02-Nov-2019 10:45:35 Etc/GMT] PHP Fatal error:  Call to a member function result() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/controllers/clogin.php on line 52
+[02-Nov-2019 10:45:43 Etc/GMT] PHP Fatal error:  Call to a member function result() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/controllers/clogin.php on line 52
+[02-Nov-2019 10:46:29 Etc/GMT] PHP Fatal error:  Call to a member function result() on a non-object in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/controllers/clogin.php on line 52
+[02-Nov-2019 10:52:10 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 12:58:13 Etc/GMT] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/active_list.php on line 110
+[02-Nov-2019 13:01:22 Etc/GMT] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/active_list.php on line 110
+[02-Nov-2019 13:01:41 Etc/GMT] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/active_list.php on line 110
+[02-Nov-2019 13:43:40 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 13:43:52 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 14:09:01 Etc/GMT] PHP Fatal error:  Call to undefined function generateCustomerInfo() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/tree.php on line 210
+[02-Nov-2019 14:09:03 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 14:12:39 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 14:16:25 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 14:20:43 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 14:20:49 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 14:20:59 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 14:28:24 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 14:28:52 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 14:31:52 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 14:31:53 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 14:39:56 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 14:40:03 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 14:47:47 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 14:48:03 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 14:49:17 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 14:49:20 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 14:50:39 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 14:50:49 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 14:51:15 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 14:52:56 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 14:53:31 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 50
+[02-Nov-2019 14:54:30 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 14:54:49 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:00:51 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:01:36 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:01:49 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:02:10 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:09:19 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:09:41 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:09:53 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:11:22 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:11:32 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:11:40 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:12:08 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:12:14 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:12:18 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:12:18 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:12:19 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:12:19 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:12:29 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:12:29 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:12:30 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:12:30 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:13:06 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:13:13 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:13:18 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:14:26 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:14:28 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:14:32 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:14:35 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:14:35 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:14:36 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:14:36 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:14:54 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:16:31 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:16:33 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:16:35 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:16:36 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:16:36 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:17:15 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51
+[02-Nov-2019 15:17:22 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/transaction.php on line 51

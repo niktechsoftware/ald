@@ -148,6 +148,14 @@
 		 	$this->db->where("c_id",$cid);
 		 	return $this->db->get("diamond_mbalance");
 		 }
+		 function getDirect($cid){
+		     	$this->db->where("c_id",$cid);
+		 	return $this->db->get("direct_income");
+		 }
+		 function getAutoPool($cid){
+		     	$this->db->where("c_id",$cid);
+		 	return $this->db->get("autopool_details");
+		 }
 		 
 		 function getCrown($cid){
 		 	$this->db->where("c_id",$cid);

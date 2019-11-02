@@ -53,7 +53,19 @@ Class AdminController extends CI_Controller{
       
     }
     
-    
+    public function admin_profile(){
+		$this->load->library("form_validation");
+		$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
+		$data['pageTitle'] = 'Admin Profile';
+		$data['smallTitle'] = 'Profile form';
+		$data['mainPage'] = 'Admin Profile';
+		$data['subPage'] = 'Admin Profile';
+		$data['title'] = 'Admin Profile Form';
+		$data['headerCss'] = 'headerCss/dashboardCss';
+		$data['footerJs'] = 'footerJs/customerJs';
+		$data['mainContent'] = 'admin_profile';
+		$this->load->view("includes/mainContent", $data);
+	}
     
     function generatepain(){
     	

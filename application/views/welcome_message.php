@@ -1,10 +1,14 @@
+
+
+
 <?php $this->load->view("header")?>
 <!-- Navbar END --> </div><!-- Slider START -->
 <div class="swiper-main-slider swiper-container">
 	<div class="swiper-wrapper">
 	    
 		<!-- Slide 1 Start -->
-		<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner1.jpg);">
+		
+		<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner11.jpg); background-size:cover; ">
 			<div class="container">
                 <div class="slider-content center-holder">
                 	<h3 class="extra-light animated fadeInDown"></h3>
@@ -17,10 +21,12 @@
                 </div>
 			</div>
 		</div>
+		
 		<!-- Slide 1 End -->
 		
 		<!-- Slide 2 Start -->	
-		<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner2.jpg);">
+		
+		<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner12.jpg); background-size:cover; ">
 			<div class="container">
                 <div class="slider-content center-holder">
                 	<h3 class="extra-light animated fadeInDown"></h3>
@@ -33,7 +39,12 @@
 			</div>
 		</div>	
 		
-		<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner3.jpg);">
+		
+			<!-- Slide 2 End -->
+			
+			<!-- Slide 3 Start -->
+			
+		<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner13.jpg); background-size:cover; ">
 			<div class="container">
                 <div class="slider-content center-holder">
                 	<h3 class="extra-light animated fadeInDown"></h3>
@@ -45,12 +56,29 @@
                 </div>
 			</div>
 		</div>	
-		<!-- Slide 2 End -->
-
-		<!-- Slide 3 Start -->
 		
-		<!-- Slide 3 End -->		
+			<!-- Slide 3 End -->
+			
+			<!-- Slide 4 Start -->
+			
+			<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner14.jpg); background-size:cover;">
+			<div class="container">
+         <div class="slider-content center-holder">
+                	<h3 class="extra-light animated fadeInDown"></h3>
+            <h2 class="light animated fadeInDown"></h2>
+                    <h5 class="animated fadeInUp"></h5>	
+                   <div class="animated fadeInUp mt-30">
+                        
+                   </div>
+               </div>
+		</div>
+	</div>	
+		
+		
 	</div>
+	
+	<!-- Slide 4 End -->
+	
 	<!-- Add Arrows -->
 	<div class="swiper-button-next"></div>
 	<div class="swiper-button-prev"></div>
@@ -71,7 +99,7 @@
 					<div class="section-heading-line"></div>
 				</div>
 				<div class="text-content wow fadeIn animated" data-wow-delay=".15s">
-					<p>ADLGM Sales Pvt. Ltd. परिवार में आपका हार्दिक स्वागत है | अत्यंत प्रसन्ता का विषय है की आपके विश्वाश एवं परम सहयोग के होते हुए कंपनी विगत १ सालोँ से MLM के क्षेत्र में कार्य कर रही है | हाल ही में ADL ग्रुप ने अपने कार्य का विस्तार करते हुए रियल स्टेट, हेल्थ केयर, पर्सनल केयर, FMCG प्रोडक्ट्स एवं शिक्षा के क्षेत्र में कदम रखा है |</p> 
+					<p>ADLGM Sales Pvt. Ltd. परिवार में आपका हार्दिक स्वागत है | अत्यंत प्रसन्नता का विषय है की आपके विश्वास एवं परम सहयोग के होते हुए कंपनी विगत साल से MLM के क्षेत्र में कार्य कर रही है | हाल ही में ADLGM Sales Pvt. Ltd. ने अपने कार्य का विस्तार करते हुए रियल स्टेट, हेल्थ केयर, पर्सनल केयर, FMCG प्रोडक्ट्स एवं शिक्षा के क्षेत्र में कदम रखा है |</p> 
 					
 				</div>
 				<div class="mt-15 wow fadeIn animated" data-wow-delay=".2s">
@@ -129,7 +157,7 @@
 						<div class="section-heading-line"></div>
 					</div>
 					<div class="text-content-big mt-10 wow fadeIn animated" data-wow-delay=".15s">
-						<p>इस व्यवसाय से लाभ प्राप्त करने के लिए ADLGM Sales Pvt. Ltd. ग्रुप द्वारा उपलब्ध पैकेजों में से किसी एक को अपनाते हुए ऑनलाइन पंजीकरण के द्वारा अपना एकअपने सपने को सच करने के लिए, आप एक स्वतंत्र व्यवसाय के मालिक बन जाते हैं्यवसाय के मालिक बन जातें हैं |</p>
+						<p>इस व्यवसाय से लाभ प्राप्त करने के लिए ADLGM Sales Pvt. Ltd. ग्रुप द्वारा उपलब्ध पैकेजों में से किसी एक को अपनाते हुए ऑनलाइन पंजीकरण के द्वारा अपना एकअपने सपने को सच करने के लिए, आप एक स्वतंत्र व्यवसाय के मालिक बन जाते हैं |</p>
 					</div>
 					<span class="italic libre-baskerville primary-color">Types of Income</span>
 					<!-- List Start -->
@@ -332,7 +360,7 @@
 				<p>A great business opportunity to fulfil your dreams.</p>	
 			</div>
 			<div class="col-md-2 col-sm-2 col-12 right-holder center-holder-xs">
-				<a href="<?php echo base_url();?>assets/img/adlplan.pdf" class="button-md primary-button">Download</a>
+				<a href="<?php echo base_url();?>assets/img/pp.pdf" class="button-md primary-button">Download</a>
 			</div>
 		</div>
 	</div>

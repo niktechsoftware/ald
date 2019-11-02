@@ -8,7 +8,7 @@
                   <div class="card-icon card-icon-large"><i class="fa fa-award"></i></div>
                   <a href="<?php echo base_url();?>index.php/customer/customer_list/1">
                   <div class="card-content text-white">
-                    <h4 class="card-title">Customer Active List</h4>
+                    <h4 class="card-title">Active List</h4>
                     <span>
                     <?php 
                       $status=1;
@@ -36,7 +36,7 @@
                   <div class="card-icon card-icon-large"><i class="fa fa-briefcase"></i></div>
                   <a href="<?php echo base_url();?>index.php/customer/customer_list/2">
                   <div class="card-content text-white">
-                    <h4 class="card-title">Customer InActive List</h4>
+                    <h4 class="card-title"> InActive List</h4>
                     <span> <?php 
                       $status=0;
                       $matchcon="status";
@@ -62,7 +62,7 @@
                   <div class="card-icon card-icon-large"><i class="fa fa-globe"></i></div>
                   <a href="<?php echo base_url();?>index.php/customer/customer_list/3">
                   <div class="card-content text-white">
-                    <h4 class="card-title">Customer Paid InActive List</h4>
+                    <h4 class="card-title"> Paid InActive List</h4>
                     <span><?php 
                       $status=2;
                       $matchcon="status";
@@ -73,7 +73,7 @@
                     
                     ?></span>
                     <div class="progress mt-1 mb-1" data-height="8">
-                      <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25"
+                      <div class="progress-bar 0-bg-cyan" role="progressbar" data-width="25%" aria-valuenow="25"
                         aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                    
@@ -99,7 +99,7 @@
                     </div>
                     <div class="row">
                     <div class="col-md-6">
-                    <span>Rs.
+                    <span>
                     <?php 
                    $this->db->select_sum("amount");
                    $this->db->where("debit_credit",1);
@@ -116,7 +116,7 @@
                     </span>
                     </div>
                     <div class="col-md-6">
-                    <span>Rs.
+                    <span>
                     <?php 
                    $this->db->select_sum("amount");
                    $this->db->where("debit_credit",0);
@@ -161,7 +161,7 @@
                     </div>
                     <div class="row">
                     <div class="col-md-6">
-                    <span>Rs.
+                    <span>
                     <?php 
                    $this->db->select_sum("amount");
                 
@@ -178,7 +178,7 @@
                     </span>
                     </div>
                     <div class="col-md-6">
-                    <span>Rs.
+                    <span>
                     <?php 
                    $this->db->select_sum("amount");
                   

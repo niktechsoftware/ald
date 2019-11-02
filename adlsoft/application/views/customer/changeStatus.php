@@ -10,7 +10,7 @@
 						</div>
 							
 							<div class="card-body">
-								<div class="alert alert-info">Note : - Now Pay 1449/- Rupees for activation ON bellow given Accoutn Details ditails.
+								<div class="alert alert-info">Note : - Now Pay 1499/- Rupees for activation ON bellow given Accoutn Details ditails.
 								<br> Account Number	:  5987101000311
 								<br> Account Name 	:  Sabare Alam
 								<br> IFSC CODE		:  CNRB0005987

@@ -20,7 +20,19 @@
                               #
                             </th>
                             <th>Customer ID</th>
-                            <th>Amount</th>
+                           
+                            <?php 
+                          
+                              if($gdetails->num_rows()>0){
+                                 if (($gdetails->row()->transaction_type==1)){ ?>
+                                     <th>Binary Income</th>
+                                     <th>Upgade Income</th>
+                                      <th>Total Income</th>
+                          <?php       
+                              }else{
+                            ?>
+                             <th>Amount</th>
+                            <?php } }?>
                             <th>Type</th>
                             <th>Invoice No</th>
                             <th>Date</th>
@@ -34,28 +46,78 @@
                         if($gdetails->num_rows()>0){
                           $i=1;
                         foreach($gdetails->result() as $data):
-                         $id= $data->paid_from;
-                        
-                          $custnm= $this->cmodel->getCrecord($data->paid_from);
+                         $id= $data->paid_to;
+                       
+                        $sumamt= $this->cmodel->getsumamount($data->paid_to,$data->transaction_type);
+                        //  $one= $this->cmodel->getsumamount($data->paid_to,1);
+                        //   $five= $this->cmodel->getsumamount($data->paid_to,5);
+                        //   echo $one;
+                        //   echo $five;
+                        //   exit();
+                    //   echo $sumamt->row()->amount;
+                    //   exit;
+                          $custnm= $this->cmodel->getCrecord($data->paid_to)->row();
+                          $this->db->where("id",$data->transaction_type);
+                         $ttype= $this->db->get("transaction_type");
                           
                         ?>
                           <tr>
                             <td><?php echo $i;?></td>
-                            <td class="align-middle"><?php  echo $data->paid_to; ?></td>
+                            <td class="align-middle"><?php  echo $custnm->customer_name ."[".$custnm->username ."]"; ?></td>
                             
-                            <td><?php echo $data->amount;?></td>
-                            <td><?php echo $data->transaction_type;?></td>
+                            <td><?php echo $data->amount;
+                            if($data->transaction_type==1){
+                               
+                                 
+                                $this->db->where("invoice_no",$data->invoice_no);
+                                $this->db->where("transaction_type",1);
+                                $this->db->where("paid_to",$data->paid_to);
+                                $bindt2=$this->db->get("inner_daybook");
+                                if($bindt2->num_rows()>0){
+                                 $onetype=  $bindt2->row()->amount; 
+                               
+                                 }
+                                 else{ $onetype= "0.00"; 
+                                       
+                                 }
+                                
+                                 
+                            
+                            ?></td>
+                            <td> <?php  $this->db->where("invoice_no",$data->invoice_no);
+                                 $this->db->where("transaction_type",5);
+                                $this->db->where("paid_to",$data->paid_to);
+                                $bindt=$this->db->get("inner_daybook");
+                                if($bindt->num_rows()>0){
+                               
+                               $fivetype=  $bindt->row()->amount; 
+                               echo $fivetype;
+                                    
+                                }
+                                 else{
+                                 $fivetype="0.00";
+                                  echo $fivetype; }
+                                  ?></td>
+                            <td> <?php 
+                             $total=$onetype +$fivetype;
+                                 echo $total;
+                            ?> 
+                           <?php } ?></td>
+                            <td><?php if($ttype->num_rows()>0){echo $ttype->row()->name; } else{ echo "N/A"; }?></td>
                             <td><?php echo $data->invoice_no;?></td>
                             <td><?php echo $data->date1;?></td>
                            
                           </tr>
                           
                           <?php //} 
-                          $i++; endforeach; } else{
-                            echo "data not found";
-                          } ?>
+                          $i++; endforeach; ?>
                         </tbody>
-                        
+                   
+                        <?php 
+                         } else{
+                            echo "data not found";
+                          }
+                        ?>
                       </table>
                     </div>
                   </div>
