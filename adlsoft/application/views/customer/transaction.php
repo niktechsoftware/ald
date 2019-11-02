@@ -48,7 +48,9 @@
                         foreach($gdetails->result() as $data):
                          $id= $data->paid_to;
                        
-                        $sumamt= $this->cmodel->getsumamount($data->paid_to,$data->transaction_type);
+                      //  $sumamt= $this->cmodel->getsumamount($data->paid_to,$data->transaction_type);
+                       // echo $sumamt;
+                        //exit;
                         //  $one= $this->cmodel->getsumamount($data->paid_to,1);
                         //   $five= $this->cmodel->getsumamount($data->paid_to,5);
                         //   echo $one;

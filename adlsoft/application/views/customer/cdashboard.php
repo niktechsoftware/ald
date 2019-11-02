@@ -136,12 +136,14 @@
                     <span>
                         <?php 
                         $this->db->select_sum("amount");
+                         $this->db->where("paid_to",$this->session->userdata("customer_id"));
+                  
                         $this->db->where("transaction_type",7);
                        $dt= $this->db->get("inner_daybook");
                    if($dt->row()->amount>0){
                    $dm = $dt->row()->amount;  echo   $dt->row()->amount;
                        }
-                       else{ echo "0.00"; }
+                       else{ echo "0.00"; $dm =0; }
                        $total=$total+ $dm;
                         ?>
                     </span>
@@ -165,12 +167,13 @@
                     <h4 class="card-title"> Matching Bonus </h4>
                     <span>   <?php 
                         $this->db->select_sum("amount");
+                         $this->db->where("paid_to",$this->session->userdata("customer_id"));
                         $this->db->where("transaction_type",1);
                        $dt= $this->db->get("inner_daybook");
                     if($dt->row()->amount>0){
                     $mb =  $dt->row()->amount; echo   $dt->row()->amount;
                        }
-                       else{ echo "0.00"; }    
+                       else{ echo "0.00"; $mb =0; }    
                        $total=$total+$mb;?></span>
                     <div class="progress mt-1 mb-1" data-height="8">
                       <div class="progress-bar l-bg-orange" role="progressbar" data-width="25%" aria-valuenow="25"
@@ -192,6 +195,7 @@
                     <h4 class="card-title"> Auto Pool Income </h4>
                     <span>   <?php 
                         $this->db->select_sum("amount");
+                          $this->db->where("paid_to",$this->session->userdata("customer_id"));
                         $this->db->where("transaction_type",2);
                        $dt= $this->db->get("inner_daybook");
                     if($dt->row()->amount>0){
@@ -219,6 +223,7 @@
                     <h4 class="card-title"> ROI Income  </h4>
                     <span>   <?php 
                         $this->db->select_sum("amount");
+                          $this->db->where("paid_to",$this->session->userdata("customer_id"));
                         $this->db->where("transaction_type",3);
                        $dt= $this->db->get("inner_daybook");
                      if($dt->row()->amount>0){
@@ -248,11 +253,13 @@
                     <h4 class="card-title"> Pair Capping </h4>
                     <span>   <?php 
                         $this->db->select_sum("amount");
-                        $this->db->where("transaction_type",4);
+                        $this->db->where("transaction_type",8);
+                          $this->db->where("paid_to",$this->session->userdata("customer_id"));
                        $dt= $this->db->get("inner_daybook");
                     if($dt->row()->amount>0){
                            
-                     $total= $total+$dt->row()->amount; echo   $dt->row()->amount;
+                     echo   $dt->row()->amount;
+                     $pca=$dt->row()->amount;
                        }
                        else{ echo "0.00"; }
                         ?></span>
@@ -262,7 +269,7 @@
                     </div>
                     <p class="mb-0 text-sm">
                       <span class="mr-2"><i class="fa fa-arrow-up"></i></span>
-                      <span class="text-nowrap">Pair</span>
+                      <span class="text-nowrap"> Pair</span>
                     </p>
                   </div>
                 </div>

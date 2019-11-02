@@ -8,7 +8,9 @@
 	    
 		<!-- Slide 1 Start -->
 		
-		<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner11.jpg); background-size:cover; ">
+		<!--<div class="swiper-slide" style="margin-top:10%; background-image:url(<?php echo base_url();?>assets/img/banner11.jpg); background-size:cover; ">-->
+		    <div class="swiper-slide" >
+		        <img src="<?php echo base_url();?>assets/img/banner11.jpg" style="width:100%; height:90%;">
 			<div class="container">
                 <div class="slider-content center-holder">
                 	<h3 class="extra-light animated fadeInDown"></h3>
@@ -26,7 +28,9 @@
 		
 		<!-- Slide 2 Start -->	
 		
-		<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner12.jpg); background-size:cover; ">
+		<!--<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner12.jpg); background-size:cover; ">-->
+		<div class="swiper-slide" >
+		        <img src="<?php echo base_url();?>assets/img/banner12.jpg" style="width:100%; height:90%;">
 			<div class="container">
                 <div class="slider-content center-holder">
                 	<h3 class="extra-light animated fadeInDown"></h3>
@@ -44,7 +48,9 @@
 			
 			<!-- Slide 3 Start -->
 			
-		<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner13.jpg); background-size:cover; ">
+		<!--<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner13.jpg); background-size:cover; ">-->
+		<div class="swiper-slide" >
+		        <img src="<?php echo base_url();?>assets/img/banner13.jpg" style="width:100%; height:90%;">
 			<div class="container">
                 <div class="slider-content center-holder">
                 	<h3 class="extra-light animated fadeInDown"></h3>
@@ -61,7 +67,9 @@
 			
 			<!-- Slide 4 Start -->
 			
-			<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner14.jpg); background-size:cover;">
+			<!--<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner14.jpg); background-size:cover;">-->
+			<div class="swiper-slide" >
+		        <img src="<?php echo base_url();?>assets/img/banner14.jpg" style="width:100%; height:90%;">
 			<div class="container">
          <div class="slider-content center-holder">
                 	<h3 class="extra-light animated fadeInDown"></h3>

@@ -25,7 +25,7 @@
                                           <tr>
                                      <td>Direct Income</td>
                                      <?php if($dirw->num_rows()>0){?>
-                                      <td><?php echo $dirw->row()->pair*2; ?></td> 
+                                      <td><?php echo $dirw->row()->pair; ?></td> 
                                        <td><?php echo $dirw->row()->amount; ?></td> 
                                        <?php }else{?>
                                       <td>0</td> 

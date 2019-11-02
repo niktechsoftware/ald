@@ -15,7 +15,9 @@
               <?php }?>
             </div>
             <div class="sidebar-user-details">
-              <div class="user-name"><?php echo $this->session->userdata("name");?></div>
+              <div class="user-name">
+                  <?php echo $this->session->userdata("name");?>
+                 [ <?php echo $this->session->userdata("customer_username");?>]</div>
               <div class="user-role"><?php if($this->session->userdata("login_type")==1){echo "Administrator";}else{echo "Customer";}?></div>
             </div>
           </div>
