@@ -164,7 +164,7 @@
                     <span>Rs.
                     <?php 
                    $this->db->select_sum("amount");
-                   $this->db->where("debit_credit",1);
+                
                    $daybook=$this->db->get("inner_daybook");
                    if($daybook->num_rows()>0){
                      $dt=$daybook->row();
@@ -181,7 +181,7 @@
                     <span>Rs.
                     <?php 
                    $this->db->select_sum("amount");
-                   $this->db->where("debit_credit",0);
+                  
                    $daybook=$this->db->get("inner_daybook");
                    if($daybook->num_rows()>0){
                      $dt=$daybook->row();

@@ -21,6 +21,26 @@ class pin extends CI_Controller{
 		}
 	}
 	
+		function new_req_pin(){
+		$this->load->library("form_validation");
+    	$data['pageTitle'] = 'PIN Panel';
+    	$data['smallTitle'] = 'PIN Management ';
+    	$data['mainPage'] = 'PIN Panel';
+    	$data['subPage'] = 'PIN Panel';
+    	$data['title'] = 'ALD PIN Panel';
+     $data['headerCss'] = 'headerCss/customerlistcss';
+     $data['footerJs'] = 'footerJs/customerJs';
+     $data['mainContent'] = 'pin/new_req_pin';
+     $this->load->view("includes/mainContent", $data);
+	}
+		function generatePin1(){
+	$parentID= $this->input->post('parent_id');
+		$getvalue = $this->cmodel->checkStatus_pin("customer_info",$parentID)->row()->id;
+		//print_r($getvalue);
+	redirect("pin/generatePin/$getvalue");
+		
+	}
+	
 	function generatePin(){
 		if($this->uri->segment("3")){
     		$id = $this->uri->segment("3");
@@ -102,6 +122,7 @@ class pin extends CI_Controller{
 		
 		$dt = $this->cmodel->activestatus($custid,$mpin,$tblnm);
 		if($dt){
+		    
 			echo "Activated" ;
 		}
 	}

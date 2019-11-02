@@ -63,12 +63,12 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-sm-6 col-12">
-					<h5>ADLGM Group © 2019. All Rights Reserved.</h5>
+					<h5>ADLGM Group © 2019. All Copy Rights Reserved.</h5>
 				</div>
 
 				<div class="col-md-6 col-sm-6 col-12">
 					<ul class="footer-style-1-bar-links">
-						<li><a href="http://schoolerp-niktech.in/" target="_blank">Developed By : niktechsoftwaresoluions</a></li>
+						<li><a href="http://schoolerp-niktech.in/" target="_blank">Developed By : Niktech Software Solutions</a></li>
 						
 					</ul>
 				</div>

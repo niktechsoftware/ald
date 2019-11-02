@@ -4,7 +4,7 @@
 		<div class="grid-gallery-4col gallery-style-1 clearfix">
 		<h3>Legal Documents</h3>
 			<div class="gallery-item">
-				<img src="<?php echo base_url();?>assets/img/cert1.jpg" title="image" alt="img">
+				<img src="<?php echo base_url();?>assets/img/img1.jpg" title="image" alt="img">
 				Incorporation Certificate
 				<div class="gallery-overlay">
 					<div class="gallery-content">
@@ -21,12 +21,12 @@
 				</div>	
 			</div>				
 			<div class="gallery-item">
-				<img src="<?php echo base_url();?>assets/img/gst.jpg" title="image" alt="img">
+				<img src="<?php echo base_url();?>assets/img/img1.jpg" title="image" alt="img">
 				GST Registration
 				<div class="gallery-overlay">
 					<div class="gallery-content">
 						<div class="gallery-content-inner">
-							<a class="image-popup-gallery" href="<?php echo base_url();?>assets/img/gst.jpg">
+							<a class="image-popup-gallery" href="<?php echo base_url();?>assets/img/img1.jpg">
 								<i class="ti-zoom-in"></i>
 							</a>
 							<a href="#">
@@ -40,12 +40,12 @@
 
 							
 			<div class="gallery-item">
-				<img src="<?php echo base_url();?>assets/img/pancard.jpg" title="image" alt="img">
+				<img src="<?php echo base_url();?>assets/img/img1.jpg" title="image" alt="img">
 				PAN Card
 				<div class="gallery-overlay">
 					<div class="gallery-content">
 						<div class="gallery-content-inner">
-							<a class="image-popup-gallery" href="<?php echo base_url();?>assets/img/pancard.jpg">
+							<a class="image-popup-gallery" href="<?php echo base_url();?>assets/img/img1.jpg">
 								<i class="ti-zoom-in"></i>
 							</a>
 							<a href="#">

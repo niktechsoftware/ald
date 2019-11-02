@@ -35,6 +35,10 @@
         	 
         	  $this->db->where("mpin",$mpin);
         	  $this->db->update("mpin",$data);
+        	  $mobile = $checksv->row()->mobilenumber;
+        	  $cname =$checksv->row()->customer_name;
+        	  $sms = "Dear Customer ".$cname."Your ID is Successfully Activated.Welcome to ADLGM Sales Pvt.Ltd.";
+        	  sms($mobile,$sms);
         	  return true;
         	}else{
         		echo " Customer ID Error";
@@ -60,6 +64,12 @@
         		"checkv"=>false		
         		);
         			}
+        			return $data;	
+        }
+        function checkStatus_pin($table,$user){
+        	$this->db->where('username',$user);
+        	$data=$this->db->get($table);
+        
         			return $data;	
         }
         
@@ -141,7 +151,7 @@
 		 
 		 function getCrown($cid){
 		 	$this->db->where("c_id",$cid);
-		 	return $this->db->get("crown_balance");
+		 	return $this->db->get("crown_mbalance");
 		 }
 		//aarju mathods
     }

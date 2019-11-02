@@ -66,7 +66,7 @@
 																	
 																	if($root->left):
 																		$leftRootData = $this->db->query("SELECT * FROM customer_info WHERE id=".$root->left." LIMIT 1;")->row();
-																		//$leftRootTree = $this->db->query("SELECT * FROM silver_tree WHERE root=".$root->left." LIMIT 1;")->row();
+																		$leftRootTree = $this->db->query("SELECT * FROM silver_tree WHERE c_id=".$root->left." LIMIT 1;")->row();
 																		$leftRootImg = $leftRootData && $leftRootData->status == 1 ? $leftRootImg : 'deactivated.png';
 																		if($leftRootData)
 																			echo '<span>' . $leftRootData->customer_name . '('.$leftRootData->username.')</span>';
@@ -89,9 +89,10 @@
 																	$rightRootImg = $root->right ? 'activated.png' : 'disabled.png';
 																	$customerID = $root->right ? $root->right : '';
 																	$rightRootData = null;
+																		$rightRootTree = null;
 																	if($root->right):
 																		$rightRootData = $this->db->query("SELECT * FROM customer_info WHERE id=".$root->right." LIMIT 1;")->row();
-																		//$rightRootTree = $this->db->query("SELECT * FROM silver_tree WHERE root=".$root->right." LIMIT 1;")->row();
+																		$rightRootTree = $this->db->query("SELECT * FROM silver_tree WHERE c_id=".$root->right." LIMIT 1;")->row();
 																		$rightRootImg = $rightRootData && $rightRootData->status == 1 ? $rightRootImg : 'deactivated.png';
 																		if($rightRootData)
 																			echo '<span>' . $rightRootData->customer_name . '('.$rightRootData->username.')</span>';
@@ -132,7 +133,7 @@
 																		$customerID = $leftRootTree->left ? $leftRootTree->left : '';
 																		if($leftRootTree->left):
 																			$leftRootData1 = $this->db->query("SELECT * FROM customer_info WHERE id=".$leftRootTree->left." LIMIT 1;")->row();
-																			//$leftRootTree1 = $this->db->query("SELECT * FROM silver_tree WHERE root=".$leftRootTree->left." LIMIT 1;")->row();
+																			$leftRootTree1 = $this->db->query("SELECT * FROM silver_tree WHERE c_id=".$leftRootTree->left." LIMIT 1;")->row();
 																			$leftRootImg = $leftRootData1 && $leftRootData1->status == 1 ? $leftRootImg : 'deactivated.png';
 																			if($leftRootData1)
 																				echo '<span>' . $leftRootData1->customer_name . '('.$leftRootData1->username.')</span>';
@@ -161,7 +162,7 @@
 																		$customerID = $leftRootTree->right ? $leftRootTree->right : '';
 																		if($leftRootTree->right):
 																			$rightRootData1 = $this->db->query("SELECT * FROM customer_info WHERE id=".$leftRootTree->right." LIMIT 1;")->row();
-																			//$rightRootTree1 = $this->db->query("SELECT * FROM silver_tree WHERE root=".$leftRootTree->right." LIMIT 1;")->row();
+																			$rightRootTree1 = $this->db->query("SELECT * FROM silver_tree WHERE c_id=".$leftRootTree->right." LIMIT 1;")->row();
 																			$rightRootImg = $rightRootData1 && $rightRootData1->status == 1 ? $rightRootImg : 'deactivated.png';
 																			if($rightRootData1)
 																				echo '<span>' . $rightRootData1->customer_name . '('.$rightRootData1->username.')</span>';
@@ -191,7 +192,7 @@
 																		$customerID = $rightRootTree->left ? $rightRootTree->left : '';
 																		if($rightRootTree->left):
 																			$leftRootData2 = $this->db->query("SELECT * FROM customer_info WHERE id=".$rightRootTree->left." LIMIT 1;")->row();
-																			//$leftRootTree2 = $this->db->query("SELECT * FROM silver_tree WHERE root=".$rightRootTree->left." LIMIT 1;")->row();
+																			$leftRootTree2 = $this->db->query("SELECT * FROM silver_tree WHERE c_id=".$rightRootTree->left." LIMIT 1;")->row();
 																			$leftRootImg = $leftRootData2 && $leftRootData2->status == 1 ? $leftRootImg : 'deactivated.png';
 																			if($leftRootData2)
 																				echo '<span>' . $leftRootData2->customer_name . '('.$leftRootData2->username.')</span>';
@@ -220,7 +221,7 @@
 																		$customerID = $rightRootTree->right ? $rightRootTree->right : '';
 																		if($rightRootTree->right):
 																			$rightRootData2 = $this->db->query("SELECT * FROM customer_info WHERE id=".$rightRootTree->right." LIMIT 1;")->row();
-																			//$rightRootTree2 = $this->db->query("SELECT * FROM silver_tree WHERE root=".$rightRootTree->right." LIMIT 1;")->row();
+																			$rightRootTree2 = $this->db->query("SELECT * FROM silver_tree WHERE c_id=".$rightRootTree->right." LIMIT 1;")->row();
 																			$rightRootImg = $rightRootData2 && $rightRootData2->status == 1 ? $rightRootImg : 'deactivated.png';
 																			if($rightRootData2)
 																				echo '<span>' . $rightRootData2->customer_name . '('.$rightRootData2->username.')</span>';
@@ -266,7 +267,7 @@
 																		$customerID = $leftRootTree1->left ? $leftRootTree1->left : '';
 																		if($leftRootTree1->left):
 																			$leftRootData3 = $this->db->query("SELECT * FROM customer_info WHERE id=".$leftRootTree1->left." LIMIT 1;")->row();
-																			//$leftRootTree3 = $this->db->query("SELECT * FROM silver_tree WHERE root=".$leftRootTree1->left." LIMIT 1;")->row();
+																			$leftRootTree3 = $this->db->query("SELECT * FROM silver_tree WHERE c_id=".$leftRootTree1->left." LIMIT 1;")->row();
 																			$leftRootImg = $leftRootData3 && $leftRootData3->status == 1 ? $leftRootImg : 'deactivated.png';
 																			if($leftRootData3)
 																				echo '<span>' . $leftRootData3->customer_name . '('.$leftRootData3->username.')</span>';
@@ -327,7 +328,7 @@
 																		$customerID = $rightRootTree1->left ? $rightRootTree1->left : '';
 																		if($rightRootTree1->left):
 																			$leftRootData4 = $this->db->query("SELECT * FROM customer_info WHERE id=".$rightRootTree1->left." LIMIT 1;")->row();
-																			//$leftRootTree4 = $this->db->query("SELECT * FROM silver_tree WHERE root=".$rightRootTree1->left." LIMIT 1;")->row();
+																			$leftRootTree4 = $this->db->query("SELECT * FROM silver_tree WHERE c_id=".$rightRootTree1->left." LIMIT 1;")->row();
 																			$leftRootImg = $leftRootData4 && $leftRootData4->status == 1 ? $leftRootImg : 'deactivated.png';
 																			if($leftRootData4)
 																				echo '<span>' . $leftRootData4->customer_name . '('.$leftRootData4->username.')</span>';
@@ -357,7 +358,7 @@
 																		$customerID = $rightRootTree1->right ? $rightRootTree1->right : '';
 																		if($rightRootTree1->right):
 																			$rightRootData4 = $this->db->query("SELECT * FROM customer_info WHERE id=".$rightRootTree1->right." LIMIT 1;")->row();
-																			//$leftRootTree3 = $this->db->query("SELECT * FROM silver_tree WHERE root=".$rightRootTree1->right." LIMIT 1;")->row();
+																			$leftRootTree3 = $this->db->query("SELECT * FROM silver_tree WHERE c_id=".$rightRootTree1->right." LIMIT 1;")->row();
 																			$rightRootImg = $rightRootData4 && $rightRootData4->status == 1 ? $rightRootImg : 'deactivated.png';
 																			if($rightRootData4)
 																				echo '<span>' . $rightRootData4->customer_name . '('.$rightRootData4->username.')</span>';

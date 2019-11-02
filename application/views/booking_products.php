@@ -112,58 +112,8 @@
         <div class="col-md-8 col-sm-12">
           <div class="row">
             <div class="col-sm-12">
-           <!--  <div class="filter-area">
-                <select>
-                  <option>short by</option>
-                  <option>Laptop</option>
-                  <option>Ram</option>
-                  <option>cpu</option>
-                </select>
-                <div class="list-grid">
-                  <ul class="nav nav-tabs list-inline" role="tablist">
-                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-th"></i></a></li>
-                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-list"></i></a></li>
-                  </ul>
-                </div>
-                <div class="showpro">
-                  <p><span>Showing 1-9</span> of 256 Results</p>
-                </div>
-              </div>-->
+     
             </div>
-        
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 			
 			 <div class="col-sm-12 " >
               <div class="tab-content">
@@ -212,7 +162,7 @@
 								<ul class="clearfix">
 									<li><a href="#"><span class="fa fa-angle-left"></span> </a></li>
 									<li><a href="#home<?php echo $i;?>"><?php echo $j;?></a></li>
-									<li class="active"><a href="#home<?php echo $i+15;?><?php echo $j+1;?></a></li>
+									<li class="active"><a href="#home<?php echo $i+15;?>"></a><?php echo $j+1;?></a></li>
 									<li><a href="#home<?php echo $i+30;?>"><?php echo $j+2;?></a></li>
 									<li><a href="#"><span class="fa fa-angle-right"></span> </a></li>
 								</ul>
@@ -227,26 +177,6 @@
             </div>
           </div>
 
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 			
 		<!--		<div class="team-member">
 					<div class="team-member-image">
@@ -356,5 +286,5 @@
 
 
 </div>
-
-<?php echo $this->load->view("footer"); ?>
+</div>
+<?php  $this->load->view("footer"); ?>

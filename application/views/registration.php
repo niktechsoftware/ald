@@ -21,7 +21,7 @@
 				<div class="col-xs-12 col-md-12 col-lg-12">
 					<div class="card">
 						<div class="card-header">
-							<h4>Customer Registeration Form</h4>
+							<h4>Customer Registration Form</h4>
 
 						</div>
 						<form method="post"
@@ -371,7 +371,7 @@
 															<div class="form-check">
 																<input class="form-check-input" type="checkbox"
 																	id="gridCheck" required="required" name="gridCheck"> <label
-																	class="form-check-label" for="gridCheck"> <a href="#">i
+																	class="form-check-label" for="gridCheck"> <a href="#">I
 																		Accept Term And Condition.</a>
 																</label>
 															</div>
