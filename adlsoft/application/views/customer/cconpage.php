@@ -40,6 +40,7 @@
 											</label>
 											<div class="col-sm-9">
 											<?php 	$parant=$this->cmodel->getCrecord($c_ro->parent_id)->row();
+										
 											echo $parant->customer_name."[".$parant->username."]";
 											
 											?>

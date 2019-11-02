@@ -1,8 +1,10 @@
 <!-- Main Content -->
       <div class="main-content">
         <section class="section">
-          <div class="section-body">
-            <div class="row mt-sm-12">
+        <div class="section-body">
+          
+
+		  <div class="row mt-sm-12">
               <div class="col-12 col-md-12 col-lg-12">
                 <div class="card author-box">
                   <div class="card-body">
@@ -10,15 +12,15 @@
 					
 					
 					
-					 <form action="<?php echo base_url(); ?>index.php/dashboard/binarySubGroup" method="post">
+					 <form action="<?php echo base_url(); ?>index.php/clogin/binarySubGroup" method="post">
 	                        <div class="row">
 		                            <div class="col-4 page-title">
-		                                <!--<div style="font-size:35px;"><?php echo $this->session->userdata("name"); ?>'s <h2 class="btn bg-danger text-white">Binary Group</h2> </div>-->
+		                                <!--<div style="font-size:35px;"><?php echo $data->customer_name."[".$data->username."]"; ?>'s <h2 class="btn bg-danger text-white">Binary Group</h2> </div>-->
 		                                 <h6 class="btn bg-danger text-white">Binary Group (Tree)</h6>
 		                            </div>
 									<div class="col-2 text-right"><input type="text" class="form-control" name="customer_id" required="required" title="Only accept numbers."></div>
 									<div class="col-3"><input type="submit" class="btn btn-danger" value="Get Tree" /></div>
-									<div class="col-3"><a href="<?= base_url() ?>index.php/dashboard/binaryGroup" class="btn btn-danger">Root</a></div>
+									<div class="col-3"><a href="<?= base_url() ?>index.php/clogin/tree" class="btn btn-danger">Root</a></div>
 	                        </div>
 	                        <?php
 	                        	if($this->session->flashdata('error'))
@@ -29,8 +31,8 @@
 								<table width="100%">
 													<tr>
 														<td style="border: none;" align="center" colspan="8">
-															<div class="customerHead"><?php $data=$crecord->row();?>
-																<?=  $this->session->userdata("name"); ?> <br/>
+															<div class="customerHead"><?php  $data=$crecord->row();?>
+																<?php  echo $data->customer_name."[".$data->username."]"; ?> <br/>
 																<?php
 																	/**
 																	 * Getting the tree data of root node.
@@ -74,8 +76,9 @@
 																?>
 															</div>
 															<div class="customerHead">
-																<img src="<?= base_url(); ?>assets/images/tree/<?= $leftRootImg; ?>" data-id="<?= $customerID ?>" class="profileImg" width="60" >
-
+															<a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
+															<img src="<?= base_url(); ?>assets/images/tree/<?= $leftRootImg; ?>" data-id="<?= $customerID ?>" class="profileImg" width="60" >
+																</a>
 																<?php if($root->left && $leftRootData): ?>
 																	<span class="customerLeft">
 																		<?php //echo generateCustomerInfo($root->left, $leftRootData) ?>
@@ -100,9 +103,9 @@
 																?>
 															</div>
 															
-															<div class="customerHead">
+															<div class="customerHead"><a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $rightRootImg; ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">																		
-
+</a>
 																<?php if($root->right && $rightRootData): ?>
 																	<span class="customerRight">
 																		<?php //echo generateCustomerInfo($root->right, $rightRootData) ?>
@@ -141,9 +144,9 @@
 																	endif;
 																?>
 															</div>
-															<div class="customerHead">
+															<div class="customerHead"><a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $leftRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
-																<?php if($root->left && $leftRootTree && $leftRootTree->left && $leftRootData1): ?>
+																</a><?php if($root->left && $leftRootTree && $leftRootTree->left && $leftRootData1): ?>
 																	<span class="customerLeft">
 																		<?php //echo generateCustomerInfo($root->right, $rightRootData) ?>
 																	</span>
@@ -170,9 +173,9 @@
 																	endif;
 																?>
 															</div>
-															<div class="customerHead">
+															<div class="customerHead"><a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $rightRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
-																<?php if($root->left && $leftRootTree && $leftRootTree->right && $rightRootData1): ?>
+																</a><?php if($root->left && $leftRootTree && $leftRootTree->right && $rightRootData1): ?>
 																	<span class="customerLeft">
 																		<?php //echo generateCustomerInfo($leftRootTree->right, $rightRootData1) ?>
 																	</span>
@@ -200,8 +203,8 @@
 																	endif;
 																?>
 															</div>
-															<div class="customerHead">
-																<img src="<?= base_url(); ?>assets/images/tree/<?= $leftRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
+															<div class="customerHead"><a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
+															</a>	<img src="<?= base_url(); ?>assets/images/tree/<?= $leftRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
 																<?php if($root->right && $leftRootTree && $leftRootTree->left && $leftRootData2): ?>
 																	<span class="customerRight">
 																		<?php echo generateCustomerInfo($rightRootTree->left, $leftRootData2) ?>
@@ -229,8 +232,8 @@
 																	endif;
 																?>
 															</div>
-															<div class="customerHead">
-																<img src="<?= base_url(); ?>assets/images/tree/<?= $rightRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
+															<div class="customerHead"><a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
+															</a>	<img src="<?= base_url(); ?>assets/images/tree/<?= $rightRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
 																<?php if($root->right && $rightRootTree && $rightRootTree->left && $rightRootData2): ?>
 																	<span class="customerRight">
 																		<?php //echo generateCustomerInfo($rightRootTree->right, $rightRootData2) ?>
@@ -276,9 +279,9 @@
 																?>
 															</div>
 														
-															<div class="customerHead">
+															<div class="customerHead"><a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $leftRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
-																<?php if($root->left && $leftRootTree1 && $leftRootTree1->left && $leftRootData3): ?>
+															</a>	<?php if($root->left && $leftRootTree1 && $leftRootTree1->left && $leftRootData3): ?>
 																	<span class="customerLeft">
 																		<?php //echo generateCustomerInfo($leftRootTree1->left, $leftRootData3) ?>
 																	</span>
@@ -336,9 +339,9 @@
 																	endif;
 																?>
 															</div>
-															<div class="customerHead">
+															<div class="customerHead"><a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $leftRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
-																<?php if($root->left && $rightRootTree1 && $rightRootTree1->left && $leftRootData4): ?>
+																</a><?php if($root->left && $rightRootTree1 && $rightRootTree1->left && $leftRootData4): ?>
 																	<span class="customerLeft">
 																		<?php //echo generateCustomerInfo($rightRootTree1->left, $leftRootData4) ?>
 																	</span>

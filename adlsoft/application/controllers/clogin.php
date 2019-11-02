@@ -45,7 +45,13 @@ class Clogin extends CI_Controller{
 	}
 	public function customer_profile(){
 		$this->load->library("form_validation");
-		$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
+	//	$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
+		if($this->session->userdata("login_type") ==1){	
+		    $id = $this->uri->segment(3);
+		    $data['crecord'] = $this->cmodel->getCrecord($id);
+		}else{	
+		    $data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
+		}
 		$data['pageTitle'] = 'Customer Profile';
 		$data['smallTitle'] = 'Profile form';
 		$data['mainPage'] = 'Customer Profile';
@@ -88,8 +94,10 @@ class Clogin extends CI_Controller{
 			
 			$username="ADL".$maxid;
 			$rjoinerID= $this->input->post('parent_id');
+			 
 			$cid  = $this->cmodel->getrowid($rjoinerID);
 			if($cid){
+			 
 			//$ljoinerID= $this->input->post('lJoinerID');
 			$name= $this->input->post('name');
 			$fname= $this->input->post('fname');
@@ -106,6 +114,7 @@ class Clogin extends CI_Controller{
 			$panno= $this->input->post('panno');
 			$left = $this->tree->selectlegleft($cid);
 			$right = $this->tree->selectlegright($cid);
+
 			if($this->input->post("selectTree")==1){
 			$postition = $left;
 			$po ="left";
@@ -116,6 +125,7 @@ class Clogin extends CI_Controller{
 			$pojiner="rightjoiner";
 			}
 			//echo $rjoinerID;
+		
 			$data= array(
 					'parent_id'=>$postition,
 					'fname'=>$fname,
@@ -346,6 +356,37 @@ class Clogin extends CI_Controller{
 			$data['mainContent'] = 'customer/tree';
 			$this->load->view("includes/mainContent", $data);
 		}
+		public function binarySubGroup() {
+	    if ($this->uri->segment(3)){
+	        $id = $this->uri->segment(3);
+	        $this->db->where("id", $id);
+	    }
+
+	    if ($this->input->server('REQUEST_METHOD') == 'POST'){
+			$id = $this->input->post("customer_id");
+			$this->db->where("username", $id);
+	    }
+
+
+
+		$data1 = $this->db->get("customer_info")->row();
+		if(!$data1){
+			$this->session->set_flashdata('error', 'Wrong userID...');
+			redirect('dashboard/binaryGroup');
+		}
+			$data['crecord'] = $this->cmodel->getCrecord($data1->id);
+			$data['data'] = $data1;
+			$this->load->model("tree");
+			$data['pageTitle'] = 'My Tree';
+			$data['smallTitle'] = 'My Tree';
+			$data['mainPage'] = 'My Tree';
+			$data['subPage'] = 'My Tree';
+			$data['title'] = 'Customer Tree';
+			$data['headerCss'] = 'headerCss/dashboardCss';
+			$data['footerJs'] = 'footerJs/customerJs';
+			$data['mainContent'] = 'customer/tree';
+			$this->load->view("includes/mainContent", $data);
+	}
 		
 		function income(){
 			$incometype = $this->uri->segment("3");
@@ -362,7 +403,7 @@ class Clogin extends CI_Controller{
 				$tranname = "ROI Income";
 				$gdetails = $this->cmodel->getTransaction($cid,$incometype);
 			}
-			if($incometype==4){
+			if($incometype==8){
 				$tranname = "Pair Capping";
 				$gdetails = $this->cmodel->getTransaction($cid,$incometype);
 			}
@@ -374,6 +415,7 @@ class Clogin extends CI_Controller{
 				$tranname = "Direct Income";
 				$gdetails = $this->cmodel->getTransaction($cid,$incometype);
 			}
+			
 			$data['gdetails']=$gdetails;
 			$data['pageTitle'] = $tranname.' Income panel';
 			$data['smallTitle'] = $tranname.' Income panel';
@@ -388,6 +430,8 @@ class Clogin extends CI_Controller{
 		
 		function walletIncome(){
 			$cid = $this->session->userdata("customer_id");
+				$data['dirw'] = $this->cmodel->getDirect($cid);
+				$data['auto'] = $this->cmodel->getAutoPool($cid);
 			$data['sw'] = $this->cmodel->getSilver($cid);
 			$data['gw'] = $this->cmodel->getGold($cid);
 			$data['dw'] = $this->cmodel->getDiamond($cid);

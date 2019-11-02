@@ -55,9 +55,13 @@
                 class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
             <div class="dropdown-menu dropdown-menu-right pullDown">
               <div class="dropdown-title">Hello <?php echo $this->session->userdata("name");?></div>
-              <a href="<?php echo base_url();?>index.php/clogin/customer_profile" class="dropdown-item has-icon"> <i class="far
+               <?php if($this->session->userdata("login_type")==1){ ?>
+               <a href="<?php echo base_url();?>index.php/adminController/admin_profile" class="dropdown-item has-icon"> <i class="far
 										fa-user"></i> Profile
-              </a>  <a href="#" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>
+              </a> <?php }else{ ?><a href="<?php echo base_url();?>index.php/clogin/customer_profile" class="dropdown-item has-icon"> <i class="far
+										fa-user"></i> Profile
+              </a><?php }?>
+              <a href="#" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>
                 Settings
               </a>
               <div class="dropdown-divider"></div>

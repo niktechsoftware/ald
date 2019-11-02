@@ -105,7 +105,7 @@
 	<nav id="navigation4" class="container navigation">
 		<div class="nav-header">
 			<a class="nav-brand" href="Default.html">
-				<img src="<?php echo base_url();?>assets/img/logos/logo.jpg" alt="logo" id="main_logo">
+				<img src="<?php echo base_url();?>assets/img/logos/adl1.jpg" alt="logo" id="main_logo" width="100">
 			</a>
 			<div class="nav-toggle"></div>
 		</div>
@@ -131,6 +131,7 @@
 				<li><a href="#">About Us</a>
 					<ul class="nav-dropdown">
 						<li><a href="<?php echo base_url();?>index.php/welcome/read">About Us</a></li>
+						<li><a href="<?php echo base_url();?>index.php/welcome/cmd_view">CMD View</a></li>
 						<li><a href="<?php echo base_url();?>index.php/welcome/legal">Legal</a></li>
 						<li><a href="<?php echo base_url();?>index.php/welcome/bankdetails">Bank Details</a></li>
 						
@@ -143,7 +144,7 @@
 						<li><a href="<?php echo base_url();?>index.php/welcome/">Re-Purchase Products</a></li>
 					</ul>-->
 				</li>
-				<li><a href="<?php echo base_url();?>assets/img/adlplan.pdf">Income Plan</a></li>
+				<li><a href="<?php echo base_url();?>assets/img/pp.pdf">Income Plan</a></li>
 				<li><a href="<?php echo base_url();?>index.php/welcome/our_plan">Our Plans</a></li>
 				<li><a href="<?php echo base_url();?>index.php/welcome/registration">Registration</a></li>
 				<li><a href="<?php echo base_url();?>adlsoft/" target="_blank">Login</a></li>

@@ -13,17 +13,25 @@ class cronjobc extends CI_Controller{
     	$righttotal=0;
     	$table="silver_tree";
     	$posl="leftjoiner";
-    	$leftjoin = $this->tree->mydownline($cid,$posl,$table,1)->num_rows();
+    	//$this->db->where("leftjoiner",$cid);
+        //$directleft=	$this->db->get("silver_tree");
+        	$directleft= $this->db->query("select c_id from silver_tree join customer_info where customer_info.status=1 and silver_tree.leftjoiner='$cid' AND customer_info.id=silver_tree.c_id");
+	
+    	$leftjoin = $directleft->num_rows();
     	$posr="rightjoiner";
     	echo $leftjoin."left";
-    	$rightjoin = $this->tree->mydownline($cid,$posr,$table,1)->num_rows();
+    //	$this->db->where("rightjoiner",$cid);
+    	$rightjoin= $this->db->query("select c_id from silver_tree join customer_info where customer_info.status=1 and silver_tree.rightjoiner='$cid' AND customer_info.id=silver_tree.c_id")->num_rows();
+		
+          
+    //	$rightjoin = $this->db->get("silver_tree")->num_rows();
     	echo $rightjoin."right";
     	$this->db->where("c_id",$cid);
     	$getdirect=$this->db->get("direct_income");
     	$tblnm="invoice_serial";
     	$maxid=$this->mpinmodel->pin_max($tblnm)+1;
     	$id1=1000+$maxid;
-    	$invoice_number="UMAI".$id1;
+    	$invoice_number="ADLI".$id1;
     	if($getdirect->num_rows()>0){
     		$olddirp = $getdirect->row()->pair;
     		$newp=($rightjoin+$leftjoin)-$olddirp;
@@ -40,7 +48,7 @@ class cronjobc extends CI_Controller{
     				"paid_from"     =>"ADLAdmin",
     				"transaction_type"=>7,
     				"date1"         =>date('Y-m-d H:i:s'),
-    				"amount"           =>($rightjoin+$leftjoin)*100
+    				"amount"           =>$newp*100
     		);
     		$this->db->insert("inner_daybook",$daybookdirect);
     	}else{
@@ -85,7 +93,7 @@ class cronjobc extends CI_Controller{
       	$tblnm="invoice_serial";
 		$maxid=$this->mpinmodel->pin_max($tblnm)+1;
 		$id1=1000+$maxid;
-		$invoice_number="UMAI".$id1;
+		$invoice_number="ADLI".$id1;
 		//end invoice code
 		
         if($rightjoin==$leftjoin){
@@ -116,22 +124,7 @@ class cronjobc extends CI_Controller{
             	$rewardPair=3;
             }
                 
-		$invoice=array(
-			"invoice_no"=>$invoice_number,
-			"reason"=>"Admin Tax",
-			"invoice_date"=>date('Y-m-d H:i:s')
-		);
-		$this->db->insert("invoice_serial",$invoice);
-		
-          $daybooksilver = array(
-              	"invoice_no"    =>$invoice_number,
-              "paid_to"	        =>$cid,
-              	"paid_from"     =>"ADLAdmin",
-              	"transaction_type"=>6,
-              	"date1"         =>date('Y-m-d H:i:s'),
-              	"amount"           =>($rewardPair*60)
-              );
-          $this->db->insert("inner_daybook",$daybooksilver);
+	
           
           $daybooksilver = array(
               	"invoice_no"    =>$invoice_number,
@@ -166,6 +159,8 @@ class cronjobc extends CI_Controller{
                      if($geGoldPair->num_rows()>0){
                      	
                          if($geGoldPair->row()->pair>14){
+                             
+                             
                          	
                               $geDmPair =  $this->tree->getPair("diamond_mbalance",$cid);
                                       if($geDmPair->num_rows()>0){

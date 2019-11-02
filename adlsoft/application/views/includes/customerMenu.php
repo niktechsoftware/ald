@@ -28,6 +28,13 @@
               </ul>
             </li>
             
+             <li >
+              <a href="<?php echo base_url()?>index.php/clogin/customer_reg" class="nav-link "><i data-feather="briefcase"></i><span>New Registration</span></a>
+              
+            </li>
+            
+            
+            
             
             <li class="dropdown">
               <a href="#" class="nav-link has-dropdown"><i data-feather="briefcase"></i><span>My Business</span></a>
@@ -54,7 +61,7 @@
                 <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/income/1">Binary (Pair) Income</a></li>
                 <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/income/2">Auto Pool Income</a></li>
                 <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/income/3">ROI Income</a></li>
-                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/income/4">Pair Capping</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/income/8">Pair Capping</a></li>
               </ul>
             </li>
            

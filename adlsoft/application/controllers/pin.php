@@ -22,15 +22,37 @@ class pin extends CI_Controller{
 	}
 	
 		function new_req_pin(){
-		$this->load->library("form_validation");
+    		$this->load->library("form_validation");
+        	$data['pageTitle'] = 'PIN Panel';
+        	$data['smallTitle'] = 'PIN Management ';
+        	$data['mainPage'] = 'PIN Panel';
+        	$data['subPage'] = 'PIN Panel';
+        	$data['title'] = 'ALD PIN Panel';
+            $data['headerCss'] = 'headerCss/customerlistcss';
+            $data['footerJs'] = 'footerJs/customerJs';
+            $data['mainContent'] = 'pin/new_req_pin';
+            $this->load->view("includes/mainContent", $data);
+	}
+	function mpin_detail(){
     	$data['pageTitle'] = 'PIN Panel';
     	$data['smallTitle'] = 'PIN Management ';
     	$data['mainPage'] = 'PIN Panel';
     	$data['subPage'] = 'PIN Panel';
     	$data['title'] = 'ALD PIN Panel';
-     $data['headerCss'] = 'headerCss/customerlistcss';
-     $data['footerJs'] = 'footerJs/customerJs';
-     $data['mainContent'] = 'pin/new_req_pin';
+    	$data['headerCss'] = 'headerCss/customerlistcss';
+		$data['footerJs'] = 'footerJs/customerlistjs';
+		$data['mainContent'] = 'pin/final_mpin_detail';
+     $this->load->view("includes/mainContent", $data);
+	}
+	function totalmpindetail(){
+    	$data['pageTitle'] = 'PIN Panel';
+    	$data['smallTitle'] = 'PIN Management ';
+    	$data['mainPage'] = 'PIN Panel';
+    	$data['subPage'] = 'PIN Panel';
+    	$data['title'] = 'ALD PIN Panel';
+    	$data['headerCss'] = 'headerCss/customerlistcss';
+		$data['footerJs'] = 'footerJs/customerlistjs';
+		$data['mainContent'] = 'pin/totalmpindetail';
      $this->load->view("includes/mainContent", $data);
 	}
 		function generatePin1(){

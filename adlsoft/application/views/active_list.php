@@ -36,7 +36,6 @@
                         if($row->num_rows()>0){
                           $i=1;
                         foreach($row->result() as $data):
-                            
                            $this->db->where("id",$data->parent_id);
                            $pdt=$this->db->get("customer_info");
                             
@@ -44,7 +43,7 @@
                         ?>
                           <tr>
                             <td><?php echo $i;?></td>
-                            <td class="align-middle"><?php echo $data->customer_name;?></td>
+                            <td class="align-middle"><a href="<?php echo base_url();?>index.php/clogin/customer_profile/<?php echo $data->id;?>"><?php echo $data->customer_name;?></a></td>
                             <td><?php echo $data->fname;?></td>
                             <td><?php echo $data->mobilenumber;?></td>
                             <td><?php echo $data->email;?></td>

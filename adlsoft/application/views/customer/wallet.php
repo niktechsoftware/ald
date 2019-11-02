@@ -22,6 +22,17 @@
                                     </tr>
                                 </thead>
                                     <tbody>
+                                          <tr>
+                                     <td>Direct Income</td>
+                                     <?php if($dirw->num_rows()>0){?>
+                                      <td><?php echo $dirw->row()->pair*2; ?></td> 
+                                       <td><?php echo $dirw->row()->amount; ?></td> 
+                                       <?php }else{?>
+                                      <td>0</td> 
+                                       <td>0</td> 
+                                       <?php }?>
+                                        
+                                    </tr>
                                     <tr>
                                      <td>Silver Wallet</td>
                                      <?php if($sw->num_rows()>0){?>
@@ -61,6 +72,17 @@
                                       <?php if($cw->num_rows()>0){?>
                                       <td><?php echo $cw->row()->pair; ?></td> 
                                        <td><?php echo $cw->row()->amount; ?></td> 
+                                       <?php }else{?>
+                                      <td>0</td> 
+                                       <td>0</td> 
+                                       <?php }?>
+                                        
+                                    </tr>
+                                     <tr>
+                                      <td>Auto Pool Income</td>
+                                      <?php if($auto->num_rows()>0){?>
+                                      <td><?php echo $auto->row()->level."[level]"; ?></td> 
+                                       <td><?php echo $auto->row()->pool_income; ?></td> 
                                        <?php }else{?>
                                       <td>0</td> 
                                        <td>0</td> 

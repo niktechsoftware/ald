@@ -430,7 +430,7 @@
 				<p>A great business opportunity to fulfil your dreams.</p>	
 			</div>
 			<div class="col-md-2 col-sm-2 col-12 right-holder center-holder-xs">
-				<a href="<?php echo base_url();?>assets/img/adlplan.pdf"  target="_blank" class="button-md primary-button">Read More</a>
+				<a href="<?php echo base_url();?>assets/img/pp.pdf"  target="_blank" class="button-md primary-button">Read More</a>
 				</div>
 		</div>
 	</div>

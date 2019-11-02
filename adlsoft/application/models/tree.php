@@ -3,7 +3,6 @@
         
         
     	public function selectlegleft($data1){
-    		//  $returndata = array();
     	
     		$this->db->where("c_id", $data1);
     		$rowdata = $this->db->get("silver_tree")->row();
@@ -15,6 +14,7 @@
     				$returndata= $rowdata->c_id;
     	
     			}
+    
     			return $returndata;
     	
     		}
@@ -57,8 +57,11 @@
     	{
     			$this->db->where("c_id", $id);
     			$fty =$this->db->get("silver_tree")->row();
-    			
+     		$dt2=	$data[$po];
+    	
+    
     			if(!$fty->$po){
+    			  
     				$this->db->where("c_id", $id);
     				$this->db->update("silver_tree", $data);
     			$datainsert = array(
@@ -96,17 +99,36 @@
     			 
     			if($query2->left){
     				//echo $query2->left.'left';
+    				$this->db->where("id",$query2->left);
+    			
+    			$getci = 	$this->db->get("customer_info")->row();
+    			if($getci->status){
     				$getv[$i]=$query2->left;
     				$leftv=$query2->left;
     				$this->getRightData($leftv,$table,$i++,$getv);
+    			}else{
+    			    	$getv[$i]=$query2->left;
+    				$leftv=$query2->left;
+    				$i=$i-1;
+    				$this->getRightData($leftv,$table,$i++,$getv);
+    			}
     				
     			}
     			if($query2->right){
+    			    	$this->db->where("id",$query2->right);
+    			
+    			$getci = 	$this->db->get("customer_info")->row();
+    				if($getci->status){
     				$getv[$i] = $query2->right;
     				//echo $query2->right.'right';
     				$rightv=$query2->right;
     				$this->getRightData($rightv,$table,$i++,$getv);
-    				 
+    				}else{
+    				    	$getv[$i] = $query2->right;
+    			$i=$i-1;
+    				$rightv=$query2->right;
+    				$this->getRightData($rightv,$table,$i++,$getv);
+    				}
     			}
     			 
     		}

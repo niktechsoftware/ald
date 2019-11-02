@@ -28,7 +28,7 @@
               <a href="#" class="nav-link has-dropdown"><i data-feather="command"></i><span>Wallet Balance</span></a>
               <ul class="dropdown-menu">
                 <li><a class="nav-link" href="<?php echo base_url();?>index.php/pin/new_req_pin">New Request</a></li>
-                <li><a class="nav-link" href="portfolio.html">MPIN Details</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/pin/mpin_detail">MPIN Details</a></li>
                 
               </ul>
             </li>
