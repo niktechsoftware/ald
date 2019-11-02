@@ -62,9 +62,6 @@ Class AdminController extends CI_Controller{
     function mpin(){
       $id = $this->input->post("id");
       $nop = $this->input->post("nop");
-
-
-     
       $data['headerCss'] = 'headerCss/customerlistcss';
       $data['footerJs'] = 'footerJs/customerlistjs';
       $this->load->view("", $data);

@@ -143,7 +143,8 @@
 						<li><a href="<?php echo base_url();?>index.php/welcome/">Re-Purchase Products</a></li>
 					</ul>-->
 				</li>
-				<li><a href="<?php echo base_url();?>assets/img/adlplan.pdf">Business Plan</a></li>
+				<li><a href="<?php echo base_url();?>assets/img/adlplan.pdf">Income Plan</a></li>
+				<li><a href="<?php echo base_url();?>index.php/welcome/our_plan">Our Plans</a></li>
 				<li><a href="<?php echo base_url();?>index.php/welcome/registration">Registration</a></li>
 				<li><a href="<?php echo base_url();?>adlsoft/" target="_blank">Login</a></li>
 				<li><a href="#">Gallery</a></li>												

@@ -1,7 +1,7 @@
 <ul class="sidebar-menu">
             <li class="menu-header">Main</li>
             <li class="dropdown active">
-              <a href="#" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+              <a href="<?php echo base_url();?>index.php/login/" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
               
             </li>
             <li class="dropdown">
@@ -27,7 +27,7 @@
             <li class="dropdown">
               <a href="#" class="nav-link has-dropdown"><i data-feather="command"></i><span>Wallet Balance</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="chat.html">New Request</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/pin/new_req_pin">New Request</a></li>
                 <li><a class="nav-link" href="portfolio.html">MPIN Details</a></li>
                 
               </ul>

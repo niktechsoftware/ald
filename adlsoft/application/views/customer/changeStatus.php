@@ -10,11 +10,11 @@
 						</div>
 							
 							<div class="card-body">
-								<div class="alert alert-info">Note : - Now Pay 1440/- Rupee for activation ON bellow given Accoutn Details ditails.
-								<br> Account Number	:  900019021
-								<br> Accunt Name 	:  ALD PVT LTD
-								<br> IFSC CODE		:  BARB012344
-								<br> Account Address :	Baliya Gorakhpur
+								<div class="alert alert-info">Note : - Now Pay 1449/- Rupees for activation ON bellow given Accoutn Details ditails.
+								<br> Account Number	:  5987101000311
+								<br> Account Name 	:  Sabare Alam
+								<br> IFSC CODE		:  CNRB0005987
+								<br> Account Address : Kasia
 								
 								Note: After tranfer Amount please upload payment slip or fill transaction number below given box.
 								 
@@ -128,11 +128,11 @@
 											<div class="col-xs-6 col-md-6 col-lg-6">
 												<div class="form-group row">
 													<div class="col-md-3">
-														<label>Refferance NO</label>
+														<label>Reference NO</label>
 													</div>
 													<div class="col-md-9">
 														<div class="form-group">
-															<input type="text" class="form-control" name="reffno" <?php if($pd1->reffno){ echo 'value='.$pd1->reffno;}else{ }?>  id="reffno"/>
+															<input type="text" class="form-control" name="reffno" <?php if($pd){  echo 'value='.$pd1->reffno;}else{ }?>  id="reffno"/>
 														</div>
                               
                                 </div>
@@ -149,7 +149,7 @@
 													</div>
 													<div class="col-md-9">
 														<div class="form-group">
-														<?php if($pd1->uploadfile){?>
+														<?php if($pd){?>
 														<img src="<?php echo base_url();?>assets/img/pay/<?php echo $pd1->uploadfile;?>" alt="Smiley face" height="250" width="230">
 															
 															<?php }?>

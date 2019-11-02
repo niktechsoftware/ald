@@ -20,6 +20,8 @@
                             <th>Father Name</th>
                             <th>Mobile Number</th>
                             <th>Email Id</th>
+                            <th>Parent Id</th>
+                            <th>Position</th>
                             <th>Current Address</th>
                             <th>City</th>
                             <th>Status</th>
@@ -34,8 +36,10 @@
                         if($row->num_rows()>0){
                           $i=1;
                         foreach($row->result() as $data):
-                          // $this->db->where("c_id",$data->id);
-                          // $paydt=$this->db->get("pay_details");
+                            
+                           $this->db->where("id",$data->parent_id);
+                           $pdt=$this->db->get("customer_info");
+                            
                           // if($paydt->num_rows()>0){
                         ?>
                           <tr>
@@ -44,6 +48,19 @@
                             <td><?php echo $data->fname;?></td>
                             <td><?php echo $data->mobilenumber;?></td>
                             <td><?php echo $data->email;?></td>
+                            <td><?php if($pdt->num_rows()>0){ echo $pdt->row()->username; } else{ echo "N/A";}?></td>
+                            <td><?php 
+                            if($pdt->num_rows()>0){
+                            $this->db->where("c_id",$pdt->row()->id);
+                            $stree=$this->db->get("silver_tree");
+                            if($stree->num_rows()>0){
+                           if($stree->row()->left==$data->id){
+                               echo "Left";
+                           }
+                           else{
+                               echo "Right";
+                           }
+                            } }?></td>
                             <td><?php echo $data->current_address;?></td>
                             <td><?php echo $data->city;?></td>
                             <td> <div class="badge badge-success badge-shadow"><?php if($data->status==1){ echo "Active";}else{ "Inactive";}?></div></td>

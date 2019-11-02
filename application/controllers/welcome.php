@@ -32,10 +32,17 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('legal');
 	}
+	
+	public function our_plan()
+	{
+		$this->load->view('our_plan');
+	}
+	
 	public function bankdetails()
 	{
 		$this->load->view('bank_details');
 	}
+	
 	public function bookproduct()
 	{
 		$this->load->view('booking_products');
@@ -120,6 +127,7 @@ public function contact()
 			//echo $rjoinerID;
 			$data= array(
 					'parent_id'=>$postition,
+					'fname'=>$fname,
 					'joiner_id'=>$cid,
 					'customer_name'=>$name,
 					'username'=>$username,
@@ -164,7 +172,7 @@ public function contact()
 				
 				$this->registration();
 			}
-	}
+     	}
 		function cconpage(){
 			$this->load->view('sub_invoice');
 		}

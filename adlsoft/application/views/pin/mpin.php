@@ -96,8 +96,8 @@
                          <th>Mobile</th>
                          <th>Date</th>
                          <th>NOP</th>
-                         <th>Used</th>
-                         <th>Left</th>
+                         <th>Pin Status</th>
+                        
                        	<th>Details</th>
                        	
                        </tr>
@@ -114,10 +114,17 @@
                          <td class="align-middle"><?php echo  $ct->username.'['.$ct->customer_name.']';?></td>
                          <td><?php echo $ct->mobilenumber;?></td>
                          <td><?php echo $data->date;?></td>
-                         <td><?php echo $data->nop;?>
-                      </td>
-                         <td><?php echo "used";?></td>
-                         <td><?php echo "Left";?></td>
+                         <td><?php echo $data->nop;?> </td>
+                         <?php 
+                         $this->db->where("id",$data->id);
+                         $dt=$this->db->get("mpin");
+                         if($dt->num_rows()>0){
+                         ?>
+                         <td><?php  if(($dt->row()->status)==1){echo "used"; } else { echo "Left";}?></td>
+                        
+                         <?php } else{?>
+                         <td><?php echo "Pin Not Found";?></td>
+                         <?php } ?>
                         
                           <td><a href="<?php echo base_url();?>index.php/pin/pinDetails/<?php echo $data->id; ?>/<?php echo $data->customer_id; ?>" class="btn btn-primary"> Details</a></td>
                          

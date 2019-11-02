@@ -110,7 +110,7 @@ class cronjobc extends CI_Controller{
             			"paid_from"     =>$cid,
             			"transaction_type"=>8,
             			"date1"         =>date('Y-m-d H:i:s'),
-            			"amount"           =>((($caping*600)-($caping*60))/2)
+            			"amount"           =>((($caping*600)))
             	);
             	$this->db->insert("inner_daybook",$daybookCapping);
             	$rewardPair=3;
@@ -139,7 +139,7 @@ class cronjobc extends CI_Controller{
               	"paid_from"     =>"ADLAdmin",
               	"transaction_type"=>1,
               	"date1"         =>date('Y-m-d H:i:s'),
-              	"amount"           =>((($rewardPair*600)-($rewardPair*60))/2)
+              	"amount"           =>((($rewardPair*600))/2)
               );
           $this->db->insert("inner_daybook",$daybooksilver);
            $daybookupgreade = array(
@@ -148,12 +148,12 @@ class cronjobc extends CI_Controller{
               	"paid_from"     =>"ADLAdmin",
               	"transaction_type"=>5,
               	"date1"         =>date('Y-m-d H:i:s'),
-              	"amount"           =>((($rewardPair*600)-($rewardPair*60))/2)
+              	"amount"           =>((($rewardPair*600))/2)
               );
           $this->db->insert("inner_daybook",$daybookupgreade);
         
                 
-                $ramount = $getoldPair->row()->amount+ ((($rewardPair*600)-($rewardPair*60))/2);
+                $ramount = $getoldPair->row()->amount+ ((($rewardPair*600))/2);
                 $binaryincome=array(
                     "pair"=>$rewardPair + $getoldPair->row()->pair,
                     "amount"=>$ramount
@@ -201,7 +201,7 @@ class cronjobc extends CI_Controller{
                                                          	}else{
                                                          		$dmaddPair=$rewardPair;
                                                          	}
-                                                         	$ramount1 = $getDmPair->row()->amount+ ((($dmaddPair*600)-($dmaddPair*60))/2);
+                                                         	$ramount1 = $getDmPair->row()->amount+ ((($dmaddPair*600))/2);
                                                          	
                                                          	
                                                          	
@@ -252,7 +252,7 @@ class cronjobc extends CI_Controller{
                          	}else{
                          		$goldaddPair=$rewardPair;
                          	}
-                         	$ramount1 = $geGoldPair->row()->amount+ ((($goldaddPair*600)-($goldaddPair*60))/2);
+                         	$ramount1 = $geGoldPair->row()->amount+ ((($goldaddPair*600))/2);
                             $binarygoldupg=array(
                     "pair"=>$goldaddPair + $geGoldPair->row()->pair,
                     "amount"=>$ramount1
@@ -355,7 +355,7 @@ class cronjobc extends CI_Controller{
 								'roi_income'=>($roi->roi_income+$totroi),
 						);
 						$this->db->where("c_id",$cid);
-						$this->db->update("autopool_details");
+						$this->db->update("autopool_details",$dataroiup);
 						$dayroi = array(
 								"invoice_no"    =>$invoice_number,
 								"paid_to"	        =>$roi->c_id,
@@ -428,8 +428,8 @@ class cronjobc extends CI_Controller{
        $getCustomer = $this->db->get("customer_info");
        if($getCustomer->num_rows()>0){
         foreach($getCustomer->result() as $gc):
-       // $this->directIncome($gc->id);
-       // $this->pairMachingIncome($gc->id);
+        $this->directIncome($gc->id);
+        $this->pairMachingIncome($gc->id);
         $this->poolIncome($gc->id);
         //$this->roiincome($gc->id);
        

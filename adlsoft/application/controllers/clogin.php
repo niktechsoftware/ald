@@ -118,6 +118,7 @@ class Clogin extends CI_Controller{
 			//echo $rjoinerID;
 			$data= array(
 					'parent_id'=>$postition,
+					'fname'=>$fname,
 					'joiner_id'=>$cid,
 					'customer_name'=>$name,
 					'username'=>$username,
@@ -367,6 +368,10 @@ class Clogin extends CI_Controller{
 			}
 			if($incometype==5){
 				$tranname = "UPGrade";
+				$gdetails = $this->cmodel->getTransaction($cid,$incometype);
+			}
+				if($incometype==7){
+				$tranname = "Direct Income";
 				$gdetails = $this->cmodel->getTransaction($cid,$incometype);
 			}
 			$data['gdetails']=$gdetails;

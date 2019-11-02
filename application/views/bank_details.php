@@ -2,29 +2,29 @@
 <div class="section-block">
 	<div class="container">
 		<div class="grid-gallery-4col gallery-style-1 clearfix">
-		<h3 style="color: #FF0000">Bank Details</h3>
+	<center>	<h3 style="color: #FF0000">Bank Details</h3></center>
 			
-			<table>
+			<table style="margin-left:60px;">
 			<tr>
-			<td>Account Name</td>
+			<td>Account Holder Name</td>
 			<td>:</td>
-			<td>ADL GLOBAL MARKETING PVT.LTD.</td>
-			<!--<td rowspan="4"><img / src="<?php echo base_url();?>assets/img/canara.png"></td>-->
+			<td>Sabare Alam</td>
+			<td rowspan="4"><img / src="<?php echo base_url();?>assets/img/canara.png"></td>
 			</tr>
 			<tr>
 			<td>Bank Name</td>
 			<td>:</td>
-			<td>xxxxx.</td>
+			<td>Canara Bank</td>
 			</tr>
 			<tr>
 			<td>A/c No.</td>
 			<td>:</td>
-			<td>xxxxx.</td>
+			<td>5987101000311</td>
 			</tr>
 			<tr>
 			<td>IFSC Code</td>
 			<td>:</td>
-			<td>xxxxx.</td>
+			<td>CNRB0005987</td>
 			</tr>
 			<tr>
 			<td>&nbsp;</td>
@@ -41,7 +41,7 @@
 			<tr>
 			<td>Account Name</td>
 			<td>:</td>
-			<td>ADL GLOBAL MARKETING PVT.LTD.</td>
+			<td>ADLGM Sales Pvt. Ltd.</td>
 			<!--<td rowspan="5"><img / src="<?php echo base_url();?>assets/img/induslnd.jpg"> </td>-->
 			</tr>
 			<tr>

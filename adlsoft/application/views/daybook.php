@@ -19,9 +19,15 @@
                             <th>Customer Name</th>
                             <th>Paid To </th>
                             <th>Amount</th>
+                           <?php if($uri==1){ ?>
                             <th>Reason</th>
+                            <?php }else{ ?>
+                                <th>Discription</th> 
+                         <?php  } ?>
                             <th>Invoice Number</th>
+                            <?php if($uri==1){ ?>
                             <th>Debit/Credit</th>
+                              <?php }else{ } ?>
                             <th>Date</th>
                            
                           </tr>
@@ -68,10 +74,9 @@
                             <td class="align-middle"><?php if($custnm->num_rows()>0){ echo $custnm->row()->customer_name;} else{ echo "name not found";}?></td>
                             <td><?php echo $data->paid_to;?></td>
                             <td><?php echo $data->amount;?></td>
-                            <td><?php echo $data->reason;?></td>
+                            <td><?php echo "N/A";?></td>
                             <td><?php echo $data->invoice_no;?></td>
-                        <td><?php if(($data->debit_credit)==1){ ?><button class="badge badge-success badge-shadow"><?php echo "Credit"; ?></button> <?php } else{ ?><button class="badge badge-danger badge-shadow"> <?php echo "Debit";?></button> <?php } ?></td>
-                            <td><?php echo $data->date;?></td>
+                            <td><?php echo $data->date1;?></td>
                            
                          
                          

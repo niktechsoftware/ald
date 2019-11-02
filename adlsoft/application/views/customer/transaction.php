@@ -23,7 +23,6 @@
                             <th>Amount</th>
                             <th>Type</th>
                             <th>Invoice No</th>
-                            <th>Debit/Credit</th>
                             <th>Date</th>
                            
                           </tr>
@@ -47,8 +46,7 @@
                             <td><?php echo $data->amount;?></td>
                             <td><?php echo $data->transaction_type;?></td>
                             <td><?php echo $data->invoice_no;?></td>
-                        <td><?php if(($data->debit_credit)==1){ ?><button class="badge badge-success badge-shadow"><?php echo "Credit"; ?></button> <?php } else{ ?><button class="badge badge-danger badge-shadow"> <?php echo "Debit";?></button> <?php } ?></td>
-                            <td><?php echo $data->date;?></td>
+                            <td><?php echo $data->date1;?></td>
                            
                           </tr>
                           

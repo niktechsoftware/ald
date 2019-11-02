@@ -15,7 +15,7 @@
 						</div>
 						<div class="contact-box-text">
 							<h5>Office</h5>
-							<p>Word No.4 Ambedkar Nagar Kasia Kushinagar - 281001, (U.P.)<br />
+							<p>Ward No.4 Ambedkar Nagar Kasia Kushinagar - 274402, (U.P.)<br />
 							Contact No. : +91 7860288090, +91 9506804800
 							</p>
 						</div>
@@ -65,6 +65,12 @@
 			</div>
 		
 			<div class="col-md-8 col-sm-12 col-12">
+			    <div class="row">
+			    	<div class="contact-box-4">
+					
+				</div>
+				</div>
+				<div class="row">
 				<div class="contact-box-4">
 					<div class="section-heading left-holder mt-15">
 						<h5 class="bold">Send us a message</h5>
@@ -90,10 +96,14 @@
 						</div>
 					
 				</div>
+				</div>
 			</div>
 		</div>	
 	</div>
 </div>
+<!--<center>-->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14586.567221035193!2d83.92272359771857!3d26.73313312657278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcb9f09a578e61ec4!2sAshirvad%20life%20care%20hospital!5e0!3m2!1sen!2sin!4v1572589004054!5m2!1sen!2sin" width="90%" height="250" frameborder="0" style="border:0;padding:80px;" allowfullscreen=""></iframe>
+    <!--</center>-->
 <!-- Contact Section END -->
 <!-- Map START -->
 <!-- Map START -->
