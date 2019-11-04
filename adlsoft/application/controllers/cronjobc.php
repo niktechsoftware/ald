@@ -492,7 +492,9 @@ echo "poool for =".$cid."<br>";
     }
     
       public function roiincome(){
+          
           $date1  = date('Y-m-d');
+          //$date1  =date('Y-m-d',(strtotime ( '-1 day' , strtotime ( $date2) ) ));
 		    	$getpoot=$this->db->get("auto_pool");
 		    	foreach($getpoot->result() as $gpt):
 		    	    $this->db->where("DATE(date)",$date1);
@@ -512,11 +514,11 @@ echo "poool for =".$cid."<br>";
 		    	         
 		    	         endforeach;
 		    	 }
-		    	 
-		    	 $this->db->where("level",$gpt->id+1);
+		    	
+		    	 $this->db->where("level >=",$gpt->id);
 		    	$numg  =  $this->db->get("autopool_details");
 		    	if($numg->num_rows()>0){
-		    	    $disamount = ($j*160)/$numg->num_rows();
+		    	    $disamount = ($j*180)/$numg->num_rows();
 		    	    foreach($numg->result() as $numr):
 		    	        	$tblnm="invoice_serial";
 		$maxid=$this->mpinmodel->pin_max($tblnm)+1;
@@ -561,9 +563,9 @@ echo "poool for =".$cid."<br>";
        $getCustomer = $this->db->get("customer_info");
        if($getCustomer->num_rows()>0){
         foreach($getCustomer->result() as $gc):
-        //$this->directIncome($gc->id);
-        //$this->pairMachingIncome($gc->id);
-      // $this->poolIncome($gc->id);
+        $this->directIncome($gc->id);
+        $this->pairMachingIncome($gc->id);
+      $this->poolIncome($gc->id);
         
        
         
