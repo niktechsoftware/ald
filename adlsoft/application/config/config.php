@@ -23,7 +23,7 @@
 |
 */
 
-$config['base_url'] = 'http://adlgm.in/adlsoft';
+$config['base_url'] = 'http://adlgm.in.net/adlsoft';
 
 // $config['base_url'] = 'http://localhost:8080/adlgm.in/adlsoft';
 

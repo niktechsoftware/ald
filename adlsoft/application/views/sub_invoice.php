@@ -28,7 +28,7 @@
                 				<td><label><?php echo $row->customer_name;?></label></td>
                 			</tr>
                 			<tr class="text-uppercase">
-                				<th>Father Name</th>
+                				<th>Father /Husband Name</th>
                 				<td><label><?php echo $row->fname;?></label></td>
                 			</tr>
                 			

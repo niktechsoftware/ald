@@ -137,12 +137,12 @@
                                 <div class="product-overlay">
                                     <div class="add-to-cart">
 									<!--<a href="<?php echo base_url();?>aldsoft/" target="_blank">Login</a>-->
-                                       <a href="<?php echo base_url();?>index.php/auth/signin">
+                                       <a href="<?php echo base_url();?>adlsoft">
                                         <i class="fa fa-shopping-cart"></i> Add to Cart</a>
                                     </div>
                                     <div class="quick-view">
 
-             <a href="<?php echo base_url();?>index.php/welcome/booking_product/<?php echo $productlist->id;?>" title="Business Financing" data-fancybox-group="gallery" class="lightbox-image" data-rel="prettyPhoto[portfolio]"><i class="fa fa-eye"></i> Quick View</a>
+             <a href="<?php echo base_url();?>index.php/welcome/bookproduct" title="Business Financing" data-fancybox-group="gallery" class="lightbox-image" data-rel="prettyPhoto[portfolio]"><i class="fa fa-eye"></i> Quick View</a>
                                             </div>
                                 </div>
                             </div>

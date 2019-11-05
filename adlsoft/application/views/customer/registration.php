@@ -100,7 +100,7 @@
 
 												<div class="form-group row">
 													<div class="col-md-3">
-														<label>Father Name<span title="Required"
+														<label>Father Name/Husband Name<span title="Required"
 															style="color: red;">*</span></label>
 													</div>
 													<div class="col-md-9">

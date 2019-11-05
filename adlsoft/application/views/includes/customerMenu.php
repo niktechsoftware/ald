@@ -72,6 +72,9 @@
                 <li><a class="nav-link" href="badge.html">Query</a></li>
                </ul>
             </li>
-           
+             <li >
+              <a href="<?php echo base_url();?>index.php/welcome/logout" class="nav-link "><i data-feather="anchor"></i><span>Log out</span></a>
+              
+            </li>
              
           </ul>

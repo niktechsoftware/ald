@@ -44,19 +44,37 @@
 				</ul>
 			</div>
 			<!-- Column 3 End -->
-
 			<!-- Column 4 Start -->
 			<div class="col-md-2 col-sm-6 col-12">
 				<h3>Quick Links</h3>
 				<ul class="footer-style-1-links">
 					<li><a href="<?php echo base_url();?>index.php/welcome/read">About Us</a></li>
 					<li><a href="<?php echo base_url();?>index.php/welcome/registration">Registration</a></li>
-					<li><a href="<?php echo base_url();?>aldsoft/" target="_blank">Login</a></li>
+					<li><a href="<?php echo base_url();?>adlsoft/" target="_blank">Login</a></li>
 					<li><a href="<?php echo base_url();?>index.php/welcome">Gallery</a></li>		
 					<li><a href="<?php echo base_url();?>index.php/welcome/contact">Contact Us</a></li>
 				</ul>
 			</div>		
-			<!-- Column 4 End -->										
+			<!-- Column 4 End -->
+			<!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14586.567221035193!2d83.92272359771857!3d26.73313312657278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcb9f09a578e61ec4!2sAshirvad%20life%20care%20hospital!5e0!3m2!1sen!2sin!4v1572589004054!5m2!1sen!2sin" width="300px" height="200px" frameborder="0" style="border:0;padding:80px;" allowfullscreen=""></iframe>-->
+			 <strong>  <h3 class="">Total Visitors:
+                                            <?php
+									/* counter */
+									//opens countlog.txt to read the number of hits
+									$datei = fopen("./counter.txt","r");
+									$count = fgets($datei,50000);
+									fclose($datei);
+									$count=$count + 1 ;
+									?><font size="3" color="white"><?php
+									echo "$count" ;
+									?></font>
+									<?php
+									// opens countlog.txt to change new hit number
+									$datei = fopen("./counter.txt","w");
+									fwrite($datei, $count);
+									fclose($datei);
+									?> </h3></strong>
+									
 		</div>
 	</div>
 

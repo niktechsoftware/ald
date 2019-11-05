@@ -37,7 +37,7 @@
                                                 $numr = $this->db->get("mpin");
                                                 $nm = $numr->num_rows();
                                                 $s1=$s1+$nm;?>
-                                               <td><a class="btn btn-info" href="<?php echo base_url();?>index.php/pin/pinDetails/<?php echo $row->id;?>"><?php echo $nm;?></a></td>
+                                               <td><a class="btn btn-info" href="<?php echo base_url();?>index.php/pin/generatePin/<?php echo $row->id;?>"><?php echo $nm;?></a></td>
                                                
                                                 <?php $this->db->where("status",1);
                                                 $this->db->where("customerid",$row->id);
