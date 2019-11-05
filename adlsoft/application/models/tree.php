@@ -138,6 +138,123 @@
         return $count;
     }
     
+    public function getRightData($cid,$count,$count1){
+       
+        $this->db->where('c_id', $cid);
+        $leftjoiner = $this->db->get('silver_tree');
+         $this->db->where("id", $cid);
+                    $dataorg = $this->db->get("customer_info")->row();
+        
+        if($leftjoiner->num_rows()>0){
+            foreach ($leftjoiner->result() as $query2)
+            {
+               
+                if($query2->right){
+                    $count1++;
+                    $this->db->where("id", $query2->right);
+                    $data1 = $this->db->get("customer_info")->row();
+                    if($data1){
+                          if($data1->status==1){ $status= "Active";}else{$status="Inactive";}
+                       /* echo $data1->username."[".$data1->customer_name."]<br>";
+						echo $data1->joining_date."[".$data1->mobilenumber."]<br>";
+						echo $data1->amount."[".$data1->position."]<br>";*/
+						echo 	"<tr>
+						
+								 <td>". $data1->customer_name. "[".$data1->username."]"."</td>
+								  <td>". $status. " [Right of".$dataorg->username."]</td>
+								 <td>". $data1->mobilenumber. "</td>
+								
+							</tr>
+							";
+                    }
+                    $right=$query2->right;
+                    $this->getRightData($right,$count,$count1);
+                    
+                }
+                 if($query2->left){
+                     $count++;
+                    $this->db->where("id", $query2->left);
+                    $data1 = $this->db->get("customer_info")->row();
+                    if($data1){
+                        if($data1->status==1){ $status= "Active";}else{$status="Inactive";}
+						echo "<tr>
+					
+						 <td>". $data1->customer_name. "[".$data1->username."]"."</td>
+								 	 <td>". $status. " [left of".$dataorg->username."]</td>
+								 <td>". $data1->mobilenumber. "</td>
+								 
+							</tr>
+							";
+                    }
+                    $right=$query2->left;
+                   $this->getLeftData($right,$count,$count1);
+                 }
+            }
+        }
+          
+        
+    }
+    
+    public function getLeftData($cid,$count,$count1){
+       
+        $this->db->where('c_id', $cid);
+        $leftjoiner = $this->db->get('silver_tree');
+         $this->db->where("id", $cid);
+                    $dataorg = $this->db->get("customer_info")->row();
+        
+        
+        if($leftjoiner->num_rows()>0){
+            foreach ($leftjoiner->result() as $query2)
+            {
+                
+                if($query2->left){
+                    $count++;
+                    $this->db->where("id", $query2->left);
+                    $data1 = $this->db->get("customer_info")->row();
+                    if($data1){
+                        if($data1->status==1){ $status= "Active";}else{$status="Inactive";}
+						echo "<tr>
+					
+						 <td>". $data1->customer_name. "[".$data1->username."]"."</td>
+								 	 <td>". $status. "[Left of".$dataorg->username."]</td>
+								 <td>". $data1->mobilenumber. "</td>
+								
+							</tr>
+							";
+                    }
+                    $right=$query2->left;
+                   $this->getLeftData($right,$count,$count1);
+                  
+                    
+                }
+                 if($query2->right){
+                     $count1++;
+                    $this->db->where("id", $query2->right);
+                    $data1 = $this->db->get("customer_info")->row();
+                    if($data1){
+                        if($data1->status==1){ $status= "Active";}else{$status="Inactive";}
+                        
+                       /* echo $data1->username."[".$data1->customer_name."]<br>";
+						echo $data1->joining_date."[".$data1->mobilenumber."]<br>";
+						echo $data1->amount."[".$data1->position."]<br>";*/
+						echo 	"<tr>
+						 <td>". $data1->customer_name. "[".$data1->username."]"."</td>
+								 <td>". $status. "[Right of".$dataorg->username."]</td>
+								 <td>". $data1->mobilenumber. "</td>
+								 
+							</tr>
+							";
+                    }
+                    $right=$query2->right;
+                    $this->getRightData($right,$count,$count1);
+                    
+                }
+            }
+          
+            
+        }
+    }
+
     
     
     }

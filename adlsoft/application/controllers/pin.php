@@ -20,7 +20,23 @@ class pin extends CI_Controller{
 			redirect("welcome/lockPage");
 		}
 	}
-	
+	function mpinused(){
+		
+		$pinid = $this->uri->segment("3");
+		$pin = $this->mpinmodel->gettotalPin($pinid);
+		$data['pind']=$pin;
+		$data['cid']=$this->uri->segment("4");
+		$data['pageTitle'] = 'PIN Panel';
+		$data['smallTitle'] = 'PIN Management ';
+		$data['mainPage'] = 'PIN Panel';
+		$data['subPage'] = 'PIN Panel';
+		$data['title'] = 'ALD PIN Panel';
+		$data['headerCss'] = 'headerCss/customerlistcss';
+		$data['footerJs'] = 'footerJs/customerlistjs';
+		 
+		$data['mainContent'] = 'pin/mpinused';
+		$this->load->view("includes/mainContent", $data);
+	}
 		function new_req_pin(){
     		$this->load->library("form_validation");
         	$data['pageTitle'] = 'PIN Panel';
@@ -114,7 +130,7 @@ class pin extends CI_Controller{
 		$id = $this->mpinmodel->pin_max($tblnm)+1;
 		$val = $this->mpinmodel->genSavePin($cid,$nopin,$id,$pinamount);
 		if($val){
-			redirect("pin/generatePin/$cid");
+			redirect("pin/generatePin/$cid/success");
 		}
 	}
 	

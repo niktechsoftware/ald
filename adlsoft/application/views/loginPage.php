@@ -81,7 +81,7 @@
               </div>
             </div>
             <div class="mt-5 text-muted text-center">
-              For New Registration  <a href="http://adlgm.in/index.php/welcome/registration">Click Here</a>
+              For New Registration  <a href="http://adlgm.in.net/index.php/welcome/registration">Click Here</a>
             </div>
           </div>
         </div>

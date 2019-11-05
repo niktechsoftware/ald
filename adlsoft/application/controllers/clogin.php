@@ -7,6 +7,7 @@ class Clogin extends CI_Controller{
 		$this->is_login();
 		$this->load->model('cmodel');
 		$this->load->model('tree');
+		//$this->output->delete_cache();
 	}
 	function is_login(){
 		$is_login = $this->session->userdata('is_login');
@@ -249,13 +250,25 @@ class Clogin extends CI_Controller{
 		}
 		function downline(){
 			$tabv = $this->uri->segment("3");
+				if($tabv==6)
+				{
+				    $table="Silver Over All";
+				    	$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
+            		$data['cid'] = $this->session->userdata("customer_id");
+            		$count =0;
+            			$data['leftrootid']=0;
+				$data['rightrootid']=0;
+            	
+					
+				}
 			if($tabv==1){
 				$table="silver_tree";
 				$lposition="leftjoiner";
 				$rposition="rightjoiner";
 				$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
-				$data['left']=$this->tree->mydownline($this->session->userdata("customer_id"),$lposition,$table,$tabv);
-				$data['right']=$this->tree->mydownline($this->session->userdata("customer_id"),$rposition,$table,$tabv);
+				$cid =$this->session->userdata("customer_id");
+				$data['left']=$this->db->query("select * from silver_tree join customer_info where customer_info.status=1 and silver_tree.leftjoiner='$cid' AND customer_info.id=silver_tree.left");
+				$data['right']=$this->db->query("select * from silver_tree join customer_info where customer_info.status=1 and silver_tree.rightjoiner='$cid' AND customer_info.id=silver_tree.right");
 					
 			}
 			if($tabv==2){
@@ -332,6 +345,7 @@ class Clogin extends CI_Controller{
 				
     			}
 			}
+			
 			$data['tabv']=$tabv;
 			$data['pageTitle'] = 'My Downline';
 			$data['smallTitle'] = $table.' Downline';
@@ -343,6 +357,59 @@ class Clogin extends CI_Controller{
 			$data['mainContent'] = 'customer/downline';
 			$this->load->view("includes/mainContent", $data);
 		}
+		function alltree(){
+		    
+		    	$table="silver_tree";
+				$lposition="leftjoiner";
+				$rposition="rightjoiner";
+				$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
+				$cid =$this->session->userdata("customer_id");
+				$data['left']=$this->db->query("select * from silver_tree join customer_info where customer_info.status=1 and silver_tree.leftjoiner='$cid' AND customer_info.id=silver_tree.left");
+				$data['right']=$this->db->query("select * from silver_tree join customer_info where customer_info.status=1 and silver_tree.rightjoiner='$cid' AND customer_info.id=silver_tree.right");
+		  if ($this->uri->segment(3)){
+	        $id = $this->uri->segment(3);
+	        $this->db->where("id", $id);
+	    }
+
+	    if ($this->input->server('REQUEST_METHOD') == 'POST'){
+			$id = $this->input->post("customer_id");
+			$this->db->where("username", $id);
+	    }
+
+
+
+		$data1 = $this->db->get("customer_info")->row();
+		if(!$data1){
+			$this->session->set_flashdata('error', 'Wrong userID...');
+			redirect('clogin/alltree');
+		}
+			$data['crecord'] = $this->cmodel->getCrecord($data1->id);
+			$data['data'] = $data1;
+			$data['pageTitle'] = 'My Downline';
+			$data['smallTitle'] = ' Downline';
+			$data['mainPage'] = 'Downline';
+			$data['subPage'] = 'Downline';
+			$data['title'] = 'Customer Downline';
+			$data['headerCss'] = 'headerCss/dashboardCss';
+			$data['footerJs'] = 'footerJs/customerJs';
+			$data['mainContent'] = 'customer/alltree';
+			$this->load->view("includes/mainContent", $data);
+		}
+		
+		function getrecord(){
+		       $cust_id=$this->input->post("custid");
+		    	$table="silver_tree";
+				$lposition="leftjoiner";
+				$rposition="rightjoiner";
+				$data['crecord'] = $this->cmodel->getCrecord($cust_id);
+			
+				$data1['left']=$this->db->query("select * from silver_tree join customer_info where customer_info.status=1 and silver_tree.leftjoiner='$cust_id' AND customer_info.id=silver_tree.left");
+				$data2['right']=$this->db->query("select * from silver_tree join customer_info where customer_info.status=1 and silver_tree.rightjoiner='$cust_id' AND customer_info.id=silver_tree.right");
+		print_r($data1);
+		print_r($data2);
+		
+		}
+		   
 		function tree(){
 		    
 		     $this->db->where("id", $this->session->userdata("customer_id"));
@@ -381,7 +448,8 @@ class Clogin extends CI_Controller{
 		}
 			$data['crecord'] = $this->cmodel->getCrecord($data1->id);
 			$data['data'] = $data1;
-	
+		
+			   
 			$data['pageTitle'] = 'My Tree';
 			$data['smallTitle'] = 'My Tree';
 			$data['mainPage'] = 'My Tree';
@@ -391,6 +459,8 @@ class Clogin extends CI_Controller{
 			$data['footerJs'] = 'footerJs/customerJs';
 			$data['mainContent'] = 'customer/tree';
 			$this->load->view("includes/mainContent", $data);
+			 
+			
 	}
 		
 		function income(){
@@ -428,7 +498,7 @@ class Clogin extends CI_Controller{
 			$data['subPage'] = $tranname.' Income panel';
 			$data['title'] = $tranname.' Income panel';
 			$data['headerCss'] = 'headerCss/dashboardCss';
-			$data['footerJs'] = 'footerJs/customerJs';
+			$data['footerJs'] = 'footerJs/dashboardJs';
 			$data['mainContent'] = 'customer/transaction';
 			$this->load->view("includes/mainContent", $data);
 		}
