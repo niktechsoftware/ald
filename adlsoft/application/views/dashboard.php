@@ -68,7 +68,7 @@
                       $matchcon="status";
                       $tblname="customer_info";
                     
-                      $dt = $this->cmodel->getcustomerdata($matchcon,$status,$tblname);
+            $dt = $this->cmodel->getcustomerdata($matchcon,$status,$tblname);
                     print_r($dt->num_rows());
                     
                     ?></span>

@@ -8,7 +8,9 @@
 	    
 		<!-- Slide 1 Start -->
 		
-		<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner11.jpg); background-size:cover; ">
+		<!--<div class="swiper-slide" style="margin-top:10%; background-image:url(<?php echo base_url();?>assets/img/banner11.jpg); background-size:cover; ">-->
+		    <div class="swiper-slide" >
+		        <img src="<?php echo base_url();?>assets/img/banner11.jpg" style="width:100%; height:90%; padding-left:40px;">
 			<div class="container">
                 <div class="slider-content center-holder">
                 	<h3 class="extra-light animated fadeInDown"></h3>
@@ -26,7 +28,9 @@
 		
 		<!-- Slide 2 Start -->	
 		
-		<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner12.jpg); background-size:cover; ">
+		<!--<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner12.jpg); background-size:cover; ">-->
+		<div class="swiper-slide" >
+		        <img src="<?php echo base_url();?>assets/img/banner12.jpg" style="width:100%; height:90%; padding-left:40px;">
 			<div class="container">
                 <div class="slider-content center-holder">
                 	<h3 class="extra-light animated fadeInDown"></h3>
@@ -44,7 +48,9 @@
 			
 			<!-- Slide 3 Start -->
 			
-		<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner13.jpg); background-size:cover; ">
+		<!--<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner13.jpg); background-size:cover; ">-->
+		<div class="swiper-slide" >
+		        <img src="<?php echo base_url();?>assets/img/banner13.jpg" style="width:100%; height:90%; padding-left:40px;">
 			<div class="container">
                 <div class="slider-content center-holder">
                 	<h3 class="extra-light animated fadeInDown"></h3>
@@ -61,7 +67,9 @@
 			
 			<!-- Slide 4 Start -->
 			
-			<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner14.jpg); background-size:cover;">
+			<!--<div class="swiper-slide" style="background-image:url(<?php echo base_url();?>assets/img/banner14.jpg); background-size:cover;">-->
+			<div class="swiper-slide" >
+		        <img src="<?php echo base_url();?>assets/img/banner14.jpg" style="width:100%; height:90%; padding-left:40px;">
 			<div class="container">
          <div class="slider-content center-holder">
                 	<h3 class="extra-light animated fadeInDown"></h3>
@@ -357,7 +365,7 @@
 		<div class="row">
 			<div class="col-md-10 col-sm-10 col-12">
 				<h3 class="bold">Business Plan</h3>
-				<p>A great business opportunity to fulfil your dreams.</p>	
+				<p>We provide a business opportunity to fulfil your dreams.</p>	
 			</div>
 			<div class="col-md-2 col-sm-2 col-12 right-holder center-holder-xs">
 				<a href="<?php echo base_url();?>assets/img/pp.pdf" class="button-md primary-button">Download</a>

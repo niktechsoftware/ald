@@ -55,7 +55,8 @@ Class AdminController extends CI_Controller{
     
     public function admin_profile(){
 		$this->load->library("form_validation");
-		$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
+		$this->load->model("adminmodel");
+		$data['crecord'] = $this->adminmodel->getrecord();
 		$data['pageTitle'] = 'Admin Profile';
 		$data['smallTitle'] = 'Profile form';
 		$data['mainPage'] = 'Admin Profile';

@@ -7,8 +7,8 @@
                 <div class="card author-box">
                   <div class="card-body">
                     <div class="author-box-center">
-					<?php if(strlen($crecord->row()->image > 0)):?>
-													<img alt="" height="128" width="138" src="<?php echo base_url();?>assets/img/users/<?php echo $crecord->row()->image;?>" />
+					<?php if(strlen($crecord->row()->logo > 0)):?>
+													<img alt="" height="128" width="138" src="<?php echo base_url();?>assets/img/users/<?php echo $crecord->row()->logo;?>" />
 												<?php else:?>
 													<img alt="" width="128" src="<?php echo base_url();?>assets/img/default.jpg" />	
 												<?php endif;?>
@@ -16,7 +16,7 @@
                       <div class="author-box-name">
                         <a href="#"><?php echo $this->session->userdata("name") ; ?></a>
                       </div>
-					  <div class="author-box-job">User Id:<?php echo $this->session->userdata("name") ; ?><?php // echo $crecord->row()->username; ?></div>
+					  <div class="author-box-job">User Id:<?php  echo $crecord->row()->admin_username; ?></div>
                     </div>
                     
                   </div>
@@ -46,8 +46,8 @@
                             <div class="row">
                               <div class="form-group col-md-3 col-12"><label>Name :</label></div>
 							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->customer_name; ?></label></div>
-                              <div class="form-group col-md-3 col-12"><label>Father Name :</label></div>
-							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->fname; ?></label> </div>
+                              <div class="form-group col-md-3 col-12"><label>Status :</label></div>
+							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->status; ?></label> </div>
                             </div>
 							
 							<div class="row">
@@ -58,52 +58,52 @@
                             </div>
 							<div class="row">
                               <div class="form-group col-md-3 col-12"><label>Current Address :</label></div>
-							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->current_address; ?></label></div>
+							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->address_1; ?></label></div>
                               <div class="form-group col-md-3 col-12"><label>Permanent Address :</label></div>
-							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->permanent_address; ?></label> </div>
+							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->address_2; ?></label> </div>
                             </div>
 							<div class="row">
                               <div class="form-group col-md-3 col-12"><label>Pincode :</label></div>
 							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->pin; ?></label></div>
                               <div class="form-group col-md-3 col-12"><label>Email Id  :</label></div>
-							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->email; ?></label> </div>
+							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->email1; ?></label> </div>
                             </div>
 							<div class="row">
                               <div class="form-group col-md-3 col-12"><label>Mobile No :</label></div>
-							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->mobilenumber; ?></label></div>
+							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->mobile_number; ?></label></div>
                               <div class="form-group col-md-3 col-12"><label>Phone No :</label></div>
-							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->altnumber; ?></label> </div>
+							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->phone_number; ?></label> </div>
                             </div>
 							<div class="row">
-                              <div class="form-group col-md-3 col-12"><label>Aadhar No :</label></div>
-							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->adhaarnumber; ?></label></div>
-                              <div class="form-group col-md-3 col-12"><label>Pan No :</label></div>
-							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->pannumber; ?></label> </div>
+                              <div class="form-group col-md-3 col-12"><label>GST No :</label></div>
+							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->gst_number; ?></label></div>
+                              <div class="form-group col-md-3 col-12"><label>Fax No :</label></div>
+							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->fax_number; ?></label> </div>
                             </div>
 							<div class="row">
                               <div class="form-group col-md-3 col-12"><label>User Id:</label></div>
-							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->username; ?></label></div>
-                              <div class="form-group col-md-3 col-12"><label>Date Of Birth :</label></div>
-							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->dob; ?></label> </div>
+							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->admin_username; ?></label></div>
+                              <div class="form-group col-md-3 col-12"><label>Language :</label></div>
+							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->language; ?></label> </div>
                             </div>
 							<div class="row">
-                              <div class="form-group col-md-3 col-12"><label>Joiner Name:</label></div>
-							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->joiner_name; ?></label></div>
-                              <div class="form-group col-md-3 col-12"><label>Position :</label></div>
-							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->position; ?></label> </div>
+                              <div class="form-group col-md-3 col-12"><label>Business Name:</label></div>
+							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->business_name; ?></label></div>
+                              <div class="form-group col-md-3 col-12"><label>Nationality :</label></div>
+							  <div class="form-group col-md-3 col-12"> <label><?php echo $crecord->row()->nationality; ?></label> </div>
                             </div>
 							<div class="row">
                               <div class="form-group col-md-3 col-12"><label>Join Date:</label></div>
-							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->joining_date;?></label></div>
-                              <div class="form-group col-md-3 col-12"><label>Active Date :</label></div>
-							  <div class="form-group col-md-3 col-12"> <label><?php  echo $crecord->row()->active_date;?></label> </div>
+							  <div class="form-group col-md-3 col-12"><label><?php echo $crecord->row()->created;?></label></div>
+                              <div class="form-group col-md-3 col-12"><label>Password :</label></div>
+							  <div class="form-group col-md-3 col-12"> <label><?php  echo $crecord->row()->admin_password;?></label> </div>
                             </div>
 							
 							
                           </div>
                       </div>
                       <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="profile-tab2">
-                        <form method="post" class="needs-validation" action="<?php echo base_url();?>index.php/customer/edit_profile" enctype="multipart/form-data"   >
+                        <form method="post" class="needs-validation" action="<?php echo base_url();?>index.php/customer/admin_edit_profile" enctype="multipart/form-data"   >
                           <div class="card-header">
                             <h4>Edit Profile</h4>
                           </div>
@@ -114,8 +114,8 @@
 							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="cname" value="<?php echo $crecord->row()->customer_name; ?>">
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
-                              <div class="form-group col-md-2 col-12"><label>Father Name</label></div>
-                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="fname" value="<?php echo $crecord->row()->fname; ?>">
+                              <div class="form-group col-md-2 col-12"><label>Password</label></div>
+                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="fname" value="<?php echo $crecord->row()->admin_password; ?>">
                                 <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>
@@ -131,11 +131,11 @@
                             </div>
 							 <div class="row">
 							<div class="form-group col-md-2 col-12"><label>Current Address</label></div>
-							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="cadd" value="<?php echo $crecord->row()->current_address; ?>">
+							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="cadd" value="<?php echo $crecord->row()->address_1; ?>">
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
                               <div class="form-group col-md-2 col-12"><label>Permanent  Address</label></div>
-                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="peradd" value="<?php echo $crecord->row()->permanent_address; ?>">
+                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="peradd" value="<?php echo $crecord->row()->address_2; ?>">
                                 <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>
@@ -144,48 +144,58 @@
 							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="pin" value="<?php echo $crecord->row()->pin; ?>">
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
-                              <div class="form-group col-md-2 col-12"><label>Email</label></div>
-                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="email" value="<?php echo $crecord->row()->email; ?>">
+                              <div class="form-group col-md-2 col-12"><label>Email 1 </label></div>
+                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="email" value="<?php echo $crecord->row()->email1; ?>">
+                                <div class="invalid-feedback">Please fill in the last name </div>
+                              </div>
+                            </div>
+                            <div class="row">
+							<div class="form-group col-md-2 col-12"><label>Business Name</label></div>
+							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="pin" value="<?php echo $crecord->row()->business_name; ?>">
+                                <div class="invalid-feedback">Please fill in the first name</div>
+                              </div>
+                              <div class="form-group col-md-2 col-12"><label>Email 2 </label></div>
+                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="email" value="<?php echo $crecord->row()->email2; ?>">
                                 <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>
 							 <div class="row">
 							<div class="form-group col-md-2 col-12"><label>Mobile No</label></div>
-							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="mno" value="<?php echo $crecord->row()->mobilenumber; ?>">
+							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="mno" value="<?php echo $crecord->row()->mobile_number; ?>">
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
-                              <div class="form-group col-md-2 col-12"><label>Other Mobile No</label></div>
-                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="pmno" value="<?php echo $crecord->row()->altnumber; ?>">
+                              <div class="form-group col-md-2 col-12"><label>Phone No</label></div>
+                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="pmno" value="<?php echo $crecord->row()->phone_number; ?>">
                                 <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>
 							<div class="row">
-							<div class="form-group col-md-2 col-12"><label>Aadhar No</label></div>
-							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="adhar" value="<?php echo $crecord->row()->adhaarnumber; ?>">
+							<div class="form-group col-md-2 col-12"><label>Fax No</label></div>
+							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="adhar" value="<?php echo $crecord->row()->fax_number; ?>">
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
-                              <div class="form-group col-md-2 col-12"><label>Pan No</label></div>
-                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="panno" value="<?php echo $crecord->row()->pannumber; ?>">
+                              <div class="form-group col-md-2 col-12"><label>GST No</label></div>
+                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="panno" value="<?php echo $crecord->row()->gst_number; ?>">
                                 <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>
 							 <div class="row">
-							<div class="form-group col-md-2 col-12"><label>Gender</label></div>
-							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="gen" value="<?php echo $crecord->row()->gender; ?>">
+							<div class="form-group col-md-2 col-12"><label>Language</label></div>
+							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="gen" value="<?php echo $crecord->row()->language; ?>">
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
-                              <div class="form-group col-md-2 col-12"><label>Date Of Birth</label></div>
-                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="dob" value="<?php echo $crecord->row()->dob; ?>">
+                              <div class="form-group col-md-2 col-12"><label>Nationality</label></div>
+                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="dob" value="<?php echo $crecord->row()->nationality; ?>">
                                 <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>
 							<div class="row">
-							<div class="form-group col-md-2 col-12"><label>Password</label></div>
-							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="password" value="<?php echo $crecord->row()->password; ?>">
+							<div class="form-group col-md-2 col-12"><label>Icon Logo</label></div>
+							  <div class="form-group col-md-4 col-12"><input type="file" class="form-control" name="ico_logo" value="<?php echo $crecord->row()->ico_logo; ?>">
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
-                              <div class="form-group col-md-2 col-12"><label>Upload Photo</label></div>
-                              <div class="form-group col-md-4 col-12"><input type="file" class="form-control" name="photo" value="<?php echo $crecord->row()->image; ?>">
+                              <div class="form-group col-md-2 col-12"><label>Logo</label></div>
+                              <div class="form-group col-md-4 col-12"><input type="file" class="form-control" name="photo" value="<?php echo $crecord->row()->logo; ?>">
                                 <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>

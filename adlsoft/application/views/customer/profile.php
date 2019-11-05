@@ -132,7 +132,7 @@
                           </div>
                       </div>
                       <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="profile-tab2">
-                        <form method="post" class="needs-validation" action="<?php echo base_url();?>index.php/customer/edit_profile" enctype="multipart/form-data"   >
+                        <form method="post" class="needs-validation" action="<?php echo base_url();?>index.php/customer/edit_profile" enctype="Multipart/Form-data"   >
                           <div class="card-header">
                             <h4>Edit Profile</h4>
                           </div>

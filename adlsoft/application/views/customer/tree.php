@@ -4,28 +4,29 @@
         <div class="section-body">
           
 
-		  <div class="row mt-sm-12">
-              <div class="col-12 col-md-12 col-lg-12">
-                <div class="card author-box">
+		  <div class="row">
+                <div class="col-xs-12 col-md-12 col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4><?php echo $smallTitle;?></h4>
+                        </div>
                   <div class="card-body">
                     <!-- tree Content -->
-					
+					 <div class="col-xs-12 col-md-12 col-lg-12">
+                         <div class="row">
 					
 					
 					 <form action="<?php echo base_url(); ?>index.php/clogin/binarySubGroup" method="post">
 	                        <div class="row">
 		                            <div class="col-4 page-title">
-		                                <!--<div style="font-size:35px;"><?php echo $data->customer_name."[".$data->username."]"; ?>'s <h2 class="btn bg-danger text-white">Binary Group</h2> </div>-->
+		                               
 		                                 <h6 class="btn bg-danger text-white">Binary Group (Tree)</h6>
 		                            </div>
 									<div class="col-2 text-right"><input type="text" class="form-control" name="customer_id" required="required" title="Only accept numbers."></div>
 									<div class="col-3"><input type="submit" class="btn btn-danger" value="Get Tree" /></div>
 									<div class="col-3"><a href="<?= base_url() ?>index.php/clogin/tree" class="btn btn-danger">Root</a></div>
 	                        </div>
-	                        <?php
-	                        	if($this->session->flashdata('error'))
-	                        		echo '<div class="row"><div class="col-12 text-center"><h5 class="text-danger">' . $this->session->flashdata('error') . '</h5></div></div>';
-	                        ?>
+	                       
 						</form>
 						<div class="table-responsive">
 								<table width="100%">
@@ -75,7 +76,7 @@
 																	endif;
 																?>
 															</div>
-															<div class="customerHead">
+															<div class="customerHead"><a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
 															<a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
 															<img src="<?= base_url(); ?>assets/images/tree/<?= $leftRootImg; ?>" data-id="<?= $customerID ?>" class="profileImg" width="60" >
 																</a>
@@ -173,6 +174,7 @@
 																	endif;
 																?>
 															</div>
+														
 															<div class="customerHead"><a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $rightRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
 																</a><?php if($root->left && $leftRootTree && $leftRootTree->right && $rightRootData1): ?>
@@ -207,7 +209,7 @@
 															</a>	<img src="<?= base_url(); ?>assets/images/tree/<?= $leftRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
 																<?php if($root->right && $leftRootTree && $leftRootTree->left && $leftRootData2): ?>
 																	<span class="customerRight">
-																		<?php echo generateCustomerInfo($rightRootTree->left, $leftRootData2) ?>
+																		<?php //echo generateCustomerInfo($rightRootTree->left, $leftRootData2) ?>
 																	</span>
 																<?php endif; ?>
 															</div>
@@ -309,7 +311,7 @@
 																?>
 															</div>
 															
-															<div class="customerHead">
+															<div class="customerHead"><a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $rightRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
 																<?php if($root->left && $leftRootTree1 && $leftRootTree1->right && $rightRootData3): ?>
 																	<span class="customerLeft">
@@ -369,7 +371,7 @@
 																	endif;
 																?>
 															</div>
-															<div class="customerHead">
+															<div class="customerHead"><a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $rightRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
 																<?php if($root->right && $rightRootTree1 && $rightRootTree1->left && $rightRootData4): ?>
 																	<span class="customerLeft">
@@ -397,7 +399,7 @@
 																	endif;
 																?>
 															</div>
-															<div class="customerHead">
+															<div class="customerHead"><a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $leftRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
 																<?php if($root->right && $leftRootTree2 && $leftRootTree2->left && $leftRootData5): ?>
 																	<span class="customerRight">
@@ -425,7 +427,7 @@
 																	endif;
 																?>
 															</div>
-															<div class="customerHead">
+															<div class="customerHead"><a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $rightRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
 																<?php if($root->right && $leftRootTree2 && $leftRootTree2->right && $rightRootData5): ?>
 																	<span class="customerRight">
@@ -453,7 +455,7 @@
 																	endif;
 																?>
 															</div>
-															<div class="customerHead">
+															<div class="customerHead"><a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $leftRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
 																<?php if($root->right && $rightRootTree2 && $rightRootTree2->right && $leftRootData6): ?>
 																	<span class="customerRight">
@@ -481,7 +483,7 @@
 																	endif;
 																?>
 															</div>
-															<div class="customerHead">
+															<div class="customerHead"><a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $rightRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
 																<?php if($root->right && $rightRootTree2 && $rightRootTree2->right && $rightRootData6): ?>
 																	<span class="customerRight">
@@ -492,12 +494,7 @@
 														</td>
 													</tr>
 												</table>
-								<?php  
-								
-									if ($this->uri->segment(3)) :
-										echo "succesfully";
-									endif;
-								?>
+							
 							</div>
 					
 					
@@ -513,115 +510,6 @@
               
             </div>
           </div>
-        </section>
-        <div class="settingSidebar">
-          <a href="javascript:void(0)" class="settingPanelToggle"> <i class="fa fa-spin fa-cog"></i>
-          </a>
-          <div class="settingSidebar-body ps-container ps-theme-default">
-            <div class=" fade show active">
-              <div class="setting-panel-header">Setting Panel
-              </div>
-              <div class="p-15 border-bottom">
-                <h6 class="font-medium m-b-10">Select Layout</h6>
-                <div class="selectgroup layout-color w-50">
-                  <label class="selectgroup-item">
-                    <input type="radio" name="value" value="1" class="selectgroup-input select-layout" checked>
-                    <span class="selectgroup-button">Light</span>
-                  </label>
-                  <label class="selectgroup-item">
-                    <input type="radio" name="value" value="2" class="selectgroup-input select-layout">
-                    <span class="selectgroup-button">Dark</span>
-                  </label>
-                </div>
-              </div>
-              <div class="p-15 border-bottom">
-                <h6 class="font-medium m-b-10">Sidebar Color</h6>
-                <div class="selectgroup selectgroup-pills sidebar-color">
-                  <label class="selectgroup-item">
-                    <input type="radio" name="icon-input" value="1" class="selectgroup-input select-sidebar">
-                    <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip"
-                      data-original-title="Light Sidebar"><i class="fas fa-sun"></i></span>
-                  </label>
-                  <label class="selectgroup-item">
-                    <input type="radio" name="icon-input" value="2" class="selectgroup-input select-sidebar" checked>
-                    <span class="selectgroup-button selectgroup-button-icon" data-toggle="tooltip"
-                      data-original-title="Dark Sidebar"><i class="fas fa-moon"></i></span>
-                  </label>
-                </div>
-              </div>
-              <div class="p-15 border-bottom">
-                <h6 class="font-medium m-b-10">Color Theme</h6>
-                <div class="theme-setting-options">
-                  <ul class="choose-theme list-unstyled mb-0">
-                    <li title="white" class="active">
-                      <div class="white"></div>
-                    </li>
-                    <li title="cyan">
-                      <div class="cyan"></div>
-                    </li>
-                    <li title="black">
-                      <div class="black"></div>
-                    </li>
-                    <li title="purple">
-                      <div class="purple"></div>
-                    </li>
-                    <li title="orange">
-                      <div class="orange"></div>
-                    </li>
-                    <li title="green">
-                      <div class="green"></div>
-                    </li>
-                    <li title="red">
-                      <div class="red"></div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="p-15 border-bottom">
-                <div class="theme-setting-options">
-                  <label>
-                    <span class="control-label p-r-20">Mini Sidebar</span>
-                    <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input"
-                      id="mini_sidebar_setting">
-                    <span class="custom-switch-indicator"></span>
-                  </label>
-                </div>
-              </div>
-              <div class="p-15 border-bottom">
-                <div class="theme-setting-options">
-                  <div class="disk-server-setting m-b-20">
-                    <p>Disk Space</p>
-                    <div class="sidebar-progress">
-                      <div class="progress" data-height="5">
-                        <div class="progress-bar l-bg-green" role="progressbar" data-width="80%" aria-valuenow="80"
-                          aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <span class="progress-description">
-                        <small>26% remaining</small>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="disk-server-setting">
-                    <p>Server Load</p>
-                    <div class="sidebar-progress">
-                      <div class="progress" data-height="5">
-                        <div class="progress-bar l-bg-orange" role="progressbar" data-width="58%" aria-valuenow="25"
-                          aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <span class="progress-description">
-                        <small>Highly Loaded</small>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="mt-4 mb-4 p-3 align-center rt-sidebar-last-ele">
-                <a href="#" class="btn btn-icon icon-left btn-primary btn-restore-theme">
-                  <i class="fas fa-undo"></i> Restore Default
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+       
+       
      

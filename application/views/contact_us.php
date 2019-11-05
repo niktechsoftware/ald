@@ -102,7 +102,7 @@
 	</div>
 </div>
 <!--<center>-->
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14586.567221035193!2d83.92272359771857!3d26.73313312657278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcb9f09a578e61ec4!2sAshirvad%20life%20care%20hospital!5e0!3m2!1sen!2sin!4v1572589004054!5m2!1sen!2sin" width="90%" height="250" frameborder="0" style="border:0;padding:80px;" allowfullscreen=""></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14586.567221035193!2d83.92272359771857!3d26.73313312657278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcb9f09a578e61ec4!2sAshirvad%20life%20care%20hospital!5e0!3m2!1sen!2sin!4v1572589004054!5m2!1sen!2sin" width="90%" height="40%" frameborder="0" style="border:0;padding:80px;" allowfullscreen=""></iframe>
     <!--</center>-->
 <!-- Contact Section END -->
 <!-- Map START -->
@@ -115,10 +115,11 @@
 		<div class="row">
 			<div class="col-md-10 col-sm-10 col-12">
 				<h3 class="bold">Business Plan</h3>
-				<p>A great business opportunity to fulfil your dreams.</p>	
+				<p>We provide a business opportunity to fulfil your dreams.</p>	
 			</div>
 			<div class="col-md-2 col-sm-2 col-12 right-holder center-holder-xs">
-				<a href="<?php echo base_url();?>assets/img/adlplan.pdf"  target="_blank" class="button-md primary-button">Read More</a>
+			    	<a href="<?php echo base_url();?>assets/img/pp.pdf" class="button-md primary-button">Download</a>
+			<!--	<a href="<?php echo base_url();?>assets/img/adlplan.pdf"  target="_blank" class="button-md primary-button">Read More</a>-->
 			</div>
 		</div>
 	</div>

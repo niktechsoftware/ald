@@ -84,7 +84,8 @@ class customer extends CI_Controller{
 			$config['file_name'] = $photo_name;
 				if (!empty($_FILES['photo']['name'])) {
 			$this->upload->initialize($config);
-	     	$data["image"]=	$this->upload->do_upload('photo');
+			 $f1= $this->upload->do_upload('photo');
+	     	$data["image"]=$photo_name;
 			
 				}else{
 				    $this->db->where("id",$cid);

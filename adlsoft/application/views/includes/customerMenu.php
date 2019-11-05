@@ -48,10 +48,11 @@
              <li class="dropdown">
               <a href="#" class="nav-link has-dropdown"><i data-feather="anchor"></i><span>My Downline</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/1">Silver</a></li>
-                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/2">Gold</a></li>
-                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/3">Diamond</a></li>
-                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/4">Crown</a></li>
+                  <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/6">Overall</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/1">Silver Direct</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/2">Gold Direct</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/3">Diamond Direct</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/4">Crown Direct</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -72,6 +73,9 @@
                 <li><a class="nav-link" href="badge.html">Query</a></li>
                </ul>
             </li>
-           
+             <li >
+              <a href="<?php echo base_url();?>index.php/welcome/logout" class="nav-link "><i data-feather="anchor"></i><span>Log out</span></a>
+              
+            </li>
              
           </ul>
