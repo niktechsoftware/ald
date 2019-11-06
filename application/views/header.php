@@ -43,7 +43,29 @@
 	<!-- Fonts Google -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" /><link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" /><link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700" rel="stylesheet" /><link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
 </head>
+<div id="boxes">
+  <div style="top: 139.5px; left: 414px; display: block;" id="dialog" class="window"> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr>
+    <td><p style="color:#CC0000" align="left">Popup</p></td>
+    <td><p align="right"><a href="#" style="color:red;display: block;" class="close agree"><img src="https://careercoachingmau.com/assets/close-button.png"></a></p></td>
+  </tr>
+</tbody></table>
+ 
+     
+  
+    <div id="lorem">
+      <p><img class="images" src="<?php echo base_url();?>assets/img/banner11.jpg" width="700px" height="450px"></p>
+    </div>
+    <div id="popupfoot">  </div>
+  </div>
+  <div style="width: 1528px; font-size: 32pt; color: white; height: 1917px; opacity: 0.9; display: block;" id="mask"></div>
+</div>
 <body>
+
+
+
+
+
     <form name="form1" method="post" action="http://dyd.in.net/Default.aspx" id="form1">
 <div>
 <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTEyMTAwNTU5NzFkZNik+z7+RuVsxnkxowqc9zA2vlgl" />
@@ -154,3 +176,53 @@
 		</div>					
 	</nav>	
 </header>	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+window.onload = function () {
+    setTimeout(function () {
+			dialog('show');
+    }, 5000);
+}
+$(document).ready(function() {	
+
+var id = '#dialog';
+
+//Get the screen height and width
+var maskHeight = $(document).height();
+var maskWidth = $(window).width();
+
+//Set heigth and width to mask to fill up the whole screen
+$('#mask').css({'width':maskWidth,'height':maskHeight});
+
+//transition effect		
+$('#mask').fadeIn(500);	
+$('#mask').fadeTo("slow",0.9);	
+
+//Get the window height and width
+var winH = $(window).height();
+var winW = $(window).width();
+					
+//Set the popup window to center
+$(id).css('top',  winH/2-$(id).height()/2);
+$(id).css('left', winW/2-$(id).width()/2);
+
+//transition effect
+$(id).fadeIn(2000); 	
+
+//if close button is clicked
+$('.window .close').click(function (e) {
+//Cancel the link behavior
+e.preventDefault();
+
+$('#mask').hide();
+$('.window').hide();
+});		
+
+//if mask is clicked
+$('#mask').click(function () {
+$(this).hide();
+$('.window').hide();
+});		
+
+});
+</script>

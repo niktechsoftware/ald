@@ -117,7 +117,7 @@
 		//aarju mathods
 		function getcustomerdata($matchcon,$status,$tblname){
 			if($status==2){
-				$req = $this->db->query("select customer_info.id,customer_info.customer_name,customer_info.fname,customer_info.status,customer_info.mobilenumber,customer_info.email,customer_info.current_address,customer_info.city,pay_details.reffno,pay_details.transaction,pay_details.uploadfile from customer_info,pay_details where customer_info.id = pay_details.c_id and customer_info.status=0");
+				$req = $this->db->query("select customer_info.id,customer_info.parent_id,customer_info.customer_name,customer_info.fname,customer_info.status,customer_info.mobilenumber,customer_info.email,customer_info.current_address,customer_info.city,pay_details.reffno,pay_details.transaction,pay_details.uploadfile from customer_info,pay_details where customer_info.id = pay_details.c_id and customer_info.status=0");
 				return $req;
 			}else{
 				$this->db->where($matchcon,$status);
