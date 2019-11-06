@@ -76,7 +76,7 @@
 																	endif;
 																?>
 															</div>
-															<div class="customerHead">
+															<div class="customerHead"><a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
 															<a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
 															<img src="<?= base_url(); ?>assets/images/tree/<?= $leftRootImg; ?>" data-id="<?= $customerID ?>" class="profileImg" width="60" >
 																</a>
@@ -311,7 +311,7 @@
 																?>
 															</div>
 															
-															<div class="customerHead">
+															<div class="customerHead"><a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $rightRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
 																<?php if($root->left && $leftRootTree1 && $leftRootTree1->right && $rightRootData3): ?>
 																	<span class="customerLeft">
@@ -371,7 +371,7 @@
 																	endif;
 																?>
 															</div>
-															<div class="customerHead">
+															<div class="customerHead"><a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $rightRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
 																<?php if($root->right && $rightRootTree1 && $rightRootTree1->left && $rightRootData4): ?>
 																	<span class="customerLeft">
@@ -399,7 +399,7 @@
 																	endif;
 																?>
 															</div>
-															<div class="customerHead">
+															<div class="customerHead"><a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $leftRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
 																<?php if($root->right && $leftRootTree2 && $leftRootTree2->left && $leftRootData5): ?>
 																	<span class="customerRight">
@@ -427,7 +427,7 @@
 																	endif;
 																?>
 															</div>
-															<div class="customerHead">
+															<div class="customerHead"><a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $rightRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
 																<?php if($root->right && $leftRootTree2 && $leftRootTree2->right && $rightRootData5): ?>
 																	<span class="customerRight">
@@ -455,7 +455,7 @@
 																	endif;
 																?>
 															</div>
-															<div class="customerHead">
+															<div class="customerHead"><a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $leftRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
 																<?php if($root->right && $rightRootTree2 && $rightRootTree2->right && $leftRootData6): ?>
 																	<span class="customerRight">
@@ -483,7 +483,7 @@
 																	endif;
 																?>
 															</div>
-															<div class="customerHead">
+															<div class="customerHead"><a href="<?php echo base_url(); ?>index.php/clogin/binarySubGroup/<?php echo $customerID ?>">
 																<img src="<?= base_url(); ?>assets/images/tree/<?= $rightRootImg ?>" data-id="<?= $customerID ?>" class="profileImg" width="60">
 																<?php if($root->right && $rightRootTree2 && $rightRootTree2->right && $rightRootData6): ?>
 																	<span class="customerRight">
@@ -510,8 +510,6 @@
               
             </div>
           </div>
-          </div>
-        
-        </section>
+       
        
      

@@ -16,13 +16,13 @@ class cronjobc extends CI_Controller{
     	$posl="leftjoiner";
     	//$this->db->where("leftjoiner",$cid);
         //$directleft=	$this->db->get("silver_tree");
-        	$directleft= $this->db->query("select c_id from silver_tree join customer_info where customer_info.status=1 and silver_tree.leftjoiner='$cid' AND customer_info.id=silver_tree.c_id");
+        	$directleft= $this->db->query("select * from silver_tree join customer_info where customer_info.status=1 and silver_tree.leftjoiner='$cid' AND customer_info.id=silver_tree.left");
 	
     	$leftjoin = $directleft->num_rows();
     	$posr="rightjoiner";
     	echo $leftjoin."=left-";
     //	$this->db->where("rightjoiner",$cid);
-    	$rightjoin= $this->db->query("select c_id from silver_tree join customer_info where customer_info.status=1 and silver_tree.rightjoiner='$cid' AND customer_info.id=silver_tree.c_id")->num_rows();
+    	$rightjoin= $this->db->query("select * from silver_tree join customer_info where customer_info.status=1 and silver_tree.rightjoiner='$cid' AND customer_info.id=silver_tree.right")->num_rows();
 		
           
     //	$rightjoin = $this->db->get("silver_tree")->num_rows();
@@ -494,7 +494,7 @@ echo "poool for =".$cid."<br>";
       public function roiincome(){
           
           $date1  = date('Y-m-d');
-          //$date1  =date('Y-m-d',(strtotime ( '-1 day' , strtotime ( $date2) ) ));
+          $date1  =date('Y-m-d',(strtotime ( '-1 day' , strtotime ( $date2) ) ));
 		    	$getpoot=$this->db->get("auto_pool");
 		    	foreach($getpoot->result() as $gpt):
 		    	    $this->db->where("DATE(date)",$date1);

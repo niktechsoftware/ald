@@ -13,7 +13,10 @@
 							action="<?php echo base_url()?>index.php/pin/genSavePin">
                      <div class="col-xs-12 col-md-12 col-lg-12">
                      	<div class="row">
+                     	   
                      		<div class=" col-col-md-3 col-xs-3 col-lg-3 ">
+                     		     <?php if($this->uri->segment("4")=="success"){
+                     	    getAlert("success");}?>
                      			 <?php 
                      			
                      			 if($id){?>
@@ -138,5 +141,6 @@
                   </div>
                 </div>
               </div>
-            </div>     
+            </div> 
+            </div>
                    

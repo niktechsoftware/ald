@@ -314,3 +314,12 @@
 [04-Nov-2019 18:16:57 Etc/GMT] PHP Fatal error:  Call to undefined function generateCustomerInfo() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/tree.php on line 212
 [04-Nov-2019 18:17:04 Etc/GMT] PHP Fatal error:  Call to undefined function generateCustomerInfo() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/tree.php on line 212
 [04-Nov-2019 18:17:06 Etc/GMT] PHP Fatal error:  Call to undefined function generateCustomerInfo() in /home/gfincpnt/public_html/adlgm.in/adlsoft/application/views/customer/tree.php on line 212
+[05-Nov-2019 08:59:39 Etc/GMT] PHP Fatal error:  Call to undefined method CI_DB_mysql_result::rows() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 39
+[05-Nov-2019 10:13:45 Etc/GMT] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/clogin.php on line 405
+[05-Nov-2019 10:13:50 Etc/GMT] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/clogin.php on line 405
+[05-Nov-2019 10:59:36 Etc/GMT] PHP Fatal error:  Call to undefined method CI_DB_mysql_result::rows() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 42
+[05-Nov-2019 11:06:47 Etc/GMT] PHP Fatal error:  Call to a member function result() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/alltree.php on line 41
+[05-Nov-2019 12:15:28 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 73
+[05-Nov-2019 14:54:33 Etc/GMT] PHP Fatal error:  Call to undefined method tree::getRightData() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/clogin.php on line 256
+[05-Nov-2019 17:12:45 Etc/GMT] PHP Fatal error:  Call to undefined method CI_Output::delete_cache() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/clogin.php on line 10
+[05-Nov-2019 17:12:59 Etc/GMT] PHP Fatal error:  Call to undefined method CI_Output::delete_cache() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/clogin.php on line 10

@@ -117,7 +117,13 @@
 		//aarju mathods
 		function getcustomerdata($matchcon,$status,$tblname){
 			if($status==2){
+<<<<<<< HEAD
 				$req = $this->db->query("select customer_info.id,customer_info.parent_id,customer_info.customer_name,customer_info.fname,customer_info.status,customer_info.mobilenumber,customer_info.email,customer_info.current_address,customer_info.city,pay_details.reffno,pay_details.transaction,pay_details.uploadfile from customer_info,pay_details where customer_info.id = pay_details.c_id and customer_info.status=0");
+=======
+				$req = $this->db->query("select customer_info.id,customer_info.parent_id,customer_info.parent_id,customer_info.customer_name,
+				customer_info.fname,customer_info.status,customer_info.mobilenumber,customer_info.email,customer_info.current_address,
+				customer_info.city,pay_details.reffno,pay_details.transaction,pay_details.uploadfile from customer_info,pay_details where customer_info.id = pay_details.c_id and customer_info.status=0");
+>>>>>>> 87c8d0abcd93e4e24049e0cbe063c57a61c9708b
 				return $req;
 			}else{
 				$this->db->where($matchcon,$status);
@@ -139,7 +145,13 @@
 		 	$this->db->where("c_id",$cid);
 		 	return $this->db->get("silver_mbalance");
 		 }
-		 
+		 function getsumamount($paid_to,$ttype){
+		   $this->db->select_sum("amount");
+		   $this->db->where("transaction_type",$ttype);
+		    $this->db->where("paid_to",$paid_to);
+			return $this->db->get("inner_daybook");
+		   
+	   }
 		 function getGold($cid){
 		 	$this->db->where("c_id",$cid);
 		 	return $this->db->get("gold_mbalance");

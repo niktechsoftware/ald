@@ -365,7 +365,7 @@
 		<div class="row">
 			<div class="col-md-10 col-sm-10 col-12">
 				<h3 class="bold">Business Plan</h3>
-				<p>A great business opportunity to fulfil your dreams.</p>	
+				<p>We provide a business opportunity to fulfil your dreams.</p>	
 			</div>
 			<div class="col-md-2 col-sm-2 col-12 right-holder center-holder-xs">
 				<a href="<?php echo base_url();?>assets/img/pp.pdf" class="button-md primary-button">Download</a>
