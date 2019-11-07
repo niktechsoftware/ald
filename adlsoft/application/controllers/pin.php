@@ -20,6 +20,14 @@ class pin extends CI_Controller{
 			redirect("welcome/lockPage");
 		}
 	}
+	function pay(){
+	 $pay= $this->input->post('pay');
+	  $paid_from= "admin";
+	   $paid_to= $this->input->post('cid');
+		$pvalue = $this->cmodel->insertpay($pay,$paid_from,$paid_to);
+	redirect("pin/mpin_detail");
+		
+	}
 	function mpinused(){
 		
 		$pinid = $this->uri->segment("3");

@@ -136,26 +136,24 @@
 		 	$getrecord = $this->db->get("inner_daybook");
 		 	return $getrecord;
 		 }
-
+ function getGold($cid){
+		 	$this->db->where("c_id",$cid);
+		 	return $this->db->get("gold_mbalance");
+		 }
 		 function getSilver($cid){
 		 	$this->db->where("c_id",$cid);
 		 	return $this->db->get("silver_mbalance");
 		 }
-		 function getsumamount($paid_to,$ttype){
-		   $this->db->select_sum("amount");
-		   $this->db->where("transaction_type",$ttype);
-		    $this->db->where("paid_to",$paid_to);
-			return $this->db->get("inner_daybook");
-		   
-	   }
-		 function getGold($cid){
-		 	$this->db->where("c_id",$cid);
-		 	return $this->db->get("gold_mbalance");
-		 }
-		 function getDiamond($cid){
+		
+		function getDiamond($cid){
 		 	$this->db->where("c_id",$cid);
 		 	return $this->db->get("diamond_mbalance");
 		 }
+		 function getCrown($cid){
+		 	$this->db->where("c_id",$cid);
+		 	return $this->db->get("crown_mbalance");
+		 }
+		
 		 function getDirect($cid){
 		     	$this->db->where("c_id",$cid);
 		 	return $this->db->get("direct_income");
@@ -165,10 +163,7 @@
 		 	return $this->db->get("autopool_details");
 		 }
 		 
-		 function getCrown($cid){
-		 	$this->db->where("c_id",$cid);
-		 	return $this->db->get("crown_mbalance");
-		 }
+		
 		//aarju mathods
     }
 ?>

@@ -323,3 +323,31 @@
 [05-Nov-2019 14:54:33 Etc/GMT] PHP Fatal error:  Call to undefined method tree::getRightData() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/clogin.php on line 256
 [05-Nov-2019 17:12:45 Etc/GMT] PHP Fatal error:  Call to undefined method CI_Output::delete_cache() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/clogin.php on line 10
 [05-Nov-2019 17:12:59 Etc/GMT] PHP Fatal error:  Call to undefined method CI_Output::delete_cache() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/clogin.php on line 10
+[06-Nov-2019 05:18:08 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 61
+[06-Nov-2019 05:18:15 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 61
+[06-Nov-2019 05:30:03 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 61
+[06-Nov-2019 05:30:04 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 61
+[06-Nov-2019 05:30:11 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 61
+[06-Nov-2019 05:30:32 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 61
+[06-Nov-2019 05:30:58 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 61
+[06-Nov-2019 05:31:18 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 51
+[06-Nov-2019 05:38:26 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 55
+[06-Nov-2019 05:38:52 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 55
+[06-Nov-2019 05:39:46 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 55
+[06-Nov-2019 08:00:06 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 352
+[06-Nov-2019 08:01:46 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 352
+[06-Nov-2019 08:04:30 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 352
+[06-Nov-2019 08:04:33 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 352
+[06-Nov-2019 08:04:33 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 352
+[06-Nov-2019 08:04:33 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 352
+[06-Nov-2019 08:04:49 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 352
+[06-Nov-2019 08:05:09 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 353
+[06-Nov-2019 08:05:09 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 353
+[06-Nov-2019 08:05:09 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 353
+[06-Nov-2019 08:05:10 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 353
+[06-Nov-2019 08:05:21 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 353
+[06-Nov-2019 08:05:25 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 353
+[06-Nov-2019 08:05:26 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 353
+[06-Nov-2019 08:05:27 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 353
+[06-Nov-2019 10:02:47 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/transaction.php on line 26
+[06-Nov-2019 10:04:17 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/transaction.php on line 26

@@ -199,7 +199,7 @@
                                                  $data1 = $this->db->get("customer_info");
                                              $this->db->where("id", $getright->row()->right);
                                                  $data2 = $this->db->get("customer_info");    
-                                                 
+                                                
                                                  
                                             if($getright->num_rows()>0){
                                                 $data1=$data1->row();

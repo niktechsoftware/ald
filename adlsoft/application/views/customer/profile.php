@@ -138,49 +138,152 @@
                           </div>
                           <div class="card-body">
                             <div class="row">
+                               
                                 <input type="hidden" class="form-control" name="id" value="<?php echo $crecord->row()->id; ?>">
 							<div class="form-group col-md-2 col-12"><label>Name</label></div>
-							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="cname" value="<?php echo $crecord->row()->customer_name; ?>">
+							  <div class="form-group col-md-4 col-12">
+							   <?php 
+							       if($this->session->userdata("login_type")==1){  ?>
+							      <input type="text" class="form-control" name="cname" value="<?php echo $crecord->row()->customer_name; ?>">
+							      <?php } else{ 
+							      if($crecord->row()->customer_name){
+							      ?>
+							       <input type="text" class="form-control" name="cname" value="<?php echo $crecord->row()->customer_name; ?>" readonly="" >
+							    
+							      
+							      <?php } else{ ?>
+							       <input type="text" class="form-control" name="cname" value="<?php echo $crecord->row()->customer_name; ?>">
+							    
+							     <?php } }?>
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
                               <div class="form-group col-md-2 col-12"><label>Father Name</label></div>
-                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="fname" value="<?php echo $crecord->row()->fname; ?>">
+                              <div class="form-group col-md-4 col-12">
+                                   <?php 
+							       if($this->session->userdata("login_type")==1){  ?>
+							   
+                                  <input type="text" class="form-control" name="fname" value="<?php echo $crecord->row()->fname; ?>">
+                                    <?php } else{ 
+							      if($crecord->row()->fname){
+							      ?>
+							        <input type="text" class="form-control" name="fname" value="<?php echo $crecord->row()->fname; ?>" readonly="">
+                                <?php } else{ ?>
+                                   <input type="text" class="form-control" name="fname" value="<?php echo $crecord->row()->fname; ?>">
+                             <?php } }?>
                                 <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>
 							 <div class="row">
 							<div class="form-group col-md-2 col-12"><label>City</label></div>
-							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="city" value="<?php echo $crecord->row()->city; ?>">
+							  <div class="form-group col-md-4 col-12">
+							         <?php 
+							       if($this->session->userdata("login_type")==1){  ?>
+							   
+							      <input type="text" class="form-control" name="city" value="<?php echo $crecord->row()->city; ?>">
+							          <?php } else{ 
+							      if($crecord->row()->city){
+							      ?>
+							       <input type="text" class="form-control" name="city" value="<?php echo $crecord->row()->city; ?>" readonly="">
+							      <?php } else{ ?>
+							       <input type="text" class="form-control" name="city" value="<?php echo $crecord->row()->city; ?>">
+							      <?php } }?>
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
                               <div class="form-group col-md-2 col-12"><label>State</label></div>
-                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="state" value="<?php echo $crecord->row()->state; ?>">
+                              <div class="form-group col-md-4 col-12">
+                                      <?php 
+							       if($this->session->userdata("login_type")==1){  ?>
+							   
+                                  <input type="text" class="form-control" name="state" value="<?php echo $crecord->row()->state; ?>">
+                                     <?php } else{ 
+							      if($crecord->row()->state){
+							      ?>
+							       <input type="text" class="form-control" name="state" value="<?php echo $crecord->row()->state; ?>" readonly="" >
+                                   <?php } else{ ?>
+                                     <input type="text" class="form-control" name="state" value="<?php echo $crecord->row()->state; ?>">
+                                 <?php } }?>
                                 <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>
 							 <div class="row">
 							<div class="form-group col-md-2 col-12"><label>Current Address</label></div>
-							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="cadd" value="<?php echo $crecord->row()->current_address; ?>">
+							  <div class="form-group col-md-4 col-12">
+							        <?php 
+							       if($this->session->userdata("login_type")==1){  ?>
+							   
+							      <input type="text" class="form-control" name="cadd" value="<?php echo $crecord->row()->current_address; ?>">
+							        <?php } else{ 
+							      if($crecord->row()->current_address){
+							      ?>
+							      <input type="text" class="form-control" name="cadd" value="<?php echo $crecord->row()->current_address; ?>" readonly="">
+							       <?php } else{ ?>
+							     <input type="text" class="form-control" name="cadd" value="<?php echo $crecord->row()->current_address; ?>">
+							     <?php } }?>
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
                               <div class="form-group col-md-2 col-12"><label>Permanent  Address</label></div>
-                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="peradd" value="<?php echo $crecord->row()->permanent_address; ?>">
+                              <div class="form-group col-md-4 col-12">
+                                   <?php 
+							       if($this->session->userdata("login_type")==1){  ?>
+							   
+                                  <input type="text" class="form-control" name="peradd" value="<?php echo $crecord->row()->permanent_address; ?>">
+                                    <?php } else{ 
+							      if($crecord->row()->permanent_address){
+							      ?>
+							        <input type="text" class="form-control" name="peradd" value="<?php echo $crecord->row()->permanent_address; ?>" readonly="" >
+							          <?php } else{ ?>
+                                  <input type="text" class="form-control" name="peradd" value="<?php echo $crecord->row()->permanent_address; ?>">
+                                   <?php } }?>
                                 <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>
 							<div class="row">
 							<div class="form-group col-md-2 col-12"><label>Pincode</label></div>
-							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="pin" value="<?php echo $crecord->row()->pin; ?>">
+							  <div class="form-group col-md-4 col-12">
+							       <?php 
+							       if($this->session->userdata("login_type")==1){  ?>
+							   
+							      <input type="text" class="form-control" name="pin" value="<?php echo $crecord->row()->pin; ?>">
+							         <?php } else{ 
+							      if($crecord->row()->pin){
+							      ?>
+							       <input type="text" class="form-control" name="pin" value="<?php echo $crecord->row()->pin; ?>" readonly="">
+							          <?php } else{ ?>
+							     <input type="text" class="form-control" name="pin" value="<?php echo $crecord->row()->pin; ?>">
+							       <?php } }?>
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
                               <div class="form-group col-md-2 col-12"><label>Email</label></div>
-                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="email" value="<?php echo $crecord->row()->email; ?>">
+                              <div class="form-group col-md-4 col-12">
+                                    <?php 
+							       if($this->session->userdata("login_type")==1){  ?>
+							   
+                                  <input type="text" class="form-control" name="email" value="<?php echo $crecord->row()->email; ?>">
+                                      <?php } else{ 
+							      if($crecord->row()->email){
+							      ?>
+							        <input type="text" class="form-control" name="email" value="<?php echo $crecord->row()->email; ?>" readonly="">
+							         <?php } else{ ?>
+                                  <input type="text" class="form-control" name="email" value="<?php echo $crecord->row()->email; ?>">
+                                <?php } }?>
                                 <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>
 							 <div class="row">
 							<div class="form-group col-md-2 col-12"><label>Mobile No</label></div>
-							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="mno" value="<?php echo $crecord->row()->mobilenumber; ?>">
+							  <div class="form-group col-md-4 col-12">
+							       <?php 
+							       if($this->session->userdata("login_type")==1){  ?>
+							   
+							      <input type="text" class="form-control" name="mno" value="<?php echo $crecord->row()->mobilenumber; ?>">
+							        <?php } else{ 
+							      if($crecord->row()->mobilenumber){
+							      ?>
+							       <input type="text" class="form-control" name="mno" value="<?php echo $crecord->row()->mobilenumber; ?>" readonly="">
+							          <?php } else{ ?>
+							      <input type="text" class="form-control" name="mno" value="<?php echo $crecord->row()->mobilenumber; ?>">
+							     
+							       <?php } }?>
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
                               <div class="form-group col-md-2 col-12"><label>Other Mobile No</label></div>
@@ -190,21 +293,65 @@
                             </div>
 							<div class="row">
 							<div class="form-group col-md-2 col-12"><label>Aadhar No</label></div>
-							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="adhar" value="<?php echo $crecord->row()->adhaarnumber; ?>">
+							  <div class="form-group col-md-4 col-12">
+							        <?php 
+							       if($this->session->userdata("login_type")==1){  ?>
+							   
+							      <input type="text" class="form-control" name="adhar" value="<?php echo $crecord->row()->adhaarnumber; ?>">
+							          <?php } else{ 
+							      if($crecord->row()->adhaarnumber){
+							      ?>
+							       <input type="text" class="form-control" name="adhar" value="<?php echo $crecord->row()->adhaarnumber; ?>" readonly="">
+							           <?php } else{ ?>
+							      <input type="text" class="form-control" name="adhar" value="<?php echo $crecord->row()->adhaarnumber; ?>">
+							       <?php } }?>
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
                               <div class="form-group col-md-2 col-12"><label>Pan No</label></div>
-                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="panno" value="<?php echo $crecord->row()->pannumber; ?>">
+                              <div class="form-group col-md-4 col-12">
+                                    <?php 
+							       if($this->session->userdata("login_type")==1){  ?>
+							   
+                                  <input type="text" class="form-control" name="panno" value="<?php echo $crecord->row()->pannumber; ?>">
+                                     <?php } else{ 
+							      if($crecord->row()->pannumber){
+							      ?>
+                                  <input type="text" class="form-control" name="panno" value="<?php echo $crecord->row()->pannumber; ?>" readonly="">
+                                    <?php } else{ ?>
+                            <input type="text" class="form-control" name="panno" value="<?php echo $crecord->row()->pannumber; ?>">
+                              <?php } }?>
                                 <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>
 							 <div class="row">
 							<div class="form-group col-md-2 col-12"><label>Gender</label></div>
-							  <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="gen" value="<?php echo $crecord->row()->gender; ?>">
+							  <div class="form-group col-md-4 col-12">
+							        <?php 
+							       if($this->session->userdata("login_type")==1){  ?>
+							   
+							      <input type="text" class="form-control" name="gen" value="<?php echo $crecord->row()->gender; ?>">
+							        <?php } else{ 
+							      if($crecord->row()->gender){
+							      ?> 
+							      <input type="text" class="form-control" name="gen" value="<?php echo $crecord->row()->gender; ?>" readonly="">
+							        <?php } else{ ?>
+                              <input type="text" class="form-control" name="gen" value="<?php echo $crecord->row()->gender; ?>">
+                               <?php } }?>
                                 <div class="invalid-feedback">Please fill in the first name</div>
                               </div>
                               <div class="form-group col-md-2 col-12"><label>Date Of Birth</label></div>
-                              <div class="form-group col-md-4 col-12"><input type="text" class="form-control" name="dob" value="<?php echo $crecord->row()->dob; ?>">
+                              <div class="form-group col-md-4 col-12">
+                                    <?php 
+							       if($this->session->userdata("login_type")==1){  ?>
+							   
+                                  <input type="text" class="form-control" name="dob" value="<?php echo $crecord->row()->dob; ?>">
+                                    <?php } else{ 
+							      if($crecord->row()->dob){
+							      ?>
+                                   <input type="text" class="form-control" name="dob" value="<?php echo $crecord->row()->dob; ?>" readonly="">
+                                     <?php } else{ ?>
+                              <input type="text" class="form-control" name="dob" value="<?php echo $crecord->row()->dob; ?>">
+                               <?php } }?>
                                 <div class="invalid-feedback">Please fill in the last name </div>
                               </div>
                             </div>
