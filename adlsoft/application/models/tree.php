@@ -161,8 +161,9 @@
 						echo 	"<tr>
 						
 								 <td>". $data1->customer_name. "[".$data1->username."]"."</td>
-								  <td>". $status. " [Right of".$dataorg->username."]</td>
-								 <td>". $data1->mobilenumber. "</td>
+								 <td>". $dataorg->customer_name. "[".$dataorg->username."]"."</td>
+								  <td>L</td>
+								  <td>". $status."]</td>
 								
 							</tr>
 							";

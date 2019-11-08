@@ -161,7 +161,7 @@ public function contact()
 				);
 				if($this->cmodel->position($datatree,$postition,$po)){
 					 $msg = "Dear " . $name . " Your Registration is successfully Done,Your Username is ".$username." and password is ".$password.
-							"Please Login to update your details And Contact to Admin for Activate your account";
+							"Please Login to update http://www.adlgm.in.net your details And Contact to Admin for Activate your account.";
                  	sms($mobile, $msg);
 					redirect('welcome/cconpage/'.$maxid);
 				}

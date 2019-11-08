@@ -22,7 +22,8 @@
         	if(($checksv->num_rows()>0)&& ($checkpinv->num_rows()>0)){
         		
         	$arr =array(
-        			"status" =>1
+        			"status" =>1,
+        			"active_date"=>date('Y-m-d H:i:s')
         	);
         
         	$this->db->where("username",$custid);
@@ -37,7 +38,7 @@
         	  $this->db->update("mpin",$data);
         	  $mobile = $checksv->row()->mobilenumber;
         	  $cname =$checksv->row()->customer_name;
-        	  $sms = "Dear Customer ".$cname."Your ID is Successfully Activated.Welcome to ADLGM Sales Pvt.Ltd.";
+        	  $sms = "Dear Customer ".$cname."Your ID is Successfully Activated.Welcome to ADLGM Sales Pvt.Ltd. http://www.adlgm.in.net";
         	  sms($mobile,$sms);
         	  return true;
         	}else{
@@ -75,6 +76,7 @@
         
         function getrowid($username){
         	$this->db->where("username",$username);
+        		$this->db->where("status",1);
         	$getrow = $this->db->get("customer_info")->row()->id;
         	return $getrow;
         }
@@ -117,9 +119,8 @@
 		//aarju mathods
 		function getcustomerdata($matchcon,$status,$tblname){
 			if($status==2){
-				$req = $this->db->query("select customer_info.id,customer_info.parent_id,customer_info.parent_id,customer_info.customer_name,
-				customer_info.fname,customer_info.status,customer_info.mobilenumber,customer_info.email,customer_info.current_address,
-				customer_info.city,pay_details.reffno,pay_details.transaction,pay_details.uploadfile from customer_info,pay_details where customer_info.id = pay_details.c_id and customer_info.status=0");
+				$req = $this->db->query("select customer_info.id,customer_info.parent_id,customer_info.customer_name,customer_info.fname,customer_info.status,customer_info.mobilenumber,customer_info.email,customer_info.current_address,customer_info.city,pay_details.reffno,pay_details.transaction,pay_details.uploadfile from customer_info,pay_details where customer_info.id = pay_details.c_id and customer_info.status=0");
+
 				return $req;
 			}else{
 				$this->db->where($matchcon,$status);

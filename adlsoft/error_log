@@ -351,3 +351,20 @@
 [06-Nov-2019 08:05:27 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 353
 [06-Nov-2019 10:02:47 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/transaction.php on line 26
 [06-Nov-2019 10:04:17 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/transaction.php on line 26
+[07-Nov-2019 07:32:07 Etc/GMT] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/models/cmodel.php on line 120
+[08-Nov-2019 10:52:18 Etc/GMT] PHP Fatal error:  Call to undefined function set_value() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 29
+[08-Nov-2019 10:52:56 Etc/GMT] PHP Fatal error:  Call to undefined function set_value() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 27
+[08-Nov-2019 10:52:57 Etc/GMT] PHP Fatal error:  Call to undefined function set_value() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 27
+[08-Nov-2019 10:52:57 Etc/GMT] PHP Fatal error:  Call to undefined function set_value() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 27
+[08-Nov-2019 10:53:17 Etc/GMT] PHP Fatal error:  Call to undefined function form_error() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 30
+[08-Nov-2019 10:54:23 Etc/GMT] PHP Fatal error:  Call to undefined function form_error() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 30
+[08-Nov-2019 10:54:25 Etc/GMT] PHP Fatal error:  Call to undefined function form_error() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 30
+[08-Nov-2019 10:54:25 Etc/GMT] PHP Fatal error:  Call to undefined function form_error() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 30
+[08-Nov-2019 10:54:26 Etc/GMT] PHP Fatal error:  Call to undefined function form_error() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 30
+[08-Nov-2019 10:54:26 Etc/GMT] PHP Fatal error:  Call to undefined function form_error() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 30
+[08-Nov-2019 10:54:27 Etc/GMT] PHP Fatal error:  Call to undefined function form_error() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 30
+[08-Nov-2019 10:56:14 Etc/GMT] PHP Fatal error:  Call to undefined function form_error() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 30
+[08-Nov-2019 10:56:59 Etc/GMT] PHP Fatal error:  Call to undefined function form_error() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 30
+[08-Nov-2019 10:57:33 Etc/GMT] PHP Fatal error:  Call to undefined function set_value() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 86
+[08-Nov-2019 11:07:51 Etc/GMT] PHP Fatal error:  Call to undefined function set_value() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 85
+[08-Nov-2019 11:08:57 Etc/GMT] PHP Fatal error:  Call to undefined function set_value() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 85

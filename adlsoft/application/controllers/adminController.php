@@ -67,7 +67,55 @@ Class AdminController extends CI_Controller{
 		$data['mainContent'] = 'admin_profile';
 		$this->load->view("includes/mainContent", $data);
 	}
-    
+	function addproduct(){
+	    $data['pageTitle'] = 'Admin Profile';
+		$data['smallTitle'] = 'Profile form';
+		$data['mainPage'] = 'Admin Profile';
+		$data['subPage'] = 'Admin Profile';
+		$data['title'] = 'Admin Profile Form';
+		$data['headerCss'] = 'headerCss/dashboardCss';
+		$data['footerJs'] = 'footerJs/customerJs';
+		$data['mainContent'] = 'addproduct';
+		$this->load->view("includes/mainContent", $data);
+	    
+	}
+	function insertproduct(){
+	    	$photo_name = time().trim($_FILES['img']['name']);
+	    	
+	   $data['product_name']= $this->input->post("name");
+	   
+	   $data['price']=$this->input->post("price");
+	   
+	   	$this->load->library('upload');
+			$image_path = realpath(APPPATH . '../assets/img/');
+			$config['upload_path'] = $image_path;
+			$config['allowed_types'] = 'gif|jpg|jpeg|png';
+			$config['max_size'] = '500';
+			$config['file_name'] = $photo_name;
+				if (!empty($_FILES['img']['name'])) {
+			$this->upload->initialize($config);
+			 $f1= $this->upload->do_upload('img');
+	     	$data["image_name"]=$photo_name;
+				}
+				$dt=$this->db->insert("products",$data);
+				if($dt){?>
+				<script> alert("Product Inserted Successfully."); </script>
+			<?php redirect("adminController/addproduct");
+			}
+	    
+	}
+    	public function sms()
+	{    $data['uri']= $this->uri->segment(3);
+	    $data['pageTitle'] = 'Admin Profile';
+		$data['smallTitle'] = 'Profile form';
+	    $data['mainPage'] = 'Admin Profile';
+		$data['subPage'] = 'Admin Profile';
+		$data['title'] = 'Admin Profile Form';
+	    $data['headerCss'] = 'headerCss/dashboardCss';
+		$data['footerJs'] = 'footerJs/customerJs';
+	    $data['mainContent'] = 'writesms';
+	    $this->load->view("includes/mainContent", $data);
+	}
     function generatepain(){
     	
      

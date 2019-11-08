@@ -156,7 +156,7 @@ class Clogin extends CI_Controller{
 				);
 				if($this->tree->position($datatree,$postition,$po)){
 					 $msg = "Dear " . $name . " Your Registration is successfully Done,Your Username is ".$username." and password is ".$password.
-							"Please Login to update your details And Contact to Admin for Activate your account";
+							"Please Login to http://www.adlgm.in.net update your details And Contact to Admin for Activate your account";
                  		sms($mobile, $msg);
 					redirect('clogin/cconpage/'.$maxid);
 				}
@@ -267,8 +267,8 @@ class Clogin extends CI_Controller{
 				$rposition="rightjoiner";
 				$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
 				$cid =$this->session->userdata("customer_id");
-				$data['left']=$this->db->query("select * from silver_tree join customer_info where customer_info.status=1 and silver_tree.leftjoiner='$cid' AND customer_info.id=silver_tree.left");
-				$data['right']=$this->db->query("select * from silver_tree join customer_info where customer_info.status=1 and silver_tree.rightjoiner='$cid' AND customer_info.id=silver_tree.right");
+				$data['left']=$this->db->query("select * from silver_tree join customer_info where  silver_tree.leftjoiner='$cid' AND customer_info.id=silver_tree.left");
+				$data['right']=$this->db->query("select * from silver_tree join customer_info where  silver_tree.rightjoiner='$cid' AND customer_info.id=silver_tree.right");
 					
 			}
 			if($tabv==2){
