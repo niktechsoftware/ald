@@ -136,6 +136,45 @@
 										</div>
 									</div>
 
+									
+										
+									<div class="col-md-12 col-lg-12 col-xs-12">
+										<div class="row">
+											<div class="col-xs-6 col-md-6 col-lg-6">
+												<div class="form-group row">
+													<div class="col-md-3">
+														<label>Nominee Name<span title="Required" style="color: red;">*</span></label>
+													</div>
+													<div class="col-md-9">
+														<div class="form-group">
+															<input type="text" class="form-control phone-number"
+																
+																maxlenght="12" minlenght="12" name="nomname" id="aadhar"
+																required="required" <?php if($crecord->nom_name){echo 'readonly="readonly" value ="'.$crecord->nom_name.'"';}?>>
+														</div> 
+                              			  <?= form_error('nomname'); ?> 
+					               </div>
+
+												</div>
+											</div>
+											<div class="col-xs-6 col-md-6 col-lg-6">
+												<div class="form-group row">
+													<div class="col-md-3">
+														<label>Nominee RElation</label>
+													</div>
+													<div class="col-md-9">
+														<div class="form-group">
+															<input type="text" class="form-control phone-number"
+																name="nomrel" id="panno" required="required" <?php if($crecord->nom_rel){echo 'readonly="readonly" value ="'.$crecord->nom_rel.'"';}?>>
+														</div>
+                                <?= form_error('nomrel'); ?> 
+                                </div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+
 									<div class="col-md-12 col-lg-12 col-xs-12">
 										<div class="row">
 											<div class="col-xs-6 col-md-6 col-lg-6">

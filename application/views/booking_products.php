@@ -132,7 +132,7 @@
                             <div class="product-img">
                                   <?php  if($productlist->image_name){?>
                     
-                                <img src="<?php echo base_url();?>/assets/img/<?php echo $productlist->image_name;?>" alt="" />
+                                <img src="<?php echo base_url();?>adlsoft/assets/img/<?php echo $productlist->image_name;?>" alt="" />
                                 <?php }?>
                                 <div class="product-overlay">
                                     <div class="add-to-cart">

@@ -323,3 +323,135 @@
 [05-Nov-2019 14:54:33 Etc/GMT] PHP Fatal error:  Call to undefined method tree::getRightData() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/clogin.php on line 256
 [05-Nov-2019 17:12:45 Etc/GMT] PHP Fatal error:  Call to undefined method CI_Output::delete_cache() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/clogin.php on line 10
 [05-Nov-2019 17:12:59 Etc/GMT] PHP Fatal error:  Call to undefined method CI_Output::delete_cache() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/clogin.php on line 10
+[06-Nov-2019 05:18:08 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 61
+[06-Nov-2019 05:18:15 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 61
+[06-Nov-2019 05:30:03 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 61
+[06-Nov-2019 05:30:04 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 61
+[06-Nov-2019 05:30:11 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 61
+[06-Nov-2019 05:30:32 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 61
+[06-Nov-2019 05:30:58 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 61
+[06-Nov-2019 05:31:18 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 51
+[06-Nov-2019 05:38:26 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 55
+[06-Nov-2019 05:38:52 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 55
+[06-Nov-2019 05:39:46 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::getsumamount() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/pin/final_mpin_detail.php on line 55
+[06-Nov-2019 08:00:06 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 352
+[06-Nov-2019 08:01:46 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 352
+[06-Nov-2019 08:04:30 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 352
+[06-Nov-2019 08:04:33 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 352
+[06-Nov-2019 08:04:33 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 352
+[06-Nov-2019 08:04:33 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 352
+[06-Nov-2019 08:04:49 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 352
+[06-Nov-2019 08:05:09 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 353
+[06-Nov-2019 08:05:09 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 353
+[06-Nov-2019 08:05:09 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 353
+[06-Nov-2019 08:05:10 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 353
+[06-Nov-2019 08:05:21 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 353
+[06-Nov-2019 08:05:25 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 353
+[06-Nov-2019 08:05:26 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 353
+[06-Nov-2019 08:05:27 Etc/GMT] PHP Parse error:  syntax error, unexpected end of file in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/profile.php on line 353
+[06-Nov-2019 10:02:47 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/transaction.php on line 26
+[06-Nov-2019 10:04:17 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/transaction.php on line 26
+[07-Nov-2019 07:32:07 Etc/GMT] PHP Parse error:  syntax error, unexpected '<<' (T_SL) in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/models/cmodel.php on line 120
+[08-Nov-2019 10:52:18 Etc/GMT] PHP Fatal error:  Call to undefined function set_value() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 29
+[08-Nov-2019 10:52:56 Etc/GMT] PHP Fatal error:  Call to undefined function set_value() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 27
+[08-Nov-2019 10:52:57 Etc/GMT] PHP Fatal error:  Call to undefined function set_value() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 27
+[08-Nov-2019 10:52:57 Etc/GMT] PHP Fatal error:  Call to undefined function set_value() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 27
+[08-Nov-2019 10:53:17 Etc/GMT] PHP Fatal error:  Call to undefined function form_error() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 30
+[08-Nov-2019 10:54:23 Etc/GMT] PHP Fatal error:  Call to undefined function form_error() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 30
+[08-Nov-2019 10:54:25 Etc/GMT] PHP Fatal error:  Call to undefined function form_error() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 30
+[08-Nov-2019 10:54:25 Etc/GMT] PHP Fatal error:  Call to undefined function form_error() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 30
+[08-Nov-2019 10:54:26 Etc/GMT] PHP Fatal error:  Call to undefined function form_error() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 30
+[08-Nov-2019 10:54:26 Etc/GMT] PHP Fatal error:  Call to undefined function form_error() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 30
+[08-Nov-2019 10:54:27 Etc/GMT] PHP Fatal error:  Call to undefined function form_error() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 30
+[08-Nov-2019 10:56:14 Etc/GMT] PHP Fatal error:  Call to undefined function form_error() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 30
+[08-Nov-2019 10:56:59 Etc/GMT] PHP Fatal error:  Call to undefined function form_error() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 30
+[08-Nov-2019 10:57:33 Etc/GMT] PHP Fatal error:  Call to undefined function set_value() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 86
+[08-Nov-2019 11:07:51 Etc/GMT] PHP Fatal error:  Call to undefined function set_value() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 85
+[08-Nov-2019 11:08:57 Etc/GMT] PHP Fatal error:  Call to undefined function set_value() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/addproduct.php on line 85
+[08-Nov-2019 11:35:18 Etc/GMT] PHP Fatal error:  Call to undefined function addproduct() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/adminController.php on line 104
+[08-Nov-2019 11:35:29 Etc/GMT] PHP Fatal error:  Call to undefined function addproduct() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/adminController.php on line 104
+[10-Nov-2019 04:33:42 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::num_rows() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/downline.php on line 94
+[10-Nov-2019 04:33:52 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::num_rows() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/downline.php on line 94
+[10-Nov-2019 04:36:01 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::num_rows() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/downline.php on line 94
+[10-Nov-2019 04:41:36 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::row() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/downline.php on line 108
+[10-Nov-2019 04:42:59 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::row() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/downline.php on line 108
+[10-Nov-2019 04:45:06 Etc/GMT] PHP Parse error:  syntax error, unexpected '>' in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/models/tree.php on line 244
+[10-Nov-2019 04:45:08 Etc/GMT] PHP Parse error:  syntax error, unexpected '>' in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/models/tree.php on line 244
+[10-Nov-2019 04:45:31 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::row() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/downline.php on line 108
+[10-Nov-2019 04:47:12 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::row() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/downline.php on line 108
+[10-Nov-2019 04:49:10 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::row() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/downline.php on line 108
+[10-Nov-2019 04:49:47 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::row() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/downline.php on line 108
+[10-Nov-2019 04:49:59 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::row() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/downline.php on line 108
+[10-Nov-2019 04:51:48 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::row() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/downline.php on line 108
+[10-Nov-2019 04:53:16 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::row() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/downline.php on line 108
+[10-Nov-2019 04:53:18 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::row() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/downline.php on line 108
+[10-Nov-2019 04:53:18 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::row() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/downline.php on line 108
+[10-Nov-2019 04:54:35 Etc/GMT] PHP Fatal error:  Call to undefined method stdClass::row() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/downline.php on line 108
+[10-Nov-2019 05:56:00 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/dashboard.php on line 233
+[10-Nov-2019 13:24:52 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/transaction.php on line 26
+[11-Nov-2019 06:23:22 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/transaction.php on line 26
+[11-Nov-2019 06:23:34 Etc/GMT] PHP Fatal error:  Call to a member function num_rows() on a non-object in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/views/customer/transaction.php on line 26
+[16-Nov-2019 04:15:48 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::insertpay() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 27
+[16-Nov-2019 04:15:52 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::insertpay() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 27
+[16-Nov-2019 04:15:54 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::insertpay() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 27
+[16-Nov-2019 04:15:54 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::insertpay() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 27
+[16-Nov-2019 04:15:56 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::insertpay() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 27
+[16-Nov-2019 04:15:56 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::insertpay() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 27
+[16-Nov-2019 04:16:04 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::insertpay() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 27
+[16-Nov-2019 04:16:18 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::insertpay() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 27
+[16-Nov-2019 04:16:23 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::insertpay() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 27
+[16-Nov-2019 04:16:29 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::insertpay() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 27
+[16-Nov-2019 04:16:42 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::insertpay() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 27
+[16-Nov-2019 04:19:15 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::insertpay() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 27
+[16-Nov-2019 04:19:51 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::insertpay() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 27
+[16-Nov-2019 04:19:52 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::insertpay() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 27
+[16-Nov-2019 04:20:11 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::insertpay() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 27
+[16-Nov-2019 04:20:56 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::insertpay() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 27
+[16-Nov-2019 04:21:16 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::insertpay() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 27
+[16-Nov-2019 04:24:52 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::insertpay() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 27
+[16-Nov-2019 04:24:58 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::insertpay() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 27
+[16-Nov-2019 04:25:01 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::insertpay() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 27
+[16-Nov-2019 04:29:04 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::insertpay() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 29
+[16-Nov-2019 04:29:31 Etc/GMT] PHP Fatal error:  Call to undefined method Cmodel::insertpay() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 29
+[16-Nov-2019 04:43:07 Etc/GMT] PHP Fatal error:  Call to undefined method CI_DB_mysql_driver::max() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/models/cmodel.php on line 15
+[16-Nov-2019 05:37:42 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 05:44:29 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 05:56:50 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 05:57:02 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 05:57:06 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:03:04 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:04:16 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:04:59 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:07:11 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:07:33 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:07:44 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:07:52 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:07:58 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:08:39 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:09:39 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:10:03 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:11:32 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:11:49 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:12:14 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:12:28 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:12:36 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:17:16 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:17:43 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:20:57 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:23:13 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:24:34 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:25:51 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:26:06 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:27:36 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:30:43 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:30:50 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:30:56 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:31:21 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:33:50 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:34:03 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:34:58 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:35:29 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:35:34 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/controllers/pin.php on line 33
+[16-Nov-2019 06:59:59 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/models/cmodel.php on line 48
+[16-Nov-2019 07:00:07 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/models/cmodel.php on line 48
+[16-Nov-2019 07:00:15 Etc/GMT] PHP Fatal error:  Call to undefined function getCrecord() in /home/gfincpnt/public_html/adlgm.in.net/adlsoft/application/models/cmodel.php on line 48

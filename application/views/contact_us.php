@@ -76,7 +76,7 @@
 						<h5 class="bold">Send us a message</h5>
 						<div class="section-heading-line"></div>
 					</div>
-					
+					<form action="<?php echo base_url();?>index.php/welcome/sendemail" method="post">
 						<div class="row">
 							<div class="col-md-12 form-group">
 								<textarea class="form-control" name="message" placeholder="Message"></textarea>
@@ -88,13 +88,13 @@
 								<input class="form-control" type="email" name="email" placeholder="E-mail">
 							</div>
 							<div class="col-md-4 col-sm-4 col-xs-12">
-								<input class="form-control" type="email" name="email" placeholder="Phone">
+								<input class="form-control" type="number" name="mobile" placeholder="Phone">
 							</div>
 							<div class="col-md-12 mt-10 mb-30">
 								<button type="submit" class="primary-button button-sm semi-rounded">Send Message</button>
 							</div>
 						</div>
-					
+					</form>
 				</div>
 				</div>
 			</div>

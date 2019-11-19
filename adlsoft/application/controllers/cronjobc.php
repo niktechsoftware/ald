@@ -252,7 +252,9 @@ class cronjobc extends CI_Controller{
             		"paid_from"     =>"ADLAdmin",
             		"transaction_type"=>5,
             		"date1"         =>date('Y-m-d H:i:s'),
-            		"amount"           =>$addamount
+
+            		"amount"           =>($addamount-($rewardPair*30))
+
             );
             $this->db->insert("inner_daybook",$daybookupgreade);
             

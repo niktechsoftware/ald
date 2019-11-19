@@ -6,6 +6,7 @@ class pin extends CI_Controller{
 		$this->is_login();
 		$this->load->model("cmodel");
 		$this->load->model("mpinmodel");
+		$this->load->model("pay_details");
 	}
 	function is_login(){
 		$is_login = $this->session->userdata('is_login');
@@ -22,10 +23,21 @@ class pin extends CI_Controller{
 	}
 	function pay(){
 	 $pay= $this->input->post('pay');
+
+	 $totv= $this->input->post('totv');
 	  $paid_from= "admin";
 	   $paid_to= $this->input->post('cid');
+	  if(($totv > $pay)&&($pay > 0)){
+	  
 		$pvalue = $this->cmodel->insertpay($pay,$paid_from,$paid_to);
-	redirect("pin/mpin_detail");
+     if($pvalue){ 
+         
+         echo $pvalue." Paid Success fully";
+     }
+	  }else{
+	      echo "INVALID AMOUNT";
+	  }
+
 		
 	}
 	function mpinused(){

@@ -36,7 +36,8 @@
 के आपके बटुए में 50% जोड़ा जाएगा ।
 <br><br>
 <div class="right-holder">	
-<h4 class="bold ls-minus"><span class="italic libre-baskerville primary-color"> Mr. Sabare Alam</span> (C.M.D)</h4></div>
+<h4 class="bold ls-minus"><span class="italic libre-baskerville primary-color"> Mr. Sabare Alam</span> </br>
+(C.M.D)</h4></div>
 </div>
 </div>
 

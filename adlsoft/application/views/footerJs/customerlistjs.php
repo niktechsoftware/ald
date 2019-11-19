@@ -1,4 +1,4 @@
-   <!-- General JS Scripts -->
+<!-- General JS Scripts -->
   <script src="<?php echo base_url();?>assets/js/app.min.js"></script>
   <!-- JS Libraies -->
   <script src="<?php echo base_url();?>assets/bundles/datatables/datatables.min.js"></script>
@@ -14,4 +14,5 @@
     $.(document).ready(function(){
         $('#table1').Datatable();
     });
+
 </script>

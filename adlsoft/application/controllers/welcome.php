@@ -23,6 +23,7 @@ class Welcome extends CI_Controller {
 	}
 	
 	function login_check(){
+	    
 		$query = $this->loginmodel->validate();
 		if($query['is_login']){  
 			

@@ -7,6 +7,7 @@ class Clogin extends CI_Controller{
 		$this->is_login();
 		$this->load->model('cmodel');
 		$this->load->model('tree');
+			$this->load->model('pay_details');
 		//$this->output->delete_cache();
 	}
 	function is_login(){
@@ -82,10 +83,10 @@ class Clogin extends CI_Controller{
 		$this->form_validation->set_rules('state','State','required');
 		$this->form_validation->set_rules('pinno','PIN No.','required |exact_length[6]');
 		$this->form_validation->set_rules('mobile','Mobile Number','required | numeric |exact_length[10]');
-		$this->form_validation->set_rules('aadhar','Aadhaar Number','required | is_unique[customer_info.adhaarnumber]');
+	
 		$this->form_validation->set_rules('password','Password','matches[confirm_pwd]');
 		$this->form_validation->set_rules('confirm_pwd','Password','matches[password]');
-		$this->form_validation->set_rules('panno','Pan Number','');
+
 		$this->form_validation->set_rules('dob','Date Of Birth','required');
 		$this->form_validation->set_rules('customRadioInline1','Gender','required');
 		if($this->form_validation->run()){
@@ -105,14 +106,14 @@ class Clogin extends CI_Controller{
 			$address= $this->input->post('address');
 			$pinno= $this->input->post('pinno');
 			$mobile= $this->input->post('mobile');
-			$aadhar= $this->input->post('aadhar');
+			
 			$gender= $this->input->post('customRadioInline1');
 			$dob= $this->input->post('dob');
 			$password= $this->input->post('password');
 			//$parent_id= $this->input->post('parent_id');
 			$city= $this->input->post('city');
 			$state= $this->input->post('state');
-			$panno= $this->input->post('panno');
+		
 			$left = $this->tree->selectlegleft($cid);
 			$right = $this->tree->selectlegright($cid);
 
@@ -543,8 +544,13 @@ class Clogin extends CI_Controller{
 			$branchname = $this->input->post("branchname");
 			$accountno = $this->input->post("accountno");
 			$aadhar = $this->input->post("aadhar");
+
+			
 			$panno=$this->input->post("panno");
 			$dob=$this->input->post("dob");
+			$nomname=$this->input->post("nomname");
+			$nomrel=$this->input->post("nomrel");
+
 			$updata = array(
 					'bankname'=>$bname,
 					'ifsccode'=>$ifsccode,
@@ -552,10 +558,16 @@ class Clogin extends CI_Controller{
 					'account_no'=>$accountno,
 					'pannumber'=>$panno,
 					'adhaarnumber'=>$aadhar,
+
+					'nom_name'	=>$nomname,
+					'nom_rel'	=>$nomrel,
 					'dob'	=>$dob
 			);
+		
+
 			$this->db->where("id",$cid);
 			$this->db->update("customer_info",$updata);
 			redirect("clogin/customer_Account/success");
 		}
+
 }

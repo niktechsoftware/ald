@@ -256,7 +256,9 @@
                     <h4 class="card-title">Total Wallet</h4>
                     <span><?php 
                 
-                  echo  $total;
+
+                  echo $this->pay_details->totwallet($this->session->userdata("customer_id"));
+
                     ?></span>
                     <div class="progress mt-1 mb-1" data-height="8">
                       <div class="progress-bar l-bg-purple" role="progressbar" data-width="25%" aria-valuenow="25"
@@ -307,7 +309,7 @@
            
              
             
-            
+            <!-- 
             
           <div class="row">
             <div class="col-12 col-sm-12 col-lg-6">
@@ -388,4 +390,5 @@
               </div>
             </div>
           </div>
+          -->
         

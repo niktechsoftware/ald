@@ -116,7 +116,8 @@
         }
         
         function getrowid($username){
-        	//$this->db->where("username",$username);
+        	$this->db->where("username",$username);
+        		$this->db->where("status",1);
         	$getrow = $this->db->get("customer_info")->row()->id;
         	return $getrow;
         }
