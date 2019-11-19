@@ -42,7 +42,18 @@ Class DaybookController extends CI_Controller{
   }
   
 
-
+function getroiandpool(){
+ 
+    $data['pageTitle'] = 'Daybook';
+    $data['smallTitle'] = 'Daybook ';
+    $data['mainPage'] = 'Accounting';
+    $data['subPage'] = 'Accounting';
+    $data['title'] = 'Daybook';
+    $data['headerCss'] = 'headerCss/customerlistcss';
+    $data['footerJs'] = 'footerJs/customerlistjs';
+    $data['mainContent'] = 'daybookpool';
+    $this->load->view("includes/mainContent", $data);
+}
 
 
 }

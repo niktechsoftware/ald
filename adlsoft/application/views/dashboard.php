@@ -202,6 +202,71 @@
                 </div>
               </div>
             </div>
+            
+           <!-- // roi and pool details-->
+             <div class="col-xl-3 col-lg-6">
+              <div class="card l-bg-green-dark">
+                <div class="card-statistic-3">
+                  <div class="card-icon card-icon-large"><i class="fa fa-money-bill-alt"></i></div>
+                  <a href="<?php echo base_url();?>index.php/daybookController/getroiandpool">
+                  <div class="card-content text-white">
+                    <h4 class="card-title">[POOL Details] ROI ID's</h4>
+                    <div class="row">
+                    <div class="col-md-6">
+                    <span>Auto Pool</span>
+                    </div>
+                    <div class="col-md-6">
+                    <span>New Comming Roi</span>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-6">
+                    <span>
+                    <?php 
+                     $date2  = date('Y-m-d');
+          $date1  =date('Y-m-d',(strtotime ( '-1 day' , strtotime ( $date2) ) ));
+                 $this->db->where("date <" ,$date2);
+                 	$getpootp=$this->db->get("autopool_details");
+
+                   if($getpootp->num_rows()>0){
+                    
+                    echo $getpootp->num_rows();
+                   }
+                   else{
+                    echo "0.00";
+                   }
+                    ?>
+                    </span>
+                    </div>
+                    <div class="col-md-6">
+                    <span>
+                    <?php 
+                     $date2  = date('Y-m-d');
+          $date1  =date('Y-m-d',(strtotime ( '-1 day' , strtotime ( $date2) ) ));
+                 $this->db->where("DATE(date)",$date1);
+                 	$getpoot=$this->db->get("autopool_details");
+
+                   if($getpoot->num_rows()>0){
+                    
+                    echo $getpoot->num_rows();
+                   }
+                   else{
+                    echo "0.00";
+                   }
+                 ?></span>
+                    </div>
+                    </div>
+                    <div class="progress mt-1 mb-1" data-height="8">
+                      <div class="progress-bar l-bg-green" role="progressbar" data-width="25%" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    
+                  </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+           <!-- //roi and pool details-->
           </div>
           <div class="row">
             <div class="col-12 col-sm-12 col-lg-6">

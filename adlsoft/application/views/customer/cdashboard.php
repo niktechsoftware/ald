@@ -200,6 +200,7 @@
                        $dt= $this->db->get("inner_daybook");
                     if($dt->row()->amount>0){
                      echo   $dt->row()->amount;
+                      $total=$total+$dt->row()->amount;
                        }
                        else{ echo "0.00"; }
                         ?></span>
@@ -228,6 +229,7 @@
                        $dt= $this->db->get("inner_daybook");
                      if($dt->row()->amount>0){
                      echo   $dt->row()->amount;
+                     $total=$total+$dt->row()->amount;
                        }
                        else{ echo "0.00"; }
                         ?></span>
@@ -245,8 +247,32 @@
             </div>
           </div>
            <div class="row ">
-            <div class="col-xl-3 col-lg-6">
-              <div class="card l-bg-green-dark">
+           
+                <div class="col-xl-3 col-lg-6">
+                 <div class="card l-bg-green-dark">
+                <div class="card-statistic-3">
+                  <div class="card-icon card-icon-large"><i class="fa fa-award"></i></div>
+                  <div class="card-content">
+                    <h4 class="card-title">Total Wallet</h4>
+                    <span><?php 
+                
+                  echo $this->pay_details->totwallet($this->session->userdata("customer_id"));
+                    ?></span>
+                    <div class="progress mt-1 mb-1" data-height="8">
+                      <div class="progress-bar l-bg-purple" role="progressbar" data-width="25%" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p class="mb-0 text-sm">
+                      <span class="mr-2"><i class="fa fa-arrow-up"></i> </span>
+                      <span class="text-nowrap">Pair</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+                
+              </div>
+               <div class="col-xl-3 col-lg-6">
+             <!-- <div class="card l-bg-green-dark">
                 <div class="card-statistic-3">
                   <div class="card-icon card-icon-large"><i class="fa fa-award"></i></div>
                   <div class="card-content">
@@ -273,30 +299,7 @@
                     </p>
                   </div>
                 </div>
-              </div>
-              </div>
-                <div class="col-xl-3 col-lg-6">
-                 <div class="card l-bg-green-dark">
-                <div class="card-statistic-3">
-                  <div class="card-icon card-icon-large"><i class="fa fa-award"></i></div>
-                  <div class="card-content">
-                    <h4 class="card-title">Total Wallet</h4>
-                    <span><?php 
-                
-                  echo  $total;
-                    ?></span>
-                    <div class="progress mt-1 mb-1" data-height="8">
-                      <div class="progress-bar l-bg-purple" role="progressbar" data-width="25%" aria-valuenow="25"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <p class="mb-0 text-sm">
-                      <span class="mr-2"><i class="fa fa-arrow-up"></i> </span>
-                      <span class="text-nowrap">Pair</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-                
+              </div>-->
               </div>
             </div>
            
@@ -304,7 +307,7 @@
            
              
             
-            
+            <!-- 
             
           <div class="row">
             <div class="col-12 col-sm-12 col-lg-6">
@@ -385,4 +388,5 @@
               </div>
             </div>
           </div>
+          -->
         

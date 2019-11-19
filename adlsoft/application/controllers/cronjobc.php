@@ -39,6 +39,7 @@ class cronjobc extends CI_Controller{
     	if($getdirect->num_rows()>0){
     		$olddirp = $getdirect->row()->pair;
     		$newp=($rightjoin+$leftjoin)-$olddirp;
+    		if($newp > 0){
     		$datadd = array(
     				'c_id'=>$cid,
     				'pair'=>	($rightjoin+$leftjoin),
@@ -55,7 +56,16 @@ class cronjobc extends CI_Controller{
     				"amount"           =>$newp*100
     		);
     		$this->db->insert("inner_daybook",$daybookdirect);
+    		
+    			$invoice=array(
+			"invoice_no"=>$invoice_number,
+			"reason"=>"Direct Income",
+			"invoice_date"=>date('Y-m-d H:i:s')
+		);
+		$this->db->insert("invoice_serial",$invoice);
+    		}
     	}else{
+    	    if(($rightjoin+$leftjoin) > 0){
     		$datadd = array(
     			'c_id'=>$cid,
     				'pair'=>	($rightjoin+$leftjoin),
@@ -71,8 +81,14 @@ class cronjobc extends CI_Controller{
     				"amount"           =>($rightjoin+$leftjoin)*100
     		);
     		$this->db->insert("inner_daybook",$daybookdirect);
+    			$invoice=array(
+			"invoice_no"=>$invoice_number,
+			"reason"=>"Direct Income",
+			"invoice_date"=>date('Y-m-d H:i:s')
+		);
+		$this->db->insert("invoice_serial",$invoice);
     	}
-    	
+    	}
     	
     }
     function pairMachingIncome($cid){
@@ -142,14 +158,29 @@ class cronjobc extends CI_Controller{
         echo "<br>pair =".$pair;
         $cps = 	$this->tree->getPair("pair_caping",$cid);
        $getoldPair =  $this->tree->getPair("silver_mbalance",$cid);
+       if($getoldPair->num_rows()>0){
+       	
+       }else{
+       	$silverentry=array(
+       			"c_id"=>$cid,
+       			"pair"=>0,
+       			"amount"=>0
+       	);
+       	$this->tree->insert("silver_mbalance",$silverentry);
+       	$getoldPair =  $this->tree->getPair("silver_mbalance",$cid);
+       }
        if($cps->num_rows()>0){
        $rewardPair = ($pair-($getoldPair->row()->pair+$cps->row()->pair));
        }else{
+       	
        	$rewardPair = ($pair-($getoldPair->row()->pair));
        }
         if($rewardPair > 0){
             if($rewardPair > 3){
+              
             	$caping = $rewardPair-3;
+            	//capping
+            	if($caping>0){
             	$daybookCapping = array(
             			"invoice_no"    =>$invoice_number,
             			"paid_to"	        =>$cid,
@@ -159,6 +190,15 @@ class cronjobc extends CI_Controller{
             			"amount"           =>((($caping*600)))
             	);
             	$this->db->insert("inner_daybook",$daybookCapping);
+            	
+            	            		$invoice=array(
+			"invoice_no"=>$invoice_number,
+			"reason"=>"pair Capping",
+			"invoice_date"=>date('Y-m-d H:i:s')
+		);
+		$this->db->insert("invoice_serial",$invoice);
+		
+		
             $cps = 	$this->tree->getPair("pair_caping",$cid);
             if($cps->num_rows()>0){
                  $bincapping=array(
@@ -166,13 +206,20 @@ class cronjobc extends CI_Controller{
                   "amount"=>$cps->row()->amount+ ($caping*600)
                    );  
                   $this->tree->update("pair_caping",$bincapping,$cid);
+                  
+                  
+            	
             }else{
                  $bincapping=array("c_id"=>$cid,
                    "pair"=> $caping,
                     "amount"=> ($caping*600)
                      );  
                  $this->tree->insert("pair_caping",$bincapping,$cid);
-            }
+                 
+                 
+
+            }}
+            //capping
             $rewardPair=3;
             }
             
@@ -192,13 +239,20 @@ class cronjobc extends CI_Controller{
             		"amount"           =>$addamount
             );
             $this->db->insert("inner_daybook",$daybooksilver);
+            $invoice=array(
+			"invoice_no"=>$invoice_number,
+			"reason"=>"pair silver +upgrade",
+			"invoice_date"=>date('Y-m-d H:i:s')
+		);
+		$this->db->insert("invoice_serial",$invoice);
+		
             $daybookupgreade = array(
             		"invoice_no"    =>$invoice_number,
             		"paid_to"	        =>$cid,
             		"paid_from"     =>"ADLAdmin",
             		"transaction_type"=>5,
             		"date1"         =>date('Y-m-d H:i:s'),
-            		"amount"           =>$addamount
+            		"amount"           =>($addamount-($rewardPair*30))
             );
             $this->db->insert("inner_daybook",$daybookupgreade);
             
@@ -372,6 +426,13 @@ class cronjobc extends CI_Controller{
 							"amount"           =>$pula 
 					);
 					$this->db->insert("inner_daybook",$daypoi);
+					
+					            		$invoice=array(
+			"invoice_no"=>$invoice_number,
+			"reason"=>"Auto Pool",
+			"invoice_date"=>date('Y-m-d H:i:s')
+		);
+		$this->db->insert("invoice_serial",$invoice);
 				
 			}
 			
@@ -387,6 +448,7 @@ class cronjobc extends CI_Controller{
 				}else{
 				    $pula =0;
 				}
+				
 				$datapool = array(
 					'c_id'=>$cid,
 						'level'=>$leveln-1,
@@ -395,6 +457,7 @@ class cronjobc extends CI_Controller{
 						'date'=>date('Y-m-d H:i:s')
 				);
 				$this->db->insert("autopool_details",$datapool);
+				if($pula > 0){
 				$daypoi = array(
 						"invoice_no"    =>$invoice_number,
 						"paid_to"	        =>$cid,
@@ -404,8 +467,15 @@ class cronjobc extends CI_Controller{
 						"amount"           =>$pula
 				);
 				$this->db->insert("inner_daybook",$daypoi);
+			$invoice=array(
+			"invoice_no"=>$invoice_number,
+			"reason"=>"Auto Pool",
+			"invoice_date"=>date('Y-m-d H:i:s')
+		);
+		$this->db->insert("invoice_serial",$invoice);
 			
 			}
+		}
 			}
 			
 		}
@@ -460,6 +530,7 @@ class cronjobc extends CI_Controller{
 					$this->db->where("c_id",$numr->c_id);
 					$this->db->update("autopool_details",$dataroi);
 					
+					if($disamount>0){
 					$daypoir = array(
 							"invoice_no"    =>$invoice_number,
 							"paid_to"	        =>$indc->row()->c_id,
@@ -469,7 +540,13 @@ class cronjobc extends CI_Controller{
 							"amount"           =>$disamount
 					);
 					$this->db->insert("inner_daybook",$daypoir);
-		    	        }
+					            		$invoice=array(
+			"invoice_no"=>$invoice_number,
+			"reason"=>"Roi Income",
+			"invoice_date"=>date('Y-m-d H:i:s')
+		);
+		$this->db->insert("invoice_serial",$invoice);
+		    	        }}
 		    	        endforeach;
 		    	    
 		    	}

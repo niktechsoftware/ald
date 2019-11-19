@@ -7,6 +7,7 @@ class Clogin extends CI_Controller{
 		$this->is_login();
 		$this->load->model('cmodel');
 		$this->load->model('tree');
+			$this->load->model('pay_details');
 		//$this->output->delete_cache();
 	}
 	function is_login(){
@@ -82,10 +83,10 @@ class Clogin extends CI_Controller{
 		$this->form_validation->set_rules('state','State','required');
 		$this->form_validation->set_rules('pinno','PIN No.','required |exact_length[6]');
 		$this->form_validation->set_rules('mobile','Mobile Number','required | numeric |exact_length[10]');
-		$this->form_validation->set_rules('aadhar','Aadhaar Number','required | is_unique[customer_info.adhaarnumber]');
+	
 		$this->form_validation->set_rules('password','Password','matches[confirm_pwd]');
 		$this->form_validation->set_rules('confirm_pwd','Password','matches[password]');
-		$this->form_validation->set_rules('panno','Pan Number','');
+
 		$this->form_validation->set_rules('dob','Date Of Birth','required');
 		$this->form_validation->set_rules('customRadioInline1','Gender','required');
 		if($this->form_validation->run()){
@@ -105,14 +106,14 @@ class Clogin extends CI_Controller{
 			$address= $this->input->post('address');
 			$pinno= $this->input->post('pinno');
 			$mobile= $this->input->post('mobile');
-			$aadhar= $this->input->post('aadhar');
+			
 			$gender= $this->input->post('customRadioInline1');
 			$dob= $this->input->post('dob');
 			$password= $this->input->post('password');
 			//$parent_id= $this->input->post('parent_id');
 			$city= $this->input->post('city');
 			$state= $this->input->post('state');
-			$panno= $this->input->post('panno');
+		
 			$left = $this->tree->selectlegleft($cid);
 			$right = $this->tree->selectlegright($cid);
 
@@ -252,7 +253,7 @@ class Clogin extends CI_Controller{
 			$tabv = $this->uri->segment("3");
 				if($tabv==6)
 				{
-				    $table="Silver Over All";
+				    $table="Over All Downline";
 				    	$data['crecord'] = $this->cmodel->getCrecord($this->session->userdata("customer_id"));
             		$data['cid'] = $this->session->userdata("customer_id");
             		$count =0;
@@ -497,8 +498,8 @@ class Clogin extends CI_Controller{
 			$data['mainPage'] = $tranname.' Income panel';
 			$data['subPage'] = $tranname.' Income panel';
 			$data['title'] = $tranname.' Income panel';
-			$data['headerCss'] = 'headerCss/dashboardCss';
-			$data['footerJs'] = 'footerJs/dashboardJs';
+			$data['headerCss'] = 'headerCss/customerlistcss';
+			$data['footerJs'] = 'footerJs/customerlistjs';
 			$data['mainContent'] = 'customer/transaction';
 			$this->load->view("includes/mainContent", $data);
 		}
@@ -517,9 +518,52 @@ class Clogin extends CI_Controller{
 			$data['mainPage'] = 'Wallet Income panel';
 			$data['subPage'] = 'Wallet Income panel';
 			$data['title'] = 'Wallet Income panel';
-			$data['headerCss'] = 'headerCss/dashboardCss';
-			$data['footerJs'] = 'footerJs/customerJs';
+			$data['headerCss'] = 'headerCss/customerlistcss';
+			$data['footerJs'] = 'footerJs/customerlistjs';
 			$data['mainContent'] = 'customer/wallet';
 			$this->load->view("includes/mainContent", $data);
 		}
+		
+		function customer_Account(){
+			$this->load->library("form_validation");
+			$data['pageTitle'] = ' Account (KYC) panel';
+			$data['smallTitle'] = ' Account (KYC) panel';
+			$data['mainPage'] = ' Account (KYC) panel';
+			$data['subPage'] = ' Account (KYC) panel';
+			$data['title'] = ' Account (KYC) panel';
+			$data['headerCss'] = 'headerCss/customerlistcss';
+			$data['footerJs'] = 'footerJs/customerlistjs';
+			$data['mainContent'] = 'customer/customer_Account';
+			$this->load->view("includes/mainContent", $data);
+		}
+		
+		function insertAccountD(){
+			$cid = $this->input->post("cid");
+			$bname=$this->input->post("bname");
+			$ifsccode = $this->input->post("ifsccode");
+			$branchname = $this->input->post("branchname");
+			$accountno = $this->input->post("accountno");
+			$aadhar = $this->input->post("aadhar");
+			
+			$panno=$this->input->post("panno");
+			$dob=$this->input->post("dob");
+			$nomname=$this->input->post("nomname");
+			$nomrel=$this->input->post("nomrel");
+			$updata = array(
+					'bankname'=>$bname,
+					'ifsccode'=>$ifsccode,
+					'branchname'=>$branchname,
+					'account_no'=>$accountno,
+					'pannumber'=>$panno,
+					'adhaarnumber'=>$aadhar,
+					'nom_name'	=>$nomname,
+					'nom_rel'	=>$nomrel,
+					'dob'	=>$dob
+			);
+		
+			$this->db->where("id",$cid);
+			$this->db->update("customer_info",$updata);
+			redirect("clogin/customer_Account/success");
+		}
+
 }

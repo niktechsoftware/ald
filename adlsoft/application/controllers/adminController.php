@@ -96,11 +96,12 @@ Class AdminController extends CI_Controller{
 			$this->upload->initialize($config);
 			 $f1= $this->upload->do_upload('img');
 	     	$data["image_name"]=$photo_name;
+	     	
 				}
 				$dt=$this->db->insert("products",$data);
-				if($dt){?>
+				if($dt){ ?>
 				<script> alert("Product Inserted Successfully."); </script>
-			<?php redirect("adminController/addproduct");
+			<?php redirect("adminController/addproduct","refresh");
 			}
 	    
 	}

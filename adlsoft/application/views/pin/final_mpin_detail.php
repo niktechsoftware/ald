@@ -9,7 +9,7 @@
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
-                       <table id="example" class="display table table-striped text-nowrap" style="width: 100%; cellspacing: 0;">
+                       <table  class="display table table-striped text-nowrap" style="width: 100%; cellspacing: 0;" id="table-1">
                                         <thead>
                                             <tr style="font-size: 18px;font-family:Arial;background-color: pink;text-align:center;">
                                                    <th>S.N.</th>
@@ -44,70 +44,39 @@
                                                 <td>
 												
 												<input type="hidden" id ="cid<?php echo $i;?>" name ="cid" value="<?php echo $custdt->id;?>">
-												<?php echo $custdt->username;?></td>
+												<?php echo $custdt->username."[".$custdt->customer_name."]";?></td>
                                                 
                                               
                                                <td><a class="btn btn-info" href="<?php echo base_url();?>index.php/pin/generatePin/<?php echo $custdt->id;?>"><?php echo $row->totp; ?></a></td>
-                                               
-                                               
-                                             
-                                               
                                                <?php 
-                                               $silver= $this->cmodel->getSilver($custdt->id);
-                                                if($silver->num_rows()>0){
-												 $silver1 =  $silver->row()->amount;
-											   }else{
-												   $silver1=0;
-											   }
-                                               $direct= $this->cmodel->getDirect($custdt->id);
-                                               if($direct->num_rows()>0){
-												 $direct1 =  $direct->row()->amount;
-											   }else{
-												   $direct1=0;
-											   }
-                                               $auto_pool= $this->cmodel->getAutoPool($custdt->id);
-                                              if($auto_pool->num_rows()>0){
-												 $auto_pool1 =  $auto_pool->row()->pool_income;
-											   }else{
-												   $auto_pool1=0;
-											   }
-                                                $auto_roi= $this->cmodel->getAutoPool($custdt->id);
-                                              if($auto_roi->num_rows()>0){
-												 $auto_roi1 =  $auto_roi->row()->roi_income;
-											   }else{
-												   $auto_roi1=0;
-											   }
-											   
-											   
-											    $this->db->select_sum("amount");
-											   $this->db->where("paid_to",$custdt->id);
-											   $this->db->where("debit_credit",0);
-                                               $outeramount = $this->db->get("outer_daybook"); 
-                                              if($outeramount->num_rows()>0){
-												 $outeramount1 =  $outeramount->row()->amount;
-											   }else{
-												   $outeramount1=0;
-											   }
-                                           // print_r($outeramount1) ;
-											 $totmbal=  $silver1 + $direct1 +$auto_pool1 +$auto_roi1-$outeramount1;
+                                              $totmb =$this->pay_details->totwallet($custdt->id);
                                              ?>
-                                               <td><?php $s2=$s2+$totmbal; echo $totmbal; ?></td> 
-                                               
-                                               <?php 
-											  
-                                              ?>
+                                             <input type="hidden" id="amt<?php echo $i;?>" value="<?php echo $totmb; ?>">
+                                               <td><?php echo $totmb; ?></td> 
+                                              
                                                 <td><input type="text" id ="pay<?php echo $i;?>" name ="pay" > <button id ="btn<?php echo $i;?>" class="btn btn-primary">Pay</button> </td> 
                                             </tr>
+                                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 											<script>
                      $("#btn<?php echo $i;?>").click(function(){
-                         var pay = $("#pay<?php echo $i;?>").val();
+                       //  alert("aarju");
+                         var pay = Number($("#pay<?php echo $i;?>").val());
 						 var cid = $("#cid<?php echo $i;?>").val();
-						 $.post("<?php echo site_url('pin/pay') ?>",{pay : pay, cid :cid},function(data){
-							alert("successfully submitted");
+						  var totv = Number($("#amt<?php echo $i;?>").val());
+						//  alert(pay+cid+totv);
+						  if((totv > pay)&&(pay > 0)){
+						       $.post("<?php echo site_url('pin/pay') ?>",
+						 {pay : pay, cid :cid, totv : totv},
+						 function(data){
+						     alert(data);
+						     location.reload();
+						
 						});
-                        
-
+						  }else{
+						     alert("Please Enter a Valid Amount");  
+						  }
                      });
+						  
                      </script>
                                             <?php $i++; ?>
                                             <?php } endforeach;}?>

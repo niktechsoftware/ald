@@ -333,7 +333,7 @@
 							        <?php } else{ 
 							      if($crecord->row()->gender){
 							      ?> 
-							      <input type="text" class="form-control" name="gen" value="<?php echo $crecord->row()->gender; ?>" readonly="">
+							      <input type="text" class="form-control" name="gen" value="<?php  if($crecord->row()->gender==1){ echo "Male" ;}else{echo "Female"; }  ?>" readonly="">
 							        <?php } else{ ?>
                               <input type="text" class="form-control" name="gen" value="<?php echo $crecord->row()->gender; ?>">
                                <?php } }?>

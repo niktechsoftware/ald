@@ -226,42 +226,7 @@
 
 										</div>
 									</div>
-									<div class="col-md-12 col-lg-12 col-xs-12">
-										<div class="row">
-											<div class="col-xs-6 col-md-6 col-lg-6">
-												<div class="form-group row">
-													<div class="col-md-3">
-														<label>Aadhar No<span title="Required" style="color: red;">*</span></label>
-													</div>
-													<div class="col-md-9">
-														<div class="form-group">
-															<input type="text" class="form-control phone-number"
-																value="<?php echo set_value('aadhar'); ?>"
-																maxlenght="12" minlenght="12" name="aadhar" id="aadhar"
-																required="required">
-														</div> 
-                              			  <?= form_error('aadhar'); ?> 
-					               </div>
-
-												</div>
-											</div>
-											<div class="col-xs-6 col-md-6 col-lg-6">
-												<div class="form-group row">
-													<div class="col-md-3">
-														<label>Pan No</label>
-													</div>
-													<div class="col-md-9">
-														<div class="form-group">
-															<input type="text" class="form-control phone-number"
-																name="panno" value="<?php echo set_value('panno'); ?>"
-																id="panno">
-														</div>
-                                <?= form_error('panno'); ?> 
-                                </div>
-												</div>
-											</div>
-										</div>
-									</div>
+								
 
 									<div class="col-md-12 col-lg-12 col-xs-12">
 										<div class="row">

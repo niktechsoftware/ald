@@ -11,6 +11,59 @@
 							return 1; 
 						}
         }
+      function insertpay($data,$paid_from,$paid_to){
+            $this->db->select_max('id');
+						$this->db->from("outer_daybook");
+						$maxid=$this->db->get();
+						if($maxid->num_rows()>0){
+			      	$max= $maxid->row()->id;
+						}else{
+							$max= 1; 
+						}
+         
+          $inv=1000+$max;
+          $invoice="ADLI".$inv;
+          $amt=$data*10;
+         $adminamt= $amt/100;
+       $cust_amt=$data - $adminamt;
+       
+			$data1 = array(
+						'amount' => $cust_amt,
+						'paid_from' =>$paid_to ,
+						'paid_to' =>$paid_from ,
+					
+						"invoice_no"=>$invoice,
+						"debit_credit"=>0,
+						'date' => date('Y-m-d')
+			        );
+				$admin = array(
+						'amount' => $adminamt,
+						'paid_from' =>$paid_from ,
+						'reason'=>'admintax',
+						'paid_to' => $paid_to,
+						"invoice_no"=>$invoice,
+						"debit_credit"=>1,
+						'date' => date('Y-m-d')
+		            	);
+		            	
+            if($this->db->insert('outer_daybook',$data1) && $this->db->insert('outer_daybook',$admin) ){
+                
+               $dt= $this->getCrecord($paid_to);
+               if($dt->num_rows()>0){
+                  $number= $dt->row()->mobilenumber;
+                 $usernm= $dt->row()->username;
+                 $cname = $dt->row()->customer_name;
+        $msg =" Dear ".$usernm."[".$cname."] Your ADL Wallet has been successfully debited amount of ".$data." and your account has been credited with ".$cust_amt." Rs/-  for more details login to www.adlgm.in.net";
+         $send=sms($number,$msg);
+       if($send){
+           return $cust_amt;
+           
+       }
+        
+               }
+           
+            }
+        }
         
         function activestatus($custid,$mpin,$tblnm){
         	$this->db->where("status",0);

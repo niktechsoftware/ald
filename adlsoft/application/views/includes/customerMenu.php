@@ -20,7 +20,7 @@
                   	 <li><a class="nav-link" href="<?php echo base_url()?>index.php/clogin/customer_reg">New Registration</a></li>
                
                    <li><a href="<?php echo base_url();?>index.php/clogin/customer_profile">View/Edit Profile</a></li>
-                    <li><a href="#">Account Info</a></li>
+                    <li><a href="<?php echo base_url();?>index.php/clogin/customer_Account/">Account Info</a></li>
                   	<?php 
                       }}?>
                

@@ -83,10 +83,10 @@ public function contact()
 		$this->form_validation->set_rules('state','State','required');
 		$this->form_validation->set_rules('pinno','PIN No.','required |exact_length[6]');
 		$this->form_validation->set_rules('mobile','Mobile Number','required | numeric |exact_length[10]');
-		$this->form_validation->set_rules('aadhar','Aadhaar Number','required | is_unique[customer_info.adhaarnumber]');
+	
 		$this->form_validation->set_rules('password','Password','matches[confirm_pwd]');
 		$this->form_validation->set_rules('confirm_pwd','Password','matches[password]');
-		$this->form_validation->set_rules('panno','Pan Number','');
+	
 		$this->form_validation->set_rules('dob','Date Of Birth','required');
 		$this->form_validation->set_rules('customRadioInline1','Gender','required');
 		if($this->form_validation->run()){
@@ -108,7 +108,7 @@ public function contact()
 			$address= $this->input->post('address');
 			$pinno= $this->input->post('pinno');
 			$mobile= $this->input->post('mobile');
-			$aadhar= $this->input->post('aadhar');
+		
 			$gender= $this->input->post('customRadioInline1');
 			$dob= $this->input->post('dob');
 			$password= $this->input->post('password');
@@ -116,7 +116,7 @@ public function contact()
 			$parent_id= $this->input->post('parent_id');
 			$city= $this->input->post('city');
 			$state= $this->input->post('state');
-			$panno= $this->input->post('panno');
+		
 			//echo $cid; exit();
 			$left = $this->cmodel->selectlegleft($cid);
 		//echo $cid;exit();
@@ -145,8 +145,8 @@ public function contact()
 					'state'=>$state,
 					'gender'=>$gender,
 					'pin'=>$pinno,
-					'pannumber'=>$panno,
-					'adhaarnumber'=>$aadhar,
+					
+					
 					'status'=>0,
 					'joining_date'=>date('Y-m-d'),
 					'dob'=>$dob
@@ -185,7 +185,34 @@ public function contact()
 		}
 	       
 		
-			
+			function sendemail(){
+			    
+			    $msg=$this->input->post("message");
+			        $email=$this->input->post("email");
+			    
+			   $data['message']= $msg;
+			   $data['name']= $this->input->post("name");
+			   $data['mobile']= $this->input->post("mobile");
+			   $data['email']= $email;
+			   $data['date']=date("y-m-d");
+			   $dt =$this->db->insert("contactus",$data);
+			   if($dt){
+			       $this->load->library("email");
+			       $this->email->from("info@adl.in.net",'ADlGM Sales Pvt.Ltd.');
+			    	$this->email->subject('Thanks For enquiry us');
+		        	$this->email->message('Your Details are Successfully seved and we will contact you soon. Thanks ADlGM Sales Pvt.Ltd., Mau');
+		
+			       $this->email->to($email);
+			      $senddt =$this->email->send();
+			      if($senddt){ ?>
+			      <script>
+			          alert("Your Quiry has been successfully Submitted .");
+			      </script>
+			        <?php  redirect("welcome/contact",'refresh');
+			      }
+			   }
+			    
+			}
 		
 		
 		
