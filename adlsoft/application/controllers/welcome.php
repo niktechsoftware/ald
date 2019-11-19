@@ -68,7 +68,41 @@ class Welcome extends CI_Controller {
 		$this->session->set_userdata('is_lock', false);
 		$this->load->view("lockPage", $data);
 	}
-	
+	        
+	        function upgrade(){
+	            $this->db->where("pair >",14);
+	          $g =  $this->db->get("silver_tree")->result();
+	            foreach($g as $r):
+	                     $cgold =  $this->db->get("gold_tree");
+	                    if($cgold->num_rows()){
+	                    $this->db->where("c_id",$r->c_id);
+	                   $gold =  $this->db->get("gold_tree");
+	                   if($gold->num_rows()>0){
+	                       
+	                   }
+	                   else{
+	                       $goldp = array(
+	                        "c_id"=>$r->c_id,
+	                        "pair" =>0,
+	                        "amount"=>0
+	                        );
+	                        $this->db->insert("gold_tree",$goldp);
+	                        
+	                       
+	                   }
+	                    
+	                }else{
+	                    $goldp = array(
+	                        "c_id"=>$r->c_id,
+	                        "pair" =>0,
+	                        "amount"=>0
+	                        );
+	                        $this->db->insert("gold_tree",$goldp);
+	                        
+	                }
+	                
+	                endforeach;
+	        }
 }
 
 /* End of file welcome.php */

@@ -20,19 +20,19 @@
                   	 <li><a class="nav-link" href="<?php echo base_url()?>index.php/clogin/customer_reg">New Registration</a></li>
                
                    <li><a href="<?php echo base_url();?>index.php/clogin/customer_profile">View/Edit Profile</a></li>
-                    <li><a href="#">Account Info</a></li>
+                    <li><a href="<?php echo base_url();?>index.php/clogin/customer_Account/">Account Info</a></li>
                   	<?php 
                       }}?>
                
                
               </ul>
             </li>
-            
+            <?php                     if(!$rc->status){?>
              <li >
               <a href="<?php echo base_url()?>index.php/clogin/customer_reg" class="nav-link "><i data-feather="briefcase"></i><span>New Registration</span></a>
               
             </li>
-            
+            <?php }?>
             
             
             
@@ -48,11 +48,11 @@
              <li class="dropdown">
               <a href="#" class="nav-link has-dropdown"><i data-feather="anchor"></i><span>My Downline</span></a>
               <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/6">Overall</a></li>
-                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/1">Silver Direct</a></li>
-                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/2">Gold Direct</a></li>
-                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/3">Diamond Direct</a></li>
-                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/4">Crown Direct</a></li>
+                  <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/6">Downline</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/1">Direct</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/2">Gold</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/3">Diamond</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/clogin/downline/4">Crown</a></li>
               </ul>
             </li>
             <li class="dropdown">

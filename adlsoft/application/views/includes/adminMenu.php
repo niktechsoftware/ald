@@ -7,7 +7,7 @@
             <li class="dropdown">
               <a href="#" class="nav-link has-dropdown"><i data-feather="briefcase"></i><span>Product</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="widget-chart.html">All List</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/adminController/addproduct/">Add Product</a></li>
                 <li><a class="nav-link" href="widget-data.html">Add/Delete</a></li>
               </ul>
             </li>
@@ -44,9 +44,10 @@
             <li class="dropdown">
               <a href="#" class="nav-link has-dropdown"><i data-feather="mail"></i><span>Mobile SMS</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="alert.html">Sms Setting</a></li>
-                <li><a class="nav-link" href="badge.html">Single Customer</a></li>
-                <li><a class="nav-link" href="breadcrumb.html">All Customer</a></li>
+               <li><a class="nav-link" href="<?php echo base_url();?>index.php/adminController/sms_setting">Sms Setting</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/adminController/sms/1">Single Customer</a></li>
+                <li><a class="nav-link" href="<?php echo base_url();?>index.php/adminController/sms/2">All Customer</a></li>
+				 <li><a class="nav-link" href="<?php echo base_url();?>index.php/adminController/sms/3">Upgrading Wise SMS</a></li>
                 <li><a class="nav-link" href="buttons.html">Product Promotion</a></li>
                 <li><a class="nav-link" href="collapse.html">Group Rank</a></li>
                
